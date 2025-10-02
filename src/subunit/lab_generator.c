@@ -1,28 +1,25 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "utils.h"
-
 #define LAB_LENGTH 11
 #define LAB_WIDTH 25
 
-void free_matrix(int ** matrix, int n){
-    for (int i=0;i<n;i++){
-        free(matrix[i]);
-    }
-    free(matrix);
-}
 
-int ** allocate_labyrinth(){
-    int ** matrix = malloc(sizeof(int*)*LAB_LENGTH);
+LabyrinthCell ** allocate_labyrinth(){
+    LabyrinthCell ** labyrinth = malloc(sizeof(LabyrinthCell*)*LAB_LENGTH);
     int value=0;
     for(int i=0;i<LAB_LENGTH;i++){
-        matrix[i]=malloc(sizeof(int)*LAB_WIDTH);
+        labyrinth[i]=malloc(sizeof(LabyrinthCell)*LAB_WIDTH);
         for(int j=0;j<LAB_WIDTH;j++){
-            matrix[i][j]=value++;
+            labyrinth[i][j].x=i;
+            labyrinth[i][j].y=j;
+            labyrinth[i][j].value=value++;
         }
     }
-    return matrix;
+    return labyrinth;
 }
+
 
 int ** allocate_matrix_walls(int lines, int columns){
     int ** matrix = malloc(sizeof(int*)*lines);
@@ -36,12 +33,12 @@ int ** allocate_matrix_walls(int lines, int columns){
 }
 
 
-void generate_lab(int ** labyrinth, int ** vertical_walls, int  ** horizontal_walls, int length, int width){
+void generate_lab(LabyrinthCell ** labyrinth, int ** vertical_walls, int  ** horizontal_walls, int length, int width){
     int count=0;
     while(count < (length*width)+1){
-        int random_case = rand()%(length*width);
-        int random_wall = (random_case % width == 0) ? rand()%4 : rand()%2;
-
+        int rand_x = rand()%length;
+        int rand_y = rand()%width;
+        
         
 
 
@@ -52,17 +49,19 @@ void generate_lab(int ** labyrinth, int ** vertical_walls, int  ** horizontal_wa
 
 int main(){
 
-    int ** labyrinth = allocate_labyrinth();
+    LabyrinthCell ** labyrinth = allocate_labyrinth();
 
     int ** vertical_walls = allocate_matrix_walls(LAB_LENGTH+1, LAB_WIDTH);
     int ** horizontal_walls = allocate_matrix_walls(LAB_LENGTH, LAB_WIDTH+1);
 
-    display_matrix(labyrinth, LAB_LENGTH, LAB_WIDTH);
-    printf("\n");
 
     display_matrix(vertical_walls, LAB_LENGTH+1, LAB_WIDTH);
 
     printf("\n");
 
     display_matrix(horizontal_walls, LAB_LENGTH, LAB_WIDTH+1);
+
+     printf("\n");
+
+    display_labyrinth(labyrinth, LAB_LENGTH, LAB_WIDTH);
 }

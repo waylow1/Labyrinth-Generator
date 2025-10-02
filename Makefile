@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -pedantic
-
+CFLAGS = -Wall -pedantic -I$(INCLUDE_DIR)
+INCLUDE_DIR = include
 SRC_DIR = src
 SUBUNIT_DIR = $(SRC_DIR)/subunit
 
@@ -8,7 +8,7 @@ APP = app.x
 APP_SRC = $(SRC_DIR)/main.c
 APP_OBJ = $(SRC_DIR)/main.o
 
-all: $(APP) lab_generator
+all: $(APP) labyrinth_generator.x
 
 $(APP): $(APP_OBJ)
 	$(CC) $(APP_OBJ) $(CFLAGS) -o $@
@@ -16,8 +16,8 @@ $(APP): $(APP_OBJ)
 $(APP_OBJ): $(APP_SRC)
 	$(CC) -c $< $(CFLAGS) -o $@
 
-lab_generator: $(SUBUNIT_DIR)/lab_generator.c $(SUBUNIT_DIR)/utils.o
-	$(CC) $(SUBUNIT_DIR)/lab_generator.c $(SUBUNIT_DIR)/utils.o $(CFLAGS) -o $@
+labyrinth_generator.x: $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/utils.o
+	$(CC) $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/utils.o $(CFLAGS) -o $@
 
 $(SUBUNIT_DIR)/utils.o: $(SUBUNIT_DIR)/utils.c
 	$(CC) -c $< $(CFLAGS) -o $@

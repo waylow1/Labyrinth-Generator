@@ -1,0 +1,1 @@
+void display_matrix(int ** matrix, int lines, int columns);

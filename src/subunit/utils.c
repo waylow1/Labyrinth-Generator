@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 typedef struct cell{
-    int x,y, value;
+    int x, y, value;
 } LabyrinthCell;
 
 void display_matrix(int ** matrix, int lines, int columns){

@@ -23,7 +23,7 @@ int ** allocate_matrix_walls(int lines, int columns){
     for(int i = 0; i < lines; i++){
         matrix[i] = malloc(sizeof(int)*columns);
         for(int j = 0; j < columns; j++){
-            matrix[i][j] = 0;
+            matrix[i][j] = 1;
         }
     }
     return matrix;
@@ -56,17 +56,17 @@ void merge_sets(LabyrinthCell **labyrinth, int length, int width, int old_val, i
 
 void open_wall(int orientation, int x, int y, int **vertical_walls, int **horizontal_walls) {
     if (orientation == 0) {
-        vertical_walls[x+1][y] = 1; 
-    } else {
-        horizontal_walls[x][y+1] = 1;
+        vertical_walls[x+1][y] = 0; 
+    } else if (orientation == 1){
+        horizontal_walls[x][y+1] = 0;
     }
 }
 
 void get_opened_walls(LabyrinthCell **labyrinth, int **vertical_walls, int **horizontal_walls, int length, int width) {
-    int walls_opened = 0;
+    int nb_iterations = 0;
     int total_walls_needed = length * width - 1;
 
-    while (walls_opened < total_walls_needed) {
+    while (nb_iterations < total_walls_needed) {
         int x = rand() % length;
         int y = rand() % width;
         int nx, ny;
@@ -80,7 +80,7 @@ void get_opened_walls(LabyrinthCell **labyrinth, int **vertical_walls, int **hor
 
             merge_sets(labyrinth, length, width, old_val, new_val);
             open_wall(orientation, x, y, vertical_walls, horizontal_walls);
-            walls_opened++;
+            nb_iterations++;
         }
     }
 }
@@ -91,15 +91,10 @@ void generate_labyrinth(LabyrinthCell **labyrinth, int length, int width){
     int ** horizontal_walls = allocate_matrix_walls(length, width+1);
 
     get_opened_walls(labyrinth, vertical_walls, horizontal_walls, length, width);
-    for(int i=0;i<length;i++){
-        for(int j=0;j<width+1;j++){
-            if(vertical_walls[i][j] == 1 || horizontal_walls[i][j] == 1){
-                labyrinth[i][j].value = 1;
-            }
-            else{
-                labyrinth[i][j].value = 0;
-            }
-        }
-    }
+
+    printf("Vertical Walls:\n");
+    display_matrix(vertical_walls, length+1, width);
+    printf("Horizontal Walls:\n");
+    display_matrix(horizontal_walls, length, width+1);
 }
 

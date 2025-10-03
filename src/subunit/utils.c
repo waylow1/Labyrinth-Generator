@@ -35,10 +35,10 @@ void display_labyrinth(LabyrinthCell ** labyrinth, int lines, int columns){
      for(int i=0;i<lines;i++){
         for(int j=0;j<columns;j++){
             if (labyrinth[i][j].value == 1){
-                printf("  #  ");
+                printf("#");
             }
             else{
-                printf("     ");
+                printf(".");
             }
         }
         printf("\n");
@@ -78,3 +78,4 @@ void free_labyrinth(LabyrinthCell ** labyrinth, int length){
     }
         free(labyrinth);
 }
+

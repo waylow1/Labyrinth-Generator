@@ -32,6 +32,7 @@ int main(){
         LabyrinthCell ** labyrinth = allocate_labyrinth(length, width);
         generate_labyrinth(labyrinth, length, width);
         dump_labyrinth(labyrinth, length, width);
+        display_labyrinth_numerically(labyrinth, length, width);
         display_labyrinth(labyrinth, length, width);
         break;
     case 2:

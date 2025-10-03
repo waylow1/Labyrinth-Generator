@@ -6,12 +6,13 @@ SUBUNIT_DIR = $(SRC_DIR)/subunit
 BUILD_DIR = build
 BIN_DIR = bin
 APP = $(BIN_DIR)/app.x
-APP_SRC = $(SRC_DIR)/main.c
-APP_OBJ = $(BUILD_DIR)/main.o
 
-.PHONY: all clean docs test help
+APP_SRC = $(SRC_DIR)/main.c $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/labyrinth_menu.c $(SUBUNIT_DIR)/utils.c
+APP_OBJ = $(BUILD_DIR)/main.o $(BUILD_DIR)/labyrinth_generator.o $(BUILD_DIR)/labyrinth_menu.o $(BUILD_DIR)/utils.o
 
-all: $(APP) $(BIN_DIR)/labyrinth_generator.x
+.PHONY: all clean docs help
+
+all: $(APP)
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
@@ -19,27 +20,24 @@ $(BIN_DIR):
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)
+	$(CC) -c $< $(CFLAGS) -o $@
+
+$(BUILD_DIR)/%.o: $(SUBUNIT_DIR)/%.c | $(BUILD_DIR)
+	$(CC) -c $< $(CFLAGS) -o $@
+
 $(APP): $(APP_OBJ) | $(BIN_DIR)
 	$(CC) $(APP_OBJ) $(CFLAGS) -o $@
-
-$(APP_OBJ): $(APP_SRC) | $(BUILD_DIR)
-	$(CC) -c $< $(CFLAGS) -o $@
-
-$(BIN_DIR)/labyrinth_generator.x: $(SUBUNIT_DIR)/labyrinth_generator.c $(BUILD_DIR)/utils.o | $(BIN_DIR)
-	$(CC) $(SUBUNIT_DIR)/labyrinth_generator.c $(BUILD_DIR)/utils.o $(CFLAGS) -o $@
-
-$(BUILD_DIR)/utils.o: $(SUBUNIT_DIR)/utils.c | $(BUILD_DIR)
-	$(CC) -c $< $(CFLAGS) -o $@
 
 docs: Doxyfile
 	doxygen Doxyfile
 
 clean:
-	rm -f $(APP) $(APP_OBJ) $(BIN_DIR)/labyrinth_generator.x $(BUILD_DIR)/utils.o
+	rm -f $(APP) $(APP_OBJ)
 
 help:
 	@echo "Makefile targets:"
-	@echo "  all                - Build the application and labyrinth generator"
-	@echo "  docs               - Generate documentation using Doxygen"
-	@echo "  clean              - Remove built files"
-	@echo "  help               - Show this help message"
+	@echo "  all     - Build the application"
+	@echo "  docs    - Generate docs with Doxygen"
+	@echo "  clean   - Remove compiled files"
+	@echo "  help    - Show this message"

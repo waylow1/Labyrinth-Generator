@@ -3,15 +3,13 @@
 #include "utils.h"
 #include <time.h>
 
-#define LAB_LENGTH 11
-#define LAB_WIDTH 25
 
-LabyrinthCell ** allocate_labyrinth(){
-    LabyrinthCell ** labyrinth = malloc(sizeof(LabyrinthCell*)*LAB_LENGTH);
+LabyrinthCell ** allocate_labyrinth(int length, int width){
+    LabyrinthCell ** labyrinth = malloc(sizeof(LabyrinthCell*)*length);
     int value = 0;
-    for(int i = 0; i < LAB_LENGTH; i++){
-        labyrinth[i] = malloc(sizeof(LabyrinthCell)*LAB_WIDTH);
-        for(int j = 0; j < LAB_WIDTH; j++){
+    for(int i = 0; i < length; i++){
+        labyrinth[i] = malloc(sizeof(LabyrinthCell)*width);
+        for(int j = 0; j < width; j++){
             labyrinth[i][j].x = i;
             labyrinth[i][j].y = j;
             labyrinth[i][j].value = value++;
@@ -87,10 +85,14 @@ void get_opened_walls(LabyrinthCell **labyrinth, int **vertical_walls, int **hor
     }
 }
 
-void generate_labyrinth(LabyrinthCell **labyrinth, int **vertical_walls, int **horizontal_walls) {
-    get_opened_walls(labyrinth, vertical_walls, horizontal_walls, LAB_LENGTH, LAB_WIDTH);
-    for(int i=0;i<LAB_LENGTH;i++){
-        for(int j=0;j<LAB_WIDTH+1;j++){
+void generate_labyrinth(LabyrinthCell **labyrinth, int length, int width){
+
+    int ** vertical_walls = allocate_matrix_walls(length+1, width);
+    int ** horizontal_walls = allocate_matrix_walls(length, width+1);
+
+    get_opened_walls(labyrinth, vertical_walls, horizontal_walls, length, width);
+    for(int i=0;i<length;i++){
+        for(int j=0;j<width+1;j++){
             if(vertical_walls[i][j] == 1 || horizontal_walls[i][j] == 1){
                 labyrinth[i][j].value = 1;
             }
@@ -101,15 +103,3 @@ void generate_labyrinth(LabyrinthCell **labyrinth, int **vertical_walls, int **h
     }
 }
 
-int main(){ 
-
-    srand(time(NULL));
-    LabyrinthCell ** labyrinth = allocate_labyrinth();
-
-    int ** vertical_walls = allocate_matrix_walls(LAB_LENGTH+1, LAB_WIDTH);
-    int ** horizontal_walls = allocate_matrix_walls(LAB_LENGTH, LAB_WIDTH+1);
-    generate_labyrinth(labyrinth, vertical_walls, horizontal_walls);
-
-
-    display_labyrinth(labyrinth, LAB_LENGTH, LAB_WIDTH);
-}

@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['free_5flabyrinth_0',['free_labyrinth',['../utils_8c.html#a6a594eb5e2225d82c964808c733c4309',1,'utils.c']]],
+  ['free_5flabyrinth_5fcells_1',['free_labyrinth_cells',['../utils_8c.html#a2d67ef53c3399032d366cec633db7fc5',1,'utils.c']]],
+  ['free_5fmatrix_2',['free_matrix',['../utils_8c.html#a5abbb85a477461bd5b81cec9f56f0855',1,'utils.c']]]
+];

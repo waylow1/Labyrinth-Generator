@@ -7,8 +7,8 @@ BUILD_DIR = build
 BIN_DIR = bin
 APP = $(BIN_DIR)/app.x
 
-APP_SRC = $(SRC_DIR)/main.c $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/labyrinth_menu.c $(SUBUNIT_DIR)/utils.c
-APP_OBJ = $(BUILD_DIR)/main.o $(BUILD_DIR)/labyrinth_generator.o $(BUILD_DIR)/labyrinth_menu.o $(BUILD_DIR)/utils.o
+APP_SRC = $(SRC_DIR)/main.c $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/labyrinth_menu.c $(SUBUNIT_DIR)/utils.c $(SUBUNIT_DIR)/displays.c
+APP_OBJ = $(BUILD_DIR)/main.o $(BUILD_DIR)/labyrinth_generator.o $(BUILD_DIR)/labyrinth_menu.o $(BUILD_DIR)/utils.o $(BUILD_DIR)/displays.o
 
 .PHONY: all clean docs help
 

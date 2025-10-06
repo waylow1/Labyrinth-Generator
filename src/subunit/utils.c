@@ -5,15 +5,15 @@ typedef struct cell{
     int x, y, value;
 } LabyrinthCell;
 
-void display_matrix(int ** matrix, int lines, int columns){
+typedef struct walls{
+    int ** walls;
+} LabyrinthWalls;
 
-    for(int i=0;i<lines;i++){
-        for(int j=0;j<columns;j++){
-            printf("%5d", matrix[i][j]);
-        }
-        printf("\n");
-    }
-}   
+typedef struct labyrinth{
+    char ** grid;
+    int starting_x, starting_y;
+    int ending_x, ending_y;
+} Labyrinth;
 
 void free_matrix(int ** matrix, int length){
     for (int i=0;i<length;i++){
@@ -22,28 +22,20 @@ void free_matrix(int ** matrix, int length){
     free(matrix);
 }
 
-void display_labyrinth_numerically(LabyrinthCell ** labyrinth, int lines, int columns){
-     for(int i=0;i<lines;i++){
-        for(int j=0;j<columns;j++){
-            printf("%5d", labyrinth[i][j].value);
-        }
-        printf("\n");
+void free_labyrinth_cells(LabyrinthCell ** labyrinth, int length){
+    for (int i=0;i<length;i++){
+        free(labyrinth[i]);
     }
+        free(labyrinth);
 }
 
-void display_labyrinth(LabyrinthCell ** labyrinth, int lines, int columns){
-     for(int i=0;i<lines;i++){
-        for(int j=0;j<columns;j++){
-            if (labyrinth[i][j].value == 1){
-                printf("#");
-            }
-            else{
-                printf(".");
-            }
-        }
-        printf("\n");
+void free_labyrinth(Labyrinth labyrinth, int lines, int columns){
+    for (int i=0;i<lines;i++){
+        free(labyrinth.grid[i]);
     }
+    free(labyrinth.grid);
 }
+
 
 char * random_labyrinth_name() {
     int random_number = rand() % 10000;
@@ -56,7 +48,7 @@ char * random_labyrinth_name() {
     return filename;
 }
 
-void dump_labyrinth(LabyrinthCell ** labyrinth, int lines, int columns){
+void dump_labyrinth(Labyrinth labyrinth, int lines, int columns){
     char * filename = random_labyrinth_name();
     FILE * file = fopen(filename, "w");
     if (file == NULL){
@@ -65,17 +57,12 @@ void dump_labyrinth(LabyrinthCell ** labyrinth, int lines, int columns){
     }
     for(int i=0;i<lines;i++){
         for(int j=0;j<columns;j++){
-            fprintf(file, "%d ", labyrinth[i][j].value);
+            fprintf(file, "%d ", labyrinth.grid[i][j]);
         }
         fprintf(file, "\n");
     }
     fclose(file);
 }
 
-void free_labyrinth(LabyrinthCell ** labyrinth, int length){
-    for (int i=0;i<length;i++){
-        free(labyrinth[i]);
-    }
-        free(labyrinth);
-}
+
 

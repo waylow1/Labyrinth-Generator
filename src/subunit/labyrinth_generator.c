@@ -30,18 +30,23 @@ int ** allocate_matrix_walls(int lines, int columns){
 }
 
 int choose_wall(int length, int width, int x, int y, int *nx, int *ny) {
-    int orientation = rand() % 2;
+    int dir = rand() % 4;
     *nx = x;
     *ny = y;
 
-    if (orientation == 0 && x+1 < length) {
-        *nx = x+1;
-    } else if (orientation == 1 && y+1 < width) {
-        *ny = y+1;
+    if (dir == 0 && x + 1 < length) {        
+        *nx = x + 1;
+    } else if (dir == 1 && y + 1 < width) {  
+        *ny = y + 1;
+    } else if (dir == 2 && x - 1 >= 0) {     
+        *nx = x - 1;
+    } else if (dir == 3 && y - 1 >= 0) {     
+        *ny = y - 1;
     } else {
-        return -1;
+        return -1; 
     }
-    return orientation;
+
+    return dir;
 }
 
 void merge_sets(LabyrinthCell **labyrinth, int length, int width, int old_val, int new_val) {
@@ -54,15 +59,24 @@ void merge_sets(LabyrinthCell **labyrinth, int length, int width, int old_val, i
     }
 }
 
-void open_wall(int orientation, int x, int y, int **vertical_walls, int **horizontal_walls) {
-    if (orientation == 0) {
-        vertical_walls[x+1][y] = 0; 
-    } else if (orientation == 1){
-        horizontal_walls[x][y+1] = 0;
+void open_wall(int dir, int x, int y, LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls) {
+    switch (dir) {
+        case 0:
+            vertical_walls.walls[x+1][y] = 0;
+            break;
+        case 1:
+            horizontal_walls.walls[x][y+1] = 0;
+            break;
+        case 2:
+            vertical_walls.walls[x][y] = 0;
+            break;
+        case 3:
+            horizontal_walls.walls[x][y] = 0;
+            break;
     }
 }
 
-void get_opened_walls(LabyrinthCell **labyrinth, int **vertical_walls, int **horizontal_walls, int length, int width) {
+void get_opened_walls(LabyrinthCell **labyrinth, LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width) {
     int nb_iterations = 0;
     int total_walls_needed = length * width - 1;
 
@@ -85,16 +99,54 @@ void get_opened_walls(LabyrinthCell **labyrinth, int **vertical_walls, int **hor
     }
 }
 
-void generate_labyrinth(LabyrinthCell **labyrinth, int length, int width){
 
-    int ** vertical_walls = allocate_matrix_walls(length+1, width);
-    int ** horizontal_walls = allocate_matrix_walls(length, width+1);
+Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width){
+    Labyrinth labyrinth;
+
+    int grid_rows = 2 * length + 1;
+    int grid_cols = 2 * width + 1;
+
+    char **grid = malloc(sizeof(char*) * grid_rows);
+    for (int i = 0; i < grid_rows; i++) {
+        grid[i] = malloc(sizeof(char) * (grid_cols + 1));
+        for (int j = 0; j < grid_cols; j++) {
+            grid[i][j] = '#';
+        }
+        grid[i][grid_cols] = '\0';
+    }
+
+    for (int i = 0; i < length; i++) {
+        for (int j = 0; j < width; j++) {
+            int gi = 2 * i + 1;
+            int gj = 2 * j + 1;
+            grid[gi][gj] = ' '; 
+
+            if (i + 1 < length && vertical_walls.walls[i+1][j] == 0) {
+                grid[gi+1][gj] = ' ';
+            }
+            if (j + 1 < width && horizontal_walls.walls[i][j+1] == 0) {
+                grid[gi][gj+1] = ' ';
+            }
+        }
+    }
+
+    grid[1][1] = 'o'; 
+    grid[2*length-1][2*width-1] = '-';
+
+    labyrinth.grid = grid;
+    return labyrinth;
+}
+
+
+Labyrinth generate_labyrinth(int length, int width){
+
+    LabyrinthCell ** labyrinth = allocate_labyrinth(length, width);
+
+    LabyrinthWalls vertical_walls, horizontal_walls;
+    vertical_walls.walls = allocate_matrix_walls(length+1, width);
+    horizontal_walls.walls = allocate_matrix_walls(length, width+1);
 
     get_opened_walls(labyrinth, vertical_walls, horizontal_walls, length, width);
 
-    printf("Vertical Walls:\n");
-    display_matrix(vertical_walls, length+1, width);
-    printf("Horizontal Walls:\n");
-    display_matrix(horizontal_walls, length, width+1);
+    return concat_vertical_horizontal_walls(vertical_walls, horizontal_walls, length, width);
 }
-

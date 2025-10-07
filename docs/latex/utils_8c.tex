@@ -25,6 +25,10 @@ typedef struct \mbox{\hyperlink{structlabyrinth}{labyrinth}} \mbox{\hyperlink{ut
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{utils_8c_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{utils_8c_a4a542472390e8d529fa43788fd2543dd}{allocate\+\_\+labyrinth}} (int length, int width)
+\item 
+int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{utils_8c_ad0d9fcf46bad29930aa25918e27bbf2d}{allocate\+\_\+matrix\+\_\+walls}} (int lines, int columns)
+\item 
 void \mbox{\hyperlink{utils_8c_a5abbb85a477461bd5b81cec9f56f0855}{free\+\_\+matrix}} (int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matrix, int length)
 \item 
 void \mbox{\hyperlink{utils_8c_a2d67ef53c3399032d366cec633db7fc5}{free\+\_\+labyrinth\+\_\+cells}} (\mbox{\hyperlink{utils_8c_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlabyrinth}{labyrinth}}, int length)
@@ -59,6 +63,18 @@ void \mbox{\hyperlink{utils_8c_a67c703d3e499636a390f9997d1376b53}{dump\+\_\+laby
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{utils_8c_a4a542472390e8d529fa43788fd2543dd}\label{utils_8c_a4a542472390e8d529fa43788fd2543dd} 
+\index{utils.c@{utils.c}!allocate\_labyrinth@{allocate\_labyrinth}}
+\index{allocate\_labyrinth@{allocate\_labyrinth}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{allocate\_labyrinth()}{allocate\_labyrinth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8c_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} allocate\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+\Hypertarget{utils_8c_ad0d9fcf46bad29930aa25918e27bbf2d}\label{utils_8c_ad0d9fcf46bad29930aa25918e27bbf2d} 
+\index{utils.c@{utils.c}!allocate\_matrix\_walls@{allocate\_matrix\_walls}}
+\index{allocate\_matrix\_walls@{allocate\_matrix\_walls}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{allocate\_matrix\_walls()}{allocate\_matrix\_walls()}}
+{\footnotesize\ttfamily int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} allocate\+\_\+matrix\+\_\+walls (\begin{DoxyParamCaption}\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
 \Hypertarget{utils_8c_a67c703d3e499636a390f9997d1376b53}\label{utils_8c_a67c703d3e499636a390f9997d1376b53} 
 \index{utils.c@{utils.c}!dump\_labyrinth@{dump\_labyrinth}}
 \index{dump\_labyrinth@{dump\_labyrinth}!utils.c@{utils.c}}

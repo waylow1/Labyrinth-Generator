@@ -17,7 +17,8 @@ typedef struct Labyrinth{
 } Labyrinth;
 
 
-
+int ** allocate_matrix_walls(int lines, int columns);
+LabyrinthCell ** allocate_labyrinth(int length, int width);
 void free_matrix(int ** matrix, int n);
 void free_labyrinth_cells(LabyrinthCell ** labyrinth, int lines);
 void free_labyrinth(Labyrinth labyrinth, int lines, int columns);

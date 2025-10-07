@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "displays.h"
 
-
 void display_labyrinth(Labyrinth labyrinth, int lines, int columns){
     for(int i=0;i<lines;i++){
         for(int j=0;j<columns;j++){
@@ -25,8 +24,6 @@ void display_labyrinth_numerically(LabyrinthCell ** labyrinth, int lines, int co
         printf("\n");
     }
 }
-
-
 
 void display_matrix(int ** matrix, int lines, int columns){
 

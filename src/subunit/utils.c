@@ -15,7 +15,6 @@ typedef struct labyrinth{
     int ending_x, ending_y;
 } Labyrinth;
 
-
 LabyrinthCell ** allocate_labyrinth(int length, int width){
     LabyrinthCell ** labyrinth = malloc(sizeof(LabyrinthCell*)*length);
     int value = 0;
@@ -62,7 +61,6 @@ void free_labyrinth(Labyrinth labyrinth, int lines, int columns){
     free(labyrinth.grid);
 }
 
-
 char * random_labyrinth_name() {
     int random_number = rand() % 10000;
     char * filename = malloc(26 * sizeof(char)); 
@@ -83,12 +81,9 @@ void dump_labyrinth(Labyrinth labyrinth, int lines, int columns){
     }
     for(int i=0;i<lines;i++){
         for(int j=0;j<columns;j++){
-            fprintf(file, "%d ", labyrinth.grid[i][j]);
+            fprintf(file, "%c", labyrinth.grid[i][j]);
         }
         fprintf(file, "\n");
     }
     fclose(file);
 }
-
-
-

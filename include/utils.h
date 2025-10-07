@@ -10,9 +10,8 @@ typedef struct walls{
 } LabyrinthWalls;
 
 typedef struct Labyrinth{
-    int starting_point_x, starting_point_y;
-    int ending_point_x, ending_point_y;
-    int length, width;
+    int starting_x, starting_y;
+    int ending_x, ending_y;
     char ** grid;
 } Labyrinth;
 

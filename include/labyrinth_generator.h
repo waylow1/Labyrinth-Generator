@@ -3,10 +3,6 @@
 
 #include "utils.h"
 
-#define LAB_LENGTH 11
-#define LAB_WIDTH 25
-
-
 LabyrinthCell ** allocate_labyrinth(int length, int width);
 int ** allocate_matrix_walls(int lines, int columns);
 int choose_wall(int length, int width, int x, int y, int *nx, int *ny);

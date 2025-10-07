@@ -77,14 +77,14 @@ void get_opened_walls(LabyrinthCell **labyrinth, LabyrinthWalls vertical_walls, 
 void generate_starting_ending(Labyrinth labyrinth, int length, int width) {
     
     do{ 
-        labyrinth.starting_x = rand() % length;
-    }while(labyrinth.starting_x % 2 == 0);
-    labyrinth.starting_y = 0;
+        labyrinth.starting_y = rand() % length;
+    }while(labyrinth.starting_y % 2 == 0);
+    labyrinth.starting_x = 0;
 
     do{
-        labyrinth.ending_x = rand() % length;
-    }while(labyrinth.ending_x % 2 == 0);
-    labyrinth.ending_y = 2 * width;
+        labyrinth.ending_y = rand() % length;
+    }while(labyrinth.ending_y % 2 == 0);
+    labyrinth.ending_x = 2 * width;
 
     labyrinth.grid[labyrinth.starting_x][labyrinth.starting_y] = 'o';
     labyrinth.grid[labyrinth.ending_x][labyrinth.ending_y] = '-';

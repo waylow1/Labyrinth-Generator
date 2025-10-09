@@ -39,7 +39,7 @@ int get_user_choice() {
         if (result == 1 && choice >= 1 && choice <= 4) {
             break;
         } else {
-            printf("Entrée invalide. Veuillez entrer un nombre entre 1 et 4 : ");
+            printf("Invalid input you must choose between 1 and 4: ");
             int c;
             while ((c = getchar()) != '\n' && c != EOF) { }
         }

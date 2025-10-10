@@ -27,8 +27,8 @@ int main(void) {
                 labyrinth = generate_labyrinth(length, width);
                 display_labyrinth(labyrinth, length, width);
 
-                dump_labyrinth((int)time(NULL), length, width, labyrinth_name);
-                //free_labyrinth(labyrinth, length, width);
+                dump_labyrinth(seed, length, width, labyrinth_name);
+                free_labyrinth(labyrinth, length, width);
                
                 break;
 
@@ -64,6 +64,6 @@ int main(void) {
         }
     }
     free(labyrinth_name);
-    //free_labyrinth(labyrinth, length, width);
+    free_labyrinth(labyrinth, length, width);
     return 0; 
 }

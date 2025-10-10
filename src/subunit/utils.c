@@ -94,6 +94,7 @@ void dump_labyrinth(int seed, int lines, int columns, char * filename){
 }
 
 void display_all_available_files(char ** labyrinth_name){
+    printf("\n");
     system("ls config/");
     printf("\n");
     printf("Please enter the name of the labyrinth file (without extension): ");

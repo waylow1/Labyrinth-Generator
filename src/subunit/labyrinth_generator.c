@@ -75,20 +75,21 @@ void get_opened_walls(LabyrinthCell **labyrinth, LabyrinthWalls vertical_walls, 
 
 
 void generate_starting_ending(Labyrinth labyrinth, int length, int width) {
-    
-    do{ 
-        labyrinth.starting_y = rand() % (2*length);
-    }while(labyrinth.starting_y % 2 == 0);
+    int grid_rows = 2 * length + 1;
+    int grid_cols = 2 * width + 1;
+
+    do { 
+        labyrinth.starting_y = rand() % grid_cols;
+    } while (labyrinth.starting_y % 2 == 0);
     labyrinth.starting_x = 0;
 
-    do{
-        labyrinth.ending_y = rand() % (2*length);
-    }while(labyrinth.ending_y % 2 == 0);
-    labyrinth.ending_x = 2 * width;
+    do {
+        labyrinth.ending_y = rand() % grid_cols;
+    } while (labyrinth.ending_y % 2 == 0);
+    labyrinth.ending_x = grid_rows - 1;
 
     labyrinth.grid[labyrinth.starting_x][labyrinth.starting_y] = 'o';
     labyrinth.grid[labyrinth.ending_x][labyrinth.ending_y] = '-';
-
 }
 
 Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width) {
@@ -97,50 +98,35 @@ Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, Labyri
     int grid_rows = 2 * length + 1;
     int grid_cols = 2 * width + 1;
 
-    char **grid = malloc(sizeof(char*) * grid_rows);
-    if (!grid) {
-        fprintf(stderr, "Erreur d'allocation mémoire pour grid\n");
-        exit(EXIT_FAILURE);
-    }
-
+    labyrinth.grid = malloc(sizeof(char*) * grid_rows);
     for (int i = 0; i < grid_rows; i++) {
-        grid[i] = malloc(sizeof(char) * (grid_cols + 1));
-        if (!grid[i]) {
-            fprintf(stderr, "Erreur d'allocation mémoire pour grid[%d]\n", i);
-            for (int k = 0; k < i; k++) {
-                free(grid[k]);
-            }
-            free(grid);
-            exit(EXIT_FAILURE);
-        }
+        labyrinth.grid[i] = malloc(sizeof(char) * (grid_cols + 1)); 
         for (int j = 0; j < grid_cols; j++) {
-            grid[i][j] = '#';
+            labyrinth.grid[i][j] = '#';
         }
-        grid[i][grid_cols] = '\0';
+        labyrinth.grid[i][grid_cols] = '\0'; 
     }
 
     for (int i = 0; i < length; i++) {
         for (int j = 0; j < width; j++) {
             int gi = 2 * i + 1;
-            int gj = 2 * j + 1;
-            grid[gi][gj] = ' ';
+            int gj = 2 * j + 1; 
+            labyrinth.grid[gi][gj] = ' '; 
+
             if (i + 1 < length && vertical_walls.walls[i+1][j] == 0) {
-                grid[gi + 1][gj] = ' ';
+                labyrinth.grid[gi + 1][gj] = ' ';
             }
 
             if (j + 1 < width && horizontal_walls.walls[i][j+1] == 0) {
-                grid[gi][gj + 1] = ' ';
+                labyrinth.grid[gi][gj + 1] = ' ';
             }
         }
     }
-
-    labyrinth.grid = grid;
 
     generate_starting_ending(labyrinth, length, width);
 
     return labyrinth;
 }
-
 
 
 Labyrinth generate_labyrinth(int length, int width){

@@ -3,6 +3,8 @@
 #include "displays.h"
 
 void display_labyrinth(Labyrinth labyrinth, int lines, int columns){
+    lines = lines*2 + 1;
+    columns = columns*2 + 1;
     for(int i=0;i<lines;i++){
         for(int j=0;j<columns;j++){
             if(labyrinth.grid[i][j] == '#'){

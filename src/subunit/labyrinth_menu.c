@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void display_menu() {
     printf("Welcome to the Labyrinth Generator!\n");
@@ -9,7 +10,7 @@ void display_menu() {
     printf("Please enter your choice: ");
 }
 
-void ask_for_labyrinth_size(int *length, int *width) {
+void ask_for_labyrinth_size_and_name(int *length, int *width, char **name) {
     int w, h, result_w, result_h;
     while (1) {
         printf("Enter labyrinth width (odd number between 5 and 51): ");
@@ -26,8 +27,13 @@ void ask_for_labyrinth_size(int *length, int *width) {
             while ((c = getchar()) != '\n' && c != EOF) { }
         }
     }
+    
     *width = w;
     *length = h;
+
+    *name = malloc(100 * sizeof(char));
+    printf("Enter labyrinth name: ");
+    scanf("%99s", *name);
 }
 
 

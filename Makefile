@@ -4,6 +4,7 @@ INCLUDE_DIR = include
 SRC_DIR = src
 SUBUNIT_DIR = $(SRC_DIR)/subunit
 BUILD_DIR = build
+CFG_DIR = config
 BIN_DIR = bin
 APP = $(BIN_DIR)/app.x
 
@@ -33,7 +34,7 @@ docs: Doxyfile
 	doxygen Doxyfile
 
 clean:
-	rm -f $(APP) $(APP_OBJ)
+	rm -f $(APP) $(APP_OBJ) $(BUILD_DIR)/* $(BIN_DIR)/* $(CFG_DIR)/*.cfg
 
 help:
 	@echo "Makefile targets:"

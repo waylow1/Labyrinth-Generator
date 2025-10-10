@@ -59,31 +59,77 @@ void free_labyrinth(Labyrinth labyrinth, int lines, int columns){
         free(labyrinth.grid[i]);
     }
     free(labyrinth.grid);
+    labyrinth.grid = NULL;
 }
 
-char * random_labyrinth_name() {
-    int random_number = rand() % 10000;
-    char * filename = malloc(26 * sizeof(char)); 
-    if (filename == NULL) {
-        perror("Unable to allocate memory for filename");
-        exit(1);
-    }
-    snprintf(filename, 26, "config/labyrinth%04d.cfg", random_number);
-    return filename;
-}
+void dump_labyrinth(int seed, int lines, int columns, char * filename){
+    if (!filename) return;
+    size_t len = 0;
+    while (filename[len]) len++;
 
-void dump_labyrinth(Labyrinth labyrinth, int lines, int columns){
-    char * filename = random_labyrinth_name();
-    FILE * file = fopen(filename, "w");
-    if (file == NULL){
-        perror("Error opening file");
+    const char prefix[] = "config/";
+    size_t prefix_len = sizeof(prefix) - 1;
+    char *path = malloc(prefix_len + len + 5);
+    if (!path) return;
+
+    size_t k = 0;
+    for (size_t i = 0; i < prefix_len; ++i) path[k++] = prefix[i];
+    for (size_t i = 0; i < len; ++i) path[k++] = filename[i];
+    path[k++] = '.';
+    path[k++] = 'c';
+    path[k++] = 'f';
+    path[k++] = 'g';
+    path[k] = '\0';
+
+    FILE *fp = fopen(path, "w");
+    if (!fp) {
+        free(path);
         return;
     }
-    for(int i=0;i<lines;i++){
-        for(int j=0;j<columns;j++){
-            fprintf(file, "%c", labyrinth.grid[i][j]);
-        }
-        fprintf(file, "\n");
+
+    fprintf(fp, "%d,%d,%d\n", seed, lines, columns);
+
+    fclose(fp);
+    free(path);
+}
+
+void display_all_available_files(char ** labyrinth_name){
+    system("ls config/");
+    printf("\n");
+    printf("Please enter the name of the labyrinth file (without extension): ");
+    *labyrinth_name = malloc(100 * sizeof(char));
+    scanf("%99s", *labyrinth_name);
+}
+
+
+void load_labyrinth(const char * filename, int * seed, int * lines, int * columns){
+    if (!filename) return;
+    size_t len = 0;
+    while (filename[len]) len++;
+
+    const char prefix[] = "config/";
+    size_t prefix_len = sizeof(prefix) - 1;
+    char *path = malloc(prefix_len + len + 5);
+    if (!path) return;
+
+    size_t k = 0;
+    for (size_t i = 0; i < prefix_len; ++i) path[k++] = prefix[i];
+    for (size_t i = 0; i < len; ++i) path[k++] = filename[i];
+    path[k++] = '.';
+    path[k++] = 'c';
+    path[k++] = 'f';
+    path[k++] = 'g';
+    path[k] = '\0';
+
+    printf("Loading labyrinth from file: %s\n", path);
+    FILE *fp = fopen(path, "r");
+    if (!fp) {
+        free(path);
+        return;
     }
-    fclose(file);
+
+    fscanf(fp, "%d,%d,%d\n", seed, lines, columns);
+
+    fclose(fp);
+    free(path);
 }

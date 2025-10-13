@@ -25,7 +25,7 @@ int is_ended(Labyrinth * labyrinth){
     if(labyrinth->starting_x == labyrinth->ending_x && labyrinth->starting_y == labyrinth->ending_y){
         return 1;
     }   
-    return 0;
+    return 0;-
 }
 
 
@@ -58,7 +58,7 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
     } else {
         printf("❌ Move blocked! (%d,%d) -> (%d,%d)\n", old_x, old_y, new_x, new_y);
     }
-    
+
     if(is_ended(labyrinth)){
         printf("🎉 Congratulations! You've reached the end of the labyrinth! 🎉\n");
         exit(0);

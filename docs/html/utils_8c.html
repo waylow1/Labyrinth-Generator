@@ -90,20 +90,28 @@ Include dependency graph for utils.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4a542472390e8d529fa43788fd2543dd" id="r_a4a542472390e8d529fa43788fd2543dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8h.html#a07e4c11e475592679fb7baaed1402ee2">LabyrinthCell</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a4a542472390e8d529fa43788fd2543dd">allocate_labyrinth</a> (int length, int width)</td></tr>
+<tr class="memdesc:a4a542472390e8d529fa43788fd2543dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory for a 2D array of LabyrinthCell structures.  <br /></td></tr>
 <tr class="separator:a4a542472390e8d529fa43788fd2543dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0d9fcf46bad29930aa25918e27bbf2d" id="r_ad0d9fcf46bad29930aa25918e27bbf2d"><td class="memItemLeft" align="right" valign="top">int **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#ad0d9fcf46bad29930aa25918e27bbf2d">allocate_matrix_walls</a> (int lines, int columns)</td></tr>
+<tr class="memdesc:ad0d9fcf46bad29930aa25918e27bbf2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory for a 2D matrix of integers, initializing all elements to 1.  <br /></td></tr>
 <tr class="separator:ad0d9fcf46bad29930aa25918e27bbf2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5abbb85a477461bd5b81cec9f56f0855" id="r_a5abbb85a477461bd5b81cec9f56f0855"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a5abbb85a477461bd5b81cec9f56f0855">free_matrix</a> (int **matrix, int length)</td></tr>
+<tr class="memdesc:a5abbb85a477461bd5b81cec9f56f0855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a 2D matrix of integers.  <br /></td></tr>
 <tr class="separator:a5abbb85a477461bd5b81cec9f56f0855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d67ef53c3399032d366cec633db7fc5" id="r_a2d67ef53c3399032d366cec633db7fc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a2d67ef53c3399032d366cec633db7fc5">free_labyrinth_cells</a> (<a class="el" href="utils_8h.html#a07e4c11e475592679fb7baaed1402ee2">LabyrinthCell</a> **labyrinth, int length)</td></tr>
+<tr class="memdesc:a2d67ef53c3399032d366cec633db7fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a 2D array of LabyrinthCell structures.  <br /></td></tr>
 <tr class="separator:a2d67ef53c3399032d366cec633db7fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a594eb5e2225d82c964808c733c4309" id="r_a6a594eb5e2225d82c964808c733c4309"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a6a594eb5e2225d82c964808c733c4309">free_labyrinth</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> labyrinth, int lines, int columns)</td></tr>
+<tr class="memdesc:a6a594eb5e2225d82c964808c733c4309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a <a class="el" href="structLabyrinth.html">Labyrinth</a> structure, including its grid.  <br /></td></tr>
 <tr class="separator:a6a594eb5e2225d82c964808c733c4309"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cccaa878d777af9c24e6dc352b885ab" id="r_a7cccaa878d777af9c24e6dc352b885ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a7cccaa878d777af9c24e6dc352b885ab">dump_labyrinth</a> (int seed, int lines, int columns, char *filename)</td></tr>
+<tr class="memdesc:a7cccaa878d777af9c24e6dc352b885ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the labyrinth configuration (seed, lines, columns) to a file.  <br /></td></tr>
 <tr class="separator:a7cccaa878d777af9c24e6dc352b885ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab75970c7149ceb3ecaea1a0cbb1ede8e" id="r_ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#ab75970c7149ceb3ecaea1a0cbb1ede8e">display_all_available_files</a> (char **labyrinth_name)</td></tr>
+<tr class="memdesc:ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays all available labyrinth configuration files and prompts the user to select one.  <br /></td></tr>
 <tr class="separator:ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab8c16aca09c1c9a75601428d67e963b" id="r_aab8c16aca09c1c9a75601428d67e963b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#aab8c16aca09c1c9a75601428d67e963b">load_labyrinth</a> (const char *filename, int *seed, int *lines, int *columns)</td></tr>
+<tr class="memdesc:aab8c16aca09c1c9a75601428d67e963b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the labyrinth configuration (seed, lines, columns) from a file.  <br /></td></tr>
 <tr class="separator:aab8c16aca09c1c9a75601428d67e963b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -133,6 +141,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Allocates memory for a 2D array of LabyrinthCell structures. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>The number of rows in the labyrinth. </td></tr>
+    <tr><td class="paramname">width</td><td>The number of columns in the labyrinth. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>LabyrinthCell** A pointer to the allocated 2D array of LabyrinthCell structures. </dd></dl>
+
 </div>
 </div>
 <a id="ad0d9fcf46bad29930aa25918e27bbf2d" name="ad0d9fcf46bad29930aa25918e27bbf2d"></a>
@@ -161,6 +179,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Allocates memory for a 2D matrix of integers, initializing all elements to 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lines</td><td>The number of rows in the matrix. </td></tr>
+    <tr><td class="paramname">columns</td><td>The number of columns in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int** A pointer to the allocated 2D matrix of integers. </dd></dl>
+
 </div>
 </div>
 <a id="ab75970c7149ceb3ecaea1a0cbb1ede8e" name="ab75970c7149ceb3ecaea1a0cbb1ede8e"></a>
@@ -178,6 +206,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Displays all available labyrinth configuration files and prompts the user to select one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth_name</td><td>A pointer to a string where the selected labyrinth name will be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -219,6 +255,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Dumps the labyrinth configuration (seed, lines, columns) to a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>The seed used for generating the labyrinth. </td></tr>
+    <tr><td class="paramname">lines</td><td>The number of rows in the labyrinth. </td></tr>
+    <tr><td class="paramname">columns</td><td>The number of columns in the labyrinth. </td></tr>
+    <tr><td class="paramname">filename</td><td>The name of the file to save the configuration (without extension). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a6a594eb5e2225d82c964808c733c4309" name="a6a594eb5e2225d82c964808c733c4309"></a>
@@ -253,6 +300,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Frees the memory allocated for a <a class="el" href="structLabyrinth.html">Labyrinth</a> structure, including its grid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>The <a class="el" href="structLabyrinth.html">Labyrinth</a> structure to be freed. </td></tr>
+    <tr><td class="paramname">lines</td><td>The number of rows in the labyrinth grid. </td></tr>
+    <tr><td class="paramname">columns</td><td>The number of columns in the labyrinth grid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2d67ef53c3399032d366cec633db7fc5" name="a2d67ef53c3399032d366cec633db7fc5"></a>
@@ -281,6 +338,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Frees the memory allocated for a 2D array of LabyrinthCell structures. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>The labyrinth to be freed. </td></tr>
+    <tr><td class="paramname">length</td><td>The number of rows in the labyrinth. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5abbb85a477461bd5b81cec9f56f0855" name="a5abbb85a477461bd5b81cec9f56f0855"></a>
@@ -308,6 +374,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Frees the memory allocated for a 2D matrix of integers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td>The matrix to be freed. </td></tr>
+    <tr><td class="paramname">length</td><td>The number of rows in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -348,6 +423,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Loads the labyrinth configuration (seed, lines, columns) from a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The name of the file to load the configuration from (without extension). </td></tr>
+    <tr><td class="paramname">seed</td><td>A pointer to store the loaded seed value. </td></tr>
+    <tr><td class="paramname">lines</td><td>A pointer to store the loaded number of rows. </td></tr>
+    <tr><td class="paramname">columns</td><td>A pointer to store the loaded number of columns. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

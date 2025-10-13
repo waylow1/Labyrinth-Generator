@@ -1,6 +1,6 @@
 var searchData=
 [
   ['free_5flabyrinth_0',['free_labyrinth',['../utils_8c.html#a6a594eb5e2225d82c964808c733c4309',1,'free_labyrinth(Labyrinth labyrinth, int lines, int columns):&#160;utils.c'],['../utils_8h.html#a6a594eb5e2225d82c964808c733c4309',1,'free_labyrinth(Labyrinth labyrinth, int lines, int columns):&#160;utils.c']]],
-  ['free_5flabyrinth_5fcells_1',['free_labyrinth_cells',['../utils_8c.html#a2d67ef53c3399032d366cec633db7fc5',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int length):&#160;utils.c'],['../utils_8h.html#a106c31c6ee2d9c5d858edf1b86477419',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int lines):&#160;utils.c']]],
-  ['free_5fmatrix_2',['free_matrix',['../utils_8c.html#a5abbb85a477461bd5b81cec9f56f0855',1,'free_matrix(int **matrix, int length):&#160;utils.c'],['../utils_8h.html#a3fdd14af07dbf53fc733d1cd8dec2670',1,'free_matrix(int **matrix, int n):&#160;utils.c']]]
+  ['free_5flabyrinth_5fcells_1',['free_labyrinth_cells',['../utils_8c.html#a2d67ef53c3399032d366cec633db7fc5',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int length):&#160;utils.c'],['../utils_8h.html#a2d67ef53c3399032d366cec633db7fc5',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int length):&#160;utils.c']]],
+  ['free_5fmatrix_2',['free_matrix',['../utils_8c.html#a5abbb85a477461bd5b81cec9f56f0855',1,'free_matrix(int **matrix, int length):&#160;utils.c'],['../utils_8h.html#a5abbb85a477461bd5b81cec9f56f0855',1,'free_matrix(int **matrix, int length):&#160;utils.c']]]
 ];

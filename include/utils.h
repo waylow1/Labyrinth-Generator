@@ -22,7 +22,7 @@ LabyrinthCell ** allocate_labyrinth(int length, int width);
 void free_matrix(int ** matrix, int n);
 void free_labyrinth_cells(LabyrinthCell ** labyrinth, int lines);
 void free_labyrinth(Labyrinth labyrinth, int lines, int columns);
-void dump_labyrinth(int seed, int lines, int columns, const char * filename);
+void dump_labyrinth(int seed, int lines, int columns, char * filename);
 
 
 void display_all_available_files(char ** filename);

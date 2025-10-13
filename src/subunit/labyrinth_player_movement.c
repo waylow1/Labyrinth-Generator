@@ -58,11 +58,6 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
     } else {
         printf("❌ Move blocked! (%d,%d) -> (%d,%d)\n", old_x, old_y, new_x, new_y);
     }
-
-    if(is_ended(labyrinth)){
-        printf("🎉 Congratulations! You've reached the end of the labyrinth! 🎉\n");
-        exit(0);
-    }
 }
 
 void display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
@@ -102,7 +97,7 @@ void display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
 
     while (running) {
         while (SDL_PollEvent(&e)) {
-            if (e.type == SDL_QUIT) {
+            if (e.type == SDL_QUIT || is_ended(&labyrinth)) {
                 running = 0;
             } 
             else if (e.type == SDL_KEYDOWN) {

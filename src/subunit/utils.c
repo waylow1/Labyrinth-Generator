@@ -1,20 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct cell{
-    int x, y, value;
-} LabyrinthCell;
-
-typedef struct walls{
-    int ** walls;
-} LabyrinthWalls;
-
-typedef struct labyrinth{
-    char ** grid;
-    int starting_x, starting_y;
-    int ending_x, ending_y;
-    int length, width;
-} Labyrinth;
+#include "utils.h"
 
 LabyrinthCell ** allocate_labyrinth(int length, int width){
     LabyrinthCell ** labyrinth = malloc(sizeof(LabyrinthCell*)*length);

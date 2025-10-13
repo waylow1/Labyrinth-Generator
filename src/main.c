@@ -11,7 +11,7 @@ int main(void) {
     int length = 0, width = 0;
     int seed = 0;
     char *labyrinth_name = NULL;
-    Labyrinth labyrinth = {0, 0, 0, 0, NULL};
+    Labyrinth labyrinth = {0, 0, 0, 0, 0, 0, NULL};
 
     length = 15;
     width = 15;
@@ -35,8 +35,8 @@ int main(void) {
                 display_labyrinth(labyrinth, length, width);
 
                 dump_labyrinth(seed, length, width, labyrinth_name);
-                //free_labyrinth(labyrinth, length, width);
                 display_labyrinth_sdl(labyrinth, length, width);
+                free_labyrinth(labyrinth, length, width);
                 break;
 
             case 2:
@@ -72,6 +72,6 @@ int main(void) {
         }
     }
     free(labyrinth_name);
-    //free_labyrinth(labyrinth, length, width);
+    free_labyrinth(labyrinth, length, width);
     return 0;
 }

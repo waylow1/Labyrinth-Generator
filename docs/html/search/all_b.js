@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['utils_2ec_0',['utils.c',['../utils_8c.html',1,'']]]
+  ['starting_5fx_0',['starting_x',['../structLabyrinth.html#afa43908c080b82a2d64a773ca0b601cf',1,'Labyrinth']]],
+  ['starting_5fy_1',['starting_y',['../structLabyrinth.html#a39513f8583a0b3e6ef3be8a207c3d374',1,'Labyrinth']]]
 ];

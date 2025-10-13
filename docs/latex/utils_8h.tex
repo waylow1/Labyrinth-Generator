@@ -1,0 +1,113 @@
+\doxysection{include/utils.h File Reference}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{include/utils.h@{include/utils.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcell}{cell}}
+\item 
+struct \mbox{\hyperlink{structwalls}{walls}}
+\item 
+struct \mbox{\hyperlink{structLabyrinth}{Labyrinth}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structcell}{cell}} \mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}}
+\item 
+typedef struct \mbox{\hyperlink{structwalls}{walls}} \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}
+\item 
+typedef struct \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{utils_8h_a16a224b3b7dcc48313c0dd10a3c4f362}{Labyrinth}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{utils_8h_ad0d9fcf46bad29930aa25918e27bbf2d}{allocate\+\_\+matrix\+\_\+walls}} (int lines, int columns)
+\item 
+\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{utils_8h_a4a542472390e8d529fa43788fd2543dd}{allocate\+\_\+labyrinth}} (int length, int width)
+\item 
+void \mbox{\hyperlink{utils_8h_a3fdd14af07dbf53fc733d1cd8dec2670}{free\+\_\+matrix}} (int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matrix, int n)
+\item 
+void \mbox{\hyperlink{utils_8h_a106c31c6ee2d9c5d858edf1b86477419}{free\+\_\+labyrinth\+\_\+cells}} (\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}labyrinth, int lines)
+\item 
+void \mbox{\hyperlink{utils_8h_a6a594eb5e2225d82c964808c733c4309}{free\+\_\+labyrinth}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int lines, int columns)
+\item 
+void \mbox{\hyperlink{utils_8h_a7cccaa878d777af9c24e6dc352b885ab}{dump\+\_\+labyrinth}} (int seed, int lines, int columns, char \texorpdfstring{$\ast$}{*}filename)
+\item 
+void \mbox{\hyperlink{utils_8h_adfaa527ae320e469b897d65cd5a8209f}{display\+\_\+all\+\_\+available\+\_\+files}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}filename)
+\item 
+void \mbox{\hyperlink{utils_8h_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+labyrinth}} (const char \texorpdfstring{$\ast$}{*}filename, int \texorpdfstring{$\ast$}{*}seed, int \texorpdfstring{$\ast$}{*}lines, int \texorpdfstring{$\ast$}{*}columns)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{utils_8h_a16a224b3b7dcc48313c0dd10a3c4f362}\label{utils_8h_a16a224b3b7dcc48313c0dd10a3c4f362} 
+\index{utils.h@{utils.h}!Labyrinth@{Labyrinth}}
+\index{Labyrinth@{Labyrinth}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{Labyrinth}{Labyrinth}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{structLabyrinth}{Labyrinth}}}
+
+\Hypertarget{utils_8h_a07e4c11e475592679fb7baaed1402ee2}\label{utils_8h_a07e4c11e475592679fb7baaed1402ee2} 
+\index{utils.h@{utils.h}!LabyrinthCell@{LabyrinthCell}}
+\index{LabyrinthCell@{LabyrinthCell}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{LabyrinthCell}{LabyrinthCell}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcell}{cell}} \mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}}}
+
+\Hypertarget{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}\label{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c} 
+\index{utils.h@{utils.h}!LabyrinthWalls@{LabyrinthWalls}}
+\index{LabyrinthWalls@{LabyrinthWalls}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{LabyrinthWalls}{LabyrinthWalls}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structwalls}{walls}} \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8h_a4a542472390e8d529fa43788fd2543dd}\label{utils_8h_a4a542472390e8d529fa43788fd2543dd} 
+\index{utils.h@{utils.h}!allocate\_labyrinth@{allocate\_labyrinth}}
+\index{allocate\_labyrinth@{allocate\_labyrinth}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{allocate\_labyrinth()}{allocate\_labyrinth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} allocate\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+\Hypertarget{utils_8h_ad0d9fcf46bad29930aa25918e27bbf2d}\label{utils_8h_ad0d9fcf46bad29930aa25918e27bbf2d} 
+\index{utils.h@{utils.h}!allocate\_matrix\_walls@{allocate\_matrix\_walls}}
+\index{allocate\_matrix\_walls@{allocate\_matrix\_walls}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{allocate\_matrix\_walls()}{allocate\_matrix\_walls()}}
+{\footnotesize\ttfamily int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} allocate\+\_\+matrix\+\_\+walls (\begin{DoxyParamCaption}\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+\Hypertarget{utils_8h_adfaa527ae320e469b897d65cd5a8209f}\label{utils_8h_adfaa527ae320e469b897d65cd5a8209f} 
+\index{utils.h@{utils.h}!display\_all\_available\_files@{display\_all\_available\_files}}
+\index{display\_all\_available\_files@{display\_all\_available\_files}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{display\_all\_available\_files()}{display\_all\_available\_files()}}
+{\footnotesize\ttfamily void display\+\_\+all\+\_\+available\+\_\+files (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+\Hypertarget{utils_8h_a7cccaa878d777af9c24e6dc352b885ab}\label{utils_8h_a7cccaa878d777af9c24e6dc352b885ab} 
+\index{utils.h@{utils.h}!dump\_labyrinth@{dump\_labyrinth}}
+\index{dump\_labyrinth@{dump\_labyrinth}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{dump\_labyrinth()}{dump\_labyrinth()}}
+{\footnotesize\ttfamily void dump\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{int}]{seed,  }\item[{int}]{lines,  }\item[{int}]{columns,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+\Hypertarget{utils_8h_a6a594eb5e2225d82c964808c733c4309}\label{utils_8h_a6a594eb5e2225d82c964808c733c4309} 
+\index{utils.h@{utils.h}!free\_labyrinth@{free\_labyrinth}}
+\index{free\_labyrinth@{free\_labyrinth}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{free\_labyrinth()}{free\_labyrinth()}}
+{\footnotesize\ttfamily void free\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+\Hypertarget{utils_8h_a106c31c6ee2d9c5d858edf1b86477419}\label{utils_8h_a106c31c6ee2d9c5d858edf1b86477419} 
+\index{utils.h@{utils.h}!free\_labyrinth\_cells@{free\_labyrinth\_cells}}
+\index{free\_labyrinth\_cells@{free\_labyrinth\_cells}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{free\_labyrinth\_cells()}{free\_labyrinth\_cells()}}
+{\footnotesize\ttfamily void free\+\_\+labyrinth\+\_\+cells (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{lines }\end{DoxyParamCaption})}
+
+\Hypertarget{utils_8h_a3fdd14af07dbf53fc733d1cd8dec2670}\label{utils_8h_a3fdd14af07dbf53fc733d1cd8dec2670} 
+\index{utils.h@{utils.h}!free\_matrix@{free\_matrix}}
+\index{free\_matrix@{free\_matrix}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{free\_matrix()}{free\_matrix()}}
+{\footnotesize\ttfamily void free\+\_\+matrix (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matrix,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{utils_8h_aab8c16aca09c1c9a75601428d67e963b}\label{utils_8h_aab8c16aca09c1c9a75601428d67e963b} 
+\index{utils.h@{utils.h}!load\_labyrinth@{load\_labyrinth}}
+\index{load\_labyrinth@{load\_labyrinth}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{load\_labyrinth()}{load\_labyrinth()}}
+{\footnotesize\ttfamily void load\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int \texorpdfstring{$\ast$}{*}}]{seed,  }\item[{int \texorpdfstring{$\ast$}{*}}]{lines,  }\item[{int \texorpdfstring{$\ast$}{*}}]{columns }\end{DoxyParamCaption})}
+

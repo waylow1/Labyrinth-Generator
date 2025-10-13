@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['grid_0',['grid',['../structlabyrinth.html#a89bba7f53e0d6bc6275fa4e7c7bd134a',1,'labyrinth']]]
+  ['grid_0',['grid',['../structLabyrinth.html#a27206dc306bb4aa3ebb0fdf111326779',1,'Labyrinth']]]
 ];

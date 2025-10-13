@@ -1,0 +1,61 @@
+\doxysection{src/subunit/labyrinth\+\_\+player\+\_\+movement.c File Reference}
+\hypertarget{labyrinth__player__movement_8c}{}\label{labyrinth__player__movement_8c}\index{src/subunit/labyrinth\_player\_movement.c@{src/subunit/labyrinth\_player\_movement.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}labyrinth\+\_\+player\+\_\+movement.\+h"{}}\newline
+{\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8c_a7a4127f14f16563da90eb3c836bc404f}{CELL\+\_\+\+SIZE}}~20
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{labyrinth__player__movement_8c_aa1577d21d4ec7d480cf9d3bc12bc1eed}{redraw\+\_\+case}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, \mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int x, int y)
+\item 
+int \mbox{\hyperlink{labyrinth__player__movement_8c_a0c1c796de73411ac51651aff761bef9b}{is\+\_\+ended}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth)
+\item 
+void \mbox{\hyperlink{labyrinth__player__movement_8c_afd7648c81d7ba445150cae509d64432f}{move\+\_\+player}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int dx, int dy, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\item 
+void \mbox{\hyperlink{labyrinth__player__movement_8c_aeab6fa986a8341607fcad12ce5f80a8c}{display\+\_\+labyrinth\+\_\+sdl}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int length, int width)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{labyrinth__player__movement_8c_a7a4127f14f16563da90eb3c836bc404f}\label{labyrinth__player__movement_8c_a7a4127f14f16563da90eb3c836bc404f} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!CELL\_SIZE@{CELL\_SIZE}}
+\index{CELL\_SIZE@{CELL\_SIZE}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{CELL\_SIZE}{CELL\_SIZE}}
+{\footnotesize\ttfamily \#define CELL\+\_\+\+SIZE~20}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{labyrinth__player__movement_8c_aeab6fa986a8341607fcad12ce5f80a8c}\label{labyrinth__player__movement_8c_aeab6fa986a8341607fcad12ce5f80a8c} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!display\_labyrinth\_sdl@{display\_labyrinth\_sdl}}
+\index{display\_labyrinth\_sdl@{display\_labyrinth\_sdl}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{display\_labyrinth\_sdl()}{display\_labyrinth\_sdl()}}
+{\footnotesize\ttfamily void display\+\_\+labyrinth\+\_\+sdl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+\Hypertarget{labyrinth__player__movement_8c_a0c1c796de73411ac51651aff761bef9b}\label{labyrinth__player__movement_8c_a0c1c796de73411ac51651aff761bef9b} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!is\_ended@{is\_ended}}
+\index{is\_ended@{is\_ended}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{is\_ended()}{is\_ended()}}
+{\footnotesize\ttfamily int is\+\_\+ended (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth }\end{DoxyParamCaption})}
+
+\Hypertarget{labyrinth__player__movement_8c_afd7648c81d7ba445150cae509d64432f}\label{labyrinth__player__movement_8c_afd7648c81d7ba445150cae509d64432f} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!move\_player@{move\_player}}
+\index{move\_player@{move\_player}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{move\_player()}{move\_player()}}
+{\footnotesize\ttfamily void move\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{dx,  }\item[{int}]{dy,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer }\end{DoxyParamCaption})}
+
+\Hypertarget{labyrinth__player__movement_8c_aa1577d21d4ec7d480cf9d3bc12bc1eed}\label{labyrinth__player__movement_8c_aa1577d21d4ec7d480cf9d3bc12bc1eed} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!redraw\_case@{redraw\_case}}
+\index{redraw\_case@{redraw\_case}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{redraw\_case()}{redraw\_case()}}
+{\footnotesize\ttfamily void redraw\+\_\+case (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+

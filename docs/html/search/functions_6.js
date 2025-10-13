@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_5fwall_0',['open_wall',['../labyrinth__generator_8c.html#aa8664f3474628d905e95f5f49027fcbe',1,'labyrinth_generator.c']]]
+  ['load_5flabyrinth_0',['load_labyrinth',['../utils_8c.html#aab8c16aca09c1c9a75601428d67e963b',1,'load_labyrinth(const char *filename, int *seed, int *lines, int *columns):&#160;utils.c'],['../utils_8h.html#aab8c16aca09c1c9a75601428d67e963b',1,'load_labyrinth(const char *filename, int *seed, int *lines, int *columns):&#160;utils.c']]]
 ];

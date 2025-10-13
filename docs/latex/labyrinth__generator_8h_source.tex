@@ -1,0 +1,20 @@
+\doxysection{labyrinth\+\_\+generator.\+h}
+\hypertarget{labyrinth__generator_8h_source}{}\label{labyrinth__generator_8h_source}\index{include/labyrinth\_generator.h@{include/labyrinth\_generator.h}}
+\mbox{\hyperlink{labyrinth__generator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LABYRINTH\_GENERATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LABYRINTH\_GENERATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \mbox{\hyperlink{structcell}{LabyrinthCell}}\ **\ \mbox{\hyperlink{labyrinth__generator_8h_a4a542472390e8d529fa43788fd2543dd}{allocate\_labyrinth}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00007\ \textcolor{keywordtype}{int}\ **\ \mbox{\hyperlink{labyrinth__generator_8h_ad0d9fcf46bad29930aa25918e27bbf2d}{allocate\_matrix\_walls}}(\textcolor{keywordtype}{int}\ lines,\ \textcolor{keywordtype}{int}\ columns);}
+\DoxyCodeLine{00008\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__generator_8h_a6a89f1096ca9103967438a007b43d825}{choose\_wall}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ *nx,\ \textcolor{keywordtype}{int}\ *ny);}
+\DoxyCodeLine{00009\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_a659942f491d71fd0661276346c33afbc}{merge\_sets}}(\mbox{\hyperlink{structcell}{LabyrinthCell}}\ **labyrinth,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ old\_val,\ \textcolor{keywordtype}{int}\ new\_val);}
+\DoxyCodeLine{00010\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_ae96c01f1259f99ff6758021ba476f86d}{open\_wall}}(\textcolor{keywordtype}{int}\ orientation,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ vertical\_walls,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ horizontal\_walls);}
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_ade99ab485be2c80411a01806e0b0fe9e}{get\_opened\_walls}}(\mbox{\hyperlink{structcell}{LabyrinthCell}}\ **labyrinth,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ vertical\_walls,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ horizontal\_walls,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00012\ \mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ \mbox{\hyperlink{labyrinth__generator_8h_aa9a656eb79177ad3bb4c4b5ed3805f81}{generate\_labyrinth}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

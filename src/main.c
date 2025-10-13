@@ -8,21 +8,20 @@
 #include <stdio.h>
 
 int main(void) {
-    int length = 0, width = 0;
-    int seed = 0;
-    char *labyrinth_name = NULL;
-    Labyrinth labyrinth = {0, 0, 0, 0, 0, 0, NULL};
-
-    length = 15;
-    width = 15;
-    seed = (int)time(NULL);
-    srand(seed);
-    labyrinth = generate_labyrinth(length, width);
-
+ 
     while (1) {
         display_menu();
         int choice = get_user_choice();
+           int length = 0, width = 0;
+        int seed = 0;
+        char *labyrinth_name = NULL;
+        Labyrinth labyrinth = {0, 0, 0, 0, 0, 0, NULL};
 
+        length = 15;
+        width = 15;
+        seed = (int)time(NULL);
+        srand(seed);
+        labyrinth = generate_labyrinth(length, width);
         switch (choice) {
             case 1:
                 seed = (int)time(NULL);
@@ -71,7 +70,6 @@ int main(void) {
                 break;
         }
     }
-    free(labyrinth_name);
-    free_labyrinth(labyrinth, length, width);
+    
     return 0;
 }

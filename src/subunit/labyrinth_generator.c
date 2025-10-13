@@ -88,8 +88,17 @@ void generate_starting_ending(Labyrinth * labyrinth, int length, int width) {
         } while (labyrinth->ending_y % 2 == 0);
         labyrinth->ending_x = grid_rows - 2;
 
-        labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] = 'o';
-        labyrinth->grid[labyrinth->ending_x][labyrinth->ending_y] = '-';
+        do {
+            labyrinth->key_x = rand() % grid_rows;
+        } while (labyrinth->key_x % 2 == 0);
+        do {
+            labyrinth->key_y = rand() % grid_cols;
+        } while (labyrinth->key_y % 2 == 0);
+
+        labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] = PLAYER;
+        labyrinth->grid[labyrinth->ending_x][labyrinth->ending_y] = END;
+        labyrinth->grid[labyrinth->key_x][labyrinth->key_y] = KEY;
+        labyrinth->has_key = 0;
     }
 
 Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width) {
@@ -102,7 +111,7 @@ Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, Labyri
     for (int i = 0; i < grid_rows; i++) {
         labyrinth.grid[i] = malloc(sizeof(char) * (grid_cols + 1)); 
         for (int j = 0; j < grid_cols; j++) {
-            labyrinth.grid[i][j] = '#';
+            labyrinth.grid[i][j] = WALL;
         }
         labyrinth.grid[i][grid_cols] = '\0'; 
     }
@@ -111,14 +120,14 @@ Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, Labyri
         for (int j = 0; j < width; j++) {
             int gi = 2 * i + 1;
             int gj = 2 * j + 1; 
-            labyrinth.grid[gi][gj] = ' '; 
+            labyrinth.grid[gi][gj] = PATH;
 
             if (i + 1 < length && vertical_walls.walls[i+1][j] == 0) {
-                labyrinth.grid[gi + 1][gj] = ' ';
+                labyrinth.grid[gi + 1][gj] = PATH;
             }
 
             if (j + 1 < width && horizontal_walls.walls[i][j+1] == 0) {
-                labyrinth.grid[gi][gj + 1] = ' ';
+                labyrinth.grid[gi][gj + 1] = PATH;
             }
         }
     }

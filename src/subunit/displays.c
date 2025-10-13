@@ -8,7 +8,7 @@ void display_labyrinth(Labyrinth labyrinth, int lines, int columns){
     columns = columns*2 + 1;
     for(int i=0;i<lines;i++){
         for(int j=0;j<columns;j++){
-            if(labyrinth.grid[i][j] == '#'){
+            if(labyrinth.grid[i][j] == WALL){
                 printf("\u2588");
             }
         else {

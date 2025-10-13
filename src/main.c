@@ -12,10 +12,10 @@ int main(void) {
     while (1) {
         display_menu();
         int choice = get_user_choice();
-           int length = 0, width = 0;
+        int length = 0, width = 0;
         int seed = 0;
         char *labyrinth_name = NULL;
-        Labyrinth labyrinth = {0, 0, 0, 0, 0, 0, NULL};
+        Labyrinth labyrinth = {NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         length = 15;
         width = 15;

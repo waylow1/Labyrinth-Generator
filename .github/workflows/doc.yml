@@ -23,7 +23,7 @@ jobs:
       - name: Téléversement de la doc
         uses: actions/upload-pages-artifact@v3
         with:
-          path: doc/html  
+          path: docs/html  
 
       - name: Déploiement sur GitHub Pages
         uses: actions/deploy-pages@v4

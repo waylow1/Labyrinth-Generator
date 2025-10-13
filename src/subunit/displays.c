@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "displays.h"
+#include <SDL2/SDL.h>
 
 void display_labyrinth(Labyrinth labyrinth, int lines, int columns){
     lines = lines*2 + 1;

@@ -18,8 +18,8 @@ void ask_for_labyrinth_size_and_name(int *length, int *width, char **name) {
         printf("Enter labyrinth height (odd number between 5 and 51): ");
         result_h = scanf("%d", &h);
         if (result_w == 1 && result_h == 1 &&
-            w >= 5 && w <= 101 && w % 2 == 1 &&
-            h >= 5 && h <= 101 && h % 2 == 1) {
+            w >= 5 && w <= 51 && w % 2 == 1 &&
+            h >= 5 && h <= 51 && h % 2 == 1) {
             break;
         } else {
             printf("Invalid input. Please enter odd numbers between 5 and 101 for both width and height.\n");

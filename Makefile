@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -pedantic -I$(INCLUDE_DIR)
+CFLAGS = -Wall -pedantic -I$(INCLUDE_DIR) -g `sdl2-config --cflags --libs`
 INCLUDE_DIR = include
 SRC_DIR = src
 SUBUNIT_DIR = $(SRC_DIR)/subunit
@@ -8,8 +8,8 @@ CFG_DIR = config
 BIN_DIR = bin
 APP = $(BIN_DIR)/app.x
 
-APP_SRC = $(SRC_DIR)/main.c $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/labyrinth_menu.c $(SUBUNIT_DIR)/utils.c $(SUBUNIT_DIR)/displays.c
-APP_OBJ = $(BUILD_DIR)/main.o $(BUILD_DIR)/labyrinth_generator.o $(BUILD_DIR)/labyrinth_menu.o $(BUILD_DIR)/utils.o $(BUILD_DIR)/displays.o
+APP_SRC = $(SRC_DIR)/main.c $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/labyrinth_menu.c $(SUBUNIT_DIR)/utils.c $(SUBUNIT_DIR)/displays.c $(SUBUNIT_DIR)/labyrinth_player_movement.c
+APP_OBJ = $(BUILD_DIR)/main.o $(BUILD_DIR)/labyrinth_generator.o $(BUILD_DIR)/labyrinth_menu.o $(BUILD_DIR)/utils.o $(BUILD_DIR)/displays.o $(BUILD_DIR)/labyrinth_player_movement.o
 
 .PHONY: all clean docs help
 

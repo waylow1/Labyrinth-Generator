@@ -81,12 +81,12 @@ void generate_starting_ending(Labyrinth labyrinth, int length, int width) {
     do { 
         labyrinth.starting_y = rand() % grid_cols;
     } while (labyrinth.starting_y % 2 == 0);
-    labyrinth.starting_x = 0;
+    labyrinth.starting_x = 1;
 
     do {
-        labyrinth.ending_y = rand() % grid_cols;
+        labyrinth.ending_y = rand() % grid_rows;
     } while (labyrinth.ending_y % 2 == 0);
-    labyrinth.ending_x = grid_rows - 1;
+    labyrinth.ending_x = grid_rows - 2;
 
     labyrinth.grid[labyrinth.starting_x][labyrinth.starting_y] = 'o';
     labyrinth.grid[labyrinth.ending_x][labyrinth.ending_y] = '-';
@@ -140,6 +140,9 @@ Labyrinth generate_labyrinth(int length, int width){
     get_opened_walls(labyrinth, vertical_walls, horizontal_walls, length, width);
 
     Labyrinth generated_labyrinth = concat_vertical_horizontal_walls(vertical_walls, horizontal_walls, length, width);
+
+    generated_labyrinth.length = length;
+    generated_labyrinth.width = width;
 
     free_labyrinth_cells(labyrinth, length);
     free_matrix(vertical_walls.walls, length+1);

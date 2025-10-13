@@ -13,6 +13,7 @@ typedef struct labyrinth{
     char ** grid;
     int starting_x, starting_y;
     int ending_x, ending_y;
+    int length, width;
 } Labyrinth;
 
 LabyrinthCell ** allocate_labyrinth(int length, int width){

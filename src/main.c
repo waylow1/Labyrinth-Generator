@@ -1,5 +1,6 @@
 #include "labyrinth_generator.h"
 #include "labyrinth_menu.h"
+#include "labyrinth_player_movement.h"
 #include <time.h>
 #include "utils.h"
 #include "displays.h"
@@ -11,6 +12,12 @@ int main(void) {
     int seed = 0;
     char *labyrinth_name = NULL;
     Labyrinth labyrinth = {0, 0, 0, 0, NULL};
+
+    length = 15;
+    width = 15;
+    seed = (int)time(NULL);
+    srand(seed);
+    labyrinth = generate_labyrinth(length, width);
 
     while (1) {
         display_menu();
@@ -28,8 +35,8 @@ int main(void) {
                 display_labyrinth(labyrinth, length, width);
 
                 dump_labyrinth(seed, length, width, labyrinth_name);
-                free_labyrinth(labyrinth, length, width);
-               
+                //free_labyrinth(labyrinth, length, width);
+                display_labyrinth_sdl(labyrinth, length, width);
                 break;
 
             case 2:
@@ -46,11 +53,12 @@ int main(void) {
                 labyrinth = generate_labyrinth(length, width);
 
                 display_labyrinth(labyrinth,length, width);
+                display_labyrinth_sdl(labyrinth, length, width);
                 break;
 
             case 3:
                 printf("Play !\n");
-                
+                display_labyrinth_sdl(labyrinth, length, width);
                 break;
 
             case 4:
@@ -64,6 +72,6 @@ int main(void) {
         }
     }
     free(labyrinth_name);
-    free_labyrinth(labyrinth, length, width);
-    return 0; 
+    //free_labyrinth(labyrinth, length, width);
+    return 0;
 }

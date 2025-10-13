@@ -63,6 +63,7 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
     printf("Ending position is (%d, %d)\n", labyrinth->ending_x, labyrinth->ending_y);
     if(is_ended(labyrinth)){
         printf("🎉 Congratulations! You've reached the end of the labyrinth! 🎉\n");
+        exit(0);
     }
 }
 

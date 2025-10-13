@@ -74,23 +74,25 @@ void get_opened_walls(LabyrinthCell **labyrinth, LabyrinthWalls vertical_walls, 
 }
 
 
-void generate_starting_ending(Labyrinth labyrinth, int length, int width) {
-    int grid_rows = 2 * length + 1;
-    int grid_cols = 2 * width + 1;
+void generate_starting_ending(Labyrinth * labyrinth, int length, int width) {
+        int grid_rows = 2 * length + 1;
+        int grid_cols = 2 * width + 1;
 
-    do { 
-        labyrinth.starting_y = rand() % grid_cols;
-    } while (labyrinth.starting_y % 2 == 0);
-    labyrinth.starting_x = 1;
+        do { 
+            labyrinth->starting_y = rand() % grid_cols;
+        } while (labyrinth->starting_y % 2 == 0);
+        labyrinth->starting_x = 1;
 
-    do {
-        labyrinth.ending_y = rand() % grid_rows;
-    } while (labyrinth.ending_y % 2 == 0);
-    labyrinth.ending_x = grid_rows - 2;
+        do {
+            labyrinth->ending_y = rand() % grid_cols;
+        } while (labyrinth->ending_y % 2 == 0);
+        labyrinth->ending_x = grid_rows - 2;
 
-    labyrinth.grid[labyrinth.starting_x][labyrinth.starting_y] = 'o';
-    labyrinth.grid[labyrinth.ending_x][labyrinth.ending_y] = '-';
-}
+        printf("Starting point: (%d, %d)\n", labyrinth->starting_x, labyrinth->starting_y);
+        printf("Ending point: (%d, %d)\n", labyrinth->ending_x, labyrinth->ending_y);
+        labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] = 'o';
+        labyrinth->grid[labyrinth->ending_x][labyrinth->ending_y] = '-';
+    }
 
 Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width) {
     Labyrinth labyrinth;
@@ -123,7 +125,7 @@ Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, Labyri
         }
     }
 
-    generate_starting_ending(labyrinth, length, width);
+    generate_starting_ending(&labyrinth, length, width);
 
     return labyrinth;
 }

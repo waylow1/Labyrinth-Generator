@@ -1,0 +1,29 @@
+name: Déploiement de la doc sur GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # déploie à chaque push sur main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du dépôt
+        uses: actions/checkout@v4
+
+      - name: Configuration de GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Téléversement de la doc
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: doc/html  
+
+      - name: Déploiement sur GitHub Pages
+        uses: actions/deploy-pages@v4

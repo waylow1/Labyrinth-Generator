@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['length_0',['length',['../structLabyrinth.html#a7aa4b719d3de2f325dff9f98d8438fff',1,'Labyrinth']]]
+  ['has_5fkey_0',['has_key',['../structLabyrinth.html#a1444b16016707db4eefb5407a282475c',1,'Labyrinth']]]
 ];

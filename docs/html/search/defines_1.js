@@ -1,19 +1,4 @@
 var searchData=
 [
-  ['minunit_5fepsilon_0',['MINUNIT_EPSILON',['../minunit_8h.html#a5720c3325f638c884373cfcaa77e547b',1,'minunit.h']]],
-  ['minunit_5fmessage_5flen_1',['MINUNIT_MESSAGE_LEN',['../minunit_8h.html#a81bcce4f04ddd963158dca943feb68b2',1,'minunit.h']]],
-  ['mu_5f_5fsafe_5fblock_2',['MU__SAFE_BLOCK',['../minunit_8h.html#a721c79b9e21e95c890aef6388362658e',1,'minunit.h']]],
-  ['mu_5fassert_3',['mu_assert',['../minunit_8h.html#a63d86a2a5916a3cdd504f2c1547e11ac',1,'minunit.h']]],
-  ['mu_5fassert_5fdouble_5feq_4',['mu_assert_double_eq',['../minunit_8h.html#ac15f5bc7e08dcd686b40f2c8329de2b7',1,'minunit.h']]],
-  ['mu_5fassert_5fint_5feq_5',['mu_assert_int_eq',['../minunit_8h.html#a6e06771cca83af1cba7f3b64c8f6beeb',1,'minunit.h']]],
-  ['mu_5fassert_5fstring_5feq_6',['mu_assert_string_eq',['../minunit_8h.html#a0b8c036d18cea962842f17cbb3ea2906',1,'minunit.h']]],
-  ['mu_5fcheck_7',['mu_check',['../minunit_8h.html#ad8ca133baa1f0f576239631f37790b2b',1,'minunit.h']]],
-  ['mu_5fexit_5fcode_8',['MU_EXIT_CODE',['../minunit_8h.html#afa40e44f2c8a0afb36acface769ab13d',1,'minunit.h']]],
-  ['mu_5ffail_9',['mu_fail',['../minunit_8h.html#a0e76010b259c57dcc09538622b5b88e1',1,'minunit.h']]],
-  ['mu_5freport_10',['MU_REPORT',['../minunit_8h.html#a34507ed892909d3f420ebe93a6ad9975',1,'minunit.h']]],
-  ['mu_5frun_5fsuite_11',['MU_RUN_SUITE',['../minunit_8h.html#a686f0ed4e3fb8ffd9687895b3a1de7f7',1,'minunit.h']]],
-  ['mu_5frun_5ftest_12',['MU_RUN_TEST',['../minunit_8h.html#acef7e3a7858368882ef2b560be0d10bb',1,'minunit.h']]],
-  ['mu_5fsuite_5fconfigure_13',['MU_SUITE_CONFIGURE',['../minunit_8h.html#a09ec4c5d3a6468580c712306558fe0a2',1,'minunit.h']]],
-  ['mu_5ftest_14',['MU_TEST',['../minunit_8h.html#a591ca1b29e41e52d7bf5bd74995b7d66',1,'minunit.h']]],
-  ['mu_5ftest_5fsuite_15',['MU_TEST_SUITE',['../minunit_8h.html#aeef69d8f319fd0a98c48f43c4105704f',1,'minunit.h']]]
+  ['end_5fcolor_0',['END_COLOR',['../labyrinth__player__movement_8c.html#a475df0d9bbf72a496b3b362ef75a2a0f',1,'labyrinth_player_movement.c']]]
 ];

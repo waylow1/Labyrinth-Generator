@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['walls_0',['walls',['../structwalls.html',1,'walls'],['../structwalls.html#aa52f523c7bb800b8bc90eb0bac475b92',1,'walls::walls()']]],
-  ['width_1',['width',['../structLabyrinth.html#a2b48c536f314354bd4c6ea6f91df8f64',1,'Labyrinth']]]
+  ['redraw_5fcase_0',['redraw_case',['../labyrinth__player__movement_8c.html#a73bb89082c65b39278b8624ef2b8096a',1,'labyrinth_player_movement.c']]]
 ];

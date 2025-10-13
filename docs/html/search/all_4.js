@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['free_5flabyrinth_0',['free_labyrinth',['../utils_8c.html#a6a594eb5e2225d82c964808c733c4309',1,'free_labyrinth(Labyrinth labyrinth, int lines, int columns):&#160;utils.c'],['../utils_8h.html#a6a594eb5e2225d82c964808c733c4309',1,'free_labyrinth(Labyrinth labyrinth, int lines, int columns):&#160;utils.c']]],
-  ['free_5flabyrinth_5fcells_1',['free_labyrinth_cells',['../utils_8c.html#a2d67ef53c3399032d366cec633db7fc5',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int length):&#160;utils.c'],['../utils_8h.html#a106c31c6ee2d9c5d858edf1b86477419',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int lines):&#160;utils.c']]],
-  ['free_5fmatrix_2',['free_matrix',['../utils_8c.html#a5abbb85a477461bd5b81cec9f56f0855',1,'free_matrix(int **matrix, int length):&#160;utils.c'],['../utils_8h.html#a3fdd14af07dbf53fc733d1cd8dec2670',1,'free_matrix(int **matrix, int n):&#160;utils.c']]]
+  ['end_0',['END',['../utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26badc6f24fd6915a3f2786a1b7045406924',1,'utils.h']]],
+  ['end_5fcolor_1',['END_COLOR',['../labyrinth__player__movement_8c.html#a475df0d9bbf72a496b3b362ef75a2a0f',1,'labyrinth_player_movement.c']]],
+  ['ending_5fx_2',['ending_x',['../structLabyrinth.html#a4d6474b29651237dfbe95322ebe23392',1,'Labyrinth']]],
+  ['ending_5fy_3',['ending_y',['../structLabyrinth.html#ae61d23f9b539e9179796419ad368f191',1,'Labyrinth']]]
 ];

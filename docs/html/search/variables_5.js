@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['walls_0',['walls',['../structwalls.html#aa52f523c7bb800b8bc90eb0bac475b92',1,'walls']]],
-  ['width_1',['width',['../structLabyrinth.html#a2b48c536f314354bd4c6ea6f91df8f64',1,'Labyrinth']]]
+  ['starting_5fx_0',['starting_x',['../structLabyrinth.html#afa43908c080b82a2d64a773ca0b601cf',1,'Labyrinth']]],
+  ['starting_5fy_1',['starting_y',['../structLabyrinth.html#a39513f8583a0b3e6ef3be8a207c3d374',1,'Labyrinth']]]
 ];

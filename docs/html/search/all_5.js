@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['generate_5flabyrinth_0',['generate_labyrinth',['../labyrinth__generator_8c.html#aa9a656eb79177ad3bb4c4b5ed3805f81',1,'generate_labyrinth(int length, int width):&#160;labyrinth_generator.c'],['../labyrinth__generator_8h.html#aa9a656eb79177ad3bb4c4b5ed3805f81',1,'generate_labyrinth(int length, int width):&#160;labyrinth_generator.c']]],
-  ['generate_5fstarting_5fending_1',['generate_starting_ending',['../labyrinth__generator_8c.html#a1b7a76634e5cdd4f39f949af14bc924e',1,'labyrinth_generator.c']]],
-  ['get_5fopened_5fwalls_2',['get_opened_walls',['../labyrinth__generator_8c.html#ade99ab485be2c80411a01806e0b0fe9e',1,'get_opened_walls(LabyrinthCell **labyrinth, LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width):&#160;labyrinth_generator.c'],['../labyrinth__generator_8h.html#ade99ab485be2c80411a01806e0b0fe9e',1,'get_opened_walls(LabyrinthCell **labyrinth, LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width):&#160;labyrinth_generator.c']]],
-  ['get_5fuser_5fchoice_3',['get_user_choice',['../labyrinth__menu_8c.html#a3fa599412893eddb08a7ee91ac233790',1,'get_user_choice():&#160;labyrinth_menu.c'],['../labyrinth__menu_8h.html#a2e9f40051bab371da46e0ddcbd9e0607',1,'get_user_choice(void):&#160;labyrinth_menu.c']]],
-  ['grid_4',['grid',['../structLabyrinth.html#a27206dc306bb4aa3ebb0fdf111326779',1,'Labyrinth']]]
+  ['free_5flabyrinth_0',['free_labyrinth',['../utils_8c.html#a6a594eb5e2225d82c964808c733c4309',1,'free_labyrinth(Labyrinth labyrinth, int lines, int columns):&#160;utils.c'],['../utils_8h.html#a6a594eb5e2225d82c964808c733c4309',1,'free_labyrinth(Labyrinth labyrinth, int lines, int columns):&#160;utils.c']]],
+  ['free_5flabyrinth_5fcells_1',['free_labyrinth_cells',['../utils_8c.html#a2d67ef53c3399032d366cec633db7fc5',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int length):&#160;utils.c'],['../utils_8h.html#a106c31c6ee2d9c5d858edf1b86477419',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int lines):&#160;utils.c']]],
+  ['free_5fmatrix_2',['free_matrix',['../utils_8c.html#a5abbb85a477461bd5b81cec9f56f0855',1,'free_matrix(int **matrix, int length):&#160;utils.c'],['../utils_8h.html#a3fdd14af07dbf53fc733d1cd8dec2670',1,'free_matrix(int **matrix, int n):&#160;utils.c']]]
 ];

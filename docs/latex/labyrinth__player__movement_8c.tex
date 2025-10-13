@@ -2,8 +2,8 @@
 \hypertarget{labyrinth__player__movement_8c}{}\label{labyrinth__player__movement_8c}\index{src/subunit/labyrinth\_player\_movement.c@{src/subunit/labyrinth\_player\_movement.c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include "{}labyrinth\+\_\+player\+\_\+movement.\+h"{}}\newline
 {\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+{\ttfamily \#include "{}labyrinth\+\_\+player\+\_\+movement.\+h"{}}\newline
 {\ttfamily \#include "{}utils.\+h"{}}\newline
 Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+c\+:
 % FIG 0
@@ -11,11 +11,21 @@ Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{labyrinth__player__movement_8c_a7a4127f14f16563da90eb3c836bc404f}{CELL\+\_\+\+SIZE}}~20
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8c_a28d88d882f8dc097928beffc901cc133}{PLAYER\+\_\+\+COLOR}}~0, 255, 0, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8c_a47eb681b9f2c5a8f4f63891a58ab8e2d}{WALL\+\_\+\+COLOR}}~0, 0, 0, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8c_a3aac54ffa4781528709d17a683e54fb5}{PATH\+\_\+\+COLOR}}~255, 255, 255, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8c_a475df0d9bbf72a496b3b362ef75a2a0f}{END\+\_\+\+COLOR}}~255, 0, 0, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8c_aa8907904926ce476a86606c0b90eee4b}{KEY\+\_\+\+COLOR}}~0, 0, 255, 255
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{labyrinth__player__movement_8c_aa1577d21d4ec7d480cf9d3bc12bc1eed}{redraw\+\_\+case}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, \mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int x, int y)
+void \mbox{\hyperlink{labyrinth__player__movement_8c_a73bb89082c65b39278b8624ef2b8096a}{redraw\+\_\+case}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int x, int y)
 \item 
 int \mbox{\hyperlink{labyrinth__player__movement_8c_a0c1c796de73411ac51651aff761bef9b}{is\+\_\+ended}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth)
 \item 
@@ -31,6 +41,36 @@ void \mbox{\hyperlink{labyrinth__player__movement_8c_aeab6fa986a8341607fcad12ce5
 \index{CELL\_SIZE@{CELL\_SIZE}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
 \doxysubsubsection{\texorpdfstring{CELL\_SIZE}{CELL\_SIZE}}
 {\footnotesize\ttfamily \#define CELL\+\_\+\+SIZE~20}
+
+\Hypertarget{labyrinth__player__movement_8c_a475df0d9bbf72a496b3b362ef75a2a0f}\label{labyrinth__player__movement_8c_a475df0d9bbf72a496b3b362ef75a2a0f} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!END\_COLOR@{END\_COLOR}}
+\index{END\_COLOR@{END\_COLOR}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{END\_COLOR}{END\_COLOR}}
+{\footnotesize\ttfamily \#define END\+\_\+\+COLOR~255, 0, 0, 255}
+
+\Hypertarget{labyrinth__player__movement_8c_aa8907904926ce476a86606c0b90eee4b}\label{labyrinth__player__movement_8c_aa8907904926ce476a86606c0b90eee4b} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!KEY\_COLOR@{KEY\_COLOR}}
+\index{KEY\_COLOR@{KEY\_COLOR}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{KEY\_COLOR}{KEY\_COLOR}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+COLOR~0, 0, 255, 255}
+
+\Hypertarget{labyrinth__player__movement_8c_a3aac54ffa4781528709d17a683e54fb5}\label{labyrinth__player__movement_8c_a3aac54ffa4781528709d17a683e54fb5} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!PATH\_COLOR@{PATH\_COLOR}}
+\index{PATH\_COLOR@{PATH\_COLOR}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{PATH\_COLOR}{PATH\_COLOR}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+COLOR~255, 255, 255, 255}
+
+\Hypertarget{labyrinth__player__movement_8c_a28d88d882f8dc097928beffc901cc133}\label{labyrinth__player__movement_8c_a28d88d882f8dc097928beffc901cc133} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!PLAYER\_COLOR@{PLAYER\_COLOR}}
+\index{PLAYER\_COLOR@{PLAYER\_COLOR}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_COLOR}{PLAYER\_COLOR}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+COLOR~0, 255, 0, 255}
+
+\Hypertarget{labyrinth__player__movement_8c_a47eb681b9f2c5a8f4f63891a58ab8e2d}\label{labyrinth__player__movement_8c_a47eb681b9f2c5a8f4f63891a58ab8e2d} 
+\index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!WALL\_COLOR@{WALL\_COLOR}}
+\index{WALL\_COLOR@{WALL\_COLOR}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
+\doxysubsubsection{\texorpdfstring{WALL\_COLOR}{WALL\_COLOR}}
+{\footnotesize\ttfamily \#define WALL\+\_\+\+COLOR~0, 0, 0, 255}
 
 
 
@@ -53,9 +93,9 @@ void \mbox{\hyperlink{labyrinth__player__movement_8c_aeab6fa986a8341607fcad12ce5
 \doxysubsubsection{\texorpdfstring{move\_player()}{move\_player()}}
 {\footnotesize\ttfamily void move\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{dx,  }\item[{int}]{dy,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer }\end{DoxyParamCaption})}
 
-\Hypertarget{labyrinth__player__movement_8c_aa1577d21d4ec7d480cf9d3bc12bc1eed}\label{labyrinth__player__movement_8c_aa1577d21d4ec7d480cf9d3bc12bc1eed} 
+\Hypertarget{labyrinth__player__movement_8c_a73bb89082c65b39278b8624ef2b8096a}\label{labyrinth__player__movement_8c_a73bb89082c65b39278b8624ef2b8096a} 
 \index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!redraw\_case@{redraw\_case}}
 \index{redraw\_case@{redraw\_case}!labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}}
 \doxysubsubsection{\texorpdfstring{redraw\_case()}{redraw\_case()}}
-{\footnotesize\ttfamily void redraw\+\_\+case (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void redraw\+\_\+case (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 

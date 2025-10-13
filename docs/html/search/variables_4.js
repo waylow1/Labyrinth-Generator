@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_0',['value',['../structcell.html#a500181b46ea51bd5435ed7b2cb1b8971',1,'cell']]]
+  ['length_0',['length',['../structLabyrinth.html#a7aa4b719d3de2f325dff9f98d8438fff',1,'Labyrinth']]]
 ];

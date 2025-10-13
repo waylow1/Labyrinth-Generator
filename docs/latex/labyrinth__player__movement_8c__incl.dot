@@ -10,11 +10,11 @@ digraph "src/subunit/labyrinth_player_movement.c"
   Node1 -> Node3 [id="edge9_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="stdlib.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node4 [id="edge10_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="labyrinth_player_movement.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$labyrinth__player__movement_8h.html",tooltip=" "];
-  Node4 -> Node5 [id="edge11_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="utils.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$utils_8h.html",tooltip=" "];
-  Node4 -> Node6 [id="edge12_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="SDL2/SDL.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node1 -> Node6 [id="edge13_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node5 [id="edge14_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="SDL2/SDL.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node5 [id="edge11_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="labyrinth_player_movement.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$labyrinth__player__movement_8h.html",tooltip=" "];
+  Node5 -> Node6 [id="edge12_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="utils.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$utils_8h.html",tooltip=" "];
+  Node5 -> Node4 [id="edge13_Node000005_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge14_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
 }

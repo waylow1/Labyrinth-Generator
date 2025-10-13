@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../structcell.html#a7c75a3656f94059da9e26a7ff2cdf75e',1,'cell']]]
+  ['starting_5fx_0',['starting_x',['../structLabyrinth.html#afa43908c080b82a2d64a773ca0b601cf',1,'Labyrinth']]],
+  ['starting_5fy_1',['starting_y',['../structLabyrinth.html#a39513f8583a0b3e6ef3be8a207c3d374',1,'Labyrinth']]]
 ];

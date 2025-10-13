@@ -25,7 +25,7 @@ int is_ended(Labyrinth * labyrinth){
     if(labyrinth->starting_x == labyrinth->ending_x && labyrinth->starting_y == labyrinth->ending_y){
         return 1;
     }   
-    return 0;-
+    return 0;
 }
 
 

@@ -58,9 +58,7 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
     } else {
         printf("❌ Move blocked! (%d,%d) -> (%d,%d)\n", old_x, old_y, new_x, new_y);
     }
-
-    printf("Player moved to (%d, %d)\n", labyrinth->starting_x, labyrinth->starting_y);
-    printf("Ending position is (%d, %d)\n", labyrinth->ending_x, labyrinth->ending_y);
+    
     if(is_ended(labyrinth)){
         printf("🎉 Congratulations! You've reached the end of the labyrinth! 🎉\n");
         exit(0);

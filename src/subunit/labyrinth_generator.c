@@ -88,8 +88,6 @@ void generate_starting_ending(Labyrinth * labyrinth, int length, int width) {
         } while (labyrinth->ending_y % 2 == 0);
         labyrinth->ending_x = grid_rows - 2;
 
-        printf("Starting point: (%d, %d)\n", labyrinth->starting_x, labyrinth->starting_y);
-        printf("Ending point: (%d, %d)\n", labyrinth->ending_x, labyrinth->ending_y);
         labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] = 'o';
         labyrinth->grid[labyrinth->ending_x][labyrinth->ending_y] = '-';
     }

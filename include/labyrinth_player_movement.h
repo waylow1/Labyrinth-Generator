@@ -3,8 +3,8 @@
 
 #include "utils.h"
 #include <SDL2/SDL.h>
-#define CELL_SIZE 20
-#define CELL_SIZE 20
+
+
 #define PLAYER_COLOR 0, 255, 0, 255
 #define WALL_COLOR 0, 0, 0, 255
 #define PATH_COLOR 255, 255, 255, 255

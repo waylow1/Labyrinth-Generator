@@ -6,7 +6,22 @@
 #include "utils.h"
 #include<unistd.h>
 
+
+int define_cell_size(int length, int width) {
+    int max_dimension = length > width ? length : width;
+    if (max_dimension <= 20) {
+        return 30;
+    } else if (max_dimension <= 40) {
+        return 20;
+    } else if (max_dimension <= 60) {
+        return 15;
+    } else {
+        return 5;
+    }
+}
+
 void redraw_case(SDL_Renderer *renderer, Labyrinth *labyrinth, int x, int y) {
+    int CELL_SIZE = define_cell_size(labyrinth->length, labyrinth->width);
     SDL_Rect cell = { y * CELL_SIZE, x * CELL_SIZE, CELL_SIZE, CELL_SIZE };
 
     if (labyrinth->grid[x][y] == WALL) {
@@ -117,7 +132,9 @@ void display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
     length = length * 2 + 1;
     int count = 0;
     float elapsed_sec = 0.0f;
-    
+
+    int CELL_SIZE = define_cell_size(labyrinth.length, labyrinth.width);
+
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         printf("SDL_Init Error: %s\n", SDL_GetError());
         return;

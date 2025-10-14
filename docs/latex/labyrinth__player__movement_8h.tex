@@ -1,17 +1,43 @@
-\doxysection{include/labyrinth\+\_\+player\+\_\+movement.h File Reference}
-\hypertarget{labyrinth__player__movement_8h}{}\label{labyrinth__player__movement_8h}\index{include/labyrinth\_player\_movement.h@{include/labyrinth\_player\_movement.h}}
-{\ttfamily \#include "{}utils.\+h"{}}\newline
+\hypertarget{labyrinth__player__movement_8h}{}\doxysection{include/labyrinth\+\_\+player\+\_\+movement.h File Reference}
+\label{labyrinth__player__movement_8h}\index{include/labyrinth\_player\_movement.h@{include/labyrinth\_player\_movement.h}}
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
-Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\doxysubsubsection*{Macros}
+Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{labyrinth__player__movement_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{labyrinth__player__movement_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}{CELL\+\_\+\+SIZE}}~20
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}{CELL\+\_\+\+SIZE}}~20
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133}{PLAYER\+\_\+\+COLOR}}~0, 255, 0, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d}{WALL\+\_\+\+COLOR}}~0, 0, 0, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_a3aac54ffa4781528709d17a683e54fb5}{PATH\+\_\+\+COLOR}}~255, 255, 255, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_a475df0d9bbf72a496b3b362ef75a2a0f}{END\+\_\+\+COLOR}}~255, 0, 0, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7}{CHEST\+\_\+\+COLOR}}~139, 69, 19, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_a7d59efc1e0d8f4dc4b530a41f216f4e9}{HAS\+\_\+\+KEY\+\_\+\+COLOR}}~255, 215, 0, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b}{KEY\+\_\+\+COLOR}}~0, 0, 255, 255
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5f80a8c}{display\+\_\+labyrinth\+\_\+sdl}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int length, int width)
@@ -19,16 +45,64 @@ void \mbox{\hyperlink{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5
 
 
 \doxysubsection{Macro Definition Documentation}
-\Hypertarget{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}\label{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f} 
+\mbox{\Hypertarget{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}\label{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!CELL\_SIZE@{CELL\_SIZE}}
 \index{CELL\_SIZE@{CELL\_SIZE}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
-\doxysubsubsection{\texorpdfstring{CELL\_SIZE}{CELL\_SIZE}}
+\doxysubsubsection{\texorpdfstring{CELL\_SIZE}{CELL\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \#define CELL\+\_\+\+SIZE~20}
+
+\mbox{\Hypertarget{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}\label{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!CELL\_SIZE@{CELL\_SIZE}}
+\index{CELL\_SIZE@{CELL\_SIZE}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{CELL\_SIZE}{CELL\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define CELL\+\_\+\+SIZE~20}
+
+\mbox{\Hypertarget{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7}\label{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!CHEST\_COLOR@{CHEST\_COLOR}}
+\index{CHEST\_COLOR@{CHEST\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{CHEST\_COLOR}{CHEST\_COLOR}}
+{\footnotesize\ttfamily \#define CHEST\+\_\+\+COLOR~139, 69, 19, 255}
+
+\mbox{\Hypertarget{labyrinth__player__movement_8h_a475df0d9bbf72a496b3b362ef75a2a0f}\label{labyrinth__player__movement_8h_a475df0d9bbf72a496b3b362ef75a2a0f}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!END\_COLOR@{END\_COLOR}}
+\index{END\_COLOR@{END\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{END\_COLOR}{END\_COLOR}}
+{\footnotesize\ttfamily \#define END\+\_\+\+COLOR~255, 0, 0, 255}
+
+\mbox{\Hypertarget{labyrinth__player__movement_8h_a7d59efc1e0d8f4dc4b530a41f216f4e9}\label{labyrinth__player__movement_8h_a7d59efc1e0d8f4dc4b530a41f216f4e9}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!HAS\_KEY\_COLOR@{HAS\_KEY\_COLOR}}
+\index{HAS\_KEY\_COLOR@{HAS\_KEY\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{HAS\_KEY\_COLOR}{HAS\_KEY\_COLOR}}
+{\footnotesize\ttfamily \#define HAS\+\_\+\+KEY\+\_\+\+COLOR~255, 215, 0, 255}
+
+\mbox{\Hypertarget{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b}\label{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!KEY\_COLOR@{KEY\_COLOR}}
+\index{KEY\_COLOR@{KEY\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_COLOR}{KEY\_COLOR}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+COLOR~0, 0, 255, 255}
+
+\mbox{\Hypertarget{labyrinth__player__movement_8h_a3aac54ffa4781528709d17a683e54fb5}\label{labyrinth__player__movement_8h_a3aac54ffa4781528709d17a683e54fb5}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!PATH\_COLOR@{PATH\_COLOR}}
+\index{PATH\_COLOR@{PATH\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_COLOR}{PATH\_COLOR}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+COLOR~255, 255, 255, 255}
+
+\mbox{\Hypertarget{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133}\label{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!PLAYER\_COLOR@{PLAYER\_COLOR}}
+\index{PLAYER\_COLOR@{PLAYER\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_COLOR}{PLAYER\_COLOR}}
+{\footnotesize\ttfamily \#define PLAYER\+\_\+\+COLOR~0, 255, 0, 255}
+
+\mbox{\Hypertarget{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d}\label{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!WALL\_COLOR@{WALL\_COLOR}}
+\index{WALL\_COLOR@{WALL\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{WALL\_COLOR}{WALL\_COLOR}}
+{\footnotesize\ttfamily \#define WALL\+\_\+\+COLOR~0, 0, 0, 255}
 
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5f80a8c}\label{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5f80a8c} 
+\mbox{\Hypertarget{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5f80a8c}\label{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5f80a8c}} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!display\_labyrinth\_sdl@{display\_labyrinth\_sdl}}
 \index{display\_labyrinth\_sdl@{display\_labyrinth\_sdl}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{display\_labyrinth\_sdl()}{display\_labyrinth\_sdl()}}

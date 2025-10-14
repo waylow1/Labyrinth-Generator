@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -pedantic -I$(INCLUDE_DIR) -g `sdl2-config --cflags --libs`
+CFLAGS = -Wall -pedantic -I$(INCLUDE_DIR) -g `sdl2-config --cflags --libs` -lSDL2_ttf
 INCLUDE_DIR = include
 SRC_DIR = src
 SUBUNIT_DIR = $(SRC_DIR)/subunit

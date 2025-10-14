@@ -1,38 +1,43 @@
-\doxysection{src/subunit/displays.c File Reference}
-\hypertarget{displays_8c}{}\label{displays_8c}\index{src/subunit/displays.c@{src/subunit/displays.c}}
+\hypertarget{displays_8c}{}\doxysection{src/subunit/displays.c File Reference}
+\label{displays_8c}\index{src/subunit/displays.c@{src/subunit/displays.c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include "{}displays.\+h"{}}\newline
+{\ttfamily \#include \char`\"{}displays.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
-Include dependency graph for displays.\+c\+:
-% FIG 0
-\doxysubsubsection*{Functions}
+Include dependency graph for displays.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{displays_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{displays_8c_a3af7d0d2d1fe81e0545dcf2221da0052}{display\+\_\+labyrinth}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int lines, int columns)
 \item 
-void \mbox{\hyperlink{displays_8c_a803b0650884efeea36cfb9785bf6ee74}{display\+\_\+labyrinth\+\_\+numerically}} (\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}labyrinth, int lines, int columns)
+void \mbox{\hyperlink{displays_8c_a803b0650884efeea36cfb9785bf6ee74}{display\+\_\+labyrinth\+\_\+numerically}} (\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} $\ast$$\ast$labyrinth, int lines, int columns)
 \item 
-void \mbox{\hyperlink{displays_8c_a911806843e8ba93eb13346d5200b46a4}{display\+\_\+matrix}} (int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matrix, int lines, int columns)
+void \mbox{\hyperlink{displays_8c_a911806843e8ba93eb13346d5200b46a4}{display\+\_\+matrix}} (int $\ast$$\ast$matrix, int lines, int columns)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{displays_8c_a3af7d0d2d1fe81e0545dcf2221da0052}\label{displays_8c_a3af7d0d2d1fe81e0545dcf2221da0052} 
+\mbox{\Hypertarget{displays_8c_a3af7d0d2d1fe81e0545dcf2221da0052}\label{displays_8c_a3af7d0d2d1fe81e0545dcf2221da0052}} 
 \index{displays.c@{displays.c}!display\_labyrinth@{display\_labyrinth}}
 \index{display\_labyrinth@{display\_labyrinth}!displays.c@{displays.c}}
 \doxysubsubsection{\texorpdfstring{display\_labyrinth()}{display\_labyrinth()}}
 {\footnotesize\ttfamily void display\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
 
-\Hypertarget{displays_8c_a803b0650884efeea36cfb9785bf6ee74}\label{displays_8c_a803b0650884efeea36cfb9785bf6ee74} 
+\mbox{\Hypertarget{displays_8c_a803b0650884efeea36cfb9785bf6ee74}\label{displays_8c_a803b0650884efeea36cfb9785bf6ee74}} 
 \index{displays.c@{displays.c}!display\_labyrinth\_numerically@{display\_labyrinth\_numerically}}
 \index{display\_labyrinth\_numerically@{display\_labyrinth\_numerically}!displays.c@{displays.c}}
 \doxysubsubsection{\texorpdfstring{display\_labyrinth\_numerically()}{display\_labyrinth\_numerically()}}
-{\footnotesize\ttfamily void display\+\_\+labyrinth\+\_\+numerically (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void display\+\_\+labyrinth\+\_\+numerically (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} $\ast$$\ast$}]{labyrinth,  }\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
 
-\Hypertarget{displays_8c_a911806843e8ba93eb13346d5200b46a4}\label{displays_8c_a911806843e8ba93eb13346d5200b46a4} 
+\mbox{\Hypertarget{displays_8c_a911806843e8ba93eb13346d5200b46a4}\label{displays_8c_a911806843e8ba93eb13346d5200b46a4}} 
 \index{displays.c@{displays.c}!display\_matrix@{display\_matrix}}
 \index{display\_matrix@{display\_matrix}!displays.c@{displays.c}}
 \doxysubsubsection{\texorpdfstring{display\_matrix()}{display\_matrix()}}
-{\footnotesize\ttfamily void display\+\_\+matrix (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matrix,  }\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void display\+\_\+matrix (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrix,  }\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
 

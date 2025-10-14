@@ -74,7 +74,7 @@ void get_opened_walls(LabyrinthCell **labyrinth, LabyrinthWalls vertical_walls, 
 }
 
 
-void generate_starting_ending(Labyrinth * labyrinth, int length, int width) {
+void generate_objects(Labyrinth * labyrinth, int length, int width) {
         int grid_rows = 2 * length + 1;
         int grid_cols = 2 * width + 1;
 
@@ -94,6 +94,18 @@ void generate_starting_ending(Labyrinth * labyrinth, int length, int width) {
         do {
             labyrinth->key_y = rand() % grid_cols;
         } while (labyrinth->key_y % 2 == 0);
+
+        int nb_chests = rand() %  5 + 3;
+        for (int i = 0; i < nb_chests; i++) {
+            int chest_x, chest_y;
+            do {
+                chest_x = rand() % grid_rows;
+            } while (chest_x % 2 == 0 || (chest_x == labyrinth->starting_x && chest_x == labyrinth->starting_y) || (chest_x == labyrinth->ending_x && chest_x == labyrinth->ending_y) || (chest_x == labyrinth->key_x && chest_x == labyrinth->key_y));
+            do {
+                chest_y = rand() % grid_cols;
+            } while (chest_y % 2 == 0 || (chest_y == labyrinth->starting_x && chest_y == labyrinth->starting_y) || (chest_y == labyrinth->ending_x && chest_y == labyrinth->ending_y) || (chest_y == labyrinth->key_x && chest_y == labyrinth->key_y));
+            labyrinth->grid[chest_x][chest_y] = CHEST; 
+        }
 
         labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] = PLAYER;
         labyrinth->grid[labyrinth->ending_x][labyrinth->ending_y] = END;
@@ -132,7 +144,7 @@ Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, Labyri
         }
     }
 
-    generate_starting_ending(&labyrinth, length, width);
+    generate_objects(&labyrinth, length, width);
 
     return labyrinth;
 }

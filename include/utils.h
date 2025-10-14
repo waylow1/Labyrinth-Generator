@@ -22,7 +22,7 @@ typedef struct Labyrinth{
     
 } Labyrinth;
 
-enum BOX_TYPE {WALL = '#', PATH = ' ', PLAYER = 'o', END = '-', KEY = 'k'};
+enum BOX_TYPE {WALL = '#', PATH = ' ', PLAYER = 'o', END = '-', KEY = 'k', CHEST = 'c'};
 
 /**
  * @brief Allocates memory for a 2D array of LabyrinthCell structures.

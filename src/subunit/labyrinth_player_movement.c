@@ -1,15 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include "labyrinth_player_movement.h"
 #include "utils.h"
-
-#define CELL_SIZE 20
-#define PLAYER_COLOR 0, 255, 0, 255
-#define WALL_COLOR 0, 0, 0, 255
-#define PATH_COLOR 255, 255, 255, 255
-#define END_COLOR 255, 0, 0, 255
-#define KEY_COLOR 0, 0, 255, 255
+#include<unistd.h>
 
 void redraw_case(SDL_Renderer *renderer, Labyrinth *labyrinth, int x, int y) {
     SDL_Rect cell = { y * CELL_SIZE, x * CELL_SIZE, CELL_SIZE, CELL_SIZE };
@@ -22,7 +17,7 @@ void redraw_case(SDL_Renderer *renderer, Labyrinth *labyrinth, int x, int y) {
 
     } else if (labyrinth->grid[x][y] == PLAYER) {
         if (labyrinth->has_key) {
-            SDL_SetRenderDrawColor(renderer, 255, 215, 0, 255);
+            SDL_SetRenderDrawColor(renderer, HAS_KEY_COLOR);
         } else {
             SDL_SetRenderDrawColor(renderer, PLAYER_COLOR);
         }
@@ -30,18 +25,23 @@ void redraw_case(SDL_Renderer *renderer, Labyrinth *labyrinth, int x, int y) {
     } else if (labyrinth->grid[x][y] == KEY) {
         SDL_SetRenderDrawColor(renderer, KEY_COLOR);
 
-    } else {
+    }else if(labyrinth->grid[x][y] == CHEST){
+        SDL_SetRenderDrawColor(renderer, CHEST_COLOR);
+    } 
+    else {
         SDL_SetRenderDrawColor(renderer, PATH_COLOR);
     }
 
     SDL_RenderFillRect(renderer, &cell);
 }
 
-int is_ended(Labyrinth *labyrinth) {
+int is_ended(Labyrinth *labyrinth, int nb_iterations, float elapsed_sec) {
     if (labyrinth->starting_x == labyrinth->ending_x &&
         labyrinth->starting_y == labyrinth->ending_y) {
         if (labyrinth->has_key) {
             printf("🎉 Congratulations! You've reached the end with the key!\n");
+            printf("⏱️ Time taken: %.2f seconds\n", elapsed_sec);
+            printf("🔄 Total moves made: %d\n", nb_iterations);
             return 1;
         } else {
             printf("🔒 You need the key to finish the labyrinth!\n");
@@ -89,12 +89,50 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
     }
 }
 
+int movement_orchestrator(SDL_Event e, Labyrinth *labyrinth, SDL_Renderer *renderer) {
+    switch (e.key.keysym.sym) {
+        case SDLK_UP:
+        case SDLK_w:
+            move_player(labyrinth, -1, 0, renderer);
+            return 1;
+        case SDLK_DOWN:
+        case SDLK_s:
+            move_player(labyrinth, 1, 0, renderer);
+            return 1;
+        case SDLK_LEFT:
+        case SDLK_a:
+            move_player(labyrinth, 0, -1, renderer);
+            return 1;
+        case SDLK_RIGHT:
+        case SDLK_d:
+            move_player(labyrinth, 0, 1, renderer);
+            return 1;
+        default:
+            return 0;
+    }
+}
+
 void display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
     width = width * 2 + 1;
     length = length * 2 + 1;
-
+    int count = 0;
+    float elapsed_sec = 0.0f;
+    
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         printf("SDL_Init Error: %s\n", SDL_GetError());
+        return;
+    }
+
+    if (TTF_Init() != 0) {
+        printf("TTF_Init Error: %s\n", TTF_GetError());
+        SDL_Quit();
+        return;
+    }
+
+    TTF_Font *font = TTF_OpenFont("assets/arial.ttf", 24); 
+    if (!font) {
+        printf("Failed to load font: %s\n", TTF_GetError());
+        SDL_Quit();
         return;
     }
 
@@ -131,34 +169,54 @@ void display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
     int running = 1;
     SDL_Event e;
 
+    Uint32 start_time = SDL_GetTicks();
+
     while (running) {
-        while (SDL_PollEvent(&e)) {
-            if (e.type == SDL_QUIT || is_ended(&labyrinth)) {
-                running = 0;
-            } else if (e.type == SDL_KEYDOWN) {
-                switch (e.key.keysym.sym) {
-                    case SDLK_UP:
-                    case SDLK_z:
-                        move_player(&labyrinth, -1, 0, renderer);
-                        break;
-                    case SDLK_DOWN:
-                    case SDLK_s:
-                        move_player(&labyrinth, 1, 0, renderer);
-                        break;
-                    case SDLK_LEFT:
-                    case SDLK_q:
-                        move_player(&labyrinth, 0, -1, renderer);
-                        break;
-                    case SDLK_RIGHT:
-                    case SDLK_d:
-                        move_player(&labyrinth, 0, 1, renderer);
-                        break;
-                }
+    while (SDL_PollEvent(&e)) {
+        if (e.type == SDL_QUIT || is_ended(&labyrinth, count, elapsed_sec)) {
+            running = 0;
+        } else if (e.type == SDL_KEYDOWN) {
+            if (movement_orchestrator(e, &labyrinth, renderer)) {
+                count++;
             }
         }
     }
 
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
+
+    for (int i = 0; i < length; i++) {
+        for (int j = 0; j < width; j++) {
+            redraw_case(renderer, &labyrinth, i, j);
+        }
+    }
+
+    Uint32 elapsed_ms = SDL_GetTicks() - start_time;
+    float elapsed_sec = elapsed_ms / 1000.0f;
+
+    char time_text[64];
+    snprintf(time_text, sizeof(time_text), "Temps: %.1f s", elapsed_sec);
+    SDL_Color text_color = {235, 64, 52, 255};
+
+    SDL_Surface *text_surface = TTF_RenderText_Blended(font, time_text, text_color);
+    SDL_Texture *text_texture = SDL_CreateTextureFromSurface(renderer, text_surface);
+
+    SDL_Rect text_rect = {10, 10, text_surface->w, text_surface->h};
+    SDL_RenderCopy(renderer, text_texture, NULL, &text_rect);
+
+    SDL_FreeSurface(text_surface);
+    SDL_DestroyTexture(text_texture);
+
+    SDL_RenderPresent(renderer);
+
+
+    SDL_Delay(16);
+    }
+
+
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(win);
+    TTF_CloseFont(font);
+    TTF_Quit();
     SDL_Quit();
 }

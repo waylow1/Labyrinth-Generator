@@ -3,11 +3,12 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
-Include dependency graph for utils.\+c\+:\nopagebreak
+Include dependency graph for utils.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=267pt]{utils_8c__incl}
+\includegraphics[width=276pt]{utils_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Functions}
@@ -28,7 +29,13 @@ void \mbox{\hyperlink{utils_8c_a7cccaa878d777af9c24e6dc352b885ab}{dump\+\_\+laby
 void \mbox{\hyperlink{utils_8c_ab75970c7149ceb3ecaea1a0cbb1ede8e}{display\+\_\+all\+\_\+available\+\_\+files}} (char $\ast$$\ast$labyrinth\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Displays all available labyrinth configuration files and prompts the user to select one. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8c_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+labyrinth}} (const char $\ast$filename, int $\ast$seed, int $\ast$lines, int $\ast$columns)
-\begin{DoxyCompactList}\small\item\em Loads the labyrinth configuration (seed, lines, columns) from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Loads the labyrinth configuration (seed, lines, columns) from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_a691e2e21ad19fb05503bbe53e62782ad}{end\+\_\+of\+\_\+game\+\_\+dialog}} (\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$\mbox{\hyperlink{structscore}{score}})
+\begin{DoxyCompactList}\small\item\em Displays the end-\/of-\/game dialog and prompts the user for their name and score. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$ \mbox{\hyperlink{utils_8c_ae3ba7aac3a2af0e98a4eb89c6d22b1f3}{load\+\_\+score}} (const char $\ast$labyrinth\+\_\+name, size\+\_\+t $\ast$out\+\_\+count)
+\item 
+int \mbox{\hyperlink{utils_8c_afd29b9297af5f295dc2b4d0a270b228d}{dump\+\_\+scores}} (\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$scores, size\+\_\+t count, char $\ast$labyrinth\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Dumps the player\textquotesingle{}s score to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -108,6 +115,40 @@ Dumps the labyrinth configuration (seed, lines, columns) to a file.
 {\em filename} & The name of the file to save the configuration (without extension). \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{utils_8c_afd29b9297af5f295dc2b4d0a270b228d}\label{utils_8c_afd29b9297af5f295dc2b4d0a270b228d}} 
+\index{utils.c@{utils.c}!dump\_scores@{dump\_scores}}
+\index{dump\_scores@{dump\_scores}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{dump\_scores()}{dump\_scores()}}
+{\footnotesize\ttfamily int dump\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$}]{scores,  }\item[{size\+\_\+t}]{count,  }\item[{char $\ast$}]{labyrinth\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Dumps the player\textquotesingle{}s score to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scores} & The Score array structure containing the players names and scores. \\
+\hline
+{\em count} & The number of scores to dump. \\
+\hline
+{\em labyrinth\+\_\+name} & The name of the labyrinth associated with the score (without extension). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8c_a691e2e21ad19fb05503bbe53e62782ad}\label{utils_8c_a691e2e21ad19fb05503bbe53e62782ad}} 
+\index{utils.c@{utils.c}!end\_of\_game\_dialog@{end\_of\_game\_dialog}}
+\index{end\_of\_game\_dialog@{end\_of\_game\_dialog}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{end\_of\_game\_dialog()}{end\_of\_game\_dialog()}}
+{\footnotesize\ttfamily void end\+\_\+of\+\_\+game\+\_\+dialog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$}]{score }\end{DoxyParamCaption})}
+
+
+
+Displays the end-\/of-\/game dialog and prompts the user for their name and score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & A pointer to the Score structure containing the player\textquotesingle{}s name and score. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{utils_8c_a6a594eb5e2225d82c964808c733c4309}\label{utils_8c_a6a594eb5e2225d82c964808c733c4309}} 
 \index{utils.c@{utils.c}!free\_labyrinth@{free\_labyrinth}}
 \index{free\_labyrinth@{free\_labyrinth}!utils.c@{utils.c}}
@@ -182,3 +223,9 @@ Loads the labyrinth configuration (seed, lines, columns) from a file.
 {\em columns} & A pointer to store the loaded number of columns. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{utils_8c_ae3ba7aac3a2af0e98a4eb89c6d22b1f3}\label{utils_8c_ae3ba7aac3a2af0e98a4eb89c6d22b1f3}} 
+\index{utils.c@{utils.c}!load\_score@{load\_score}}
+\index{load\_score@{load\_score}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{load\_score()}{load\_score()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}}$\ast$ load\+\_\+score (\begin{DoxyParamCaption}\item[{const char $\ast$}]{labyrinth\+\_\+name,  }\item[{size\+\_\+t $\ast$}]{out\+\_\+count }\end{DoxyParamCaption})}
+

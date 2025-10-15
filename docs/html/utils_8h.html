@@ -74,7 +74,21 @@ $(function() {
 <div class="title">utils.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for utils.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h__incl.png" border="0" usemap="#ainclude_2utils_8h" alt=""/></div>
+<map name="ainclude_2utils_8h" id="ainclude_2utils_8h">
+<area shape="rect" title=" " alt="" coords="75,5,189,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,72,107"/>
+<area shape="rect" title=" " alt="" coords="97,80,167,107"/>
+<area shape="rect" title=" " alt="" coords="192,80,267,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="utils_8h__dep__incl.png" border="0" usemap="#ainclude_2utils_8hdep" alt=""/></div>
@@ -101,6 +115,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLabyrinth.html">Labyrinth</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structscore.html">score</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -110,6 +126,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:ab3020224e6e9f4718c4bdee1beedbd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16a224b3b7dcc48313c0dd10a3c4f362"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structLabyrinth.html">Labyrinth</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a16a224b3b7dcc48313c0dd10a3c4f362">Labyrinth</a></td></tr>
 <tr class="separator:a16a224b3b7dcc48313c0dd10a3c4f362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6713cd83acee4d263623e703cc762efc"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structscore.html">score</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a></td></tr>
+<tr class="separator:a6713cd83acee4d263623e703cc762efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -121,6 +139,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26ba147e71049e3285d642d0d5268dba260f">KEY</a> = 'k'
 , <a class="el" href="utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26bad3fba710316b46b04a3bf166dfb65643">CHEST</a> = 'c'
+, <a class="el" href="utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26bac0533b6cb94383273589b6764c8a0796">TRAP</a> = 'x'
 <br />
  }</td></tr>
 <tr class="separator:a1396ec6ef3e7959327771d2e11e1f26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,6 +170,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aab8c16aca09c1c9a75601428d67e963b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#aab8c16aca09c1c9a75601428d67e963b">load_labyrinth</a> (const char *filename, int *seed, int *lines, int *columns)</td></tr>
 <tr class="memdesc:aab8c16aca09c1c9a75601428d67e963b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the labyrinth configuration (seed, lines, columns) from a file.  <a href="utils_8h.html#aab8c16aca09c1c9a75601428d67e963b">More...</a><br /></td></tr>
 <tr class="separator:aab8c16aca09c1c9a75601428d67e963b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691e2e21ad19fb05503bbe53e62782ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a691e2e21ad19fb05503bbe53e62782ad">end_of_game_dialog</a> (<a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *<a class="el" href="structscore.html">score</a>)</td></tr>
+<tr class="memdesc:a691e2e21ad19fb05503bbe53e62782ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the end-of-game dialog and prompts the user for their name and score.  <a href="utils_8h.html#a691e2e21ad19fb05503bbe53e62782ad">More...</a><br /></td></tr>
+<tr class="separator:a691e2e21ad19fb05503bbe53e62782ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd29b9297af5f295dc2b4d0a270b228d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#afd29b9297af5f295dc2b4d0a270b228d">dump_scores</a> (<a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *scores, size_t count, char *labyrinth_name)</td></tr>
+<tr class="memdesc:afd29b9297af5f295dc2b4d0a270b228d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the player's score to a file.  <a href="utils_8h.html#afd29b9297af5f295dc2b4d0a270b228d">More...</a><br /></td></tr>
+<tr class="separator:afd29b9297af5f295dc2b4d0a270b228d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a16a224b3b7dcc48313c0dd10a3c4f362"></a>
@@ -195,6 +220,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6713cd83acee4d263623e703cc762efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6713cd83acee4d263623e703cc762efc">&#9670;&nbsp;</a></span>Score</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structscore.html">score</a> <a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a1396ec6ef3e7959327771d2e11e1f26b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1396ec6ef3e7959327771d2e11e1f26b">&#9670;&nbsp;</a></span>BOX_TYPE</h2>
@@ -214,6 +253,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26badc6f24fd6915a3f2786a1b7045406924"></a>END&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26ba147e71049e3285d642d0d5268dba260f"></a>KEY&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26bad3fba710316b46b04a3bf166dfb65643"></a>CHEST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26bac0533b6cb94383273589b6764c8a0796"></a>TRAP&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -366,6 +406,76 @@ Functions</h2></td></tr>
     <tr><td class="paramname">lines</td><td>The number of rows in the labyrinth. </td></tr>
     <tr><td class="paramname">columns</td><td>The number of columns in the labyrinth. </td></tr>
     <tr><td class="paramname">filename</td><td>The name of the file to save the configuration (without extension). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd29b9297af5f295dc2b4d0a270b228d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd29b9297af5f295dc2b4d0a270b228d">&#9670;&nbsp;</a></span>dump_scores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dump_scores </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *&#160;</td>
+          <td class="paramname"><em>scores</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>labyrinth_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dumps the player's score to a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scores</td><td>The Score array structure containing the players names and scores. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of scores to dump. </td></tr>
+    <tr><td class="paramname">labyrinth_name</td><td>The name of the labyrinth associated with the score (without extension). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a691e2e21ad19fb05503bbe53e62782ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691e2e21ad19fb05503bbe53e62782ad">&#9670;&nbsp;</a></span>end_of_game_dialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void end_of_game_dialog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *&#160;</td>
+          <td class="paramname"><em>score</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the end-of-game dialog and prompts the user for their name and score. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">score</td><td>A pointer to the Score structure containing the player's name and score. </td></tr>
   </table>
   </dd>
 </dl>

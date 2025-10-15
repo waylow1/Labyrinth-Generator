@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['walls_140',['walls',['../structwalls.html#aa52f523c7bb800b8bc90eb0bac475b92',1,'walls']]],
-  ['width_141',['width',['../structLabyrinth.html#a2b48c536f314354bd4c6ea6f91df8f64',1,'Labyrinth']]]
+  ['value_161',['value',['../structcell.html#a500181b46ea51bd5435ed7b2cb1b8971',1,'cell']]]
 ];

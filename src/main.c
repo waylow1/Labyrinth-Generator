@@ -11,11 +11,12 @@ int main(void) {
  
     while (1) {
         display_menu();
+        Score final_score;
         int choice = get_user_choice();
         int length = 0, width = 0;
         int seed = 0;
         char *labyrinth_name = NULL;
-        Labyrinth labyrinth = {NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        Labyrinth labyrinth = {NULL, 0, 0, 0, 0, 0, 0, 0, 0};
 
         length = 15;
         width = 15;
@@ -34,7 +35,7 @@ int main(void) {
                 display_labyrinth(labyrinth, length, width);
 
                 dump_labyrinth(seed, length, width, labyrinth_name);
-                display_labyrinth_sdl(labyrinth, length, width);
+                final_score = display_labyrinth_sdl(labyrinth, length, width);
                 free_labyrinth(labyrinth, length, width);
                 break;
 
@@ -52,12 +53,12 @@ int main(void) {
                 labyrinth = generate_labyrinth(length, width);
 
                 display_labyrinth(labyrinth,length, width);
-                display_labyrinth_sdl(labyrinth, length, width);
+                final_score = display_labyrinth_sdl(labyrinth, length, width);
                 break;
 
             case 3:
                 printf("Play !\n");
-                display_labyrinth_sdl(labyrinth, length, width);
+                final_score = display_labyrinth_sdl(labyrinth, length, width);
                 break;
 
             case 4:
@@ -69,7 +70,12 @@ int main(void) {
                 printf("Invalid choice. Please try again.\n");
                 break;
         }
+
+        //dump_score(final_score, labyrinth_name);
+        free(labyrinth_name);
+        //free_labyrinth(labyrinth, length*2+1, width*2+1);
+        
     }
-    
+
     return 0;
 }

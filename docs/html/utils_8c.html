@@ -79,10 +79,11 @@ Include dependency graph for utils.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="utils_8c__incl.png" border="0" usemap="#asrc_2subunit_2utils_8c" alt=""/></div>
 <map name="asrc_2subunit_2utils_8c" id="asrc_2subunit_2utils_8c">
-<area shape="rect" title=" " alt="" coords="64,5,200,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,72,107"/>
-<area shape="rect" title=" " alt="" coords="97,80,167,107"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="191,80,254,107"/>
+<area shape="rect" title=" " alt="" coords="65,5,201,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,72,181"/>
+<area shape="rect" title=" " alt="" coords="195,155,266,181"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="102,80,165,107"/>
+<area shape="rect" title=" " alt="" coords="96,155,171,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -112,6 +113,14 @@ Functions</h2></td></tr>
 <tr class="memitem:aab8c16aca09c1c9a75601428d67e963b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#aab8c16aca09c1c9a75601428d67e963b">load_labyrinth</a> (const char *filename, int *seed, int *lines, int *columns)</td></tr>
 <tr class="memdesc:aab8c16aca09c1c9a75601428d67e963b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the labyrinth configuration (seed, lines, columns) from a file.  <a href="utils_8c.html#aab8c16aca09c1c9a75601428d67e963b">More...</a><br /></td></tr>
 <tr class="separator:aab8c16aca09c1c9a75601428d67e963b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691e2e21ad19fb05503bbe53e62782ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a691e2e21ad19fb05503bbe53e62782ad">end_of_game_dialog</a> (<a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *<a class="el" href="structscore.html">score</a>)</td></tr>
+<tr class="memdesc:a691e2e21ad19fb05503bbe53e62782ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the end-of-game dialog and prompts the user for their name and score.  <a href="utils_8c.html#a691e2e21ad19fb05503bbe53e62782ad">More...</a><br /></td></tr>
+<tr class="separator:a691e2e21ad19fb05503bbe53e62782ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ba7aac3a2af0e98a4eb89c6d22b1f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#ae3ba7aac3a2af0e98a4eb89c6d22b1f3">load_score</a> (const char *labyrinth_name, size_t *out_count)</td></tr>
+<tr class="separator:ae3ba7aac3a2af0e98a4eb89c6d22b1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd29b9297af5f295dc2b4d0a270b228d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#afd29b9297af5f295dc2b4d0a270b228d">dump_scores</a> (<a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *scores, size_t count, char *labyrinth_name)</td></tr>
+<tr class="memdesc:afd29b9297af5f295dc2b4d0a270b228d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the player's score to a file.  <a href="utils_8c.html#afd29b9297af5f295dc2b4d0a270b228d">More...</a><br /></td></tr>
+<tr class="separator:afd29b9297af5f295dc2b4d0a270b228d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa6993234de73f2379cab632dd537c9df"></a>
@@ -261,6 +270,76 @@ Functions</h2></td></tr>
     <tr><td class="paramname">lines</td><td>The number of rows in the labyrinth. </td></tr>
     <tr><td class="paramname">columns</td><td>The number of columns in the labyrinth. </td></tr>
     <tr><td class="paramname">filename</td><td>The name of the file to save the configuration (without extension). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd29b9297af5f295dc2b4d0a270b228d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd29b9297af5f295dc2b4d0a270b228d">&#9670;&nbsp;</a></span>dump_scores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dump_scores </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *&#160;</td>
+          <td class="paramname"><em>scores</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>labyrinth_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dumps the player's score to a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scores</td><td>The Score array structure containing the players names and scores. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of scores to dump. </td></tr>
+    <tr><td class="paramname">labyrinth_name</td><td>The name of the labyrinth associated with the score (without extension). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a691e2e21ad19fb05503bbe53e62782ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691e2e21ad19fb05503bbe53e62782ad">&#9670;&nbsp;</a></span>end_of_game_dialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void end_of_game_dialog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> *&#160;</td>
+          <td class="paramname"><em>score</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the end-of-game dialog and prompts the user for their name and score. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">score</td><td>A pointer to the Score structure containing the player's name and score. </td></tr>
   </table>
   </dd>
 </dl>
@@ -433,6 +512,34 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ae3ba7aac3a2af0e98a4eb89c6d22b1f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3ba7aac3a2af0e98a4eb89c6d22b1f3">&#9670;&nbsp;</a></span>load_score()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a>* load_score </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>labyrinth_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>out_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

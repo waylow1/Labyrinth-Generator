@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['main_124',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['merge_5fsets_125',['merge_sets',['../labyrinth__generator_8c.html#a659942f491d71fd0661276346c33afbc',1,'labyrinth_generator.c']]],
-  ['move_5fplayer_126',['move_player',['../labyrinth__player__movement_8c.html#afd7648c81d7ba445150cae509d64432f',1,'labyrinth_player_movement.c']]],
-  ['movement_5forchestrator_127',['movement_orchestrator',['../labyrinth__player__movement_8c.html#aececc6089b2902ef9a60693712a989f0',1,'labyrinth_player_movement.c']]]
+  ['load_5flabyrinth_144',['load_labyrinth',['../utils_8c.html#aab8c16aca09c1c9a75601428d67e963b',1,'load_labyrinth(const char *filename, int *seed, int *lines, int *columns):&#160;utils.c'],['../utils_8h.html#aab8c16aca09c1c9a75601428d67e963b',1,'load_labyrinth(const char *filename, int *seed, int *lines, int *columns):&#160;utils.c']]],
+  ['load_5fscore_145',['load_score',['../utils_8c.html#ae3ba7aac3a2af0e98a4eb89c6d22b1f3',1,'utils.c']]]
 ];

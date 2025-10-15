@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['labyrinth_89',['Labyrinth',['../structLabyrinth.html',1,'']]]
+  ['labyrinth_101',['Labyrinth',['../structLabyrinth.html',1,'']]]
 ];

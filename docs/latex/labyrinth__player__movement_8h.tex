@@ -2,11 +2,12 @@
 \label{labyrinth__player__movement_8h}\index{include/labyrinth\_player\_movement.h@{include/labyrinth\_player\_movement.h}}
 {\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
-Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+h\+:\nopagebreak
+Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=222pt]{labyrinth__player__movement_8h__incl}
+\includegraphics[width=289pt]{labyrinth__player__movement_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
@@ -18,10 +19,6 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \end{figure}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}{CELL\+\_\+\+SIZE}}~20
-\item 
-\#define \mbox{\hyperlink{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}{CELL\+\_\+\+SIZE}}~20
 \item 
 \#define \mbox{\hyperlink{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133}{PLAYER\+\_\+\+COLOR}}~0, 255, 0, 255
 \item 
@@ -36,27 +33,17 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \#define \mbox{\hyperlink{labyrinth__player__movement_8h_a7d59efc1e0d8f4dc4b530a41f216f4e9}{HAS\+\_\+\+KEY\+\_\+\+COLOR}}~255, 215, 0, 255
 \item 
 \#define \mbox{\hyperlink{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b}{KEY\+\_\+\+COLOR}}~0, 0, 255, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_ad099e382fb2f419fe9e884491b871c0b}{TRAP\+\_\+\+COLOR}}~255, 0, 255, 255
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5f80a8c}{display\+\_\+labyrinth\+\_\+sdl}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int length, int width)
+\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} \mbox{\hyperlink{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}{display\+\_\+labyrinth\+\_\+sdl}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int length, int width)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}\label{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}} 
-\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!CELL\_SIZE@{CELL\_SIZE}}
-\index{CELL\_SIZE@{CELL\_SIZE}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
-\doxysubsubsection{\texorpdfstring{CELL\_SIZE}{CELL\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \#define CELL\+\_\+\+SIZE~20}
-
-\mbox{\Hypertarget{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}\label{labyrinth__player__movement_8h_a7a4127f14f16563da90eb3c836bc404f}} 
-\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!CELL\_SIZE@{CELL\_SIZE}}
-\index{CELL\_SIZE@{CELL\_SIZE}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
-\doxysubsubsection{\texorpdfstring{CELL\_SIZE}{CELL\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \#define CELL\+\_\+\+SIZE~20}
-
 \mbox{\Hypertarget{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7}\label{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7}} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!CHEST\_COLOR@{CHEST\_COLOR}}
 \index{CHEST\_COLOR@{CHEST\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
@@ -93,6 +80,12 @@ void \mbox{\hyperlink{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5
 \doxysubsubsection{\texorpdfstring{PLAYER\_COLOR}{PLAYER\_COLOR}}
 {\footnotesize\ttfamily \#define PLAYER\+\_\+\+COLOR~0, 255, 0, 255}
 
+\mbox{\Hypertarget{labyrinth__player__movement_8h_ad099e382fb2f419fe9e884491b871c0b}\label{labyrinth__player__movement_8h_ad099e382fb2f419fe9e884491b871c0b}} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!TRAP\_COLOR@{TRAP\_COLOR}}
+\index{TRAP\_COLOR@{TRAP\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{TRAP\_COLOR}{TRAP\_COLOR}}
+{\footnotesize\ttfamily \#define TRAP\+\_\+\+COLOR~255, 0, 255, 255}
+
 \mbox{\Hypertarget{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d}\label{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d}} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!WALL\_COLOR@{WALL\_COLOR}}
 \index{WALL\_COLOR@{WALL\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
@@ -102,9 +95,9 @@ void \mbox{\hyperlink{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5f80a8c}\label{labyrinth__player__movement_8h_aeab6fa986a8341607fcad12ce5f80a8c}} 
+\mbox{\Hypertarget{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}\label{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!display\_labyrinth\_sdl@{display\_labyrinth\_sdl}}
 \index{display\_labyrinth\_sdl@{display\_labyrinth\_sdl}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{display\_labyrinth\_sdl()}{display\_labyrinth\_sdl()}}
-{\footnotesize\ttfamily void display\+\_\+labyrinth\+\_\+sdl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} display\+\_\+labyrinth\+\_\+sdl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 

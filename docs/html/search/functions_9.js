@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['redraw_5fcase_129',['redraw_case',['../labyrinth__player__movement_8c.html#a73bb89082c65b39278b8624ef2b8096a',1,'labyrinth_player_movement.c']]]
+  ['open_5fwall_150',['open_wall',['../labyrinth__generator_8c.html#aa8664f3474628d905e95f5f49027fcbe',1,'labyrinth_generator.c']]]
 ];

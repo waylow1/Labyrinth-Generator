@@ -74,8 +74,8 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define CELL_SIZE 20</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="labyrinth__player__movement_8h.html#a7a4127f14f16563da90eb3c836bc404f">    7</a></span>&#160;<span class="preprocessor">#define CELL_SIZE 20</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="labyrinth__player__movement_8h.html#a28d88d882f8dc097928beffc901cc133">    8</a></span>&#160;<span class="preprocessor">#define PLAYER_COLOR 0, 255, 0, 255</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="labyrinth__player__movement_8h.html#a47eb681b9f2c5a8f4f63891a58ab8e2d">    9</a></span>&#160;<span class="preprocessor">#define WALL_COLOR 0, 0, 0, 255</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="labyrinth__player__movement_8h.html#a3aac54ffa4781528709d17a683e54fb5">   10</a></span>&#160;<span class="preprocessor">#define PATH_COLOR 255, 255, 255, 255</span></div>
@@ -83,12 +83,14 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="labyrinth__player__movement_8h.html#ad0ac81564107ad290257ae9c2d0a5bd7">   12</a></span>&#160;<span class="preprocessor">#define CHEST_COLOR 139, 69, 19, 255</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="labyrinth__player__movement_8h.html#a7d59efc1e0d8f4dc4b530a41f216f4e9">   13</a></span>&#160;<span class="preprocessor">#define HAS_KEY_COLOR 255, 215, 0, 255</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="labyrinth__player__movement_8h.html#aa8907904926ce476a86606c0b90eee4b">   14</a></span>&#160;<span class="preprocessor">#define KEY_COLOR 0, 0, 255, 255</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="labyrinth__player__movement_8h.html#aeab6fa986a8341607fcad12ce5f80a8c">display_labyrinth_sdl</a>(<a class="code" href="structLabyrinth.html">Labyrinth</a> labyrinth, <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> width);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="alabyrinth__player__movement_8h_html_aeab6fa986a8341607fcad12ce5f80a8c"><div class="ttname"><a href="labyrinth__player__movement_8h.html#aeab6fa986a8341607fcad12ce5f80a8c">display_labyrinth_sdl</a></div><div class="ttdeci">void display_labyrinth_sdl(Labyrinth labyrinth, int length, int width)</div><div class="ttdef"><b>Definition:</b> labyrinth_player_movement.c:114</div></div>
-<div class="ttc" id="astructLabyrinth_html"><div class="ttname"><a href="structLabyrinth.html">Labyrinth</a></div><div class="ttdef"><b>Definition:</b> utils.h:12</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="labyrinth__player__movement_8h.html#ad099e382fb2f419fe9e884491b871c0b">   15</a></span>&#160;<span class="preprocessor">#define TRAP_COLOR 255, 0, 255, 255</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="structscore.html">Score</a> <a class="code" href="labyrinth__player__movement_8h.html#a143bae0add2d0f0ede018a39804e27f2">display_labyrinth_sdl</a>(<a class="code" href="structLabyrinth.html">Labyrinth</a> labyrinth, <span class="keywordtype">int</span> length, <span class="keywordtype">int</span> width);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alabyrinth__player__movement_8h_html_a143bae0add2d0f0ede018a39804e27f2"><div class="ttname"><a href="labyrinth__player__movement_8h.html#a143bae0add2d0f0ede018a39804e27f2">display_labyrinth_sdl</a></div><div class="ttdeci">Score display_labyrinth_sdl(Labyrinth labyrinth, int length, int width)</div><div class="ttdef"><b>Definition:</b> labyrinth_player_movement.c:180</div></div>
+<div class="ttc" id="astructLabyrinth_html"><div class="ttname"><a href="structLabyrinth.html">Labyrinth</a></div><div class="ttdef"><b>Definition:</b> utils.h:16</div></div>
+<div class="ttc" id="astructscore_html"><div class="ttname"><a href="structscore.html">score</a></div><div class="ttdef"><b>Definition:</b> utils.h:30</div></div>
 <div class="ttc" id="autils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

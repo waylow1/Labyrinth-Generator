@@ -4,11 +4,12 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$time.\+h$>$}\newline
-Include dependency graph for labyrinth\+\_\+generator.\+c\+:\nopagebreak
+Include dependency graph for labyrinth\+\_\+generator.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=334pt]{labyrinth__generator_8c__incl}
+\includegraphics[width=308pt]{labyrinth__generator_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Functions}
@@ -21,6 +22,12 @@ void \mbox{\hyperlink{labyrinth__generator_8c_a659942f491d71fd0661276346c33afbc}
 void \mbox{\hyperlink{labyrinth__generator_8c_aa8664f3474628d905e95f5f49027fcbe}{open\+\_\+wall}} (int dir, int x, int y, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} vertical\+\_\+walls, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} horizontal\+\_\+walls)
 \item 
 void \mbox{\hyperlink{labyrinth__generator_8c_ade99ab485be2c80411a01806e0b0fe9e}{get\+\_\+opened\+\_\+walls}} (\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} $\ast$$\ast$labyrinth, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} vertical\+\_\+walls, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} horizontal\+\_\+walls, int length, int width)
+\item 
+void \mbox{\hyperlink{labyrinth__generator_8c_a8198ea9b488d8c2eb4c9ab6e024914bf}{generate\+\_\+key}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} $\ast$labyrinth, int length, int width)
+\item 
+int \mbox{\hyperlink{labyrinth__generator_8c_a3095f31aac70387d6c67d23f8cddc2df}{generate\+\_\+chests}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} $\ast$labyrinth, int length, int width)
+\item 
+void \mbox{\hyperlink{labyrinth__generator_8c_a72317e89ba7b4e3eaf5efc5a5a92130d}{generate\+\_\+traps}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} $\ast$labyrinth, int length, int width, int nb\+\_\+chests)
 \item 
 void \mbox{\hyperlink{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47}{generate\+\_\+objects}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} $\ast$labyrinth, int length, int width)
 \item 
@@ -43,6 +50,18 @@ void \mbox{\hyperlink{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47}
 \doxysubsubsection{\texorpdfstring{concat\_vertical\_horizontal\_walls()}{concat\_vertical\_horizontal\_walls()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structLabyrinth}{Labyrinth}} concat\+\_\+vertical\+\_\+horizontal\+\_\+walls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}]{vertical\+\_\+walls,  }\item[{\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}]{horizontal\+\_\+walls,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{labyrinth__generator_8c_a3095f31aac70387d6c67d23f8cddc2df}\label{labyrinth__generator_8c_a3095f31aac70387d6c67d23f8cddc2df}} 
+\index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_chests@{generate\_chests}}
+\index{generate\_chests@{generate\_chests}!labyrinth\_generator.c@{labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{generate\_chests()}{generate\_chests()}}
+{\footnotesize\ttfamily int generate\+\_\+chests (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} $\ast$}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{labyrinth__generator_8c_a8198ea9b488d8c2eb4c9ab6e024914bf}\label{labyrinth__generator_8c_a8198ea9b488d8c2eb4c9ab6e024914bf}} 
+\index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_key@{generate\_key}}
+\index{generate\_key@{generate\_key}!labyrinth\_generator.c@{labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{generate\_key()}{generate\_key()}}
+{\footnotesize\ttfamily void generate\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} $\ast$}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{labyrinth__generator_8c_aa9a656eb79177ad3bb4c4b5ed3805f81}\label{labyrinth__generator_8c_aa9a656eb79177ad3bb4c4b5ed3805f81}} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_labyrinth@{generate\_labyrinth}}
 \index{generate\_labyrinth@{generate\_labyrinth}!labyrinth\_generator.c@{labyrinth\_generator.c}}
@@ -54,6 +73,12 @@ void \mbox{\hyperlink{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47}
 \index{generate\_objects@{generate\_objects}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{generate\_objects()}{generate\_objects()}}
 {\footnotesize\ttfamily void generate\+\_\+objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} $\ast$}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{labyrinth__generator_8c_a72317e89ba7b4e3eaf5efc5a5a92130d}\label{labyrinth__generator_8c_a72317e89ba7b4e3eaf5efc5a5a92130d}} 
+\index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_traps@{generate\_traps}}
+\index{generate\_traps@{generate\_traps}!labyrinth\_generator.c@{labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{generate\_traps()}{generate\_traps()}}
+{\footnotesize\ttfamily void generate\+\_\+traps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} $\ast$}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width,  }\item[{int}]{nb\+\_\+chests }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{labyrinth__generator_8c_ade99ab485be2c80411a01806e0b0fe9e}\label{labyrinth__generator_8c_ade99ab485be2c80411a01806e0b0fe9e}} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!get\_opened\_walls@{get\_opened\_walls}}

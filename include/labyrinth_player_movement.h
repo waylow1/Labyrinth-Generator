@@ -12,7 +12,8 @@
 #define CHEST_COLOR 139, 69, 19, 255
 #define HAS_KEY_COLOR 255, 215, 0, 255
 #define KEY_COLOR 0, 0, 255, 255
+#define TRAP_COLOR 255, 0, 255, 255
 
-void display_labyrinth_sdl(Labyrinth labyrinth, int length, int width);
+Score display_labyrinth_sdl(Labyrinth labyrinth, int length, int width);
 
 #endif

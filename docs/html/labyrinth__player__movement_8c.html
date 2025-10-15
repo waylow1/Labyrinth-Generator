@@ -83,39 +83,74 @@ Include dependency graph for labyrinth_player_movement.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="labyrinth__player__movement_8c__incl.png" border="0" usemap="#asrc_2subunit_2labyrinth__player__movement_8c" alt=""/></div>
 <map name="asrc_2subunit_2labyrinth__player__movement_8c" id="asrc_2subunit_2labyrinth__player__movement_8c">
-<area shape="rect" title=" " alt="" coords="222,5,381,47"/>
-<area shape="rect" title=" " alt="" coords="5,95,72,121"/>
-<area shape="rect" title=" " alt="" coords="97,95,167,121"/>
-<area shape="rect" title=" " alt="" coords="323,169,419,196"/>
-<area shape="rect" title=" " alt="" coords="243,95,360,121"/>
-<area shape="rect" href="labyrinth__player__movement_8h.html" title=" " alt="" coords="384,95,603,121"/>
-<area shape="rect" href="utils_8h.html" title=" " alt="" coords="535,169,598,196"/>
-<area shape="rect" title=" " alt="" coords="677,95,752,121"/>
+<area shape="rect" title=" " alt="" coords="277,5,435,47"/>
+<area shape="rect" title=" " alt="" coords="5,244,72,271"/>
+<area shape="rect" title=" " alt="" coords="295,244,366,271"/>
+<area shape="rect" title=" " alt="" coords="244,169,340,196"/>
+<area shape="rect" title=" " alt="" coords="444,95,561,121"/>
+<area shape="rect" href="labyrinth__player__movement_8h.html" title=" " alt="" coords="100,95,319,121"/>
+<area shape="rect" href="utils_8h.html" title=" " alt="" coords="127,169,190,196"/>
+<area shape="rect" title=" " alt="" coords="585,95,660,121"/>
+<area shape="rect" title=" " alt="" coords="121,244,196,271"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a181468cb84be8091678b2649dbbbabed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#a181468cb84be8091678b2649dbbbabed">define_cell_size</a> (int length, int width)</td></tr>
+<tr class="separator:a181468cb84be8091678b2649dbbbabed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73bb89082c65b39278b8624ef2b8096a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#a73bb89082c65b39278b8624ef2b8096a">redraw_case</a> (SDL_Renderer *renderer, <a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, int x, int y)</td></tr>
 <tr class="separator:a73bb89082c65b39278b8624ef2b8096a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c1c796de73411ac51651aff761bef9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#a0c1c796de73411ac51651aff761bef9b">is_ended</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth)</td></tr>
-<tr class="separator:a0c1c796de73411ac51651aff761bef9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a62a11f992a30cb1fc562c0336a50e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#a0a62a11f992a30cb1fc562c0336a50e1">is_ended</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, int nb_iterations, float elapsed_sec)</td></tr>
+<tr class="separator:a0a62a11f992a30cb1fc562c0336a50e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd7648c81d7ba445150cae509d64432f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#afd7648c81d7ba445150cae509d64432f">move_player</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, int dx, int dy, SDL_Renderer *renderer)</td></tr>
 <tr class="separator:afd7648c81d7ba445150cae509d64432f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aececc6089b2902ef9a60693712a989f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#aececc6089b2902ef9a60693712a989f0">movement_orchestrator</a> (SDL_Event e, <a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, SDL_Renderer *renderer)</td></tr>
-<tr class="separator:aececc6089b2902ef9a60693712a989f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeab6fa986a8341607fcad12ce5f80a8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#aeab6fa986a8341607fcad12ce5f80a8c">display_labyrinth_sdl</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> labyrinth, int length, int width)</td></tr>
-<tr class="separator:aeab6fa986a8341607fcad12ce5f80a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443946bcaa0cc4e80fd99e41870a9a7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#a443946bcaa0cc4e80fd99e41870a9a7f">movement_orchestrator</a> (SDL_Event e, <a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, SDL_Renderer *renderer)</td></tr>
+<tr class="separator:a443946bcaa0cc4e80fd99e41870a9a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e76367aa2bd909fbfdbc9174d81de7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#ac5e76367aa2bd909fbfdbc9174d81de7">display_time_on_ui</a> (Uint32 start_time, SDL_Renderer *renderer, TTF_Font *font)</td></tr>
+<tr class="separator:ac5e76367aa2bd909fbfdbc9174d81de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e5c5346a8c298fb73c295ae57d45ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#a87e5c5346a8c298fb73c295ae57d45ca">display_points_on_ui</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, SDL_Renderer *renderer, TTF_Font *font)</td></tr>
+<tr class="separator:a87e5c5346a8c298fb73c295ae57d45ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143bae0add2d0f0ede018a39804e27f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8c.html#a143bae0add2d0f0ede018a39804e27f2">display_labyrinth_sdl</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> labyrinth, int length, int width)</td></tr>
+<tr class="separator:a143bae0add2d0f0ede018a39804e27f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aeab6fa986a8341607fcad12ce5f80a8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeab6fa986a8341607fcad12ce5f80a8c">&#9670;&nbsp;</a></span>display_labyrinth_sdl()</h2>
+<a id="a181468cb84be8091678b2649dbbbabed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a181468cb84be8091678b2649dbbbabed">&#9670;&nbsp;</a></span>define_cell_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void display_labyrinth_sdl </td>
+          <td class="memname">int define_cell_size </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a143bae0add2d0f0ede018a39804e27f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143bae0add2d0f0ede018a39804e27f2">&#9670;&nbsp;</a></span>display_labyrinth_sdl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a> display_labyrinth_sdl </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structLabyrinth.html">Labyrinth</a>&#160;</td>
           <td class="paramname"><em>labyrinth</em>, </td>
@@ -142,8 +177,76 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0c1c796de73411ac51651aff761bef9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c1c796de73411ac51651aff761bef9b">&#9670;&nbsp;</a></span>is_ended()</h2>
+<a id="a87e5c5346a8c298fb73c295ae57d45ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e5c5346a8c298fb73c295ae57d45ca">&#9670;&nbsp;</a></span>display_points_on_ui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_points_on_ui </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLabyrinth.html">Labyrinth</a> *&#160;</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TTF_Font *&#160;</td>
+          <td class="paramname"><em>font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5e76367aa2bd909fbfdbc9174d81de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e76367aa2bd909fbfdbc9174d81de7">&#9670;&nbsp;</a></span>display_time_on_ui()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_time_on_ui </td>
+          <td>(</td>
+          <td class="paramtype">Uint32&#160;</td>
+          <td class="paramname"><em>start_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TTF_Font *&#160;</td>
+          <td class="paramname"><em>font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a62a11f992a30cb1fc562c0336a50e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a62a11f992a30cb1fc562c0336a50e1">&#9670;&nbsp;</a></span>is_ended()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,8 +255,24 @@ Functions</h2></td></tr>
           <td class="memname">int is_ended </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structLabyrinth.html">Labyrinth</a> *&#160;</td>
-          <td class="paramname"><em>labyrinth</em></td><td>)</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_iterations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>elapsed_sec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -200,14 +319,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aececc6089b2902ef9a60693712a989f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aececc6089b2902ef9a60693712a989f0">&#9670;&nbsp;</a></span>movement_orchestrator()</h2>
+<a id="a443946bcaa0cc4e80fd99e41870a9a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a443946bcaa0cc4e80fd99e41870a9a7f">&#9670;&nbsp;</a></span>movement_orchestrator()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void movement_orchestrator </td>
+          <td class="memname">int movement_orchestrator </td>
           <td>(</td>
           <td class="paramtype">SDL_Event&#160;</td>
           <td class="paramname"><em>e</em>, </td>

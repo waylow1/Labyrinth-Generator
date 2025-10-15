@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['generate_5flabyrinth_118',['generate_labyrinth',['../labyrinth__generator_8c.html#aa9a656eb79177ad3bb4c4b5ed3805f81',1,'generate_labyrinth(int length, int width):&#160;labyrinth_generator.c'],['../labyrinth__generator_8h.html#aa9a656eb79177ad3bb4c4b5ed3805f81',1,'generate_labyrinth(int length, int width):&#160;labyrinth_generator.c']]],
-  ['generate_5fobjects_119',['generate_objects',['../labyrinth__generator_8c.html#af680eb8a9fb0c4a08c6851dea7807d47',1,'labyrinth_generator.c']]],
-  ['get_5fopened_5fwalls_120',['get_opened_walls',['../labyrinth__generator_8c.html#ade99ab485be2c80411a01806e0b0fe9e',1,'labyrinth_generator.c']]],
-  ['get_5fuser_5fchoice_121',['get_user_choice',['../labyrinth__menu_8c.html#a3fa599412893eddb08a7ee91ac233790',1,'get_user_choice():&#160;labyrinth_menu.c'],['../labyrinth__menu_8h.html#a2e9f40051bab371da46e0ddcbd9e0607',1,'get_user_choice(void):&#160;labyrinth_menu.c']]]
+  ['free_5flabyrinth_133',['free_labyrinth',['../utils_8c.html#a6a594eb5e2225d82c964808c733c4309',1,'free_labyrinth(Labyrinth labyrinth, int lines, int columns):&#160;utils.c'],['../utils_8h.html#a6a594eb5e2225d82c964808c733c4309',1,'free_labyrinth(Labyrinth labyrinth, int lines, int columns):&#160;utils.c']]],
+  ['free_5flabyrinth_5fcells_134',['free_labyrinth_cells',['../utils_8c.html#a2d67ef53c3399032d366cec633db7fc5',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int length):&#160;utils.c'],['../utils_8h.html#a2d67ef53c3399032d366cec633db7fc5',1,'free_labyrinth_cells(LabyrinthCell **labyrinth, int length):&#160;utils.c']]],
+  ['free_5fmatrix_135',['free_matrix',['../utils_8c.html#a5abbb85a477461bd5b81cec9f56f0855',1,'free_matrix(int **matrix, int length):&#160;utils.c'],['../utils_8h.html#a5abbb85a477461bd5b81cec9f56f0855',1,'free_matrix(int **matrix, int length):&#160;utils.c']]]
 ];

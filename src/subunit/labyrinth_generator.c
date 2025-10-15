@@ -74,6 +74,59 @@ void get_opened_walls(LabyrinthCell **labyrinth, LabyrinthWalls vertical_walls, 
 }
 
 
+void generate_key(Labyrinth * labyrinth, int length, int width) {
+    int grid_rows = 2 * length + 1;
+    int grid_cols = 2 * width + 1;
+
+    int key_x, key_y;
+    do {
+        key_x = rand() % grid_rows;
+    } while (key_x % 2 == 0);
+    do {
+        key_y = rand() % grid_cols;
+    } while (key_y % 2 == 0);
+
+    labyrinth->grid[key_x][key_y] = KEY; 
+}
+
+int generate_chests(Labyrinth * labyrinth, int length, int width) {
+    int grid_rows = 2 * length + 1;
+    int grid_cols = 2 * width + 1;
+
+    int nb_chests = rand() %  ((length * width) / 4 + 1) + 5;
+    for (int i = 0; i < nb_chests; i++) {
+        int chest_x, chest_y;
+        do {
+            chest_x = rand() % grid_rows;
+        } while (chest_x % 2 == 0 || (chest_x == labyrinth->starting_x && chest_x == labyrinth->starting_y) || (chest_x == labyrinth->ending_x && chest_x == labyrinth->ending_y));
+        do {
+            chest_y = rand() % grid_cols;
+        } while (chest_y % 2 == 0 || (labyrinth->grid[chest_x][chest_y] != PATH));
+        labyrinth->grid[chest_x][chest_y] = CHEST; 
+    }
+    
+    return nb_chests;
+}
+
+void generate_traps(Labyrinth * labyrinth, int length, int width, int nb_chests) {
+    int grid_rows = 2 * length + 1;
+    int grid_cols = 2 * width + 1;
+
+    int nb_traps = nb_chests / 2 + 3;
+    for (int i = 0; i < nb_traps; i++) {
+        int trap_x, trap_y;
+        do {
+            trap_x = rand() % grid_rows;
+        } while (trap_x % 2 == 0 || (trap_x == labyrinth->starting_x && trap_x == labyrinth->starting_y) || (trap_x == labyrinth->ending_x && trap_x == labyrinth->ending_y));
+        do {
+            trap_y = rand() % grid_cols;
+        } while (trap_y % 2 == 0 || (labyrinth->grid[trap_x][trap_y] != PATH));
+        labyrinth->grid[trap_x][trap_y] = TRAP; 
+    }
+
+}
+
+
 void generate_objects(Labyrinth * labyrinth, int length, int width) {
         int grid_rows = 2 * length + 1;
         int grid_cols = 2 * width + 1;
@@ -88,29 +141,14 @@ void generate_objects(Labyrinth * labyrinth, int length, int width) {
         } while (labyrinth->ending_y % 2 == 0);
         labyrinth->ending_x = grid_rows - 2;
 
-        do {
-            labyrinth->key_x = rand() % grid_rows;
-        } while (labyrinth->key_x % 2 == 0);
-        do {
-            labyrinth->key_y = rand() % grid_cols;
-        } while (labyrinth->key_y % 2 == 0);
-
-        int nb_chests = rand() %  5 + 3;
-        for (int i = 0; i < nb_chests; i++) {
-            int chest_x, chest_y;
-            do {
-                chest_x = rand() % grid_rows;
-            } while (chest_x % 2 == 0 || (chest_x == labyrinth->starting_x && chest_x == labyrinth->starting_y) || (chest_x == labyrinth->ending_x && chest_x == labyrinth->ending_y) || (chest_x == labyrinth->key_x && chest_x == labyrinth->key_y));
-            do {
-                chest_y = rand() % grid_cols;
-            } while (chest_y % 2 == 0 || (chest_y == labyrinth->starting_x && chest_y == labyrinth->starting_y) || (chest_y == labyrinth->ending_x && chest_y == labyrinth->ending_y) || (chest_y == labyrinth->key_x && chest_y == labyrinth->key_y));
-            labyrinth->grid[chest_x][chest_y] = CHEST; 
-        }
+        generate_key(labyrinth, length, width);
+        int nb_chests = generate_chests(labyrinth, length, width);
+        generate_traps(labyrinth, length, width, nb_chests);
 
         labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] = PLAYER;
         labyrinth->grid[labyrinth->ending_x][labyrinth->ending_y] = END;
-        labyrinth->grid[labyrinth->key_x][labyrinth->key_y] = KEY;
         labyrinth->has_key = 0;
+        labyrinth->coins = 50;
     }
 
 Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width) {

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wall_5fcolor_177',['WALL_COLOR',['../labyrinth__player__movement_8h.html#a47eb681b9f2c5a8f4f63891a58ab8e2d',1,'labyrinth_player_movement.h']]]
+  ['trap_5fcolor_200',['TRAP_COLOR',['../labyrinth__player__movement_8h.html#ad099e382fb2f419fe9e884491b871c0b',1,'labyrinth_player_movement.h']]]
 ];

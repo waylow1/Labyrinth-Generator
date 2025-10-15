@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_5fwall_71',['open_wall',['../labyrinth__generator_8c.html#aa8664f3474628d905e95f5f49027fcbe',1,'labyrinth_generator.c']]]
+  ['name_78',['name',['../structscore.html#a929b9b4673a2fa3f9e0f265b41ce905e',1,'score']]]
 ];

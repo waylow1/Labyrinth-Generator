@@ -30,7 +30,13 @@ typedef struct Labyrinth{
 typedef struct score{
     char * name;
     int coins;
+
 } Score;
+
+typedef struct ladder{
+    Score * scores;
+    int count;
+} Ladder;
 
 enum BOX_TYPE {WALL = '#', PATH = ' ', PLAYER = 'o', END = '-', KEY = 'k', CHEST = 'c', TRAP = 'x'};
 
@@ -104,22 +110,5 @@ void display_all_available_files(char ** labyrinth_name);
  */
 void load_labyrinth(const char * filename, int * seed, int * lines, int * columns);
 
-
-/**
- * @brief Displays the end-of-game dialog and prompts the user for their name and score.
- * 
- * @param score A pointer to the Score structure containing the player's name and score.
- */
-void end_of_game_dialog(Score * score);
-
-
-/**
- * @brief Dumps the player's score to a file.
- * @param scores The Score array structure containing the players names and scores.
- * @param count The number of scores to dump.
- * @param labyrinth_name The name of the labyrinth associated with the score (without extension).
- */
-
-int dump_scores(Score * scores, size_t count, char * labyrinth_name);
 
 #endif

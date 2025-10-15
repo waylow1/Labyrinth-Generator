@@ -5,16 +5,17 @@
 #include "labyrinth_player_movement.h"
 #include "utils.h"
 #include <unistd.h>
+#include "labyrinth_score.h"
 
 
 int define_cell_size(int length, int width) {
     int max_dimension = length > width ? length : width;
     if (max_dimension <= 20) {
         return 30;
-    } else if (max_dimension <= 40) {
+    } else if (max_dimension <= 35) {
         return 20;
-    } else {
-        return 10;
+    } else if(max_dimension > 40){
+        return 8;
     }
 }
 

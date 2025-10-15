@@ -1,6 +1,7 @@
 #include "labyrinth_generator.h"
 #include "labyrinth_menu.h"
 #include "labyrinth_player_movement.h"
+#include "labyrinth_score.h"
 #include <time.h>
 #include "utils.h"
 #include "displays.h"
@@ -9,23 +10,20 @@
 
 int main(void) {
  
+    Score final_score;
+
+    Ladder ladder;
+    ladder.scores = malloc(10 * sizeof(Score));
+    char * labyrinth_name = NULL;
+    Labyrinth labyrinth;
+    int length = 0, width = 0;
+
     while (1) {
         display_menu();
-        Score final_score;
         int choice = get_user_choice();
-        int length = 0, width = 0;
-        int seed = 0;
-        char *labyrinth_name = NULL;
-        Labyrinth labyrinth = {NULL, 0, 0, 0, 0, 0, 0, 0, 0};
-
-        length = 15;
-        width = 15;
-        seed = (int)time(NULL);
-        srand(seed);
-        labyrinth = generate_labyrinth(length, width);
         switch (choice) {
             case 1:
-                seed = (int)time(NULL);
+                int seed = (int)time(NULL);
                 srand(seed);
                 printf("Generating a new labyrinth...\n");
                 ask_for_labyrinth_size_and_name(&length, &width, &labyrinth_name);
@@ -35,7 +33,8 @@ int main(void) {
                 display_labyrinth(labyrinth, length, width);
 
                 dump_labyrinth(seed, length, width, labyrinth_name);
-                final_score = display_labyrinth_sdl(labyrinth, length, width);
+                free(labyrinth_name);
+                labyrinth_name = NULL;
                 free_labyrinth(labyrinth, length, width);
                 break;
 
@@ -46,6 +45,10 @@ int main(void) {
 
                 load_labyrinth(labyrinth_name, &seed, &length, &width);
 
+                ladder.scores = load_labyirinth_scores(labyrinth_name);
+
+                display_ladder(ladder);
+
                 srand(seed);
 
                 printf("Loaded labyrinth '%s' with size %dx%d and seed %d\n", labyrinth_name, length, width, seed);
@@ -53,12 +56,26 @@ int main(void) {
                 labyrinth = generate_labyrinth(length, width);
 
                 display_labyrinth(labyrinth,length, width);
-                final_score = display_labyrinth_sdl(labyrinth, length, width);
                 break;
 
             case 3:
                 printf("Play !\n");
+                if (!labyrinth_name || labyrinth_name == NULL) {
+                    printf("No labyrinth loaded. Please load a labyrinth first.\n");
+                    break;
+                }
+
                 final_score = display_labyrinth_sdl(labyrinth, length, width);
+                
+                add_new_score(&ladder, final_score);
+
+                sort_scores(&ladder);
+                dump_scores(ladder, labyrinth_name);
+                display_ladder(ladder);
+
+
+                free(labyrinth_name);
+                free_labyrinth(labyrinth, length, width);
                 break;
 
             case 4:
@@ -71,10 +88,6 @@ int main(void) {
                 break;
         }
 
-        //dump_score(final_score, labyrinth_name);
-        free(labyrinth_name);
-        //free_labyrinth(labyrinth, length*2+1, width*2+1);
-        
     }
 
     return 0;

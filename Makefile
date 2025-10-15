@@ -6,10 +6,10 @@ SUBUNIT_DIR = $(SRC_DIR)/subunit
 BUILD_DIR = build
 CFG_DIR = config
 BIN_DIR = bin
-APP = $(BIN_DIR)/app.x
+APP = $(BIN_DIR)/labyrinth
 
-APP_SRC = $(SRC_DIR)/main.c $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/labyrinth_menu.c $(SUBUNIT_DIR)/utils.c $(SUBUNIT_DIR)/displays.c $(SUBUNIT_DIR)/labyrinth_player_movement.c
-APP_OBJ = $(BUILD_DIR)/main.o $(BUILD_DIR)/labyrinth_generator.o $(BUILD_DIR)/labyrinth_menu.o $(BUILD_DIR)/utils.o $(BUILD_DIR)/displays.o $(BUILD_DIR)/labyrinth_player_movement.o
+APP_SRC = $(SRC_DIR)/main.c $(SUBUNIT_DIR)/labyrinth_generator.c $(SUBUNIT_DIR)/labyrinth_menu.c $(SUBUNIT_DIR)/utils.c $(SUBUNIT_DIR)/displays.c $(SUBUNIT_DIR)/labyrinth_player_movement.c 
+APP_OBJ = $(BUILD_DIR)/main.o $(BUILD_DIR)/labyrinth_generator.o $(BUILD_DIR)/labyrinth_menu.o $(BUILD_DIR)/utils.o $(BUILD_DIR)/displays.o $(BUILD_DIR)/labyrinth_player_movement.o $(BUILD_DIR)/labyrinth_score.o
 
 .PHONY: all clean docs help
 

@@ -48,8 +48,6 @@ int main(void) {
 
                 load_labyrinth_scores(ladder, labyrinth_name);
                 
-                printf("%d", ladder->count);
-
                 srand(seed);
 
                 printf("Loaded labyrinth '%s' with size %dx%d and seed %d\n", labyrinth_name, length, width, seed);
@@ -70,6 +68,7 @@ int main(void) {
                 final_score = display_labyrinth_sdl(labyrinth, length, width);
 
                 add_new_score(ladder, final_score);
+                display_ladder(*ladder);
                 sort_scores(ladder);
                 dump_scores(*ladder, labyrinth_name);
                 display_ladder(*ladder);
@@ -80,6 +79,13 @@ int main(void) {
                 break;
 
             case 4:
+                free(ladder->scores);
+                free(ladder);
+                free_labyrinth(labyrinth, length, width);
+                if (labyrinth_name) free(labyrinth_name);
+                
+                labyrinth_name = NULL;
+
                 printf("Exiting the program. Goodbye!\n");
                 exit(0);
                 break;
@@ -89,7 +95,6 @@ int main(void) {
                 break;
         }
 
-    }
-
+    } 
     return 0;
 }

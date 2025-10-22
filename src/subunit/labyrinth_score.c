@@ -59,7 +59,8 @@ int sort_scores(Ladder * ladder){
 }
 
 void load_labyrinth_scores(Ladder * ladder, const char * labyrinth_name){
-    if (!labyrinth_name) return;
+    if (!ladder || !labyrinth_name) return;
+
     char filename[256];
     snprintf(filename, sizeof(filename), "score/%s.score", labyrinth_name);
 
@@ -68,25 +69,42 @@ void load_labyrinth_scores(Ladder * ladder, const char * labyrinth_name){
         return;
     }
 
-    if (fseek(fp, 0, SEEK_END) != 0) { fclose(fp);return ; }
+    if (fseek(fp, 0, SEEK_END) != 0) { fclose(fp); return; }
     long file_size = ftell(fp);
-    if (file_size == -1) { fclose(fp); return ; }
+    if (file_size <= 0) { fclose(fp); return; }
 
     rewind(fp);
 
     size_t entry_size = sizeof(Score);
-    size_t count = file_size / entry_size;
+    if (entry_size == 0) { fclose(fp); return; }
 
+    size_t count = (size_t)file_size / entry_size;
+    if (count == 0) { fclose(fp); return; }
+
+
+    if (((size_t)file_size % entry_size) != 0) {
+        fclose(fp);
+        return;
+    }
+
+    const size_t MAX_SCORES = 10;
+    if (count > MAX_SCORES) count = MAX_SCORES;
+
+    if (!ladder->scores) { fclose(fp); return; }
 
     Score * scores = malloc(count * entry_size);
-
     if (!scores) { fclose(fp); return; }
 
     size_t read = fread(scores, entry_size, count, fp);
+    if (read != count) {
+        free(scores);
+        fclose(fp);
+        return;
+    }
 
-    ladder->count = count;
-    ladder->scores = scores;
+    ladder->count = (int)count;
 
+    free(scores);
     fclose(fp);
 }
 

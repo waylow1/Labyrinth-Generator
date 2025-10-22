@@ -4,6 +4,16 @@
 #include "utils.h"
 
 /**
+ * @brief Creates a score file for the specified labyrinth if it does not already exist.
+ * 
+ * @param labyrinth_name The name of the labyrinth for which to create the score file (without extension).
+ * @return int Returns 0 on success, -1 on failure.
+ */
+
+int create_score_file_if_not_exists(char * labyrinth_name);
+
+
+/**
  * @brief Displays the end-of-game dialog and prompts the user for their name and score.
  * 
  * @param score A pointer to the Score structure containing the player's name and score.
@@ -43,11 +53,11 @@ int sort_scores(Ladder * ladder);
  * 
  * @param labyrinth_name The name of the labyrinth associated with the scores (without extension).
  * @param out_count A pointer to store the number of scores loaded.
- * @return Score* A pointer to an array of Score structures, or NULL if loading fails.
+ * @return void
  */
 
 
-Score * load_labyirinth_scores(const char *labyrinth_name);
+void  load_labyrinth_scores(Ladder * ladder, const char *labyrinth_name);
 
 /**
  * @brief Dumps the player's score to a file.

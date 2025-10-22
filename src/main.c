@@ -12,8 +12,8 @@ int main(void) {
  
     Score final_score;
 
-    Ladder ladder;
-    ladder.scores = malloc(10 * sizeof(Score));
+    Ladder * ladder = malloc(sizeof(Ladder));
+    ladder->scores = malloc(10 * sizeof(Score));
     char * labyrinth_name = NULL;
     Labyrinth labyrinth;
     int length = 0, width = 0;
@@ -33,6 +33,7 @@ int main(void) {
                 display_labyrinth(labyrinth, length, width);
 
                 dump_labyrinth(seed, length, width, labyrinth_name);
+                create_score_file_if_not_exists(labyrinth_name);
                 free(labyrinth_name);
                 labyrinth_name = NULL;
                 free_labyrinth(labyrinth, length, width);
@@ -45,9 +46,9 @@ int main(void) {
 
                 load_labyrinth(labyrinth_name, &seed, &length, &width);
 
-                ladder.scores = load_labyirinth_scores(labyrinth_name);
-
-                display_ladder(ladder);
+                load_labyrinth_scores(ladder, labyrinth_name);
+                
+                printf("%d", ladder->count);
 
                 srand(seed);
 
@@ -56,6 +57,7 @@ int main(void) {
                 labyrinth = generate_labyrinth(length, width);
 
                 display_labyrinth(labyrinth,length, width);
+                display_ladder(*ladder);
                 break;
 
             case 3:
@@ -66,16 +68,15 @@ int main(void) {
                 }
 
                 final_score = display_labyrinth_sdl(labyrinth, length, width);
-                
-                add_new_score(&ladder, final_score);
 
-                sort_scores(&ladder);
-                dump_scores(ladder, labyrinth_name);
-                display_ladder(ladder);
-
+                add_new_score(ladder, final_score);
+                sort_scores(ladder);
+                dump_scores(*ladder, labyrinth_name);
+                display_ladder(*ladder);
 
                 free(labyrinth_name);
                 free_labyrinth(labyrinth, length, width);
+                labyrinth_name = NULL;
                 break;
 
             case 4:

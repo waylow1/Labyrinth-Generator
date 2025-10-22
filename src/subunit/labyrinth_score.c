@@ -3,6 +3,26 @@
 #include "labyrinth_score.h"    
 #include <stdlib.h>
 
+int create_score_file_if_not_exists(char * labyrinth_name){
+    if (!labyrinth_name) return -1;
+    char filename[256];
+    snprintf(filename, sizeof(filename), "score/%s.score", labyrinth_name);
+
+    FILE *fp = fopen(filename, "rb");
+    if (fp) {
+        fclose(fp);
+        return 0; 
+    }
+
+    fp = fopen(filename, "wb");
+    if (!fp) {
+        return -1; 
+    }
+
+    fclose(fp);
+    return 0; 
+}
+
 void end_of_game_dialog(Score * score){
     printf("Game Over!\n");
     printf("You finished the labyrinth with %d coins.\n", score->coins);
@@ -11,6 +31,7 @@ void end_of_game_dialog(Score * score){
 }
 
 int add_new_score(Ladder * ladder, Score new_player){
+    printf("Adding new score: %s with %d coins\n", new_player.name, new_player.coins);
     if (ladder->count < 10) {
         ladder->scores[ladder->count] = new_player;
         ladder->count++;
@@ -19,7 +40,9 @@ int add_new_score(Ladder * ladder, Score new_player){
     } else {
         return 0; 
     }
+    printf("Score added successfully.\n");
     return 0;
+    
 }
 
 int sort_scores(Ladder * ladder){
@@ -35,41 +58,36 @@ int sort_scores(Ladder * ladder){
     return 0;
 }
 
-Score * load_labyirinth_scores(const char *labyrinth_name){
-    if (!labyrinth_name) return NULL;
+void load_labyrinth_scores(Ladder * ladder, const char * labyrinth_name){
+    if (!labyrinth_name) return;
     char filename[256];
     snprintf(filename, sizeof(filename), "score/%s.score", labyrinth_name);
 
-    printf("Loading scores from file: %s\n", filename);
     FILE *fp = fopen(filename, "rb");
     if (!fp) {
-        return NULL;
+        return;
     }
 
-    if (fseek(fp, 0, SEEK_END) != 0) { fclose(fp);return NULL; }
+    if (fseek(fp, 0, SEEK_END) != 0) { fclose(fp);return ; }
     long file_size = ftell(fp);
-    if (file_size <= 0) { fclose(fp); return NULL; }
+    if (file_size == -1) { fclose(fp); return ; }
+
     rewind(fp);
 
     size_t entry_size = sizeof(Score);
-    size_t count = (size_t)file_size / entry_size;
-    Score *scores = malloc(count * entry_size);
-    if (!scores) { fclose(fp); return NULL; }
+    size_t count = file_size / entry_size;
+
+
+    Score * scores = malloc(count * entry_size);
+
+    if (!scores) { fclose(fp); return; }
 
     size_t read = fread(scores, entry_size, count, fp);
-    if (read != count) {
-        count = read;
-        if (count == 0) {
-            free(scores);
-            scores = NULL;
-        } else {
-            Score *tmp = realloc(scores, count * entry_size);
-            if (tmp) scores = tmp;
-        }
-    }
+
+    ladder->count = count;
+    ladder->scores = scores;
 
     fclose(fp);
-    return scores;
 }
 
 int display_ladder(Ladder ladder){

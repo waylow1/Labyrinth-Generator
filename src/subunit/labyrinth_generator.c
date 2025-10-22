@@ -112,7 +112,7 @@ void generate_traps(Labyrinth * labyrinth, int length, int width, int nb_chests)
     int grid_rows = 2 * length + 1;
     int grid_cols = 2 * width + 1;
 
-    int nb_traps = nb_chests / 2 + 3;
+    int nb_traps = nb_chests / 2 ;
     for (int i = 0; i < nb_traps; i++) {
         int trap_x, trap_y;
         do {

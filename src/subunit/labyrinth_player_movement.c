@@ -17,6 +17,7 @@ int define_cell_size(int length, int width) {
     } else if(max_dimension > 40){
         return 8;
     }
+    return 15;
 }
 
 void redraw_case(SDL_Renderer *renderer, Labyrinth *labyrinth, int x, int y) {
@@ -121,7 +122,7 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
 int movement_orchestrator(SDL_Event e, Labyrinth *labyrinth, SDL_Renderer *renderer) {
     switch (e.key.keysym.sym) {
         case SDLK_UP:
-        case SDLK_w:
+        case SDLK_z:
             move_player(labyrinth, -1, 0, renderer);
             return 1;
         case SDLK_DOWN:
@@ -129,7 +130,7 @@ int movement_orchestrator(SDL_Event e, Labyrinth *labyrinth, SDL_Renderer *rende
             move_player(labyrinth, 1, 0, renderer);
             return 1;
         case SDLK_LEFT:
-        case SDLK_a:
+        case SDLK_q:
             move_player(labyrinth, 0, -1, renderer);
             return 1;
         case SDLK_RIGHT:

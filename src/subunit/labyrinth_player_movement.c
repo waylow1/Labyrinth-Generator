@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include "labyrinth_score.h"
 
-
 int define_cell_size(int length, int width) {
     int max_dimension = length > width ? length : width;
     if (max_dimension <= 20) {
@@ -26,46 +25,62 @@ void redraw_case(SDL_Renderer *renderer, Labyrinth *labyrinth, int x, int y) {
 
     if (labyrinth->grid[x][y] == WALL) {
         SDL_SetRenderDrawColor(renderer, WALL_COLOR);
-
     } else if (labyrinth->grid[x][y] == END) {
         SDL_SetRenderDrawColor(renderer, END_COLOR);
-
     } else if (labyrinth->grid[x][y] == PLAYER) {
         if (labyrinth->has_key) {
             SDL_SetRenderDrawColor(renderer, HAS_KEY_COLOR);
         } else {
             SDL_SetRenderDrawColor(renderer, PLAYER_COLOR);
         }
-
     } else if (labyrinth->grid[x][y] == KEY) {
         SDL_SetRenderDrawColor(renderer, KEY_COLOR);
-
-    }else if(labyrinth->grid[x][y] == CHEST){
+    } else if(labyrinth->grid[x][y] == CHEST) {
         SDL_SetRenderDrawColor(renderer, CHEST_COLOR);
-    }
-    else if(labyrinth->grid[x][y] == TRAP){
+    } else if(labyrinth->grid[x][y] == TRAP) {
         SDL_SetRenderDrawColor(renderer, TRAP_COLOR);
-    }
-    else {
+    } else if(labyrinth->grid[x][y] == DOOR) {
+        SDL_SetRenderDrawColor(renderer, DOOR_COLOR);
+    } else {
         SDL_SetRenderDrawColor(renderer, PATH_COLOR);
     }
 
     SDL_RenderFillRect(renderer, &cell);
 }
 
+void try_unlock_door(Labyrinth *labyrinth, SDL_Renderer *renderer) {
+    int x = labyrinth->starting_x;
+    int y = labyrinth->starting_y;
+
+    int door_x = labyrinth->ending_x;
+    int door_y = labyrinth->ending_y;
+
+    // Vérifie si la porte est devant la sortie
+    if (((x == door_x - 1 && y == door_y) ||
+         (x == door_x + 1 && y == door_y) ||
+         (y == door_y - 1 && x == door_x) ||
+         (y == door_y + 1 && x == door_x)) &&
+        labyrinth->grid[door_x][door_y] == DOOR) {
+
+        if (labyrinth->has_key) {
+            labyrinth->grid[door_x][door_y] = PATH;
+            redraw_case(renderer, labyrinth, door_x, door_y);
+            SDL_RenderPresent(renderer);
+            printf("🚪 You unlocked the door in front of the exit!\n");
+        } else {
+            printf("🔒 You need a key to unlock the door!\n");
+        }
+    }
+}
+
 int is_ended(Labyrinth *labyrinth, int nb_iterations, float elapsed_sec) {
     if (labyrinth->starting_x == labyrinth->ending_x &&
         labyrinth->starting_y == labyrinth->ending_y) {
-        if (labyrinth->has_key) {
-            printf("🎉 Congratulations! You've reached the end with the key!\n");
-            printf("⏱️ Time taken: %.2f seconds\n", elapsed_sec);
-            printf("🔄 Total moves made: %d\n", nb_iterations);
-            printf("💰 Total points: %d\n", labyrinth->coins);
-            return 1;
-        } else {
-            printf("🔒 You need the key to finish the labyrinth!\n");
-            return 0;
-        }
+        printf("🎉 Congratulations! You've reached the exit!\n");
+        printf("⏱️ Time taken: %.2f seconds\n", elapsed_sec);
+        printf("🔄 Total moves made: %d\n", nb_iterations);
+        printf("💰 Total points: %d\n", labyrinth->coins);
+        return 1;
     }
     return 0;
 }
@@ -79,25 +94,24 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
 
     if (new_x >= 0 && new_x < labyrinth->length * 2 + 1 &&
         new_y >= 0 && new_y < labyrinth->width * 2 + 1 &&
-        labyrinth->grid[new_x][new_y] != WALL) {
+        labyrinth->grid[new_x][new_y] != WALL &&
+        labyrinth->grid[new_x][new_y] != DOOR) {
 
         if (labyrinth->grid[new_x][new_y] == KEY) {
             labyrinth->has_key = 1;
             printf("🔑 You picked up the key!\n");
         }
-        else if (labyrinth->grid[new_x][new_y] == CHEST)
-        {
+        else if (labyrinth->grid[new_x][new_y] == CHEST) {
             labyrinth->grid[new_x][new_y] = PATH;
             printf("🎁 You opened a chest and received 1000 coins\n");
             labyrinth->coins += 1000;
         }
-        else if (labyrinth->grid[new_x][new_y] == TRAP)
-        {
+        else if (labyrinth->grid[new_x][new_y] == TRAP) {
             labyrinth->grid[new_x][new_y] = PATH;
             printf("💀 You stepped on a trap and lost 500 coins\n");
             labyrinth->coins -= 500;
         }
-        
+
         char old_char = labyrinth->grid[old_x][old_y];
         if (old_char != END) {
             labyrinth->grid[old_x][old_y] = PATH;
@@ -137,6 +151,9 @@ int movement_orchestrator(SDL_Event e, Labyrinth *labyrinth, SDL_Renderer *rende
         case SDLK_d:
             move_player(labyrinth, 0, 1, renderer);
             return 1;
+        case SDLK_e:  // Déverrouiller la porte devant la sortie
+            try_unlock_door(labyrinth, renderer);
+            return 0;
         default:
             return 0;
     }
@@ -146,19 +163,19 @@ void display_time_on_ui(Uint32 start_time, SDL_Renderer *renderer, TTF_Font *fon
     Uint32 elapsed_ms = SDL_GetTicks() - start_time;
     float elapsed_sec = elapsed_ms / 1000.0f;
     char time_text[64];
-        snprintf(time_text, sizeof(time_text), "Temps: %.1f s", elapsed_sec);
-        SDL_Color text_color = {235, 64, 52, 255};
+    snprintf(time_text, sizeof(time_text), "Temps: %.1f s", elapsed_sec);
+    SDL_Color text_color = {235, 64, 52, 255};
 
-        SDL_Surface *text_surface = TTF_RenderText_Blended(font, time_text, text_color);
-        if (text_surface) {
-            SDL_Texture *text_texture = SDL_CreateTextureFromSurface(renderer, text_surface);
-            if (text_texture) {
-                SDL_Rect text_rect = {10, 10, text_surface->w, text_surface->h};
-                SDL_RenderCopy(renderer, text_texture, NULL, &text_rect);
-                SDL_DestroyTexture(text_texture);
-            }
-            SDL_FreeSurface(text_surface);
+    SDL_Surface *text_surface = TTF_RenderText_Blended(font, time_text, text_color);
+    if (text_surface) {
+        SDL_Texture *text_texture = SDL_CreateTextureFromSurface(renderer, text_surface);
+        if (text_texture) {
+            SDL_Rect text_rect = {10, 10, text_surface->w, text_surface->h};
+            SDL_RenderCopy(renderer, text_texture, NULL, &text_rect);
+            SDL_DestroyTexture(text_texture);
         }
+        SDL_FreeSurface(text_surface);
+    }
 }
 
 void display_points_on_ui(Labyrinth *labyrinth, SDL_Renderer *renderer, TTF_Font *font) {
@@ -177,7 +194,6 @@ void display_points_on_ui(Labyrinth *labyrinth, SDL_Renderer *renderer, TTF_Font
         SDL_FreeSurface(text_surface);
     }
 }
-
 
 Score display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
     width = width * 2 + 1;
@@ -247,6 +263,7 @@ Score display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
         display_points_on_ui(&labyrinth, renderer, font);
         SDL_RenderPresent(renderer);
         SDL_Delay(16);
+
         while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT || is_ended(&labyrinth, count, elapsed_sec)) {
                 running = 0;
@@ -266,8 +283,6 @@ Score display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
                 redraw_case(renderer, &labyrinth, i, j);
             }
         }
-
-        
     }
 
     SDL_DestroyRenderer(renderer);
@@ -278,8 +293,6 @@ Score display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
 
     Score final_score;
     final_score.coins = labyrinth.coins;
-    final_score.name = malloc(100 * sizeof(char));
     end_of_game_dialog(&final_score);
     return final_score;
 }
-

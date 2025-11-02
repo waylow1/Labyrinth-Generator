@@ -1,49 +1,38 @@
-\hypertarget{utils_8c}{}\doxysection{src/subunit/utils.c File Reference}
-\label{utils_8c}\index{src/subunit/utils.c@{src/subunit/utils.c}}
+\doxysection{src/subunit/utils.c File Reference}
+\hypertarget{utils_8c}{}\label{utils_8c}\index{src/subunit/utils.c@{src/subunit/utils.c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}utils.\+h"{}}\newline
 Include dependency graph for utils.\+c\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=276pt]{utils_8c__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Functions}
+% FIG 0
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} $\ast$$\ast$ \mbox{\hyperlink{utils_8c_aa6993234de73f2379cab632dd537c9df}{allocate\+\_\+labyrinth}} (int length, int width)
+\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{utils_8c_a4a542472390e8d529fa43788fd2543dd}{allocate\+\_\+labyrinth}} (int length, int width)
 \begin{DoxyCompactList}\small\item\em Allocates memory for a 2D array of Labyrinth\+Cell structures. \end{DoxyCompactList}\item 
-int $\ast$$\ast$ \mbox{\hyperlink{utils_8c_a9bb114b25089c239f1080b5c49a36ef1}{allocate\+\_\+matrix\+\_\+walls}} (int lines, int columns)
+int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{utils_8c_ad0d9fcf46bad29930aa25918e27bbf2d}{allocate\+\_\+matrix\+\_\+walls}} (int lines, int columns)
 \begin{DoxyCompactList}\small\item\em Allocates memory for a 2D matrix of integers, initializing all elements to 1. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{utils_8c_a5abbb85a477461bd5b81cec9f56f0855}{free\+\_\+matrix}} (int $\ast$$\ast$matrix, int length)
+void \mbox{\hyperlink{utils_8c_a5abbb85a477461bd5b81cec9f56f0855}{free\+\_\+matrix}} (int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matrix, int length)
 \begin{DoxyCompactList}\small\item\em Frees the memory allocated for a 2D matrix of integers. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{utils_8c_a2d67ef53c3399032d366cec633db7fc5}{free\+\_\+labyrinth\+\_\+cells}} (\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} $\ast$$\ast$labyrinth, int length)
+void \mbox{\hyperlink{utils_8c_a2d67ef53c3399032d366cec633db7fc5}{free\+\_\+labyrinth\+\_\+cells}} (\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}labyrinth, int length)
 \begin{DoxyCompactList}\small\item\em Frees the memory allocated for a 2D array of Labyrinth\+Cell structures. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8c_a6a594eb5e2225d82c964808c733c4309}{free\+\_\+labyrinth}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int lines, int columns)
-\begin{DoxyCompactList}\small\item\em Frees the memory allocated for a \mbox{\hyperlink{structLabyrinth}{Labyrinth}} structure, including its grid. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{utils_8c_a7cccaa878d777af9c24e6dc352b885ab}{dump\+\_\+labyrinth}} (int seed, int lines, int columns, char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Frees the memory allocated for a \doxylink{structLabyrinth}{Labyrinth} structure, including its grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_a7cccaa878d777af9c24e6dc352b885ab}{dump\+\_\+labyrinth}} (int seed, int lines, int columns, char \texorpdfstring{$\ast$}{*}filename)
 \begin{DoxyCompactList}\small\item\em Dumps the labyrinth configuration (seed, lines, columns) to a file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{utils_8c_ab75970c7149ceb3ecaea1a0cbb1ede8e}{display\+\_\+all\+\_\+available\+\_\+files}} (char $\ast$$\ast$labyrinth\+\_\+name)
+void \mbox{\hyperlink{utils_8c_ab75970c7149ceb3ecaea1a0cbb1ede8e}{display\+\_\+all\+\_\+available\+\_\+files}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}labyrinth\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Displays all available labyrinth configuration files and prompts the user to select one. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{utils_8c_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+labyrinth}} (const char $\ast$filename, int $\ast$seed, int $\ast$lines, int $\ast$columns)
-\begin{DoxyCompactList}\small\item\em Loads the labyrinth configuration (seed, lines, columns) from a file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{utils_8c_a691e2e21ad19fb05503bbe53e62782ad}{end\+\_\+of\+\_\+game\+\_\+dialog}} (\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$\mbox{\hyperlink{structscore}{score}})
-\begin{DoxyCompactList}\small\item\em Displays the end-\/of-\/game dialog and prompts the user for their name and score. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$ \mbox{\hyperlink{utils_8c_ae3ba7aac3a2af0e98a4eb89c6d22b1f3}{load\+\_\+score}} (const char $\ast$labyrinth\+\_\+name, size\+\_\+t $\ast$out\+\_\+count)
-\item 
-int \mbox{\hyperlink{utils_8c_afd29b9297af5f295dc2b4d0a270b228d}{dump\+\_\+scores}} (\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$scores, size\+\_\+t count, char $\ast$labyrinth\+\_\+name)
-\begin{DoxyCompactList}\small\item\em Dumps the player\textquotesingle{}s score to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{utils_8c_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+labyrinth}} (const char \texorpdfstring{$\ast$}{*}filename, int \texorpdfstring{$\ast$}{*}seed, int \texorpdfstring{$\ast$}{*}lines, int \texorpdfstring{$\ast$}{*}columns)
+\begin{DoxyCompactList}\small\item\em Loads the labyrinth configuration (seed, lines, columns) from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{utils_8c_aa6993234de73f2379cab632dd537c9df}\label{utils_8c_aa6993234de73f2379cab632dd537c9df}} 
+\Hypertarget{utils_8c_a4a542472390e8d529fa43788fd2543dd}\label{utils_8c_a4a542472390e8d529fa43788fd2543dd} 
 \index{utils.c@{utils.c}!allocate\_labyrinth@{allocate\_labyrinth}}
 \index{allocate\_labyrinth@{allocate\_labyrinth}!utils.c@{utils.c}}
 \doxysubsubsection{\texorpdfstring{allocate\_labyrinth()}{allocate\_labyrinth()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}}$\ast$$\ast$ allocate\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} allocate\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
 
 
@@ -57,13 +46,13 @@ Allocates memory for a 2D array of Labyrinth\+Cell structures.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Labyrinth\+Cell$\ast$$\ast$ A pointer to the allocated 2D array of Labyrinth\+Cell structures. 
+Labyrinth\+Cell\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} A pointer to the allocated 2D array of Labyrinth\+Cell structures. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{utils_8c_a9bb114b25089c239f1080b5c49a36ef1}\label{utils_8c_a9bb114b25089c239f1080b5c49a36ef1}} 
+\Hypertarget{utils_8c_ad0d9fcf46bad29930aa25918e27bbf2d}\label{utils_8c_ad0d9fcf46bad29930aa25918e27bbf2d} 
 \index{utils.c@{utils.c}!allocate\_matrix\_walls@{allocate\_matrix\_walls}}
 \index{allocate\_matrix\_walls@{allocate\_matrix\_walls}!utils.c@{utils.c}}
 \doxysubsubsection{\texorpdfstring{allocate\_matrix\_walls()}{allocate\_matrix\_walls()}}
-{\footnotesize\ttfamily int$\ast$$\ast$ allocate\+\_\+matrix\+\_\+walls (\begin{DoxyParamCaption}\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} allocate\+\_\+matrix\+\_\+walls (\begin{DoxyParamCaption}\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
 
 
 
@@ -77,13 +66,13 @@ Allocates memory for a 2D matrix of integers, initializing all elements to 1.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int$\ast$$\ast$ A pointer to the allocated 2D matrix of integers. 
+int\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} A pointer to the allocated 2D matrix of integers. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{utils_8c_ab75970c7149ceb3ecaea1a0cbb1ede8e}\label{utils_8c_ab75970c7149ceb3ecaea1a0cbb1ede8e}} 
+\Hypertarget{utils_8c_ab75970c7149ceb3ecaea1a0cbb1ede8e}\label{utils_8c_ab75970c7149ceb3ecaea1a0cbb1ede8e} 
 \index{utils.c@{utils.c}!display\_all\_available\_files@{display\_all\_available\_files}}
 \index{display\_all\_available\_files@{display\_all\_available\_files}!utils.c@{utils.c}}
 \doxysubsubsection{\texorpdfstring{display\_all\_available\_files()}{display\_all\_available\_files()}}
-{\footnotesize\ttfamily void display\+\_\+all\+\_\+available\+\_\+files (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{labyrinth\+\_\+name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void display\+\_\+all\+\_\+available\+\_\+files (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{labyrinth\+\_\+name }\end{DoxyParamCaption})}
 
 
 
@@ -94,11 +83,11 @@ Displays all available labyrinth configuration files and prompts the user to sel
 {\em labyrinth\+\_\+name} & A pointer to a string where the selected labyrinth name will be stored. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{utils_8c_a7cccaa878d777af9c24e6dc352b885ab}\label{utils_8c_a7cccaa878d777af9c24e6dc352b885ab}} 
+\Hypertarget{utils_8c_a7cccaa878d777af9c24e6dc352b885ab}\label{utils_8c_a7cccaa878d777af9c24e6dc352b885ab} 
 \index{utils.c@{utils.c}!dump\_labyrinth@{dump\_labyrinth}}
 \index{dump\_labyrinth@{dump\_labyrinth}!utils.c@{utils.c}}
 \doxysubsubsection{\texorpdfstring{dump\_labyrinth()}{dump\_labyrinth()}}
-{\footnotesize\ttfamily void dump\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{int}]{seed,  }\item[{int}]{lines,  }\item[{int}]{columns,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void dump\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{int}]{seed,  }\item[{int}]{lines,  }\item[{int}]{columns,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
 
 
 
@@ -115,41 +104,7 @@ Dumps the labyrinth configuration (seed, lines, columns) to a file.
 {\em filename} & The name of the file to save the configuration (without extension). \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{utils_8c_afd29b9297af5f295dc2b4d0a270b228d}\label{utils_8c_afd29b9297af5f295dc2b4d0a270b228d}} 
-\index{utils.c@{utils.c}!dump\_scores@{dump\_scores}}
-\index{dump\_scores@{dump\_scores}!utils.c@{utils.c}}
-\doxysubsubsection{\texorpdfstring{dump\_scores()}{dump\_scores()}}
-{\footnotesize\ttfamily int dump\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$}]{scores,  }\item[{size\+\_\+t}]{count,  }\item[{char $\ast$}]{labyrinth\+\_\+name }\end{DoxyParamCaption})}
-
-
-
-Dumps the player\textquotesingle{}s score to a file. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em scores} & The Score array structure containing the players names and scores. \\
-\hline
-{\em count} & The number of scores to dump. \\
-\hline
-{\em labyrinth\+\_\+name} & The name of the labyrinth associated with the score (without extension). \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{utils_8c_a691e2e21ad19fb05503bbe53e62782ad}\label{utils_8c_a691e2e21ad19fb05503bbe53e62782ad}} 
-\index{utils.c@{utils.c}!end\_of\_game\_dialog@{end\_of\_game\_dialog}}
-\index{end\_of\_game\_dialog@{end\_of\_game\_dialog}!utils.c@{utils.c}}
-\doxysubsubsection{\texorpdfstring{end\_of\_game\_dialog()}{end\_of\_game\_dialog()}}
-{\footnotesize\ttfamily void end\+\_\+of\+\_\+game\+\_\+dialog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} $\ast$}]{score }\end{DoxyParamCaption})}
-
-
-
-Displays the end-\/of-\/game dialog and prompts the user for their name and score. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em score} & A pointer to the Score structure containing the player\textquotesingle{}s name and score. \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{utils_8c_a6a594eb5e2225d82c964808c733c4309}\label{utils_8c_a6a594eb5e2225d82c964808c733c4309}} 
+\Hypertarget{utils_8c_a6a594eb5e2225d82c964808c733c4309}\label{utils_8c_a6a594eb5e2225d82c964808c733c4309} 
 \index{utils.c@{utils.c}!free\_labyrinth@{free\_labyrinth}}
 \index{free\_labyrinth@{free\_labyrinth}!utils.c@{utils.c}}
 \doxysubsubsection{\texorpdfstring{free\_labyrinth()}{free\_labyrinth()}}
@@ -157,22 +112,22 @@ Displays the end-\/of-\/game dialog and prompts the user for their name and scor
 
 
 
-Frees the memory allocated for a \mbox{\hyperlink{structLabyrinth}{Labyrinth}} structure, including its grid. 
+Frees the memory allocated for a \doxylink{structLabyrinth}{Labyrinth} structure, including its grid. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em labyrinth} & The \mbox{\hyperlink{structLabyrinth}{Labyrinth}} structure to be freed. \\
+{\em labyrinth} & The \doxylink{structLabyrinth}{Labyrinth} structure to be freed. \\
 \hline
 {\em lines} & The number of rows in the labyrinth grid. \\
 \hline
 {\em columns} & The number of columns in the labyrinth grid. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{utils_8c_a2d67ef53c3399032d366cec633db7fc5}\label{utils_8c_a2d67ef53c3399032d366cec633db7fc5}} 
+\Hypertarget{utils_8c_a2d67ef53c3399032d366cec633db7fc5}\label{utils_8c_a2d67ef53c3399032d366cec633db7fc5} 
 \index{utils.c@{utils.c}!free\_labyrinth\_cells@{free\_labyrinth\_cells}}
 \index{free\_labyrinth\_cells@{free\_labyrinth\_cells}!utils.c@{utils.c}}
 \doxysubsubsection{\texorpdfstring{free\_labyrinth\_cells()}{free\_labyrinth\_cells()}}
-{\footnotesize\ttfamily void free\+\_\+labyrinth\+\_\+cells (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} $\ast$$\ast$}]{labyrinth,  }\item[{int}]{length }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void free\+\_\+labyrinth\+\_\+cells (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{length }\end{DoxyParamCaption})}
 
 
 
@@ -185,11 +140,11 @@ Frees the memory allocated for a 2D array of Labyrinth\+Cell structures.
 {\em length} & The number of rows in the labyrinth. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{utils_8c_a5abbb85a477461bd5b81cec9f56f0855}\label{utils_8c_a5abbb85a477461bd5b81cec9f56f0855}} 
+\Hypertarget{utils_8c_a5abbb85a477461bd5b81cec9f56f0855}\label{utils_8c_a5abbb85a477461bd5b81cec9f56f0855} 
 \index{utils.c@{utils.c}!free\_matrix@{free\_matrix}}
 \index{free\_matrix@{free\_matrix}!utils.c@{utils.c}}
 \doxysubsubsection{\texorpdfstring{free\_matrix()}{free\_matrix()}}
-{\footnotesize\ttfamily void free\+\_\+matrix (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrix,  }\item[{int}]{length }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void free\+\_\+matrix (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matrix,  }\item[{int}]{length }\end{DoxyParamCaption})}
 
 
 
@@ -202,11 +157,11 @@ Frees the memory allocated for a 2D matrix of integers.
 {\em length} & The number of rows in the matrix. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{utils_8c_aab8c16aca09c1c9a75601428d67e963b}\label{utils_8c_aab8c16aca09c1c9a75601428d67e963b}} 
+\Hypertarget{utils_8c_aab8c16aca09c1c9a75601428d67e963b}\label{utils_8c_aab8c16aca09c1c9a75601428d67e963b} 
 \index{utils.c@{utils.c}!load\_labyrinth@{load\_labyrinth}}
 \index{load\_labyrinth@{load\_labyrinth}!utils.c@{utils.c}}
 \doxysubsubsection{\texorpdfstring{load\_labyrinth()}{load\_labyrinth()}}
-{\footnotesize\ttfamily void load\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{int $\ast$}]{seed,  }\item[{int $\ast$}]{lines,  }\item[{int $\ast$}]{columns }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void load\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int \texorpdfstring{$\ast$}{*}}]{seed,  }\item[{int \texorpdfstring{$\ast$}{*}}]{lines,  }\item[{int \texorpdfstring{$\ast$}{*}}]{columns }\end{DoxyParamCaption})}
 
 
 
@@ -223,9 +178,3 @@ Loads the labyrinth configuration (seed, lines, columns) from a file.
 {\em columns} & A pointer to store the loaded number of columns. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{utils_8c_ae3ba7aac3a2af0e98a4eb89c6d22b1f3}\label{utils_8c_ae3ba7aac3a2af0e98a4eb89c6d22b1f3}} 
-\index{utils.c@{utils.c}!load\_score@{load\_score}}
-\index{load\_score@{load\_score}!utils.c@{utils.c}}
-\doxysubsubsection{\texorpdfstring{load\_score()}{load\_score()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}}$\ast$ load\+\_\+score (\begin{DoxyParamCaption}\item[{const char $\ast$}]{labyrinth\+\_\+name,  }\item[{size\+\_\+t $\ast$}]{out\+\_\+count }\end{DoxyParamCaption})}
-

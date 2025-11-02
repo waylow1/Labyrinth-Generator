@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "utils.h"
 
 LabyrinthCell ** allocate_labyrinth(int length, int width){
@@ -90,33 +91,39 @@ void display_all_available_files(char ** labyrinth_name){
 }
 
 
-void load_labyrinth(const char * filename, int * seed, int * lines, int * columns){
-    if (!filename) return;
-    size_t len = 0;
-    while (filename[len]) len++;
-
-    const char prefix[] = "config/";
-    size_t prefix_len = sizeof(prefix) - 1;
-    char *path = malloc(prefix_len + len + 5);
-    if (!path) return;
-
-    size_t k = 0;
-    for (size_t i = 0; i < prefix_len; ++i) path[k++] = prefix[i];
-    for (size_t i = 0; i < len; ++i) path[k++] = filename[i];
-    path[k++] = '.';
-    path[k++] = 'c';
-    path[k++] = 'f';
-    path[k++] = 'g';
-    path[k] = '\0';
-
-    printf("Loading labyrinth from file: %s\n", path);
-    FILE *fp = fopen(path, "r");
-    if (!fp) {
-        free(path);
+void load_labyrinth(const char *filename, int *seed, int *lines, int *columns) {
+    if (!filename || !seed || !lines || !columns) {
+        fprintf(stderr, "❌ Invalid arguments to load_labyrinth().\n");
         return;
     }
 
-    fscanf(fp, "%d,%d,%d\n", seed, lines, columns);
+    const char prefix[] = "config/";
+    size_t len = strlen(filename);
+    size_t path_len = strlen(prefix) + len + 5;
+    char *path = malloc(path_len);
+    if (!path) {
+        fprintf(stderr, "❌ Memory allocation failed for path.\n");
+        return;
+    }
+
+    snprintf(path, path_len, "%s%s.cfg", prefix, filename);
+
+    FILE *fp = fopen(path, "r");
+    if (!fp) {
+        fprintf(stderr, "⚠️  File not found: %s\n", path);
+        free(path);
+        *seed = *lines = *columns = 0; 
+        return;
+    }
+
+    printf("Loading labyrinth from file: %s\n", path);
+
+    if (fscanf(fp, "%d,%d,%d", seed, lines, columns) != 3) {
+        fprintf(stderr, "⚠️  Invalid labyrinth file format: %s\n", path);
+        *seed = *lines = *columns = 0;
+    } else {
+        printf("✅ Loaded labyrinth parameters: seed=%d, lines=%d, columns=%d\n", *seed, *lines, *columns);
+    }
 
     fclose(fp);
     free(path);

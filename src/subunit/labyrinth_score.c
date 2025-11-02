@@ -1,21 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "labyrinth_score.h"    
-#include <stdlib.h>
+
+#define MAX_SCORES 10
 
 int create_score_file_if_not_exists(char * labyrinth_name){
     if (!labyrinth_name) return -1;
+
     char filename[256];
     snprintf(filename, sizeof(filename), "score/%s.score", labyrinth_name);
 
-    FILE *fp = fopen(filename, "rb");
+    FILE *fp = fopen(filename, "r");
     if (fp) {
         fclose(fp);
         return 0; 
     }
 
-    fp = fopen(filename, "wb");
+    fp = fopen(filename, "w");
     if (!fp) {
+        perror("Error creating score file");
         return -1; 
     }
 
@@ -31,8 +35,11 @@ void end_of_game_dialog(Score * score){
 }
 
 int add_new_score(Ladder * ladder, Score new_player){
+    if (!ladder || !ladder->scores) return -1;
+
     printf("Adding new score: %s with %d coins\n", new_player.name, new_player.coins);
-    if (ladder->count < 10) {
+
+    if (ladder->count < MAX_SCORES) {
         ladder->scores[ladder->count] = new_player;
         ladder->count++;
     } else if (new_player.coins > ladder->scores[ladder->count - 1].coins) {
@@ -40,18 +47,20 @@ int add_new_score(Ladder * ladder, Score new_player){
     } else {
         return 0; 
     }
+
     printf("Score added successfully.\n");
     return 0;
-    
 }
 
 int sort_scores(Ladder * ladder){
-    for(int i=0;i<ladder->count-1;i++){
-        for(int j=0;j<ladder->count-i-1;j++){
-            if(ladder->scores[j].coins< ladder->scores[j+1].coins){
+    if (!ladder || !ladder->scores) return -1;
+
+    for(int i = 0; i < ladder->count - 1; i++){
+        for(int j = 0; j < ladder->count - i - 1; j++){
+            if(ladder->scores[j].coins < ladder->scores[j + 1].coins){
                 Score temp = ladder->scores[j];
-                ladder->scores[j] = ladder->scores[j+1];
-                ladder->scores[j+1] = temp;
+                ladder->scores[j] = ladder->scores[j + 1];
+                ladder->scores[j + 1] = temp;
             }
         }
     }
@@ -61,81 +70,54 @@ int sort_scores(Ladder * ladder){
 void load_labyrinth_scores(Ladder * ladder, const char * labyrinth_name){
     if (!ladder || !labyrinth_name) return;
 
+    ladder->count = 0;
+
     char filename[256];
     snprintf(filename, sizeof(filename), "score/%s.score", labyrinth_name);
 
-    FILE *fp = fopen(filename, "rb");
+    FILE *fp = fopen(filename, "r");
     if (!fp) {
+        printf("No score file found for %s.\n", labyrinth_name);
         return;
     }
 
-    if (fseek(fp, 0, SEEK_END) != 0) { fclose(fp); return; }
-    long file_size = ftell(fp);
-    if (file_size <= 0) { fclose(fp); return; }
-
-    rewind(fp);
-
-    size_t entry_size = sizeof(Score);
-    if (entry_size == 0) { fclose(fp); return; }
-
-    size_t count = (size_t)file_size / entry_size;
-    if (count == 0) { fclose(fp); return; }
-
-
-    if (((size_t)file_size % entry_size) != 0) {
-        fclose(fp);
-        return;
+    while (ladder->count < MAX_SCORES && 
+           fscanf(fp, "%99s %d", ladder->scores[ladder->count].name,
+            &ladder->scores[ladder->count].coins) == 2) {
+        ladder->count++;
     }
 
-    const size_t MAX_SCORES = 10;
-    if (count > MAX_SCORES) count = MAX_SCORES;
-
-    if (!ladder->scores) { fclose(fp); return; }
-
-    Score * scores = malloc(count * entry_size);
-    if (!scores) { fclose(fp); return; }
-
-    size_t read = fread(scores, entry_size, count, fp);
-    if (read != count) {
-        free(scores);
-        fclose(fp);
-        return;
-    }
-
-    ladder->count = (int)count;
-
-    free(scores);
     fclose(fp);
 }
 
 int display_ladder(Ladder ladder){
-
     if (!ladder.scores || ladder.count == 0) {
         printf("No scores available.\n");
         return -1;
     }
 
     printf("\n--- High Scores ---\n");
-    for (size_t i = 0; i < ladder.count; i++) {
-        printf("%zu. %s - %d coins\n", i + 1, ladder.scores[i].name, ladder.scores[i].coins);
+    for (int i = 0; i < ladder.count; i++) {
+        printf("%d. %s - %d coins\n", i + 1, ladder.scores[i].name, ladder.scores[i].coins);
     }
     printf("-------------------\n\n");
     return 0;
 }
 
 int dump_scores(Ladder ladder, char *labyrinth_name){
-    
     if ((!ladder.scores && ladder.count > 0) || !labyrinth_name) return -1;
+
     char filename[256];
     snprintf(filename, sizeof(filename), "score/%s.score", labyrinth_name);
 
-    FILE *fp = fopen(filename, "wb");
-    if (!fp) return -1;
+    FILE *fp = fopen(filename, "w");
+    if (!fp) {
+        perror("Error saving scores");
+        return -1;
+    }
 
-    if (ladder.count > 0) {
-        size_t written = fwrite(ladder.scores, sizeof(Score), ladder.count, fp);
-        fclose(fp);
-        return (written == ladder.count) ? 0 : -1;
+    for (int i = 0; i < ladder.count; i++) {
+        fprintf(fp, "%s %d\n", ladder.scores[i].name, ladder.scores[i].coins);
     }
 
     fclose(fp);

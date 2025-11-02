@@ -1,0 +1,159 @@
+\doxysection{include/labyrinth\+\_\+score.h File Reference}
+\hypertarget{labyrinth__score_8h}{}\label{labyrinth__score_8h}\index{include/labyrinth\_score.h@{include/labyrinth\_score.h}}
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+Include dependency graph for labyrinth\+\_\+score.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{labyrinth__score_8h_afd76b93c33d9859ce3d2dbec43101dfa}{create\+\_\+score\+\_\+file\+\_\+if\+\_\+not\+\_\+exists}} (char \texorpdfstring{$\ast$}{*}labyrinth\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Creates a score file for the specified labyrinth if it does not already exist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__score_8h_a691e2e21ad19fb05503bbe53e62782ad}{end\+\_\+of\+\_\+game\+\_\+dialog}} (\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structscore}{score}})
+\begin{DoxyCompactList}\small\item\em Displays the end-\/of-\/game dialog and prompts the user for their name and score. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{labyrinth__score_8h_a97c570987fa2cda2ca4f12d4694b5250}{display\+\_\+ladder}} (\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}} \mbox{\hyperlink{structladder}{ladder}})
+\begin{DoxyCompactList}\small\item\em Displays the leaderboard with the list of scores. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{labyrinth__score_8h_ac46e1e22ed933707bdb4a790a186179b}{add\+\_\+new\+\_\+score}} (\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structladder}{ladder}}, \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} new\+\_\+player)
+\begin{DoxyCompactList}\small\item\em Adds a new player\textquotesingle{}s score to the scores array if it qualifies for the leaderboard. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{labyrinth__score_8h_abca9e7383ba0185044dacf0ba057b3c9}{sort\+\_\+scores}} (\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structladder}{ladder}})
+\begin{DoxyCompactList}\small\item\em Sorts the scores in descending order based on the number of coins. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__score_8h_a89b3d997f59fc3a4f79778d55793f498}{load\+\_\+labyrinth\+\_\+scores}} (\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structladder}{ladder}}, const char \texorpdfstring{$\ast$}{*}labyrinth\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Loads the scores from a file associated with a specific labyrinth. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{labyrinth__score_8h_a3c76820968b792c7736f410ea17e14c5}{dump\+\_\+scores}} (\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}} \mbox{\hyperlink{structladder}{ladder}}, char \texorpdfstring{$\ast$}{*}labyrinth\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Dumps the player\textquotesingle{}s score to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{labyrinth__score_8h_ac46e1e22ed933707bdb4a790a186179b}\label{labyrinth__score_8h_ac46e1e22ed933707bdb4a790a186179b} 
+\index{labyrinth\_score.h@{labyrinth\_score.h}!add\_new\_score@{add\_new\_score}}
+\index{add\_new\_score@{add\_new\_score}!labyrinth\_score.h@{labyrinth\_score.h}}
+\doxysubsubsection{\texorpdfstring{add\_new\_score()}{add\_new\_score()}}
+{\footnotesize\ttfamily int add\+\_\+new\+\_\+score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}} \texorpdfstring{$\ast$}{*}}]{ladder,  }\item[{\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}}}]{new\+\_\+player }\end{DoxyParamCaption})}
+
+
+
+Adds a new player\textquotesingle{}s score to the scores array if it qualifies for the leaderboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ladder} & A pointer to Ladder structure. \\
+\hline
+{\em new\+\_\+player} & The Score structure containing the new player\textquotesingle{}s name and score. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__score_8h_afd76b93c33d9859ce3d2dbec43101dfa}\label{labyrinth__score_8h_afd76b93c33d9859ce3d2dbec43101dfa} 
+\index{labyrinth\_score.h@{labyrinth\_score.h}!create\_score\_file\_if\_not\_exists@{create\_score\_file\_if\_not\_exists}}
+\index{create\_score\_file\_if\_not\_exists@{create\_score\_file\_if\_not\_exists}!labyrinth\_score.h@{labyrinth\_score.h}}
+\doxysubsubsection{\texorpdfstring{create\_score\_file\_if\_not\_exists()}{create\_score\_file\_if\_not\_exists()}}
+{\footnotesize\ttfamily int create\+\_\+score\+\_\+file\+\_\+if\+\_\+not\+\_\+exists (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{labyrinth\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Creates a score file for the specified labyrinth if it does not already exist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth\+\_\+name} & The name of the labyrinth for which to create the score file (without extension). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__score_8h_a97c570987fa2cda2ca4f12d4694b5250}\label{labyrinth__score_8h_a97c570987fa2cda2ca4f12d4694b5250} 
+\index{labyrinth\_score.h@{labyrinth\_score.h}!display\_ladder@{display\_ladder}}
+\index{display\_ladder@{display\_ladder}!labyrinth\_score.h@{labyrinth\_score.h}}
+\doxysubsubsection{\texorpdfstring{display\_ladder()}{display\_ladder()}}
+{\footnotesize\ttfamily int display\+\_\+ladder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}}}]{ladder }\end{DoxyParamCaption})}
+
+
+
+Displays the leaderboard with the list of scores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scores} & A pointer to an array of Score structures. \\
+\hline
+{\em count} & The number of scores in the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 on success, -\/1 if there are no scores to display. 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__score_8h_a3c76820968b792c7736f410ea17e14c5}\label{labyrinth__score_8h_a3c76820968b792c7736f410ea17e14c5} 
+\index{labyrinth\_score.h@{labyrinth\_score.h}!dump\_scores@{dump\_scores}}
+\index{dump\_scores@{dump\_scores}!labyrinth\_score.h@{labyrinth\_score.h}}
+\doxysubsubsection{\texorpdfstring{dump\_scores()}{dump\_scores()}}
+{\footnotesize\ttfamily int dump\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}}}]{ladder,  }\item[{char \texorpdfstring{$\ast$}{*}}]{labyrinth\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Dumps the player\textquotesingle{}s score to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ladder} & A Ladder structure containing the scores to be dumped. \\
+\hline
+{\em count} & The number of scores to dump. \\
+\hline
+{\em labyrinth\+\_\+name} & The name of the labyrinth associated with the score (without extension). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{labyrinth__score_8h_a691e2e21ad19fb05503bbe53e62782ad}\label{labyrinth__score_8h_a691e2e21ad19fb05503bbe53e62782ad} 
+\index{labyrinth\_score.h@{labyrinth\_score.h}!end\_of\_game\_dialog@{end\_of\_game\_dialog}}
+\index{end\_of\_game\_dialog@{end\_of\_game\_dialog}!labyrinth\_score.h@{labyrinth\_score.h}}
+\doxysubsubsection{\texorpdfstring{end\_of\_game\_dialog()}{end\_of\_game\_dialog()}}
+{\footnotesize\ttfamily void end\+\_\+of\+\_\+game\+\_\+dialog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} \texorpdfstring{$\ast$}{*}}]{score }\end{DoxyParamCaption})}
+
+
+
+Displays the end-\/of-\/game dialog and prompts the user for their name and score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & A pointer to the Score structure containing the player\textquotesingle{}s name and score. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{labyrinth__score_8h_a89b3d997f59fc3a4f79778d55793f498}\label{labyrinth__score_8h_a89b3d997f59fc3a4f79778d55793f498} 
+\index{labyrinth\_score.h@{labyrinth\_score.h}!load\_labyrinth\_scores@{load\_labyrinth\_scores}}
+\index{load\_labyrinth\_scores@{load\_labyrinth\_scores}!labyrinth\_score.h@{labyrinth\_score.h}}
+\doxysubsubsection{\texorpdfstring{load\_labyrinth\_scores()}{load\_labyrinth\_scores()}}
+{\footnotesize\ttfamily void load\+\_\+labyrinth\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}} \texorpdfstring{$\ast$}{*}}]{ladder,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{labyrinth\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Loads the scores from a file associated with a specific labyrinth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth\+\_\+name} & The name of the labyrinth associated with the scores (without extension). \\
+\hline
+{\em out\+\_\+count} & A pointer to store the number of scores loaded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__score_8h_abca9e7383ba0185044dacf0ba057b3c9}\label{labyrinth__score_8h_abca9e7383ba0185044dacf0ba057b3c9} 
+\index{labyrinth\_score.h@{labyrinth\_score.h}!sort\_scores@{sort\_scores}}
+\index{sort\_scores@{sort\_scores}!labyrinth\_score.h@{labyrinth\_score.h}}
+\doxysubsubsection{\texorpdfstring{sort\_scores()}{sort\_scores()}}
+{\footnotesize\ttfamily int sort\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}} \texorpdfstring{$\ast$}{*}}]{ladder }\end{DoxyParamCaption})}
+
+
+
+Sorts the scores in descending order based on the number of coins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ladder} & A pointer to Ladder structure. \\
+\hline
+{\em count} & The number of scores in the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 on success, -\/1 on failure. 
+\end{DoxyReturn}

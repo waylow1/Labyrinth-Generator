@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['trap_5fcolor_200',['TRAP_COLOR',['../labyrinth__player__movement_8h.html#ad099e382fb2f419fe9e884491b871c0b',1,'labyrinth_player_movement.h']]]
+  ['path_5fcolor_0',['PATH_COLOR',['../labyrinth__player__movement_8h.html#a3aac54ffa4781528709d17a683e54fb5',1,'labyrinth_player_movement.h']]],
+  ['player_5fcolor_1',['PLAYER_COLOR',['../labyrinth__player__movement_8h.html#a28d88d882f8dc097928beffc901cc133',1,'labyrinth_player_movement.h']]]
 ];

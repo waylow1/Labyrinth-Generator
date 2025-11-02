@@ -3,7 +3,7 @@ name: Déploiement de la doc sur GitHub Pages
 on:
   push:
     branches:
-      - main  # déploie à chaque push sur main
+      - main 
 
 permissions:
   contents: read

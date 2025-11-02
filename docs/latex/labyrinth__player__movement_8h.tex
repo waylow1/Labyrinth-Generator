@@ -1,23 +1,13 @@
-\hypertarget{labyrinth__player__movement_8h}{}\doxysection{include/labyrinth\+\_\+player\+\_\+movement.h File Reference}
-\label{labyrinth__player__movement_8h}\index{include/labyrinth\_player\_movement.h@{include/labyrinth\_player\_movement.h}}
-{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+\doxysection{include/labyrinth\+\_\+player\+\_\+movement.h File Reference}
+\hypertarget{labyrinth__player__movement_8h}{}\label{labyrinth__player__movement_8h}\index{include/labyrinth\_player\_movement.h@{include/labyrinth\_player\_movement.h}}
+{\ttfamily \#include "{}utils.\+h"{}}\newline
 {\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2/\+SDL\+\_\+ttf.\+h$>$}\newline
 Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+h\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=289pt]{labyrinth__player__movement_8h__incl}
-\end{center}
-\end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=284pt]{labyrinth__player__movement_8h__dep__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Macros}
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133}{PLAYER\+\_\+\+COLOR}}~0, 255, 0, 255
@@ -35,58 +25,82 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \#define \mbox{\hyperlink{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b}{KEY\+\_\+\+COLOR}}~0, 0, 255, 255
 \item 
 \#define \mbox{\hyperlink{labyrinth__player__movement_8h_ad099e382fb2f419fe9e884491b871c0b}{TRAP\+\_\+\+COLOR}}~255, 0, 255, 255
+\item 
+\#define \mbox{\hyperlink{labyrinth__player__movement_8h_ab7d6b1dd423174c62ebe043ab0192264}{DOOR\+\_\+\+COLOR}}~160, 82, 45, 255
 \end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{labyrinth__player__movement_8h_a181468cb84be8091678b2649dbbbabed}{define\+\_\+cell\+\_\+size}} (int length, int width)
+\begin{DoxyCompactList}\small\item\em Determines the cell size based on the labyrinth dimensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__player__movement_8h_a73bb89082c65b39278b8624ef2b8096a}{redraw\+\_\+case}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int x, int y)
+\begin{DoxyCompactList}\small\item\em Redraws a specific cell of the labyrinth in the SDL window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__player__movement_8h_aa7e8c6115c06994df12f475f96830577}{try\+\_\+unlock\+\_\+door}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Attempts to unlock the door in front of the exit if the player has the key. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{labyrinth__player__movement_8h_a0a62a11f992a30cb1fc562c0336a50e1}{is\+\_\+ended}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int nb\+\_\+iterations, float elapsed\+\_\+sec)
+\begin{DoxyCompactList}\small\item\em Checks whether the player has reached the end of the labyrinth. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__player__movement_8h_afd7648c81d7ba445150cae509d64432f}{move\+\_\+player}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int dx, int dy, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Moves the player in the labyrinth according to the given direction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{labyrinth__player__movement_8h_a443946bcaa0cc4e80fd99e41870a9a7f}{movement\+\_\+orchestrator}} (SDL\+\_\+\+Event e, \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Handles keyboard input to orchestrate player movement or actions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__player__movement_8h_ac5e76367aa2bd909fbfdbc9174d81de7}{display\+\_\+time\+\_\+on\+\_\+ui}} (Uint32 start\+\_\+time, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*}font)
+\begin{DoxyCompactList}\small\item\em Displays the elapsed time on the SDL interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__player__movement_8h_a87e5c5346a8c298fb73c295ae57d45ca}{display\+\_\+points\+\_\+on\+\_\+ui}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*}font)
+\begin{DoxyCompactList}\small\item\em Displays the player\textquotesingle{}s coin count on the SDL interface. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} \mbox{\hyperlink{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}{display\+\_\+labyrinth\+\_\+sdl}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int length, int width)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Launches the SDL display of the labyrinth and handles interactive gameplay. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7}\label{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7}} 
+\Hypertarget{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7}\label{labyrinth__player__movement_8h_ad0ac81564107ad290257ae9c2d0a5bd7} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!CHEST\_COLOR@{CHEST\_COLOR}}
 \index{CHEST\_COLOR@{CHEST\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{CHEST\_COLOR}{CHEST\_COLOR}}
 {\footnotesize\ttfamily \#define CHEST\+\_\+\+COLOR~139, 69, 19, 255}
 
-\mbox{\Hypertarget{labyrinth__player__movement_8h_a475df0d9bbf72a496b3b362ef75a2a0f}\label{labyrinth__player__movement_8h_a475df0d9bbf72a496b3b362ef75a2a0f}} 
+\Hypertarget{labyrinth__player__movement_8h_ab7d6b1dd423174c62ebe043ab0192264}\label{labyrinth__player__movement_8h_ab7d6b1dd423174c62ebe043ab0192264} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!DOOR\_COLOR@{DOOR\_COLOR}}
+\index{DOOR\_COLOR@{DOOR\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{DOOR\_COLOR}{DOOR\_COLOR}}
+{\footnotesize\ttfamily \#define DOOR\+\_\+\+COLOR~160, 82, 45, 255}
+
+\Hypertarget{labyrinth__player__movement_8h_a475df0d9bbf72a496b3b362ef75a2a0f}\label{labyrinth__player__movement_8h_a475df0d9bbf72a496b3b362ef75a2a0f} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!END\_COLOR@{END\_COLOR}}
 \index{END\_COLOR@{END\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{END\_COLOR}{END\_COLOR}}
 {\footnotesize\ttfamily \#define END\+\_\+\+COLOR~255, 0, 0, 255}
 
-\mbox{\Hypertarget{labyrinth__player__movement_8h_a7d59efc1e0d8f4dc4b530a41f216f4e9}\label{labyrinth__player__movement_8h_a7d59efc1e0d8f4dc4b530a41f216f4e9}} 
+\Hypertarget{labyrinth__player__movement_8h_a7d59efc1e0d8f4dc4b530a41f216f4e9}\label{labyrinth__player__movement_8h_a7d59efc1e0d8f4dc4b530a41f216f4e9} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!HAS\_KEY\_COLOR@{HAS\_KEY\_COLOR}}
 \index{HAS\_KEY\_COLOR@{HAS\_KEY\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{HAS\_KEY\_COLOR}{HAS\_KEY\_COLOR}}
 {\footnotesize\ttfamily \#define HAS\+\_\+\+KEY\+\_\+\+COLOR~255, 215, 0, 255}
 
-\mbox{\Hypertarget{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b}\label{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b}} 
+\Hypertarget{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b}\label{labyrinth__player__movement_8h_aa8907904926ce476a86606c0b90eee4b} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!KEY\_COLOR@{KEY\_COLOR}}
 \index{KEY\_COLOR@{KEY\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{KEY\_COLOR}{KEY\_COLOR}}
 {\footnotesize\ttfamily \#define KEY\+\_\+\+COLOR~0, 0, 255, 255}
 
-\mbox{\Hypertarget{labyrinth__player__movement_8h_a3aac54ffa4781528709d17a683e54fb5}\label{labyrinth__player__movement_8h_a3aac54ffa4781528709d17a683e54fb5}} 
+\Hypertarget{labyrinth__player__movement_8h_a3aac54ffa4781528709d17a683e54fb5}\label{labyrinth__player__movement_8h_a3aac54ffa4781528709d17a683e54fb5} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!PATH\_COLOR@{PATH\_COLOR}}
 \index{PATH\_COLOR@{PATH\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{PATH\_COLOR}{PATH\_COLOR}}
 {\footnotesize\ttfamily \#define PATH\+\_\+\+COLOR~255, 255, 255, 255}
 
-\mbox{\Hypertarget{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133}\label{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133}} 
+\Hypertarget{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133}\label{labyrinth__player__movement_8h_a28d88d882f8dc097928beffc901cc133} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!PLAYER\_COLOR@{PLAYER\_COLOR}}
 \index{PLAYER\_COLOR@{PLAYER\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{PLAYER\_COLOR}{PLAYER\_COLOR}}
 {\footnotesize\ttfamily \#define PLAYER\+\_\+\+COLOR~0, 255, 0, 255}
 
-\mbox{\Hypertarget{labyrinth__player__movement_8h_ad099e382fb2f419fe9e884491b871c0b}\label{labyrinth__player__movement_8h_ad099e382fb2f419fe9e884491b871c0b}} 
+\Hypertarget{labyrinth__player__movement_8h_ad099e382fb2f419fe9e884491b871c0b}\label{labyrinth__player__movement_8h_ad099e382fb2f419fe9e884491b871c0b} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!TRAP\_COLOR@{TRAP\_COLOR}}
 \index{TRAP\_COLOR@{TRAP\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{TRAP\_COLOR}{TRAP\_COLOR}}
 {\footnotesize\ttfamily \#define TRAP\+\_\+\+COLOR~255, 0, 255, 255}
 
-\mbox{\Hypertarget{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d}\label{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d}} 
+\Hypertarget{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d}\label{labyrinth__player__movement_8h_a47eb681b9f2c5a8f4f63891a58ab8e2d} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!WALL\_COLOR@{WALL\_COLOR}}
 \index{WALL\_COLOR@{WALL\_COLOR}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{WALL\_COLOR}{WALL\_COLOR}}
@@ -95,9 +109,195 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}\label{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}} 
+\Hypertarget{labyrinth__player__movement_8h_a181468cb84be8091678b2649dbbbabed}\label{labyrinth__player__movement_8h_a181468cb84be8091678b2649dbbbabed} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!define\_cell\_size@{define\_cell\_size}}
+\index{define\_cell\_size@{define\_cell\_size}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{define\_cell\_size()}{define\_cell\_size()}}
+{\footnotesize\ttfamily int define\+\_\+cell\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Determines the cell size based on the labyrinth dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & Height of the labyrinth. \\
+\hline
+{\em width} & Width of the labyrinth. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cell size in pixels. 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}\label{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2} 
 \index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!display\_labyrinth\_sdl@{display\_labyrinth\_sdl}}
 \index{display\_labyrinth\_sdl@{display\_labyrinth\_sdl}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
 \doxysubsubsection{\texorpdfstring{display\_labyrinth\_sdl()}{display\_labyrinth\_sdl()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}} display\+\_\+labyrinth\+\_\+sdl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
+
+
+Launches the SDL display of the labyrinth and handles interactive gameplay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & \doxylink{structLabyrinth}{Labyrinth} to display and interact with. \\
+\hline
+{\em length} & Height of the labyrinth. \\
+\hline
+{\em width} & Width of the labyrinth. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Final score of the player. 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__player__movement_8h_a87e5c5346a8c298fb73c295ae57d45ca}\label{labyrinth__player__movement_8h_a87e5c5346a8c298fb73c295ae57d45ca} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!display\_points\_on\_ui@{display\_points\_on\_ui}}
+\index{display\_points\_on\_ui@{display\_points\_on\_ui}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{display\_points\_on\_ui()}{display\_points\_on\_ui()}}
+{\footnotesize\ttfamily void display\+\_\+points\+\_\+on\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*}}]{font }\end{DoxyParamCaption})}
+
+
+
+Displays the player\textquotesingle{}s coin count on the SDL interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the labyrinth structure. \\
+\hline
+{\em renderer} & SDL renderer used to draw the text. \\
+\hline
+{\em font} & TTF font used for rendering text. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{labyrinth__player__movement_8h_ac5e76367aa2bd909fbfdbc9174d81de7}\label{labyrinth__player__movement_8h_ac5e76367aa2bd909fbfdbc9174d81de7} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!display\_time\_on\_ui@{display\_time\_on\_ui}}
+\index{display\_time\_on\_ui@{display\_time\_on\_ui}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{display\_time\_on\_ui()}{display\_time\_on\_ui()}}
+{\footnotesize\ttfamily void display\+\_\+time\+\_\+on\+\_\+ui (\begin{DoxyParamCaption}\item[{Uint32}]{start\+\_\+time,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*}}]{font }\end{DoxyParamCaption})}
+
+
+
+Displays the elapsed time on the SDL interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+time} & Start time of the game (SDL\+\_\+\+Get\+Ticks). \\
+\hline
+{\em renderer} & SDL renderer used to draw the text. \\
+\hline
+{\em font} & TTF font used for rendering text. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{labyrinth__player__movement_8h_a0a62a11f992a30cb1fc562c0336a50e1}\label{labyrinth__player__movement_8h_a0a62a11f992a30cb1fc562c0336a50e1} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!is\_ended@{is\_ended}}
+\index{is\_ended@{is\_ended}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{is\_ended()}{is\_ended()}}
+{\footnotesize\ttfamily int is\+\_\+ended (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{nb\+\_\+iterations,  }\item[{float}]{elapsed\+\_\+sec }\end{DoxyParamCaption})}
+
+
+
+Checks whether the player has reached the end of the labyrinth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the labyrinth structure. \\
+\hline
+{\em nb\+\_\+iterations} & Number of moves made. \\
+\hline
+{\em elapsed\+\_\+sec} & Time elapsed since the start of the game. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the game is finished, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__player__movement_8h_afd7648c81d7ba445150cae509d64432f}\label{labyrinth__player__movement_8h_afd7648c81d7ba445150cae509d64432f} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!move\_player@{move\_player}}
+\index{move\_player@{move\_player}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{move\_player()}{move\_player()}}
+{\footnotesize\ttfamily void move\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{dx,  }\item[{int}]{dy,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Moves the player in the labyrinth according to the given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the labyrinth structure. \\
+\hline
+{\em dx} & Horizontal displacement (-\/1, 0, 1). \\
+\hline
+{\em dy} & Vertical displacement (-\/1, 0, 1). \\
+\hline
+{\em renderer} & SDL renderer to update the display.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the player moves onto a key (KEY), they acquire it. 
+
+If the player moves onto a chest (CHEST), 1000 coins are added. 
+
+If the player moves onto a trap (TRAP), 500 coins are subtracted. 
+
+Movement blocked by a wall (WALL) or door (DOOR) is ignored. 
+\end{DoxyNote}
+\Hypertarget{labyrinth__player__movement_8h_a443946bcaa0cc4e80fd99e41870a9a7f}\label{labyrinth__player__movement_8h_a443946bcaa0cc4e80fd99e41870a9a7f} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!movement\_orchestrator@{movement\_orchestrator}}
+\index{movement\_orchestrator@{movement\_orchestrator}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{movement\_orchestrator()}{movement\_orchestrator()}}
+{\footnotesize\ttfamily int movement\+\_\+orchestrator (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event}]{e,  }\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Handles keyboard input to orchestrate player movement or actions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & SDL event corresponding to a key press. \\
+\hline
+{\em labyrinth} & Pointer to the labyrinth structure. \\
+\hline
+{\em renderer} & SDL renderer to update the display. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a movement occurred, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__player__movement_8h_a73bb89082c65b39278b8624ef2b8096a}\label{labyrinth__player__movement_8h_a73bb89082c65b39278b8624ef2b8096a} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!redraw\_case@{redraw\_case}}
+\index{redraw\_case@{redraw\_case}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{redraw\_case()}{redraw\_case()}}
+{\footnotesize\ttfamily void redraw\+\_\+case (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Redraws a specific cell of the labyrinth in the SDL window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & SDL renderer used to draw. \\
+\hline
+{\em labyrinth} & Pointer to the labyrinth structure. \\
+\hline
+{\em x} & X-\/coordinate (row) of the cell. \\
+\hline
+{\em y} & Y-\/coordinate (column) of the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{labyrinth__player__movement_8h_aa7e8c6115c06994df12f475f96830577}\label{labyrinth__player__movement_8h_aa7e8c6115c06994df12f475f96830577} 
+\index{labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}!try\_unlock\_door@{try\_unlock\_door}}
+\index{try\_unlock\_door@{try\_unlock\_door}!labyrinth\_player\_movement.h@{labyrinth\_player\_movement.h}}
+\doxysubsubsection{\texorpdfstring{try\_unlock\_door()}{try\_unlock\_door()}}
+{\footnotesize\ttfamily void try\+\_\+unlock\+\_\+door (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Attempts to unlock the door in front of the exit if the player has the key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the labyrinth structure. \\
+\hline
+{\em renderer} & SDL renderer to update the display. \\
+\hline
+\end{DoxyParams}

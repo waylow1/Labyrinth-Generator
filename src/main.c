@@ -13,17 +13,19 @@ int main(void) {
     Score final_score;
 
     Ladder * ladder = malloc(sizeof(Ladder));
+    ladder->count = 0;
     ladder->scores = malloc(10 * sizeof(Score));
     char * labyrinth_name = NULL;
     Labyrinth labyrinth;
     int length = 0, width = 0;
+    int seed;
 
     while (1) {
         display_menu();
         int choice = get_user_choice();
         switch (choice) {
             case 1:
-                int seed = (int)time(NULL);
+                seed = (int)time(NULL);
                 srand(seed);
                 printf("Generating a new labyrinth...\n");
                 ask_for_labyrinth_size_and_name(&length, &width, &labyrinth_name);
@@ -48,6 +50,15 @@ int main(void) {
 
                 load_labyrinth_scores(ladder, labyrinth_name);
                 
+                if (length <= 0 || width <= 0) {
+                    printf("❌ Failed to load labyrinth '%s'. Please check that the file exists in config/.\n", labyrinth_name);
+                    if (labyrinth_name) {
+                        free(labyrinth_name);
+                        labyrinth_name = NULL;
+                    }
+                    break; 
+                }
+
                 srand(seed);
 
                 printf("Loaded labyrinth '%s' with size %dx%d and seed %d\n", labyrinth_name, length, width, seed);
@@ -79,17 +90,29 @@ int main(void) {
                 break;
 
             case 4:
-                free(ladder->scores);
-                free(ladder);
-                free_labyrinth(labyrinth, length, width);
-                if (labyrinth_name) free(labyrinth_name);
-                
-                labyrinth_name = NULL;
-
                 printf("Exiting the program. Goodbye!\n");
+
+                if (ladder) {
+                    if (ladder->scores) {
+                        free(ladder->scores);
+                        ladder->scores = NULL;
+                    }
+                    free(ladder);
+                    ladder = NULL;
+                }
+
+                if (labyrinth.grid) {
+                    free_labyrinth(labyrinth, length, width);
+                    labyrinth.grid = NULL;
+                }
+
+                if (labyrinth_name) {
+                    free(labyrinth_name);
+                    labyrinth_name = NULL;
+                }
+
                 exit(0);
                 break;
-
             default:
                 printf("Invalid choice. Please try again.\n");
                 break;

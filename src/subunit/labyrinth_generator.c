@@ -146,7 +146,8 @@ void generate_objects(Labyrinth * labyrinth, int length, int width) {
         generate_traps(labyrinth, length, width, nb_chests);
 
         labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] = PLAYER;
-        labyrinth->grid[labyrinth->ending_x][labyrinth->ending_y] = END;
+        labyrinth->grid[labyrinth->ending_x][labyrinth->ending_y] = DOOR;
+        labyrinth->grid[labyrinth->ending_x+1][labyrinth->ending_y] = END;
         labyrinth->has_key = 0;
         labyrinth->coins = 50;
     }

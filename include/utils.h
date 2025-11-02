@@ -28,9 +28,8 @@ typedef struct Labyrinth{
 } Labyrinth;
 
 typedef struct score{
-    char * name;
+    char name[100];
     int coins;
-
 } Score;
 
 typedef struct ladder{
@@ -38,7 +37,7 @@ typedef struct ladder{
     int count;
 } Ladder;
 
-enum BOX_TYPE {WALL = '#', PATH = ' ', PLAYER = 'o', END = '-', KEY = 'k', CHEST = 'c', TRAP = 'x'};
+enum BOX_TYPE {WALL = '#', PATH = ' ', PLAYER = 'o', END = '-', KEY = 'k', CHEST = 'c', TRAP = 'x', DOOR = 'd'};
 
 /**
  * @brief Allocates memory for a 2D array of LabyrinthCell structures.

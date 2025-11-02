@@ -95,9 +95,245 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa9a656eb79177ad3bb4c4b5ed3805f81" id="r_aa9a656eb79177ad3bb4c4b5ed3805f81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLabyrinth.html">Labyrinth</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#aa9a656eb79177ad3bb4c4b5ed3805f81">generate_labyrinth</a> (int length, int width)</td></tr>
+<tr class="memdesc:aa9a656eb79177ad3bb4c4b5ed3805f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a complete labyrinth with walls, paths, player, exit, key, chests, and traps.  <br /></td></tr>
 <tr class="separator:aa9a656eb79177ad3bb4c4b5ed3805f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a89f1096ca9103967438a007b43d825" id="r_a6a89f1096ca9103967438a007b43d825"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#a6a89f1096ca9103967438a007b43d825">choose_wall</a> (int length, int width, int x, int y, int *nx, int *ny)</td></tr>
+<tr class="memdesc:a6a89f1096ca9103967438a007b43d825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly chooses a wall adjacent to a given cell.  <br /></td></tr>
+<tr class="separator:a6a89f1096ca9103967438a007b43d825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659942f491d71fd0661276346c33afbc" id="r_a659942f491d71fd0661276346c33afbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#a659942f491d71fd0661276346c33afbc">merge_sets</a> (<a class="el" href="utils_8h.html#a07e4c11e475592679fb7baaed1402ee2">LabyrinthCell</a> **labyrinth, int length, int width, int old_val, int new_val)</td></tr>
+<tr class="memdesc:a659942f491d71fd0661276346c33afbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges two sets of cells by replacing all occurrences of old_val with new_val.  <br /></td></tr>
+<tr class="separator:a659942f491d71fd0661276346c33afbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8664f3474628d905e95f5f49027fcbe" id="r_aa8664f3474628d905e95f5f49027fcbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#aa8664f3474628d905e95f5f49027fcbe">open_wall</a> (int dir, int x, int y, <a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a> vertical_walls, <a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a> horizontal_walls)</td></tr>
+<tr class="memdesc:aa8664f3474628d905e95f5f49027fcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a wall in the labyrinth based on the direction.  <br /></td></tr>
+<tr class="separator:aa8664f3474628d905e95f5f49027fcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade99ab485be2c80411a01806e0b0fe9e" id="r_ade99ab485be2c80411a01806e0b0fe9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#ade99ab485be2c80411a01806e0b0fe9e">get_opened_walls</a> (<a class="el" href="utils_8h.html#a07e4c11e475592679fb7baaed1402ee2">LabyrinthCell</a> **labyrinth, <a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a> vertical_walls, <a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a> horizontal_walls, int length, int width)</td></tr>
+<tr class="memdesc:ade99ab485be2c80411a01806e0b0fe9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens walls randomly to generate the maze connectivity.  <br /></td></tr>
+<tr class="separator:ade99ab485be2c80411a01806e0b0fe9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8198ea9b488d8c2eb4c9ab6e024914bf" id="r_a8198ea9b488d8c2eb4c9ab6e024914bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#a8198ea9b488d8c2eb4c9ab6e024914bf">generate_key</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, int length, int width)</td></tr>
+<tr class="memdesc:a8198ea9b488d8c2eb4c9ab6e024914bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a key in a random odd position within the labyrinth.  <br /></td></tr>
+<tr class="separator:a8198ea9b488d8c2eb4c9ab6e024914bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3095f31aac70387d6c67d23f8cddc2df" id="r_a3095f31aac70387d6c67d23f8cddc2df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#a3095f31aac70387d6c67d23f8cddc2df">generate_chests</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, int length, int width)</td></tr>
+<tr class="memdesc:a3095f31aac70387d6c67d23f8cddc2df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates random chests in the labyrinth grid.  <br /></td></tr>
+<tr class="separator:a3095f31aac70387d6c67d23f8cddc2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72317e89ba7b4e3eaf5efc5a5a92130d" id="r_a72317e89ba7b4e3eaf5efc5a5a92130d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#a72317e89ba7b4e3eaf5efc5a5a92130d">generate_traps</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, int length, int width, int nb_chests)</td></tr>
+<tr class="memdesc:a72317e89ba7b4e3eaf5efc5a5a92130d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates traps in the labyrinth grid, usually half the number of chests.  <br /></td></tr>
+<tr class="separator:a72317e89ba7b4e3eaf5efc5a5a92130d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af680eb8a9fb0c4a08c6851dea7807d47" id="r_af680eb8a9fb0c4a08c6851dea7807d47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#af680eb8a9fb0c4a08c6851dea7807d47">generate_objects</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, int length, int width)</td></tr>
+<tr class="memdesc:af680eb8a9fb0c4a08c6851dea7807d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Places the player, exit, key, chests, and traps in the labyrinth grid.  <br /></td></tr>
+<tr class="separator:af680eb8a9fb0c4a08c6851dea7807d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f29ab5897b33f8998b9b4d78a85132" id="r_ab7f29ab5897b33f8998b9b4d78a85132"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLabyrinth.html">Labyrinth</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8h.html#ab7f29ab5897b33f8998b9b4d78a85132">concat_vertical_horizontal_walls</a> (<a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a> vertical_walls, <a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a> horizontal_walls, int length, int width)</td></tr>
+<tr class="memdesc:ab7f29ab5897b33f8998b9b4d78a85132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the vertical and horizontal wall matrices into a full labyrinth grid.  <br /></td></tr>
+<tr class="separator:ab7f29ab5897b33f8998b9b4d78a85132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a6a89f1096ca9103967438a007b43d825" name="a6a89f1096ca9103967438a007b43d825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a89f1096ca9103967438a007b43d825">&#9670;&#160;</a></span>choose_wall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int choose_wall </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>nx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ny</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Randomly chooses a wall adjacent to a given cell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Number of rows of cells. </td></tr>
+    <tr><td class="paramname">width</td><td>Number of columns of cells. </td></tr>
+    <tr><td class="paramname">x</td><td>Current cell row index. </td></tr>
+    <tr><td class="paramname">y</td><td>Current cell column index. </td></tr>
+    <tr><td class="paramname">nx</td><td>Pointer to store the neighboring cell row index. </td></tr>
+    <tr><td class="paramname">ny</td><td>Pointer to store the neighboring cell column index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Direction of chosen wall (0=down, 1=right, 2=up, 3=left) or -1 if invalid. </dd></dl>
+
+</div>
+</div>
+<a id="ab7f29ab5897b33f8998b9b4d78a85132" name="ab7f29ab5897b33f8998b9b4d78a85132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f29ab5897b33f8998b9b4d78a85132">&#9670;&#160;</a></span>concat_vertical_horizontal_walls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structLabyrinth.html">Labyrinth</a> concat_vertical_horizontal_walls </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a>&#160;</td>
+          <td class="paramname"><em>vertical_walls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a>&#160;</td>
+          <td class="paramname"><em>horizontal_walls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts the vertical and horizontal wall matrices into a full labyrinth grid. </p>
+<p>Also calls generate_objects to place player, exit, key, chests, and traps.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertical_walls</td><td>Vertical walls structure. </td></tr>
+    <tr><td class="paramname">horizontal_walls</td><td>Horizontal walls structure. </td></tr>
+    <tr><td class="paramname">length</td><td>Number of rows of cells. </td></tr>
+    <tr><td class="paramname">width</td><td>Number of columns of cells. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structLabyrinth.html">Labyrinth</a> structure with the completed grid. </dd></dl>
+
+</div>
+</div>
+<a id="a3095f31aac70387d6c67d23f8cddc2df" name="a3095f31aac70387d6c67d23f8cddc2df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3095f31aac70387d6c67d23f8cddc2df">&#9670;&#160;</a></span>generate_chests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int generate_chests </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLabyrinth.html">Labyrinth</a> *&#160;</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates random chests in the labyrinth grid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html">Labyrinth</a> structure. </td></tr>
+    <tr><td class="paramname">length</td><td>Logical height of the labyrinth. </td></tr>
+    <tr><td class="paramname">width</td><td>Logical width of the labyrinth. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of chests placed. </dd></dl>
+
+</div>
+</div>
+<a id="a8198ea9b488d8c2eb4c9ab6e024914bf" name="a8198ea9b488d8c2eb4c9ab6e024914bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8198ea9b488d8c2eb4c9ab6e024914bf">&#9670;&#160;</a></span>generate_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generate_key </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLabyrinth.html">Labyrinth</a> *&#160;</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a key in a random odd position within the labyrinth. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html">Labyrinth</a> structure. </td></tr>
+    <tr><td class="paramname">length</td><td>Logical height of the labyrinth. </td></tr>
+    <tr><td class="paramname">width</td><td>Logical width of the labyrinth. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa9a656eb79177ad3bb4c4b5ed3805f81" name="aa9a656eb79177ad3bb4c4b5ed3805f81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9a656eb79177ad3bb4c4b5ed3805f81">&#9670;&#160;</a></span>generate_labyrinth()</h2>
 
@@ -123,6 +359,288 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generates a complete labyrinth with walls, paths, player, exit, key, chests, and traps. </p>
+<p>This function uses randomized Prim/Kruskal-like logic to open walls between cells, then places objects in the labyrinth grid.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Logical height of the labyrinth (number of rows of cells, before expansion). </td></tr>
+    <tr><td class="paramname">width</td><td>Logical width of the labyrinth (number of columns of cells, before expansion). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structLabyrinth.html">Labyrinth</a> structure containing the full generated labyrinth grid. </dd></dl>
+
+</div>
+</div>
+<a id="af680eb8a9fb0c4a08c6851dea7807d47" name="af680eb8a9fb0c4a08c6851dea7807d47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af680eb8a9fb0c4a08c6851dea7807d47">&#9670;&#160;</a></span>generate_objects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generate_objects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLabyrinth.html">Labyrinth</a> *&#160;</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Places the player, exit, key, chests, and traps in the labyrinth grid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html">Labyrinth</a> structure. </td></tr>
+    <tr><td class="paramname">length</td><td>Logical height of the labyrinth. </td></tr>
+    <tr><td class="paramname">width</td><td>Logical width of the labyrinth. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a72317e89ba7b4e3eaf5efc5a5a92130d" name="a72317e89ba7b4e3eaf5efc5a5a92130d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72317e89ba7b4e3eaf5efc5a5a92130d">&#9670;&#160;</a></span>generate_traps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generate_traps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLabyrinth.html">Labyrinth</a> *&#160;</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_chests</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates traps in the labyrinth grid, usually half the number of chests. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html">Labyrinth</a> structure. </td></tr>
+    <tr><td class="paramname">length</td><td>Logical height of the labyrinth. </td></tr>
+    <tr><td class="paramname">width</td><td>Logical width of the labyrinth. </td></tr>
+    <tr><td class="paramname">nb_chests</td><td>Number of chests placed (used to compute trap count). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ade99ab485be2c80411a01806e0b0fe9e" name="ade99ab485be2c80411a01806e0b0fe9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade99ab485be2c80411a01806e0b0fe9e">&#9670;&#160;</a></span>get_opened_walls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void get_opened_walls </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a07e4c11e475592679fb7baaed1402ee2">LabyrinthCell</a> **&#160;</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a>&#160;</td>
+          <td class="paramname"><em>vertical_walls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a>&#160;</td>
+          <td class="paramname"><em>horizontal_walls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens walls randomly to generate the maze connectivity. </p>
+<p>Uses a randomized approach to ensure all cells are reachable.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>2D LabyrinthCell array. </td></tr>
+    <tr><td class="paramname">vertical_walls</td><td>Vertical walls structure. </td></tr>
+    <tr><td class="paramname">horizontal_walls</td><td>Horizontal walls structure. </td></tr>
+    <tr><td class="paramname">length</td><td>Number of rows of cells. </td></tr>
+    <tr><td class="paramname">width</td><td>Number of columns of cells. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a659942f491d71fd0661276346c33afbc" name="a659942f491d71fd0661276346c33afbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a659942f491d71fd0661276346c33afbc">&#9670;&#160;</a></span>merge_sets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void merge_sets </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a07e4c11e475592679fb7baaed1402ee2">LabyrinthCell</a> **&#160;</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>old_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>new_val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merges two sets of cells by replacing all occurrences of old_val with new_val. </p>
+<p>Used to maintain connectivity when removing walls between cells.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the 2D LabyrinthCell array. </td></tr>
+    <tr><td class="paramname">length</td><td>Number of rows. </td></tr>
+    <tr><td class="paramname">width</td><td>Number of columns. </td></tr>
+    <tr><td class="paramname">old_val</td><td>Value to replace. </td></tr>
+    <tr><td class="paramname">new_val</td><td>New value to assign. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa8664f3474628d905e95f5f49027fcbe" name="aa8664f3474628d905e95f5f49027fcbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8664f3474628d905e95f5f49027fcbe">&#9670;&#160;</a></span>open_wall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void open_wall </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a>&#160;</td>
+          <td class="paramname"><em>vertical_walls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a>&#160;</td>
+          <td class="paramname"><em>horizontal_walls</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens a wall in the labyrinth based on the direction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Direction of the wall (0=down, 1=right, 2=up, 3=left). </td></tr>
+    <tr><td class="paramname">x</td><td>Cell row index. </td></tr>
+    <tr><td class="paramname">y</td><td>Cell column index. </td></tr>
+    <tr><td class="paramname">vertical_walls</td><td>Vertical walls structure. </td></tr>
+    <tr><td class="paramname">horizontal_walls</td><td>Horizontal walls structure. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

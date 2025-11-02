@@ -16,25 +16,25 @@ Include dependency graph for labyrinth\+\_\+generator.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{labyrinth__generator_8c_a6a89f1096ca9103967438a007b43d825}{choose\+\_\+wall}} (int length, int width, int x, int y, int \texorpdfstring{$\ast$}{*}nx, int \texorpdfstring{$\ast$}{*}ny)
-\item 
+\begin{DoxyCompactList}\small\item\em Randomly chooses a wall adjacent to a given cell. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{labyrinth__generator_8c_a659942f491d71fd0661276346c33afbc}{merge\+\_\+sets}} (\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}labyrinth, int length, int width, int old\+\_\+val, int new\+\_\+val)
-\item 
+\begin{DoxyCompactList}\small\item\em Merges two sets of cells by replacing all occurrences of old\+\_\+val with new\+\_\+val. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{labyrinth__generator_8c_aa8664f3474628d905e95f5f49027fcbe}{open\+\_\+wall}} (int dir, int x, int y, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} vertical\+\_\+walls, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} horizontal\+\_\+walls)
-\item 
+\begin{DoxyCompactList}\small\item\em Opens a wall in the labyrinth based on the direction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{labyrinth__generator_8c_ade99ab485be2c80411a01806e0b0fe9e}{get\+\_\+opened\+\_\+walls}} (\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}labyrinth, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} vertical\+\_\+walls, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} horizontal\+\_\+walls, int length, int width)
-\item 
+\begin{DoxyCompactList}\small\item\em Opens walls randomly to generate the maze connectivity. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{labyrinth__generator_8c_a8198ea9b488d8c2eb4c9ab6e024914bf}{generate\+\_\+key}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int length, int width)
-\item 
+\begin{DoxyCompactList}\small\item\em Generates a key in a random odd position within the labyrinth. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{labyrinth__generator_8c_a3095f31aac70387d6c67d23f8cddc2df}{generate\+\_\+chests}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int length, int width)
-\item 
+\begin{DoxyCompactList}\small\item\em Generates random chests in the labyrinth grid. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{labyrinth__generator_8c_a72317e89ba7b4e3eaf5efc5a5a92130d}{generate\+\_\+traps}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int length, int width, int nb\+\_\+chests)
-\item 
+\begin{DoxyCompactList}\small\item\em Generates traps in the labyrinth grid, usually half the number of chests. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47}{generate\+\_\+objects}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int length, int width)
-\item 
+\begin{DoxyCompactList}\small\item\em Places the player, exit, key, chests, and traps in the labyrinth grid. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{labyrinth__generator_8c_ab7f29ab5897b33f8998b9b4d78a85132}{concat\+\_\+vertical\+\_\+horizontal\+\_\+walls}} (\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} vertical\+\_\+walls, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} horizontal\+\_\+walls, int length, int width)
-\item 
+\begin{DoxyCompactList}\small\item\em Converts the vertical and horizontal wall matrices into a full labyrinth grid. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{labyrinth__generator_8c_aa9a656eb79177ad3bb4c4b5ed3805f81}{generate\+\_\+labyrinth}} (int length, int width)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates a complete labyrinth with walls, paths, player, exit, key, chests, and traps. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -44,57 +44,227 @@ void \mbox{\hyperlink{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47}
 \doxysubsubsection{\texorpdfstring{choose\_wall()}{choose\_wall()}}
 {\footnotesize\ttfamily int choose\+\_\+wall (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{width,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \texorpdfstring{$\ast$}{*}}]{nx,  }\item[{int \texorpdfstring{$\ast$}{*}}]{ny }\end{DoxyParamCaption})}
 
+
+
+Randomly chooses a wall adjacent to a given cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & Number of rows of cells. \\
+\hline
+{\em width} & Number of columns of cells. \\
+\hline
+{\em x} & Current cell row index. \\
+\hline
+{\em y} & Current cell column index. \\
+\hline
+{\em nx} & Pointer to store the neighboring cell row index. \\
+\hline
+{\em ny} & Pointer to store the neighboring cell column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Direction of chosen wall (0=down, 1=right, 2=up, 3=left) or -\/1 if invalid. 
+\end{DoxyReturn}
 \Hypertarget{labyrinth__generator_8c_ab7f29ab5897b33f8998b9b4d78a85132}\label{labyrinth__generator_8c_ab7f29ab5897b33f8998b9b4d78a85132} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!concat\_vertical\_horizontal\_walls@{concat\_vertical\_horizontal\_walls}}
 \index{concat\_vertical\_horizontal\_walls@{concat\_vertical\_horizontal\_walls}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{concat\_vertical\_horizontal\_walls()}{concat\_vertical\_horizontal\_walls()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structLabyrinth}{Labyrinth}} concat\+\_\+vertical\+\_\+horizontal\+\_\+walls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}]{vertical\+\_\+walls,  }\item[{\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}]{horizontal\+\_\+walls,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
+
+
+Converts the vertical and horizontal wall matrices into a full labyrinth grid. 
+
+Also calls generate\+\_\+objects to place player, exit, key, chests, and traps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertical\+\_\+walls} & Vertical walls structure. \\
+\hline
+{\em horizontal\+\_\+walls} & Horizontal walls structure. \\
+\hline
+{\em length} & Number of rows of cells. \\
+\hline
+{\em width} & Number of columns of cells. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structLabyrinth}{Labyrinth} structure with the completed grid. 
+\end{DoxyReturn}
 \Hypertarget{labyrinth__generator_8c_a3095f31aac70387d6c67d23f8cddc2df}\label{labyrinth__generator_8c_a3095f31aac70387d6c67d23f8cddc2df} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_chests@{generate\_chests}}
 \index{generate\_chests@{generate\_chests}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{generate\_chests()}{generate\_chests()}}
 {\footnotesize\ttfamily int generate\+\_\+chests (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
+
+
+Generates random chests in the labyrinth grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the \doxylink{structLabyrinth}{Labyrinth} structure. \\
+\hline
+{\em length} & Logical height of the labyrinth. \\
+\hline
+{\em width} & Logical width of the labyrinth. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of chests placed. 
+\end{DoxyReturn}
 \Hypertarget{labyrinth__generator_8c_a8198ea9b488d8c2eb4c9ab6e024914bf}\label{labyrinth__generator_8c_a8198ea9b488d8c2eb4c9ab6e024914bf} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_key@{generate\_key}}
 \index{generate\_key@{generate\_key}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{generate\_key()}{generate\_key()}}
 {\footnotesize\ttfamily void generate\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
+
+
+Generates a key in a random odd position within the labyrinth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the \doxylink{structLabyrinth}{Labyrinth} structure. \\
+\hline
+{\em length} & Logical height of the labyrinth. \\
+\hline
+{\em width} & Logical width of the labyrinth. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{labyrinth__generator_8c_aa9a656eb79177ad3bb4c4b5ed3805f81}\label{labyrinth__generator_8c_aa9a656eb79177ad3bb4c4b5ed3805f81} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_labyrinth@{generate\_labyrinth}}
 \index{generate\_labyrinth@{generate\_labyrinth}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{generate\_labyrinth()}{generate\_labyrinth()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structLabyrinth}{Labyrinth}} generate\+\_\+labyrinth (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
+
+
+Generates a complete labyrinth with walls, paths, player, exit, key, chests, and traps. 
+
+This function uses randomized Prim/\+Kruskal-\/like logic to open walls between cells, then places objects in the labyrinth grid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & Logical height of the labyrinth (number of rows of cells, before expansion). \\
+\hline
+{\em width} & Logical width of the labyrinth (number of columns of cells, before expansion). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structLabyrinth}{Labyrinth} structure containing the full generated labyrinth grid. 
+\end{DoxyReturn}
 \Hypertarget{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47}\label{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_objects@{generate\_objects}}
 \index{generate\_objects@{generate\_objects}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{generate\_objects()}{generate\_objects()}}
 {\footnotesize\ttfamily void generate\+\_\+objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
+
+
+Places the player, exit, key, chests, and traps in the labyrinth grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the \doxylink{structLabyrinth}{Labyrinth} structure. \\
+\hline
+{\em length} & Logical height of the labyrinth. \\
+\hline
+{\em width} & Logical width of the labyrinth. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{labyrinth__generator_8c_a72317e89ba7b4e3eaf5efc5a5a92130d}\label{labyrinth__generator_8c_a72317e89ba7b4e3eaf5efc5a5a92130d} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_traps@{generate\_traps}}
 \index{generate\_traps@{generate\_traps}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{generate\_traps()}{generate\_traps()}}
 {\footnotesize\ttfamily void generate\+\_\+traps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width,  }\item[{int}]{nb\+\_\+chests }\end{DoxyParamCaption})}
 
+
+
+Generates traps in the labyrinth grid, usually half the number of chests. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the \doxylink{structLabyrinth}{Labyrinth} structure. \\
+\hline
+{\em length} & Logical height of the labyrinth. \\
+\hline
+{\em width} & Logical width of the labyrinth. \\
+\hline
+{\em nb\+\_\+chests} & Number of chests placed (used to compute trap count). \\
+\hline
+\end{DoxyParams}
 \Hypertarget{labyrinth__generator_8c_ade99ab485be2c80411a01806e0b0fe9e}\label{labyrinth__generator_8c_ade99ab485be2c80411a01806e0b0fe9e} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!get\_opened\_walls@{get\_opened\_walls}}
 \index{get\_opened\_walls@{get\_opened\_walls}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{get\_opened\_walls()}{get\_opened\_walls()}}
 {\footnotesize\ttfamily void get\+\_\+opened\+\_\+walls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}]{vertical\+\_\+walls,  }\item[{\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}]{horizontal\+\_\+walls,  }\item[{int}]{length,  }\item[{int}]{width }\end{DoxyParamCaption})}
 
+
+
+Opens walls randomly to generate the maze connectivity. 
+
+Uses a randomized approach to ensure all cells are reachable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & 2D Labyrinth\+Cell array. \\
+\hline
+{\em vertical\+\_\+walls} & Vertical walls structure. \\
+\hline
+{\em horizontal\+\_\+walls} & Horizontal walls structure. \\
+\hline
+{\em length} & Number of rows of cells. \\
+\hline
+{\em width} & Number of columns of cells. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{labyrinth__generator_8c_a659942f491d71fd0661276346c33afbc}\label{labyrinth__generator_8c_a659942f491d71fd0661276346c33afbc} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!merge\_sets@{merge\_sets}}
 \index{merge\_sets@{merge\_sets}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{merge\_sets()}{merge\_sets()}}
 {\footnotesize\ttfamily void merge\+\_\+sets (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width,  }\item[{int}]{old\+\_\+val,  }\item[{int}]{new\+\_\+val }\end{DoxyParamCaption})}
 
+
+
+Merges two sets of cells by replacing all occurrences of old\+\_\+val with new\+\_\+val. 
+
+Used to maintain connectivity when removing walls between cells.
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the 2D Labyrinth\+Cell array. \\
+\hline
+{\em length} & Number of rows. \\
+\hline
+{\em width} & Number of columns. \\
+\hline
+{\em old\+\_\+val} & Value to replace. \\
+\hline
+{\em new\+\_\+val} & New value to assign. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{labyrinth__generator_8c_aa8664f3474628d905e95f5f49027fcbe}\label{labyrinth__generator_8c_aa8664f3474628d905e95f5f49027fcbe} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!open\_wall@{open\_wall}}
 \index{open\_wall@{open\_wall}!labyrinth\_generator.c@{labyrinth\_generator.c}}
 \doxysubsubsection{\texorpdfstring{open\_wall()}{open\_wall()}}
 {\footnotesize\ttfamily void open\+\_\+wall (\begin{DoxyParamCaption}\item[{int}]{dir,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}]{vertical\+\_\+walls,  }\item[{\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}]{horizontal\+\_\+walls }\end{DoxyParamCaption})}
 
+
+
+Opens a wall in the labyrinth based on the direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Direction of the wall (0=down, 1=right, 2=up, 3=left). \\
+\hline
+{\em x} & Cell row index. \\
+\hline
+{\em y} & Cell column index. \\
+\hline
+{\em vertical\+\_\+walls} & Vertical walls structure. \\
+\hline
+{\em horizontal\+\_\+walls} & Horizontal walls structure. \\
+\hline
+\end{DoxyParams}

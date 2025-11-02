@@ -3,7 +3,7 @@ var searchData=
   ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
   ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
   ['max_5fscores_2',['MAX_SCORES',['../labyrinth__score_8c.html#a85abf1c6889438cc50351afbacd7ff43',1,'labyrinth_score.c']]],
-  ['merge_5fsets_3',['merge_sets',['../labyrinth__generator_8c.html#a659942f491d71fd0661276346c33afbc',1,'labyrinth_generator.c']]],
+  ['merge_5fsets_3',['merge_sets',['../labyrinth__generator_8c.html#a659942f491d71fd0661276346c33afbc',1,'merge_sets(LabyrinthCell **labyrinth, int length, int width, int old_val, int new_val):&#160;labyrinth_generator.c'],['../labyrinth__generator_8h.html#a659942f491d71fd0661276346c33afbc',1,'merge_sets(LabyrinthCell **labyrinth, int length, int width, int old_val, int new_val):&#160;labyrinth_generator.c']]],
   ['minunit_2eh_4',['minunit.h',['../minunit_8h.html',1,'']]],
   ['minunit_5fepsilon_5',['MINUNIT_EPSILON',['../minunit_8h.html#a5720c3325f638c884373cfcaa77e547b',1,'minunit.h']]],
   ['minunit_5fmessage_5flen_6',['MINUNIT_MESSAGE_LEN',['../minunit_8h.html#a81bcce4f04ddd963158dca943feb68b2',1,'minunit.h']]],

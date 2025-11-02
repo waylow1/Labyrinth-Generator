@@ -7,8 +7,26 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ \mbox{\hyperlink{labyrinth__generator_8h_aa9a656eb79177ad3bb4c4b5ed3805f81}{generate\_labyrinth}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00016\ \mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ \mbox{\hyperlink{labyrinth__generator_8h_aa9a656eb79177ad3bb4c4b5ed3805f81}{generate\_labyrinth}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__generator_8h_a6a89f1096ca9103967438a007b43d825}{choose\_wall}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ *nx,\ \textcolor{keywordtype}{int}\ *ny);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_a659942f491d71fd0661276346c33afbc}{merge\_sets}}(\mbox{\hyperlink{structcell}{LabyrinthCell}}\ **labyrinth,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ old\_val,\ \textcolor{keywordtype}{int}\ new\_val);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_aa8664f3474628d905e95f5f49027fcbe}{open\_wall}}(\textcolor{keywordtype}{int}\ dir,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ vertical\_walls,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ horizontal\_walls);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_ade99ab485be2c80411a01806e0b0fe9e}{get\_opened\_walls}}(\mbox{\hyperlink{structcell}{LabyrinthCell}}\ **labyrinth,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ vertical\_walls,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ horizontal\_walls,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_a8198ea9b488d8c2eb4c9ab6e024914bf}{generate\_key}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__generator_8h_a3095f31aac70387d6c67d23f8cddc2df}{generate\_chests}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_a72317e89ba7b4e3eaf5efc5a5a92130d}{generate\_traps}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ nb\_chests);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__generator_8h_af680eb8a9fb0c4a08c6851dea7807d47}{generate\_objects}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00116\ \mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ \mbox{\hyperlink{labyrinth__generator_8h_ab7f29ab5897b33f8998b9b4d78a85132}{concat\_vertical\_horizontal\_walls}}(\mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ vertical\_walls,\ \mbox{\hyperlink{structwalls}{LabyrinthWalls}}\ horizontal\_walls,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LABYRINTH\_GENERATOR\_H}}
 
 \end{DoxyCode}

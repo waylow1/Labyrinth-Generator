@@ -55,7 +55,6 @@ void try_unlock_door(Labyrinth *labyrinth, SDL_Renderer *renderer) {
     int door_x = labyrinth->ending_x;
     int door_y = labyrinth->ending_y;
 
-    // Vérifie si la porte est devant la sortie
     if (((x == door_x - 1 && y == door_y) ||
          (x == door_x + 1 && y == door_y) ||
          (y == door_y - 1 && x == door_x) ||
@@ -151,7 +150,7 @@ int movement_orchestrator(SDL_Event e, Labyrinth *labyrinth, SDL_Renderer *rende
         case SDLK_d:
             move_player(labyrinth, 0, 1, renderer);
             return 1;
-        case SDLK_e:  // Déverrouiller la porte devant la sortie
+        case SDLK_e: 
             try_unlock_door(labyrinth, renderer);
             return 0;
         default:

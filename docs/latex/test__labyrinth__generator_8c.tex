@@ -1,0 +1,105 @@
+\doxysection{test/test\+\_\+labyrinth\+\_\+generator.c File Reference}
+\hypertarget{test__labyrinth__generator_8c}{}\label{test__labyrinth__generator_8c}\index{test/test\_labyrinth\_generator.c@{test/test\_labyrinth\_generator.c}}
+{\ttfamily \#include "{}minunit.\+h"{}}\newline
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+{\ttfamily \#include "{}labyrinth\+\_\+generator.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}monsters.\+h"{}}\newline
+Include dependency graph for test\+\_\+labyrinth\+\_\+generator.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test__labyrinth__generator_8c_ad8a586731b8c8b2fc1060ab675e6e7d6}{visited\+\_\+count}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}visited, int x, int y)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_af7071099d1aaf226de9089d7ee6cc09a}{MU\+\_\+\+TEST}} (test\+\_\+labyrinth\+\_\+is\+\_\+perfect)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_ab3d394660acbbe5b1870dd952e1bd069}{MU\+\_\+\+TEST}} (test\+\_\+utils\+\_\+allocation)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_a6ba7b9f0bf41718c1583e1d531306e6c}{MU\+\_\+\+TEST}} (test\+\_\+dump\+\_\+and\+\_\+load\+\_\+labyrinth)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_acd9fd26400f3b4566001248d661810ad}{MU\+\_\+\+TEST}} (test\+\_\+labyrinth\+\_\+invariants)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_a4632de13cebf3bd30a55ee5274a79446}{MU\+\_\+\+TEST}} (test\+\_\+deterministic\+\_\+generation\+\_\+with\+\_\+seed)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_ab8ac24ec1d9690d75dc9483b23e14c0c}{MU\+\_\+\+TEST}} (test\+\_\+choose\+\_\+wall\+\_\+contract\+\_\+and\+\_\+merge\+\_\+sets)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_a7185c42781540077628be09c82059ed4}{MU\+\_\+\+TEST}} (test\+\_\+open\+\_\+extra\+\_\+walls\+\_\+creates\+\_\+loops)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_a39a7fd72898c9678f87fe2fbda37076e}{MU\+\_\+\+TEST}} (test\+\_\+init\+\_\+monsters\+\_\+and\+\_\+move)
+\item 
+\mbox{\hyperlink{test__labyrinth__generator_8c_a2bb1dcd555d1f587daba80d8291163a8}{MU\+\_\+\+TEST\+\_\+\+SUITE}} (test\+\_\+suite)
+\item 
+int \mbox{\hyperlink{test__labyrinth__generator_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{test__labyrinth__generator_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test__labyrinth__generator_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!main@{main}}
+\index{main@{main}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_ab8ac24ec1d9690d75dc9483b23e14c0c}\label{test__labyrinth__generator_8c_ab8ac24ec1d9690d75dc9483b23e14c0c} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+choose\+\_\+wall\+\_\+contract\+\_\+and\+\_\+merge\+\_\+sets}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_a4632de13cebf3bd30a55ee5274a79446}\label{test__labyrinth__generator_8c_a4632de13cebf3bd30a55ee5274a79446} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+deterministic\+\_\+generation\+\_\+with\+\_\+seed}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_a6ba7b9f0bf41718c1583e1d531306e6c}\label{test__labyrinth__generator_8c_a6ba7b9f0bf41718c1583e1d531306e6c} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+dump\+\_\+and\+\_\+load\+\_\+labyrinth}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_a39a7fd72898c9678f87fe2fbda37076e}\label{test__labyrinth__generator_8c_a39a7fd72898c9678f87fe2fbda37076e} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+init\+\_\+monsters\+\_\+and\+\_\+move}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_acd9fd26400f3b4566001248d661810ad}\label{test__labyrinth__generator_8c_acd9fd26400f3b4566001248d661810ad} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+labyrinth\+\_\+invariants}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_af7071099d1aaf226de9089d7ee6cc09a}\label{test__labyrinth__generator_8c_af7071099d1aaf226de9089d7ee6cc09a} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+labyrinth\+\_\+is\+\_\+perfect}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_a7185c42781540077628be09c82059ed4}\label{test__labyrinth__generator_8c_a7185c42781540077628be09c82059ed4} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+open\+\_\+extra\+\_\+walls\+\_\+creates\+\_\+loops}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_ab3d394660acbbe5b1870dd952e1bd069}\label{test__labyrinth__generator_8c_ab3d394660acbbe5b1870dd952e1bd069} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST()}{MU\_TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST (\begin{DoxyParamCaption}\item[{test\+\_\+utils\+\_\+allocation}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_a2bb1dcd555d1f587daba80d8291163a8}\label{test__labyrinth__generator_8c_a2bb1dcd555d1f587daba80d8291163a8} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!MU\_TEST\_SUITE@{MU\_TEST\_SUITE}}
+\index{MU\_TEST\_SUITE@{MU\_TEST\_SUITE}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST\_SUITE()}{MU\_TEST\_SUITE()}}
+{\footnotesize\ttfamily MU\+\_\+\+TEST\+\_\+\+SUITE (\begin{DoxyParamCaption}\item[{test\+\_\+suite}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{test__labyrinth__generator_8c_ad8a586731b8c8b2fc1060ab675e6e7d6}\label{test__labyrinth__generator_8c_ad8a586731b8c8b2fc1060ab675e6e7d6} 
+\index{test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}!visited\_count@{visited\_count}}
+\index{visited\_count@{visited\_count}!test\_labyrinth\_generator.c@{test\_labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{visited\_count()}{visited\_count()}}
+{\footnotesize\ttfamily int visited\+\_\+count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}}}]{labyrinth,  }\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{visited,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+

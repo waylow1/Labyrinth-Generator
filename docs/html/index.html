@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Labyrinth Generator: Main Page</title>
+<title>Labyrinth Generator: Labyrinth Generator</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,10 +68,73 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Labyrinth Generator Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title"><a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> Generator </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_docs_2mainpage"></a> A small C + SDL2 project that generates, plays, and documents mazes. It features Easy/Hard difficulty, optional monsters with function-pointer AI, a simple score ladder, and a unit test suite.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Features</h1>
+<ul>
+<li>Maze generation (Kruskal-like) with objects (player, exit, door+key, chests, traps)</li>
+<li>Difficulty modes (Hard: extra loops + monsters)</li>
+<li>Monsters (ghosts/ogres) with behavior via function pointers</li>
+<li>Config I/O (seed, size, difficulty) and score persistence</li>
+<li>SDL rendering (grid, time, points) + ASCII debug displays</li>
+<li>Unit tests (minunit)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Project Layout</h1>
+<div class="fragment"><div class="line">Labyrinth-Generator/</div>
+<div class="line">├─ Doxyfile</div>
+<div class="line">├─ Makefile</div>
+<div class="line">├─ README.md</div>
+<div class="line">├─ asset/</div>
+<div class="line">├─ bin/</div>
+<div class="line">│  ├─ labyrinth</div>
+<div class="line">│  └─ test_labyrinth</div>
+<div class="line">├─ build/</div>
+<div class="line">├─ config/</div>
+<div class="line">│  ├─ labyrinth8572.cfg-example</div>
+<div class="line">│  └─ toto.cfg</div>
+<div class="line">├─ docs/      (generated output: html/, latex/)</div>
+<div class="line">│  └─ mainpage.md   (this page)</div>
+<div class="line">├─ include/</div>
+<div class="line">│  ├─ displays.h</div>
+<div class="line">│  ├─ labyrinth_generator.h</div>
+<div class="line">│  ├─ labyrinth_menu.h</div>
+<div class="line">│  ├─ labyrinth_player_movement.h</div>
+<div class="line">│  ├─ labyrinth_score.h</div>
+<div class="line">│  ├─ minunit.h</div>
+<div class="line">│  ├─ monsters.h</div>
+<div class="line">│  └─ utils.h</div>
+<div class="line">├─ score/</div>
+<div class="line">│  └─ *.score</div>
+<div class="line">├─ src/</div>
+<div class="line">│  ├─ main.c</div>
+<div class="line">│  └─ subunit/</div>
+<div class="line">│     ├─ displays.c</div>
+<div class="line">│     ├─ labyrinth_generator.c</div>
+<div class="line">│     ├─ labyrinth_menu.c</div>
+<div class="line">│     ├─ labyrinth_player_movement.c</div>
+<div class="line">│     ├─ labyrinth_score.c</div>
+<div class="line">│     ├─ monsters.c</div>
+<div class="line">│     └─ utils.c</div>
+<div class="line">└─ test/</div>
+<div class="line">   └─ test_labyrinth_generator.c</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+Build &amp; Run</h1>
+<div class="fragment"><div class="line">make</div>
+<div class="line">./bin/labyrinth</div>
+<div class="line"># Run tests</div>
+<div class="line">./bin/test_labyrinth</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+Documentation</h1>
+<ul>
+<li>Regenerate: <code>doxygen Doxyfile</code></li>
+<li>Open: <code>docs/html/index.html</code> </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

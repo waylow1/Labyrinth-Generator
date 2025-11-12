@@ -1,0 +1,70 @@
+\chapter{Labyrinth Generator}
+\hypertarget{index}{}\label{index}\index{Labyrinth Generator@{Labyrinth Generator}}
+\label{index_md_docs_2mainpage}%
+\Hypertarget{index_md_docs_2mainpage}%
+ A small C + SDL2 project that generates, plays, and documents mazes. It features Easy/\+Hard difficulty, optional monsters with function-\/pointer AI, a simple score ladder, and a unit test suite.\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Maze generation (Kruskal-\/like) with objects (player, exit, door+key, chests, traps)
+\item Difficulty modes (Hard\+: extra loops + monsters)
+\item Monsters (ghosts/ogres) with behavior via function pointers
+\item Config I/O (seed, size, difficulty) and score persistence
+\item SDL rendering (grid, time, points) + ASCII debug displays
+\item Unit tests (minunit)
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Project Layout}{Project Layout}}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Labyrinth-\/Generator/}
+\DoxyCodeLine{├─\ Doxyfile}
+\DoxyCodeLine{├─\ Makefile}
+\DoxyCodeLine{├─\ README.md}
+\DoxyCodeLine{├─\ asset/}
+\DoxyCodeLine{├─\ bin/}
+\DoxyCodeLine{│\ \ ├─\ labyrinth}
+\DoxyCodeLine{│\ \ └─\ test\_labyrinth}
+\DoxyCodeLine{├─\ build/}
+\DoxyCodeLine{├─\ config/}
+\DoxyCodeLine{│\ \ ├─\ labyrinth8572.cfg-\/example}
+\DoxyCodeLine{│\ \ └─\ toto.cfg}
+\DoxyCodeLine{├─\ docs/\ \ \ \ \ \ (generated\ output:\ html/,\ latex/)}
+\DoxyCodeLine{│\ \ └─\ mainpage.md\ \ \ (this\ page)}
+\DoxyCodeLine{├─\ include/}
+\DoxyCodeLine{│\ \ ├─\ displays.h}
+\DoxyCodeLine{│\ \ ├─\ labyrinth\_generator.h}
+\DoxyCodeLine{│\ \ ├─\ labyrinth\_menu.h}
+\DoxyCodeLine{│\ \ ├─\ labyrinth\_player\_movement.h}
+\DoxyCodeLine{│\ \ ├─\ labyrinth\_score.h}
+\DoxyCodeLine{│\ \ ├─\ minunit.h}
+\DoxyCodeLine{│\ \ ├─\ monsters.h}
+\DoxyCodeLine{│\ \ └─\ utils.h}
+\DoxyCodeLine{├─\ score/}
+\DoxyCodeLine{│\ \ └─\ *.score}
+\DoxyCodeLine{├─\ src/}
+\DoxyCodeLine{│\ \ ├─\ main.c}
+\DoxyCodeLine{│\ \ └─\ subunit/}
+\DoxyCodeLine{│\ \ \ \ \ ├─\ displays.c}
+\DoxyCodeLine{│\ \ \ \ \ ├─\ labyrinth\_generator.c}
+\DoxyCodeLine{│\ \ \ \ \ ├─\ labyrinth\_menu.c}
+\DoxyCodeLine{│\ \ \ \ \ ├─\ labyrinth\_player\_movement.c}
+\DoxyCodeLine{│\ \ \ \ \ ├─\ labyrinth\_score.c}
+\DoxyCodeLine{│\ \ \ \ \ ├─\ monsters.c}
+\DoxyCodeLine{│\ \ \ \ \ └─\ utils.c}
+\DoxyCodeLine{└─\ test/}
+\DoxyCodeLine{\ \ \ └─\ test\_labyrinth\_generator.c}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Build \& Run}{Build \& Run}}\label{index_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+\DoxyCodeLine{./bin/labyrinth}
+\DoxyCodeLine{\#\ Run\ tests}
+\DoxyCodeLine{./bin/test\_labyrinth}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Regenerate\+: {\ttfamily doxygen Doxyfile}
+\item Open\+: {\ttfamily docs/html/index.\+html} 
+\end{DoxyItemize}

@@ -8,3 +8,91 @@ Console menu utilities for generating, loading, and playing a labyrinth.
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 Include dependency graph for labyrinth\+\_\+menu.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{labyrinth__menu_8h_a65c493e4917b50c983f9efee5b278f1c}{display\+\_\+menu}} (void)
+\begin{DoxyCompactList}\small\item\em Displays the main menu for the \doxylink{structLabyrinth}{Labyrinth} Generator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__menu_8h_aa5c7f2391fb537da2006bf3d6189b70c}{ask\+\_\+for\+\_\+labyrinth\+\_\+size\+\_\+and\+\_\+name}} (int \texorpdfstring{$\ast$}{*}length, int \texorpdfstring{$\ast$}{*}width, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Asks the user for the labyrinth size and its name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{labyrinth__menu_8h_a2e9f40051bab371da46e0ddcbd9e0607}{get\+\_\+user\+\_\+choice}} (void)
+\begin{DoxyCompactList}\small\item\em Prompts the user to enter a menu choice and validates the input. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{labyrinth__menu_8h_af39c727d908e8f905d0466a56b4f2d4c}{ask\+\_\+for\+\_\+difficulty}} (void)
+\begin{DoxyCompactList}\small\item\em Asks the user for difficulty level (0=easy, 1=hard). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Console menu utilities for generating, loading, and playing a labyrinth. 
+
+Declares helpers to display the main menu and collect user inputs such as sizes, names, and difficulty. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{labyrinth__menu_8h_af39c727d908e8f905d0466a56b4f2d4c}\label{labyrinth__menu_8h_af39c727d908e8f905d0466a56b4f2d4c} 
+\index{labyrinth\_menu.h@{labyrinth\_menu.h}!ask\_for\_difficulty@{ask\_for\_difficulty}}
+\index{ask\_for\_difficulty@{ask\_for\_difficulty}!labyrinth\_menu.h@{labyrinth\_menu.h}}
+\doxysubsubsection{\texorpdfstring{ask\_for\_difficulty()}{ask\_for\_difficulty()}}
+{\footnotesize\ttfamily int ask\+\_\+for\+\_\+difficulty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Asks the user for difficulty level (0=easy, 1=hard). 
+
+\begin{DoxyReturn}{Returns}
+Difficulty value. 
+\end{DoxyReturn}
+\Hypertarget{labyrinth__menu_8h_aa5c7f2391fb537da2006bf3d6189b70c}\label{labyrinth__menu_8h_aa5c7f2391fb537da2006bf3d6189b70c} 
+\index{labyrinth\_menu.h@{labyrinth\_menu.h}!ask\_for\_labyrinth\_size\_and\_name@{ask\_for\_labyrinth\_size\_and\_name}}
+\index{ask\_for\_labyrinth\_size\_and\_name@{ask\_for\_labyrinth\_size\_and\_name}!labyrinth\_menu.h@{labyrinth\_menu.h}}
+\doxysubsubsection{\texorpdfstring{ask\_for\_labyrinth\_size\_and\_name()}{ask\_for\_labyrinth\_size\_and\_name()}}
+{\footnotesize\ttfamily void ask\+\_\+for\+\_\+labyrinth\+\_\+size\+\_\+and\+\_\+name (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{length,  }\item[{int \texorpdfstring{$\ast$}{*}}]{width,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{name }\end{DoxyParamCaption})}
+
+
+
+Asks the user for the labyrinth size and its name. 
+
+Ensures that width and height are odd numbers between 5 and 51.
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & Pointer to an integer where the labyrinth height will be stored. \\
+\hline
+{\em width} & Pointer to an integer where the labyrinth width will be stored. \\
+\hline
+{\em name} & Pointer to a char pointer where the labyrinth name will be stored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The function allocates memory for {\ttfamily name} using malloc. The caller is responsible for freeing this memory after use. 
+\end{DoxyNote}
+\Hypertarget{labyrinth__menu_8h_a65c493e4917b50c983f9efee5b278f1c}\label{labyrinth__menu_8h_a65c493e4917b50c983f9efee5b278f1c} 
+\index{labyrinth\_menu.h@{labyrinth\_menu.h}!display\_menu@{display\_menu}}
+\index{display\_menu@{display\_menu}!labyrinth\_menu.h@{labyrinth\_menu.h}}
+\doxysubsubsection{\texorpdfstring{display\_menu()}{display\_menu()}}
+{\footnotesize\ttfamily void display\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Displays the main menu for the \doxylink{structLabyrinth}{Labyrinth} Generator. 
+
+Options\+:
+\begin{DoxyEnumerate}
+\item Generate a new labyrinth
+\item Load a labyrinth from file
+\item Play the labyrinth
+\item Exit 
+\end{DoxyEnumerate}\Hypertarget{labyrinth__menu_8h_a2e9f40051bab371da46e0ddcbd9e0607}\label{labyrinth__menu_8h_a2e9f40051bab371da46e0ddcbd9e0607} 
+\index{labyrinth\_menu.h@{labyrinth\_menu.h}!get\_user\_choice@{get\_user\_choice}}
+\index{get\_user\_choice@{get\_user\_choice}!labyrinth\_menu.h@{labyrinth\_menu.h}}
+\doxysubsubsection{\texorpdfstring{get\_user\_choice()}{get\_user\_choice()}}
+{\footnotesize\ttfamily int get\+\_\+user\+\_\+choice (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Prompts the user to enter a menu choice and validates the input. 
+
+\begin{DoxyReturn}{Returns}
+Integer representing the user\textquotesingle{}s choice (1 to 4). 
+\end{DoxyReturn}

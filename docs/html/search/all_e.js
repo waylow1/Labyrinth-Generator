@@ -4,5 +4,6 @@ var searchData=
   ['path_5fcolor_1',['PATH_COLOR',['../labyrinth__player__movement_8h.html#a3aac54ffa4781528709d17a683e54fb5',1,'labyrinth_player_movement.h']]],
   ['penalty_5fpoints_2',['penalty_points',['../structMonster.html#aae8285416b3d4f60e7f410e4aff1544c',1,'Monster']]],
   ['player_3',['PLAYER',['../utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26bade5dc3e0dbd007d995ed3e37bde5ce7e',1,'utils.h']]],
-  ['player_5fcolor_4',['PLAYER_COLOR',['../labyrinth__player__movement_8h.html#a28d88d882f8dc097928beffc901cc133',1,'labyrinth_player_movement.h']]]
+  ['player_5fcolor_4',['PLAYER_COLOR',['../labyrinth__player__movement_8h.html#a28d88d882f8dc097928beffc901cc133',1,'labyrinth_player_movement.h']]],
+  ['project_20layout_5',['Project Layout',['../index.html#autotoc_md2',1,'']]]
 ];

@@ -20,6 +20,8 @@ Crée, explore et survis à un labyrinthe rempli de **pièges**, **coffres**, et
 - **Sauvegarde / chargement** de configurations (`config/*.cfg`)  
 - **Score dynamique** : chaque action influe sur votre nombre de pièces 💰
 - **Sauvegarde locale** : Sauvegarde locale à la fin de chaque partie  (`score/*.score`) 
+- **Niveaux de difficulté** : Easy / Hard (en Hard, boucles supplémentaires + monstres)
+- **Monstres** : Fantômes et Ogres avec comportements via pointeurs de fonctions
 
 ---
 
@@ -72,8 +74,12 @@ L’application vous proposera :
 
 Les fichiers `.cfg` contiennent les paramètres de génération :
 ```
-<seed>,<lines>,<columns>
+<seed>,<lines>,<columns>,<difficulty>
 ```
+
+Notes:
+- `difficulty` est optionnel (compatibilité ascendante) : `0 = Easy`, `1 = Hard`.
+- Les anciens fichiers à 3 champs sont toujours supportés (traités comme Easy).
 
 ---
 
@@ -97,7 +103,17 @@ Les fichiers `.cfg` contiennent les paramètres de génération :
 | 🔑 | Clé (nécessaire pour sortir) |
 | 🎁 | Coffre (+1000 pièces) |
 | 💀 | Piège (-500 pièces) |
-| 🚪 | Sortie (accessible uniquement avec la clé) |
+| 🚪 | Porte (se déverrouille au contact si vous avez la clé) |
+| 🏁 | Sortie (case finale; accessible après ouverture de la porte) |
+
+### 👾 Monstres (mode Hard)
+
+- `G` Fantôme : se déplace librement selon son comportement, peut ignorer certains obstacles.
+- `O` Ogre : déplacement plus lourd/contraint, comportement différent.
+
+Effets de jeu:
+- Un contact joueur ↔ monstre applique une pénalité de pièces et supprime le monstre.
+- Les monstres se déplacent après vos déplacements.
 
 ---
 
@@ -106,6 +122,7 @@ Les fichiers `.cfg` contiennent les paramètres de génération :
 - Chaque **déplacement** coûte 1 pièce 💰  
 - Ouvrir un **coffre** rapporte +1000 💎  
 - Marcher sur un **piège** fait perdre -500 ☠️  
+- Une **collision avec un monstre** applique une pénalité (variable selon le monstre)  
 - Le score final est calculé à la fin de la partie.
 
 ---
@@ -126,15 +143,30 @@ Labyrinth-Generator/
 │   ├── labyrinth_generator.h
 │   ├── labyrinth_player_movement.h
 │   ├── labyrinth_score.h
+│   ├── monsters.h
 │   └── ...
 ├── src/
 │   ├── main.c
 │   ├── utils.c
 │   ├── labyrinth_generator.c
 │   ├── labyrinth_player_movement.c
+│   ├── monsters.c
 │   └── ...
 ├── Makefile
 └── README.md
+
+---
+
+## 🧪 Tests
+
+Des tests unitaires (minunit) couvrent la génération et des invariants de labyrinthe, ainsi que des comportements avancés (ouverture de murs supplémentaires, monstres).
+
+```bash
+make
+./bin/test_labyrinth
+```
+
+Sortie attendue : `X tests, Y assertions, 0 failures`.
 ```
 
 ---
@@ -156,6 +188,6 @@ Gestion du joueur, des collisions et de l’affichage SDL2 (temps, score, intera
 ## 🧾 Licence
 
 Projet libre sous licence **MIT**.  
-Créé par [@waylow1](https://github.com/waylow1).
+Créé par Maxence LEVESQUE [@waylow1](https://github.com/waylow1).
 
 ---

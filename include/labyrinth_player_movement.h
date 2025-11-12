@@ -1,10 +1,18 @@
 #ifndef LABYRINTH_PLAYER_MOVEMENT_H
 #define LABYRINTH_PLAYER_MOVEMENT_H
 
+/**
+ * @file labyrinth_player_movement.h
+ * @brief SDL rendering and player movement controls for the labyrinth game.
+ * @details Provides drawing helpers, keyboard input orchestration, time/score UI,
+ * and high-level movement rules (keys, doors, chests, traps, monsters).
+ */
+
 #include "utils.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
+/** SDL RGBA color macros used for drawing tiles and entities. */
 #define PLAYER_COLOR 0, 255, 0, 255
 #define WALL_COLOR 0, 0, 0, 255
 #define PATH_COLOR 255, 255, 255, 255
@@ -61,7 +69,8 @@ int is_ended(Labyrinth *labyrinth, int nb_iterations, float elapsed_sec);
  * @note If the player moves onto a key (KEY), they acquire it.
  * @note If the player moves onto a chest (CHEST), 1000 coins are added.
  * @note If the player moves onto a trap (TRAP), 500 coins are subtracted.
- * @note Movement blocked by a wall (WALL) or door (DOOR) is ignored.
+ * @note Movement into a wall (WALL) is blocked. A door (DOOR) is passable if
+ *       the player holds the key; stepping onto it unlocks the door.
  */
 void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer);
 

@@ -1,6 +1,13 @@
 #ifndef LABYRINTH_MENU_H
 #define LABYRINTH_MENU_H
 
+/**
+ * @file labyrinth_menu.h
+ * @brief Console menu utilities for generating, loading, and playing a labyrinth.
+ * @details Declares helpers to display the main menu and collect user inputs
+ * such as sizes, names, and difficulty.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -5,45 +5,41 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LABYRINTH\_PLAYER\_MOVEMENT\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LABYRINTH\_PLAYER\_MOVEMENT\_H}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_ttf.h>}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00009\ \textcolor{comment}{//\ SDL\ Rendering\ Colors}}
-\DoxyCodeLine{00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ PLAYER\_COLOR\ 0,\ 255,\ 0,\ 255}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ WALL\_COLOR\ 0,\ 0,\ 0,\ 255}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ PATH\_COLOR\ 255,\ 255,\ 255,\ 255}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ END\_COLOR\ 255,\ 0,\ 0,\ 255}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ CHEST\_COLOR\ 139,\ 69,\ 19,\ 255}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ HAS\_KEY\_COLOR\ 255,\ 215,\ 0,\ 255}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ KEY\_COLOR\ 0,\ 0,\ 255,\ 255}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ TRAP\_COLOR\ 255,\ 0,\ 255,\ 255}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ DOOR\_COLOR\ 160,\ 82,\ 45,\ 255}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00022\ \textcolor{comment}{//\ SDL\ and\ Player\ Movement\ Functions}}
-\DoxyCodeLine{00023\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00031\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a181468cb84be8091678b2649dbbbabed}{define\_cell\_size}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a73bb89082c65b39278b8624ef2b8096a}{redraw\_case}}(SDL\_Renderer\ *renderer,\ \mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_aa7e8c6115c06994df12f475f96830577}{try\_unlock\_door}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ SDL\_Renderer\ *renderer);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00056\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a0a62a11f992a30cb1fc562c0336a50e1}{is\_ended}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ nb\_iterations,\ \textcolor{keywordtype}{float}\ elapsed\_sec);}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_afd7648c81d7ba445150cae509d64432f}{move\_player}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ dx,\ \textcolor{keywordtype}{int}\ dy,\ SDL\_Renderer\ *renderer);}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00079\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a443946bcaa0cc4e80fd99e41870a9a7f}{movement\_orchestrator}}(SDL\_Event\ e,\ \mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ SDL\_Renderer\ *renderer);}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_ac5e76367aa2bd909fbfdbc9174d81de7}{display\_time\_on\_ui}}(Uint32\ start\_time,\ SDL\_Renderer\ *renderer,\ TTF\_Font\ *font);}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a87e5c5346a8c298fb73c295ae57d45ca}{display\_points\_on\_ui}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ SDL\_Renderer\ *renderer,\ TTF\_Font\ *font);}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00104\ \mbox{\hyperlink{structscore}{Score}}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}{display\_labyrinth\_sdl}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ labyrinth,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LABYRINTH\_PLAYER\_MOVEMENT\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_ttf.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ PLAYER\_COLOR\ 0,\ 255,\ 0,\ 255}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ WALL\_COLOR\ 0,\ 0,\ 0,\ 255}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ PATH\_COLOR\ 255,\ 255,\ 255,\ 255}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ END\_COLOR\ 255,\ 0,\ 0,\ 255}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ CHEST\_COLOR\ 139,\ 69,\ 19,\ 255}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ HAS\_KEY\_COLOR\ 255,\ 215,\ 0,\ 255}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ KEY\_COLOR\ 0,\ 0,\ 255,\ 255}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ TRAP\_COLOR\ 255,\ 0,\ 255,\ 255}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ DOOR\_COLOR\ 160,\ 82,\ 45,\ 255}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ GHOST\_SDL\_COLOR\ 0,\ 200,\ 200,\ 255}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ OGRE\_SDL\_COLOR\ \ 200,\ 100,\ 0,\ 255}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a181468cb84be8091678b2649dbbbabed}{define\_cell\_size}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a73bb89082c65b39278b8624ef2b8096a}{redraw\_case}}(SDL\_Renderer\ *renderer,\ \mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_aa7e8c6115c06994df12f475f96830577}{try\_unlock\_door}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ SDL\_Renderer\ *renderer);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a0a62a11f992a30cb1fc562c0336a50e1}{is\_ended}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ nb\_iterations,\ \textcolor{keywordtype}{float}\ elapsed\_sec);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_afd7648c81d7ba445150cae509d64432f}{move\_player}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ \textcolor{keywordtype}{int}\ dx,\ \textcolor{keywordtype}{int}\ dy,\ SDL\_Renderer\ *renderer);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a443946bcaa0cc4e80fd99e41870a9a7f}{movement\_orchestrator}}(SDL\_Event\ e,\ \mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ SDL\_Renderer\ *renderer);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_ac5e76367aa2bd909fbfdbc9174d81de7}{display\_time\_on\_ui}}(Uint32\ start\_time,\ SDL\_Renderer\ *renderer,\ TTF\_Font\ *font);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a87e5c5346a8c298fb73c295ae57d45ca}{display\_points\_on\_ui}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ *labyrinth,\ SDL\_Renderer\ *renderer,\ TTF\_Font\ *font);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00109\ \mbox{\hyperlink{structscore}{Score}}\ \mbox{\hyperlink{labyrinth__player__movement_8h_a143bae0add2d0f0ede018a39804e27f2}{display\_labyrinth\_sdl}}(\mbox{\hyperlink{structLabyrinth}{Labyrinth}}\ labyrinth,\ \textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LABYRINTH\_PLAYER\_MOVEMENT\_H}}
 
 \end{DoxyCode}

@@ -2,8 +2,17 @@
 \hypertarget{structLabyrinth}{}\label{structLabyrinth}\index{Labyrinth@{Labyrinth}}
 
 
+Full labyrinth grid and runtime state.  
+
+
+
+
 {\ttfamily \#include $<$utils.\+h$>$}
 
+
+
+Collaboration diagram for Labyrinth\+:
+% FIG 0
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,8 +33,15 @@ int \mbox{\hyperlink{structLabyrinth_a2b48c536f314354bd4c6ea6f91df8f64}{width}}
 int \mbox{\hyperlink{structLabyrinth_a1444b16016707db4eefb5407a282475c}{has\+\_\+key}}
 \item 
 int \mbox{\hyperlink{structLabyrinth_abc4fb53c9327943f9f60e7aecccd60ed}{coins}}
+\item 
+\mbox{\hyperlink{structLabyrinthInternalExtras}{Labyrinth\+Internal\+Extras}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structLabyrinth_a1795d1b3ec6c204d52a8ed5d56faf7be}{extras}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Full labyrinth grid and runtime state. 
+
+The grid uses a scaled representation of size (2\texorpdfstring{$\ast$}{*}length+1) x (2\texorpdfstring{$\ast$}{*}width+1) where walls are placed at even coordinates and paths/objects at odd coordinates. 
 
 \doxysubsection{Field Documentation}
 \Hypertarget{structLabyrinth_abc4fb53c9327943f9f60e7aecccd60ed}\label{structLabyrinth_abc4fb53c9327943f9f60e7aecccd60ed} 
@@ -34,7 +50,7 @@ int \mbox{\hyperlink{structLabyrinth_abc4fb53c9327943f9f60e7aecccd60ed}{coins}}
 \doxysubsubsection{\texorpdfstring{coins}{coins}}
 {\footnotesize\ttfamily int Labyrinth\+::coins}
 
-\Hypertarget{structLabyrinth_a4d6474b29651237dfbe95322ebe23392}\label{structLabyrinth_a4d6474b29651237dfbe95322ebe23392} 
+Player\textquotesingle{}s current coin total. \Hypertarget{structLabyrinth_a4d6474b29651237dfbe95322ebe23392}\label{structLabyrinth_a4d6474b29651237dfbe95322ebe23392} 
 \index{Labyrinth@{Labyrinth}!ending\_x@{ending\_x}}
 \index{ending\_x@{ending\_x}!Labyrinth@{Labyrinth}}
 \doxysubsubsection{\texorpdfstring{ending\_x}{ending\_x}}
@@ -46,19 +62,25 @@ int \mbox{\hyperlink{structLabyrinth_abc4fb53c9327943f9f60e7aecccd60ed}{coins}}
 \doxysubsubsection{\texorpdfstring{ending\_y}{ending\_y}}
 {\footnotesize\ttfamily int Labyrinth\+::ending\+\_\+y}
 
-\Hypertarget{structLabyrinth_a27206dc306bb4aa3ebb0fdf111326779}\label{structLabyrinth_a27206dc306bb4aa3ebb0fdf111326779} 
+Exit position in grid coordinates. \Hypertarget{structLabyrinth_a1795d1b3ec6c204d52a8ed5d56faf7be}\label{structLabyrinth_a1795d1b3ec6c204d52a8ed5d56faf7be} 
+\index{Labyrinth@{Labyrinth}!extras@{extras}}
+\index{extras@{extras}!Labyrinth@{Labyrinth}}
+\doxysubsubsection{\texorpdfstring{extras}{extras}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLabyrinthInternalExtras}{Labyrinth\+Internal\+Extras}}\texorpdfstring{$\ast$}{*} Labyrinth\+::extras}
+
+Optional extras (difficulty, monsters). \Hypertarget{structLabyrinth_a27206dc306bb4aa3ebb0fdf111326779}\label{structLabyrinth_a27206dc306bb4aa3ebb0fdf111326779} 
 \index{Labyrinth@{Labyrinth}!grid@{grid}}
 \index{grid@{grid}!Labyrinth@{Labyrinth}}
 \doxysubsubsection{\texorpdfstring{grid}{grid}}
 {\footnotesize\ttfamily char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Labyrinth\+::grid}
 
-\Hypertarget{structLabyrinth_a1444b16016707db4eefb5407a282475c}\label{structLabyrinth_a1444b16016707db4eefb5407a282475c} 
+2D grid of characters. \Hypertarget{structLabyrinth_a1444b16016707db4eefb5407a282475c}\label{structLabyrinth_a1444b16016707db4eefb5407a282475c} 
 \index{Labyrinth@{Labyrinth}!has\_key@{has\_key}}
 \index{has\_key@{has\_key}!Labyrinth@{Labyrinth}}
 \doxysubsubsection{\texorpdfstring{has\_key}{has\_key}}
 {\footnotesize\ttfamily int Labyrinth\+::has\+\_\+key}
 
-\Hypertarget{structLabyrinth_a7aa4b719d3de2f325dff9f98d8438fff}\label{structLabyrinth_a7aa4b719d3de2f325dff9f98d8438fff} 
+1 if player currently holds the key. \Hypertarget{structLabyrinth_a7aa4b719d3de2f325dff9f98d8438fff}\label{structLabyrinth_a7aa4b719d3de2f325dff9f98d8438fff} 
 \index{Labyrinth@{Labyrinth}!length@{length}}
 \index{length@{length}!Labyrinth@{Labyrinth}}
 \doxysubsubsection{\texorpdfstring{length}{length}}
@@ -76,13 +98,13 @@ int \mbox{\hyperlink{structLabyrinth_abc4fb53c9327943f9f60e7aecccd60ed}{coins}}
 \doxysubsubsection{\texorpdfstring{starting\_y}{starting\_y}}
 {\footnotesize\ttfamily int Labyrinth\+::starting\+\_\+y}
 
-\Hypertarget{structLabyrinth_a2b48c536f314354bd4c6ea6f91df8f64}\label{structLabyrinth_a2b48c536f314354bd4c6ea6f91df8f64} 
+Player position in grid coordinates. \Hypertarget{structLabyrinth_a2b48c536f314354bd4c6ea6f91df8f64}\label{structLabyrinth_a2b48c536f314354bd4c6ea6f91df8f64} 
 \index{Labyrinth@{Labyrinth}!width@{width}}
 \index{width@{width}!Labyrinth@{Labyrinth}}
 \doxysubsubsection{\texorpdfstring{width}{width}}
 {\footnotesize\ttfamily int Labyrinth\+::width}
 
-
+Logical size (number of cells). 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

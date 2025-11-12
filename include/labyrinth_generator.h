@@ -1,6 +1,14 @@
 #ifndef LABYRINTH_GENERATOR_H
 #define LABYRINTH_GENERATOR_H
 
+/**
+ * @file labyrinth_generator.h
+ * @brief Maze generation API and utilities.
+ * @details Declares functions to generate the base maze, open walls,
+ * place objects (player, exit, key, chests, traps), and hard-mode tweaks
+ * such as extra loops and monsters.
+ */
+
 #include "utils.h"
 
 /**
@@ -17,7 +25,12 @@ Labyrinth generate_labyrinth(int length, int width);
 
 /**
  * @brief Generates a labyrinth with a given difficulty.
- * In hard mode, extra random walls are opened and monsters are spawned.
+ * @details In hard mode, extra random internal walls are opened to create loops
+ * and monsters are spawned according to the chosen difficulty.
+ * @param length Logical height (number of cell rows).
+ * @param width Logical width (number of cell columns).
+ * @param diff Difficulty level (DIFF_EASY or DIFF_HARD).
+ * @return A fully initialized Labyrinth structure.
  */
 Labyrinth generate_labyrinth_with_difficulty(int length, int width, Difficulty diff);
 
@@ -123,10 +136,10 @@ Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, Labyri
 
 /**
  * @brief Open additional random walls in the final grid to create loops (hard mode).
- * @param labyrinth Pointer to the resulting grid (scaled 2N+1 x 2M+1)
- * @param length Logical rows
- * @param width Logical cols
- * @param extra_count Number of extra walls to remove
+ * @param labyrinth Pointer to the resulting grid (scaled 2N+1 x 2M+1).
+ * @param length Logical number of rows (N).
+ * @param width Logical number of columns (M).
+ * @param extra_count Number of extra walls to remove.
  */
 void open_extra_walls(Labyrinth *labyrinth, int length, int width, int extra_count);
 

@@ -79,6 +79,9 @@ $(function() {
   <div class="headertitle"><div class="title">labyrinth_player_movement.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>SDL rendering and player movement controls for the labyrinth game.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
 <code>#include &lt;SDL2/SDL.h&gt;</code><br />
 <code>#include &lt;SDL2/SDL_ttf.h&gt;</code><br />
@@ -115,6 +118,10 @@ Macros</h2></td></tr>
 <tr class="separator:ad099e382fb2f419fe9e884491b871c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7d6b1dd423174c62ebe043ab0192264" id="r_ab7d6b1dd423174c62ebe043ab0192264"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8h.html#ab7d6b1dd423174c62ebe043ab0192264">DOOR_COLOR</a>&#160;&#160;&#160;160, 82, 45, 255</td></tr>
 <tr class="separator:ab7d6b1dd423174c62ebe043ab0192264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44bbef8d1178449ad8df19c080e7e0bb" id="r_a44bbef8d1178449ad8df19c080e7e0bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8h.html#a44bbef8d1178449ad8df19c080e7e0bb">GHOST_SDL_COLOR</a>&#160;&#160;&#160;0, 200, 200, 255</td></tr>
+<tr class="separator:a44bbef8d1178449ad8df19c080e7e0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f97082540f9e5635528cbb5b265fc0d" id="r_a2f97082540f9e5635528cbb5b265fc0d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__player__movement_8h.html#a2f97082540f9e5635528cbb5b265fc0d">OGRE_SDL_COLOR</a>&#160;&#160;&#160;200, 100, 0, 255</td></tr>
+<tr class="separator:a2f97082540f9e5635528cbb5b265fc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -146,7 +153,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a143bae0add2d0f0ede018a39804e27f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launches the SDL display of the labyrinth and handles interactive gameplay.  <br /></td></tr>
 <tr class="separator:a143bae0add2d0f0ede018a39804e27f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SDL rendering and player movement controls for the labyrinth game. </p>
+<p>Provides drawing helpers, keyboard input orchestration, time/score UI, and high-level movement rules (keys, doors, chests, traps, monsters). </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad0ac81564107ad290257ae9c2d0a5bd7" name="ad0ac81564107ad290257ae9c2d0a5bd7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0ac81564107ad290257ae9c2d0a5bd7">&#9670;&#160;</a></span>CHEST_COLOR</h2>
 
@@ -189,6 +199,20 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a44bbef8d1178449ad8df19c080e7e0bb" name="a44bbef8d1178449ad8df19c080e7e0bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44bbef8d1178449ad8df19c080e7e0bb">&#9670;&#160;</a></span>GHOST_SDL_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GHOST_SDL_COLOR&#160;&#160;&#160;0, 200, 200, 255</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7d59efc1e0d8f4dc4b530a41f216f4e9" name="a7d59efc1e0d8f4dc4b530a41f216f4e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d59efc1e0d8f4dc4b530a41f216f4e9">&#9670;&#160;</a></span>HAS_KEY_COLOR</h2>
 
@@ -211,6 +235,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define KEY_COLOR&#160;&#160;&#160;0, 0, 255, 255</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f97082540f9e5635528cbb5b265fc0d" name="a2f97082540f9e5635528cbb5b265fc0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f97082540f9e5635528cbb5b265fc0d">&#9670;&#160;</a></span>OGRE_SDL_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OGRE_SDL_COLOR&#160;&#160;&#160;200, 100, 0, 255</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -242,6 +280,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>SDL RGBA color macros used for drawing tiles and entities. </p>
 
 </div>
 </div>
@@ -347,7 +386,7 @@ Functions</h2></td></tr>
 <p>Launches the SDL display of the labyrinth and handles interactive gameplay. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td><a class="el" href="structLabyrinth.html">Labyrinth</a> to display and interact with. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td><a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> to display and interact with. </td></tr>
     <tr><td class="paramname">length</td><td>Height of the labyrinth. </td></tr>
     <tr><td class="paramname">width</td><td>Width of the labyrinth. </td></tr>
   </table>
@@ -544,7 +583,7 @@ If the player moves onto a chest (CHEST), 1000 coins are added. </dd>
 <dd>
 If the player moves onto a trap (TRAP), 500 coins are subtracted. </dd>
 <dd>
-Movement blocked by a wall (WALL) or door (DOOR) is ignored. </dd></dl>
+Movement into a wall (WALL) is blocked. A door (DOOR) is passable if the player holds the key; stepping onto it unlocks the door. </dd></dl>
 
 </div>
 </div>

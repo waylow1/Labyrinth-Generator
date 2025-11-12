@@ -103,14 +103,20 @@ Functions</h2></td></tr>
 <tr class="memdesc:a2d67ef53c3399032d366cec633db7fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a 2D array of LabyrinthCell structures.  <br /></td></tr>
 <tr class="separator:a2d67ef53c3399032d366cec633db7fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a594eb5e2225d82c964808c733c4309" id="r_a6a594eb5e2225d82c964808c733c4309"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a6a594eb5e2225d82c964808c733c4309">free_labyrinth</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> labyrinth, int lines, int columns)</td></tr>
-<tr class="memdesc:a6a594eb5e2225d82c964808c733c4309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a <a class="el" href="structLabyrinth.html">Labyrinth</a> structure, including its grid.  <br /></td></tr>
+<tr class="memdesc:a6a594eb5e2225d82c964808c733c4309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure, including its grid.  <br /></td></tr>
 <tr class="separator:a6a594eb5e2225d82c964808c733c4309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1986f83dd2126857ff708b05627e820a" id="r_a1986f83dd2126857ff708b05627e820a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a1986f83dd2126857ff708b05627e820a">dump_labyrinth_ext</a> (int seed, int lines, int columns, <a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a> diff, char *filename)</td></tr>
+<tr class="memdesc:a1986f83dd2126857ff708b05627e820a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended dump: also persists difficulty as a 4th field.  <br /></td></tr>
+<tr class="separator:a1986f83dd2126857ff708b05627e820a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cccaa878d777af9c24e6dc352b885ab" id="r_a7cccaa878d777af9c24e6dc352b885ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a7cccaa878d777af9c24e6dc352b885ab">dump_labyrinth</a> (int seed, int lines, int columns, char *filename)</td></tr>
 <tr class="memdesc:a7cccaa878d777af9c24e6dc352b885ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the labyrinth configuration (seed, lines, columns) to a file.  <br /></td></tr>
 <tr class="separator:a7cccaa878d777af9c24e6dc352b885ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab75970c7149ceb3ecaea1a0cbb1ede8e" id="r_ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#ab75970c7149ceb3ecaea1a0cbb1ede8e">display_all_available_files</a> (char **labyrinth_name)</td></tr>
 <tr class="memdesc:ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays all available labyrinth configuration files and prompts the user to select one.  <br /></td></tr>
 <tr class="separator:ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6f2957cde65f98764a36346f677509" id="r_a4c6f2957cde65f98764a36346f677509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a4c6f2957cde65f98764a36346f677509">load_labyrinth_ext</a> (const char *filename, int *seed, int *lines, int *columns, <a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a> *diff)</td></tr>
+<tr class="memdesc:a4c6f2957cde65f98764a36346f677509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended load: reads difficulty if present (defaults to DIFF_EASY).  <br /></td></tr>
+<tr class="separator:a4c6f2957cde65f98764a36346f677509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab8c16aca09c1c9a75601428d67e963b" id="r_aab8c16aca09c1c9a75601428d67e963b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#aab8c16aca09c1c9a75601428d67e963b">load_labyrinth</a> (const char *filename, int *seed, int *lines, int *columns)</td></tr>
 <tr class="memdesc:aab8c16aca09c1c9a75601428d67e963b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the labyrinth configuration (seed, lines, columns) from a file.  <br /></td></tr>
 <tr class="separator:aab8c16aca09c1c9a75601428d67e963b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -269,6 +275,64 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1986f83dd2126857ff708b05627e820a" name="a1986f83dd2126857ff708b05627e820a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1986f83dd2126857ff708b05627e820a">&#9670;&#160;</a></span>dump_labyrinth_ext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dump_labyrinth_ext </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a>&#160;</td>
+          <td class="paramname"><em>diff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extended dump: also persists difficulty as a 4th field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>RNG seed used to generate the labyrinth. </td></tr>
+    <tr><td class="paramname">lines</td><td>Logical number of rows. </td></tr>
+    <tr><td class="paramname">columns</td><td>Logical number of columns. </td></tr>
+    <tr><td class="paramname">diff</td><td>Difficulty to persist alongside the config. </td></tr>
+    <tr><td class="paramname">filename</td><td>Basename (without extension) for the output file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6a594eb5e2225d82c964808c733c4309" name="a6a594eb5e2225d82c964808c733c4309"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a594eb5e2225d82c964808c733c4309">&#9670;&#160;</a></span>free_labyrinth()</h2>
 
@@ -301,10 +365,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Frees the memory allocated for a <a class="el" href="structLabyrinth.html">Labyrinth</a> structure, including its grid. </p>
+<p>Frees the memory allocated for a <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure, including its grid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td>The <a class="el" href="structLabyrinth.html">Labyrinth</a> structure to be freed. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td>The <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure to be freed. </td></tr>
     <tr><td class="paramname">lines</td><td>The number of rows in the labyrinth grid. </td></tr>
     <tr><td class="paramname">columns</td><td>The number of columns in the labyrinth grid. </td></tr>
   </table>
@@ -432,6 +496,64 @@ Functions</h2></td></tr>
     <tr><td class="paramname">seed</td><td>A pointer to store the loaded seed value. </td></tr>
     <tr><td class="paramname">lines</td><td>A pointer to store the loaded number of rows. </td></tr>
     <tr><td class="paramname">columns</td><td>A pointer to store the loaded number of columns. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4c6f2957cde65f98764a36346f677509" name="a4c6f2957cde65f98764a36346f677509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c6f2957cde65f98764a36346f677509">&#9670;&#160;</a></span>load_labyrinth_ext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void load_labyrinth_ext </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>lines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a> *&#160;</td>
+          <td class="paramname"><em>diff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extended load: reads difficulty if present (defaults to DIFF_EASY). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Basename (without extension) of the config to load. </td></tr>
+    <tr><td class="paramname">seed</td><td>Output seed. </td></tr>
+    <tr><td class="paramname">lines</td><td>Output logical rows. </td></tr>
+    <tr><td class="paramname">columns</td><td>Output logical cols. </td></tr>
+    <tr><td class="paramname">diff</td><td>Output difficulty (DIFF_EASY if not present in file). </td></tr>
   </table>
   </dd>
 </dl>

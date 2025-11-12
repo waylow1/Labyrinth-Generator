@@ -78,6 +78,9 @@ $(function() {
   <div class="headertitle"><div class="title">labyrinth_score.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Leaderboard and score persistence utilities.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for labyrinth_score.h:</div>
@@ -116,7 +119,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3c76820968b792c7736f410ea17e14c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the player's score to a file.  <br /></td></tr>
 <tr class="separator:a3c76820968b792c7736f410ea17e14c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Leaderboard and score persistence utilities. </p>
+<p>Declares helpers to create score files, display ladders, add and sort entries, and load/dump scores associated with a labyrinth. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ac46e1e22ed933707bdb4a790a186179b" name="ac46e1e22ed933707bdb4a790a186179b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac46e1e22ed933707bdb4a790a186179b">&#9670;&#160;</a></span>add_new_score()</h2>
 
@@ -146,8 +152,8 @@ Functions</h2></td></tr>
 <p>Adds a new player's score to the scores array if it qualifies for the leaderboard. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ladder</td><td>A pointer to Ladder structure. </td></tr>
-    <tr><td class="paramname">new_player</td><td>The Score structure containing the new player's name and score. </td></tr>
+    <tr><td class="paramname">ladder</td><td>A pointer to Ladder structure to be updated. </td></tr>
+    <tr><td class="paramname">new_player</td><td>The Score containing the new player's name and coins. </td></tr>
   </table>
   </dd>
 </dl>
@@ -201,8 +207,7 @@ Functions</h2></td></tr>
 <p>Displays the leaderboard with the list of scores. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scores</td><td>A pointer to an array of Score structures. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of scores in the array. </td></tr>
+    <tr><td class="paramname">ladder</td><td>Ladder structure containing the entries to display. </td></tr>
   </table>
   </dd>
 </dl>
@@ -240,7 +245,6 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ladder</td><td>A Ladder structure containing the scores to be dumped. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of scores to dump. </td></tr>
     <tr><td class="paramname">labyrinth_name</td><td>The name of the labyrinth associated with the score (without extension). </td></tr>
   </table>
   </dd>
@@ -267,7 +271,7 @@ Functions</h2></td></tr>
 <p>Displays the end-of-game dialog and prompts the user for their name and score. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">score</td><td>A pointer to the Score structure containing the player's name and score. </td></tr>
+    <tr><td class="paramname">score</td><td>A pointer to the Score structure containing the player's name and coins. </td></tr>
   </table>
   </dd>
 </dl>
@@ -304,11 +308,10 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">labyrinth_name</td><td>The name of the labyrinth associated with the scores (without extension). </td></tr>
-    <tr><td class="paramname">out_count</td><td>A pointer to store the number of scores loaded. </td></tr>
+    <tr><td class="paramname">ladder</td><td>Output ladder to be filled with loaded scores. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -331,8 +334,7 @@ Functions</h2></td></tr>
 <p>Sorts the scores in descending order based on the number of coins. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ladder</td><td>A pointer to Ladder structure. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of scores in the array. </td></tr>
+    <tr><td class="paramname">ladder</td><td>A pointer to Ladder structure to sort in-place. </td></tr>
   </table>
   </dd>
 </dl>

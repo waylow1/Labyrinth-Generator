@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../structcell.html#a7c75a3656f94059da9e26a7ff2cdf75e',1,'cell']]]
+  ['penalty_5fpoints_0',['penalty_points',['../structMonster.html#aae8285416b3d4f60e7f410e4aff1544c',1,'Monster']]]
 ];

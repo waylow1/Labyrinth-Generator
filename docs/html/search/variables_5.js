@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['name_0',['name',['../structscore.html#aad7a4ea1f9b9cb9c5c8e4da90af05b65',1,'score']]]
+  ['has_5fkey_0',['has_key',['../structLabyrinth.html#a1444b16016707db4eefb5407a282475c',1,'Labyrinth']]]
 ];

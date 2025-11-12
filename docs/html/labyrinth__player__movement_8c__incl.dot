@@ -14,9 +14,9 @@ digraph "src/subunit/labyrinth_player_movement.c"
   Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="SDL2/SDL_ttf.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="labyrinth_player_movement.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$labyrinth__player__movement_8h.html",tooltip=" "];
+  Node6 [id="Node000006",label="labyrinth_player_movement.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$labyrinth__player__movement_8h.html",tooltip="SDL rendering and player movement controls for the labyrinth game."];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="utils.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$utils_8h.html",tooltip=" "];
+  Node7 [id="Node000007",label="utils.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$utils_8h.html",tooltip="Core data structures and utilities for the labyrinth game."];
   Node7 -> Node2 [id="edge7_Node000007_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node3 [id="edge8_Node000007_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node8 [id="edge9_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
@@ -27,6 +27,9 @@ digraph "src/subunit/labyrinth_player_movement.c"
   Node1 -> Node9 [id="edge13_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="unistd.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node10 [id="edge14_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="labyrinth_score.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$labyrinth__score_8h.html",tooltip=" "];
+  Node10 [id="Node000010",label="labyrinth_score.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$labyrinth__score_8h.html",tooltip="Leaderboard and score persistence utilities."];
   Node10 -> Node7 [id="edge15_Node000010_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node11 [id="edge16_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="monsters.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$monsters_8h.html",tooltip="Monster API: initialization, movement, and collisions."];
+  Node11 -> Node7 [id="edge17_Node000011_Node000007",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -1,74 +1,121 @@
 #ifndef UTILS_H
 #define UTILS_H
 
+/**
+ * @file utils.h
+ * @brief Core data structures and utilities for the labyrinth game.
+ * @details Defines fundamental types (cells, walls, labyrinth, score, monsters),
+ * enums, and helper functions for allocation, I/O, and persistence.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 
+/**
+ * @brief Logical cell used during generation (disjoint-set labeling).
+ */
 typedef struct cell{
-    int x, y, value;
+    int x;      /**< Row index (0..length-1). */
+    int y;      /**< Column index (0..width-1). */
+    int value;  /**< Set identifier used for connectivity merges. */
 } LabyrinthCell;
 
+/**
+ * @brief Wrapper for a 2D matrix of walls (1=wall present, 0=open).
+ */
 typedef struct walls{
-    int ** walls;
+    int ** walls; /**< Matrix of size [length][width] or [length][width+1] depending on orientation. */
 } LabyrinthWalls;
 
+/** Forward declaration for the main Labyrinth structure. */
 typedef struct Labyrinth Labyrinth;
 
+/**
+ * @brief Difficulty levels for generation and gameplay tweaks.
+ */
 typedef enum {
-    DIFF_EASY = 0,
-    DIFF_HARD = 1
+    DIFF_EASY = 0, /**< Classic maze, no extra loops and no monsters. */
+    DIFF_HARD = 1  /**< Extra loops and monsters enabled. */
 } Difficulty;
 
+/**
+ * @brief Monster kinds available in the game.
+ */
 typedef enum {
-    MONSTER_GHOST = 'G',
-    MONSTER_OGRE  = 'O'
+    MONSTER_GHOST = 'G', /**< Ghost: can ignore some walls when moving. */
+    MONSTER_OGRE  = 'O'  /**< Ogre: heavy, slower movement, different AI. */
 } MonsterType;
 
+/** Forward declaration for Monster structure. */
 struct Monster;
 
+/** Function pointer for per-monster movement behavior. */
 typedef void (*MonsterMoveFn)(struct Monster *m, struct Labyrinth *lab);
 
+/**
+ * @brief Runtime monster entity embedded in a labyrinth.
+ */
 typedef struct Monster {
-    int x, y;                
-    int penalty_points;      
-    int mobility_range;       
-    MonsterType type;         
-    char under_char;          
-    int alive;              
-    MonsterMoveFn move;       
+    int x, y;                /**< Current grid coordinates (scaled grid). */
+    int penalty_points;      /**< Coins lost when colliding with the player. */
+    int mobility_range;      /**< Max steps a monster may attempt per turn. */
+    MonsterType type;        /**< Monster kind. */
+    char under_char;         /**< Tile character stored under the monster (to restore). */
+    int alive;               /**< Non-zero if active; zero if removed. */
+    MonsterMoveFn move;      /**< Behavior callback used to move this monster. */
 } Monster;
 
+/**
+ * @brief Optional gameplay extras carried alongside a labyrinth.
+ */
 typedef struct LabyrinthExtra {
-    Difficulty difficulty;
-    Monster *monsters;
-    int monster_count;
+    Difficulty difficulty;  /**< Selected difficulty for this maze. */
+    Monster *monsters;      /**< Dynamic array of monsters (may be NULL). */
+    int monster_count;      /**< Number of monsters in the array. */
 } LabyrinthExtra;
 
+/**
+ * @brief Indirection used to keep extras optional/allocatable.
+ */
 typedef struct LabyrinthInternalExtras {
-    LabyrinthExtra extra;
+    LabyrinthExtra extra;   /**< Actual extras payload. */
 } LabyrinthInternalExtras;
 
+/**
+ * @brief Full labyrinth grid and runtime state.
+ * @details The grid uses a scaled representation of size (2*length+1) x (2*width+1)
+ * where walls are placed at even coordinates and paths/objects at odd coordinates.
+ */
 struct Labyrinth {
-    char ** grid;
-    int starting_x, starting_y;
-    int ending_x, ending_y;
-    int length, width;
-    int has_key;
-    int coins;
-    LabyrinthInternalExtras *extras;
+    char ** grid;                      /**< 2D grid of characters. */
+    int starting_x, starting_y;        /**< Player position in grid coordinates. */
+    int ending_x, ending_y;            /**< Exit position in grid coordinates. */
+    int length, width;                 /**< Logical size (number of cells). */
+    int has_key;                       /**< 1 if player currently holds the key. */
+    int coins;                         /**< Player's current coin total. */
+    LabyrinthInternalExtras *extras;   /**< Optional extras (difficulty, monsters). */
 };
 
+/**
+ * @brief Player score entry for the leaderboard.
+ */
 typedef struct score{
-    char name[100];
-    int coins;
+    char name[100];  /**< Player name (null-terminated). */
+    int coins;       /**< Coin total achieved. */
 } Score;
 
+/**
+ * @brief Ladder containing multiple score entries.
+ */
 typedef struct ladder{
-    Score * scores;
-    int count;
+    Score * scores;  /**< Dynamic array of scores (may be NULL). */
+    int count;       /**< Number of entries in the array. */
 } Ladder;
 
+/**
+ * @brief Character codes used in the visual grid representation.
+ */
 enum BOX_TYPE {WALL = '#', PATH = ' ', PLAYER = 'o', END = '-', KEY = 'k', CHEST = 'c', TRAP = 'x', DOOR = 'd'};
 
 /**
@@ -125,7 +172,12 @@ void free_labyrinth(Labyrinth labyrinth, int lines, int columns);
 void dump_labyrinth(int seed, int lines, int columns, char * filename);
 
 /**
- * Version étendue: persiste la difficulté (4ème champ).
+ * @brief Extended dump: also persists difficulty as a 4th field.
+ * @param seed RNG seed used to generate the labyrinth.
+ * @param lines Logical number of rows.
+ * @param columns Logical number of columns.
+ * @param diff Difficulty to persist alongside the config.
+ * @param filename Basename (without extension) for the output file.
  */
 void dump_labyrinth_ext(int seed, int lines, int columns, Difficulty diff, char *filename);
 
@@ -147,7 +199,12 @@ void display_all_available_files(char ** labyrinth_name);
 void load_labyrinth(const char * filename, int * seed, int * lines, int * columns);
 
 /**
- * Version étendue: lit la difficulté si présente (sinon renvoie DIFF_EASY par défaut).
+ * @brief Extended load: reads difficulty if present (defaults to DIFF_EASY).
+ * @param filename Basename (without extension) of the config to load.
+ * @param seed Output seed.
+ * @param lines Output logical rows.
+ * @param columns Output logical cols.
+ * @param diff Output difficulty (DIFF_EASY if not present in file).
  */
 void load_labyrinth_ext(const char *filename, int *seed, int *lines, int *columns, Difficulty *diff);
 

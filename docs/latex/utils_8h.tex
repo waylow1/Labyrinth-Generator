@@ -1,5 +1,10 @@
 \doxysection{include/utils.h File Reference}
 \hypertarget{utils_8h}{}\label{utils_8h}\index{include/utils.h@{include/utils.h}}
+
+
+Core data structures and utilities for the labyrinth game.  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stddef.\+h$>$}\newline
@@ -11,31 +16,53 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structcell}{cell}}
-\item 
+\begin{DoxyCompactList}\small\item\em Logical cell used during generation (disjoint-\/set labeling). \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structwalls}{walls}}
-\item 
+\begin{DoxyCompactList}\small\item\em Wrapper for a 2D matrix of walls (1=wall present, 0=open). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structMonster}{Monster}}
+\begin{DoxyCompactList}\small\item\em Runtime monster entity embedded in a labyrinth. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLabyrinthExtra}{Labyrinth\+Extra}}
+\begin{DoxyCompactList}\small\item\em Optional gameplay extras carried alongside a labyrinth. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLabyrinthInternalExtras}{Labyrinth\+Internal\+Extras}}
+\begin{DoxyCompactList}\small\item\em Indirection used to keep extras optional/allocatable. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structLabyrinth}{Labyrinth}}
-\item 
+\begin{DoxyCompactList}\small\item\em Full labyrinth grid and runtime state. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structscore}{score}}
-\item 
+\begin{DoxyCompactList}\small\item\em Player score entry for the leaderboard. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structladder}{ladder}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ladder containing multiple score entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \mbox{\hyperlink{structcell}{cell}} \mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}}
-\item 
+\begin{DoxyCompactList}\small\item\em Logical cell used during generation (disjoint-\/set labeling). \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structwalls}{walls}} \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}
-\item 
+\begin{DoxyCompactList}\small\item\em Wrapper for a 2D matrix of walls (1=wall present, 0=open). \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{utils_8h_a16a224b3b7dcc48313c0dd10a3c4f362}{Labyrinth}}
 \item 
-typedef struct \mbox{\hyperlink{structscore}{score}} \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}}
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{utils_8h_abf7eaf74557d303ddbc5f0bf2e711c58}{Monster\+Move\+Fn}}) (struct \mbox{\hyperlink{structMonster}{Monster}} \texorpdfstring{$\ast$}{*}m, struct \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}lab)
 \item 
+typedef struct \mbox{\hyperlink{structMonster}{Monster}} \mbox{\hyperlink{utils_8h_abe3b29e5c09694fcc65ce0b69e85ecde}{Monster}}
+\begin{DoxyCompactList}\small\item\em Runtime monster entity embedded in a labyrinth. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLabyrinthExtra}{Labyrinth\+Extra}} \mbox{\hyperlink{utils_8h_abbe9ad1d525eb6425f95ca43e7807c5c}{Labyrinth\+Extra}}
+\begin{DoxyCompactList}\small\item\em Optional gameplay extras carried alongside a labyrinth. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structLabyrinthInternalExtras}{Labyrinth\+Internal\+Extras}} \mbox{\hyperlink{utils_8h_a3606af69435891ff110a0357366e0e2b}{Labyrinth\+Internal\+Extras}}
+\begin{DoxyCompactList}\small\item\em Indirection used to keep extras optional/allocatable. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structscore}{score}} \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}}
+\begin{DoxyCompactList}\small\item\em Player score entry for the leaderboard. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structladder}{ladder}} \mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ladder containing multiple score entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
+enum \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} \{ \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83a8bda7b0105c63f8b111bd844df580ce7}{DIFF\+\_\+\+EASY}} = 0
+, \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83acb9dd0bdcd97ec04f1573370b991ef0e}{DIFF\+\_\+\+HARD}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Difficulty levels for generation and gameplay tweaks. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{utils_8h_abd758b4216b3fc46a32b2f1a359b3492}{Monster\+Type}} \{ \mbox{\hyperlink{utils_8h_abd758b4216b3fc46a32b2f1a359b3492a71ceca66bcf18aaeceb5c5343be55d65}{MONSTER\+\_\+\+GHOST}} = \textquotesingle{}G\textquotesingle{}
+, \mbox{\hyperlink{utils_8h_abd758b4216b3fc46a32b2f1a359b3492af12a193688723a96cd4fe471f4b47a18}{MONSTER\+\_\+\+OGRE}} = \textquotesingle{}O\textquotesingle{}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{structMonster}{Monster} kinds available in the game. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{utils_8h_a1396ec6ef3e7959327771d2e11e1f26b}{BOX\+\_\+\+TYPE}} \{ \newline
 \mbox{\hyperlink{utils_8h_a1396ec6ef3e7959327771d2e11e1f26bafca2faad41310c7e71ec303ef789c53a}{WALL}} = \textquotesingle{}\#\textquotesingle{}
 , \mbox{\hyperlink{utils_8h_a1396ec6ef3e7959327771d2e11e1f26bad67a493278074cf714b262b33d84739c}{PATH}} = \textquotesingle{} \textquotesingle{}
@@ -47,7 +74,7 @@ enum \mbox{\hyperlink{utils_8h_a1396ec6ef3e7959327771d2e11e1f26b}{BOX\+\_\+\+TYP
 , \mbox{\hyperlink{utils_8h_a1396ec6ef3e7959327771d2e11e1f26bac0533b6cb94383273589b6764c8a0796}{TRAP}} = \textquotesingle{}x\textquotesingle{}
 , \mbox{\hyperlink{utils_8h_a1396ec6ef3e7959327771d2e11e1f26baf5a83949bd019169467f675ef8c60ef9}{DOOR}} = \textquotesingle{}d\textquotesingle{}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Character codes used in the visual grid representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,11 +90,20 @@ void \mbox{\hyperlink{utils_8h_a6a594eb5e2225d82c964808c733c4309}{free\+\_\+laby
 \begin{DoxyCompactList}\small\item\em Frees the memory allocated for a \doxylink{structLabyrinth}{Labyrinth} structure, including its grid. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8h_a7cccaa878d777af9c24e6dc352b885ab}{dump\+\_\+labyrinth}} (int seed, int lines, int columns, char \texorpdfstring{$\ast$}{*}filename)
 \begin{DoxyCompactList}\small\item\em Dumps the labyrinth configuration (seed, lines, columns) to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_a1986f83dd2126857ff708b05627e820a}{dump\+\_\+labyrinth\+\_\+ext}} (int seed, int lines, int columns, \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} diff, char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Extended dump\+: also persists difficulty as a 4th field. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8h_ab75970c7149ceb3ecaea1a0cbb1ede8e}{display\+\_\+all\+\_\+available\+\_\+files}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}labyrinth\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Displays all available labyrinth configuration files and prompts the user to select one. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8h_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+labyrinth}} (const char \texorpdfstring{$\ast$}{*}filename, int \texorpdfstring{$\ast$}{*}seed, int \texorpdfstring{$\ast$}{*}lines, int \texorpdfstring{$\ast$}{*}columns)
-\begin{DoxyCompactList}\small\item\em Loads the labyrinth configuration (seed, lines, columns) from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Loads the labyrinth configuration (seed, lines, columns) from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_a4c6f2957cde65f98764a36346f677509}{load\+\_\+labyrinth\+\_\+ext}} (const char \texorpdfstring{$\ast$}{*}filename, int \texorpdfstring{$\ast$}{*}seed, int \texorpdfstring{$\ast$}{*}lines, int \texorpdfstring{$\ast$}{*}columns, \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} \texorpdfstring{$\ast$}{*}diff)
+\begin{DoxyCompactList}\small\item\em Extended load\+: reads difficulty if present (defaults to DIFF\+\_\+\+EASY). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Core data structures and utilities for the labyrinth game. 
+
+Defines fundamental types (cells, walls, labyrinth, score, monsters), enums, and helper functions for allocation, I/O, and persistence. 
 
 \doxysubsection{Typedef Documentation}
 \Hypertarget{utils_8h_a16a224b3b7dcc48313c0dd10a3c4f362}\label{utils_8h_a16a224b3b7dcc48313c0dd10a3c4f362} 
@@ -76,11 +112,35 @@ void \mbox{\hyperlink{utils_8h_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+laby
 \doxysubsubsection{\texorpdfstring{Labyrinth}{Labyrinth}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{structLabyrinth}{Labyrinth}}}
 
-\Hypertarget{utils_8h_a07e4c11e475592679fb7baaed1402ee2}\label{utils_8h_a07e4c11e475592679fb7baaed1402ee2} 
+Forward declaration for the main \doxylink{structLabyrinth}{Labyrinth} structure. \Hypertarget{utils_8h_a07e4c11e475592679fb7baaed1402ee2}\label{utils_8h_a07e4c11e475592679fb7baaed1402ee2} 
 \index{utils.h@{utils.h}!LabyrinthCell@{LabyrinthCell}}
 \index{LabyrinthCell@{LabyrinthCell}!utils.h@{utils.h}}
 \doxysubsubsection{\texorpdfstring{LabyrinthCell}{LabyrinthCell}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcell}{cell}} \mbox{\hyperlink{utils_8h_a07e4c11e475592679fb7baaed1402ee2}{Labyrinth\+Cell}}}
+
+
+
+Logical cell used during generation (disjoint-\/set labeling). 
+
+\Hypertarget{utils_8h_abbe9ad1d525eb6425f95ca43e7807c5c}\label{utils_8h_abbe9ad1d525eb6425f95ca43e7807c5c} 
+\index{utils.h@{utils.h}!LabyrinthExtra@{LabyrinthExtra}}
+\index{LabyrinthExtra@{LabyrinthExtra}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{LabyrinthExtra}{LabyrinthExtra}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLabyrinthExtra}{Labyrinth\+Extra}} \mbox{\hyperlink{structLabyrinthExtra}{Labyrinth\+Extra}}}
+
+
+
+Optional gameplay extras carried alongside a labyrinth. 
+
+\Hypertarget{utils_8h_a3606af69435891ff110a0357366e0e2b}\label{utils_8h_a3606af69435891ff110a0357366e0e2b} 
+\index{utils.h@{utils.h}!LabyrinthInternalExtras@{LabyrinthInternalExtras}}
+\index{LabyrinthInternalExtras@{LabyrinthInternalExtras}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{LabyrinthInternalExtras}{LabyrinthInternalExtras}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structLabyrinthInternalExtras}{Labyrinth\+Internal\+Extras}} \mbox{\hyperlink{structLabyrinthInternalExtras}{Labyrinth\+Internal\+Extras}}}
+
+
+
+Indirection used to keep extras optional/allocatable. 
 
 \Hypertarget{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}\label{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c} 
 \index{utils.h@{utils.h}!LabyrinthWalls@{LabyrinthWalls}}
@@ -88,17 +148,45 @@ void \mbox{\hyperlink{utils_8h_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+laby
 \doxysubsubsection{\texorpdfstring{LabyrinthWalls}{LabyrinthWalls}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structwalls}{walls}} \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}}}
 
+
+
+Wrapper for a 2D matrix of walls (1=wall present, 0=open). 
+
 \Hypertarget{utils_8h_aa2440c584686d4f544c0397d391d6e1f}\label{utils_8h_aa2440c584686d4f544c0397d391d6e1f} 
 \index{utils.h@{utils.h}!Ladder@{Ladder}}
 \index{Ladder@{Ladder}!utils.h@{utils.h}}
 \doxysubsubsection{\texorpdfstring{Ladder}{Ladder}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structladder}{ladder}} \mbox{\hyperlink{utils_8h_aa2440c584686d4f544c0397d391d6e1f}{Ladder}}}
 
-\Hypertarget{utils_8h_a6713cd83acee4d263623e703cc762efc}\label{utils_8h_a6713cd83acee4d263623e703cc762efc} 
+
+
+Ladder containing multiple score entries. 
+
+\Hypertarget{utils_8h_abe3b29e5c09694fcc65ce0b69e85ecde}\label{utils_8h_abe3b29e5c09694fcc65ce0b69e85ecde} 
+\index{utils.h@{utils.h}!Monster@{Monster}}
+\index{Monster@{Monster}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{Monster}{Monster}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structMonster}{Monster}} \mbox{\hyperlink{structMonster}{Monster}}}
+
+
+
+Runtime monster entity embedded in a labyrinth. 
+
+\Hypertarget{utils_8h_abf7eaf74557d303ddbc5f0bf2e711c58}\label{utils_8h_abf7eaf74557d303ddbc5f0bf2e711c58} 
+\index{utils.h@{utils.h}!MonsterMoveFn@{MonsterMoveFn}}
+\index{MonsterMoveFn@{MonsterMoveFn}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{MonsterMoveFn}{MonsterMoveFn}}
+{\footnotesize\ttfamily typedef void(\texorpdfstring{$\ast$}{*} Monster\+Move\+Fn) (struct \mbox{\hyperlink{structMonster}{Monster}} \texorpdfstring{$\ast$}{*}m, struct \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}lab)}
+
+Function pointer for per-\/monster movement behavior. \Hypertarget{utils_8h_a6713cd83acee4d263623e703cc762efc}\label{utils_8h_a6713cd83acee4d263623e703cc762efc} 
 \index{utils.h@{utils.h}!Score@{Score}}
 \index{Score@{Score}!utils.h@{utils.h}}
 \doxysubsubsection{\texorpdfstring{Score}{Score}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structscore}{score}} \mbox{\hyperlink{utils_8h_a6713cd83acee4d263623e703cc762efc}{Score}}}
+
+
+
+Player score entry for the leaderboard. 
 
 
 
@@ -108,6 +196,10 @@ void \mbox{\hyperlink{utils_8h_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+laby
 \index{BOX\_TYPE@{BOX\_TYPE}!utils.h@{utils.h}}
 \doxysubsubsection{\texorpdfstring{BOX\_TYPE}{BOX\_TYPE}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{utils_8h_a1396ec6ef3e7959327771d2e11e1f26b}{BOX\+\_\+\+TYPE}}}
+
+
+
+Character codes used in the visual grid representation. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{WALL@{WALL}!utils.h@{utils.h}}\index{utils.h@{utils.h}!WALL@{WALL}}}\Hypertarget{utils_8h_a1396ec6ef3e7959327771d2e11e1f26bafca2faad41310c7e71ec303ef789c53a}\label{utils_8h_a1396ec6ef3e7959327771d2e11e1f26bafca2faad41310c7e71ec303ef789c53a} 
@@ -140,6 +232,46 @@ TRAP&\\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DOOR@{DOOR}!utils.h@{utils.h}}\index{utils.h@{utils.h}!DOOR@{DOOR}}}\Hypertarget{utils_8h_a1396ec6ef3e7959327771d2e11e1f26baf5a83949bd019169467f675ef8c60ef9}\label{utils_8h_a1396ec6ef3e7959327771d2e11e1f26baf5a83949bd019169467f675ef8c60ef9} 
 DOOR&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}\label{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83} 
+\index{utils.h@{utils.h}!Difficulty@{Difficulty}}
+\index{Difficulty@{Difficulty}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{Difficulty}{Difficulty}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}}}
+
+
+
+Difficulty levels for generation and gameplay tweaks. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIFF\_EASY@{DIFF\_EASY}!utils.h@{utils.h}}\index{utils.h@{utils.h}!DIFF\_EASY@{DIFF\_EASY}}}\Hypertarget{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83a8bda7b0105c63f8b111bd844df580ce7}\label{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83a8bda7b0105c63f8b111bd844df580ce7} 
+DIFF\+\_\+\+EASY&Classic maze, no extra loops and no monsters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIFF\_HARD@{DIFF\_HARD}!utils.h@{utils.h}}\index{utils.h@{utils.h}!DIFF\_HARD@{DIFF\_HARD}}}\Hypertarget{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83acb9dd0bdcd97ec04f1573370b991ef0e}\label{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83acb9dd0bdcd97ec04f1573370b991ef0e} 
+DIFF\+\_\+\+HARD&Extra loops and monsters enabled. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{utils_8h_abd758b4216b3fc46a32b2f1a359b3492}\label{utils_8h_abd758b4216b3fc46a32b2f1a359b3492} 
+\index{utils.h@{utils.h}!MonsterType@{MonsterType}}
+\index{MonsterType@{MonsterType}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{MonsterType}{MonsterType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{utils_8h_abd758b4216b3fc46a32b2f1a359b3492}{Monster\+Type}}}
+
+
+
+\doxylink{structMonster}{Monster} kinds available in the game. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_GHOST@{MONSTER\_GHOST}!utils.h@{utils.h}}\index{utils.h@{utils.h}!MONSTER\_GHOST@{MONSTER\_GHOST}}}\Hypertarget{utils_8h_abd758b4216b3fc46a32b2f1a359b3492a71ceca66bcf18aaeceb5c5343be55d65}\label{utils_8h_abd758b4216b3fc46a32b2f1a359b3492a71ceca66bcf18aaeceb5c5343be55d65} 
+MONSTER\+\_\+\+GHOST&Ghost\+: can ignore some walls when moving. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONSTER\_OGRE@{MONSTER\_OGRE}!utils.h@{utils.h}}\index{utils.h@{utils.h}!MONSTER\_OGRE@{MONSTER\_OGRE}}}\Hypertarget{utils_8h_abd758b4216b3fc46a32b2f1a359b3492af12a193688723a96cd4fe471f4b47a18}\label{utils_8h_abd758b4216b3fc46a32b2f1a359b3492af12a193688723a96cd4fe471f4b47a18} 
+MONSTER\+\_\+\+OGRE&Ogre\+: heavy, slower movement, different AI. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -222,6 +354,29 @@ Dumps the labyrinth configuration (seed, lines, columns) to a file.
 {\em filename} & The name of the file to save the configuration (without extension). \\
 \hline
 \end{DoxyParams}
+\Hypertarget{utils_8h_a1986f83dd2126857ff708b05627e820a}\label{utils_8h_a1986f83dd2126857ff708b05627e820a} 
+\index{utils.h@{utils.h}!dump\_labyrinth\_ext@{dump\_labyrinth\_ext}}
+\index{dump\_labyrinth\_ext@{dump\_labyrinth\_ext}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{dump\_labyrinth\_ext()}{dump\_labyrinth\_ext()}}
+{\footnotesize\ttfamily void dump\+\_\+labyrinth\+\_\+ext (\begin{DoxyParamCaption}\item[{int}]{seed,  }\item[{int}]{lines,  }\item[{int}]{columns,  }\item[{\mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}}}]{diff,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Extended dump\+: also persists difficulty as a 4th field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & RNG seed used to generate the labyrinth. \\
+\hline
+{\em lines} & Logical number of rows. \\
+\hline
+{\em columns} & Logical number of columns. \\
+\hline
+{\em diff} & Difficulty to persist alongside the config. \\
+\hline
+{\em filename} & Basename (without extension) for the output file. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{utils_8h_a6a594eb5e2225d82c964808c733c4309}\label{utils_8h_a6a594eb5e2225d82c964808c733c4309} 
 \index{utils.h@{utils.h}!free\_labyrinth@{free\_labyrinth}}
 \index{free\_labyrinth@{free\_labyrinth}!utils.h@{utils.h}}
@@ -294,5 +449,28 @@ Loads the labyrinth configuration (seed, lines, columns) from a file.
 {\em lines} & A pointer to store the loaded number of rows. \\
 \hline
 {\em columns} & A pointer to store the loaded number of columns. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8h_a4c6f2957cde65f98764a36346f677509}\label{utils_8h_a4c6f2957cde65f98764a36346f677509} 
+\index{utils.h@{utils.h}!load\_labyrinth\_ext@{load\_labyrinth\_ext}}
+\index{load\_labyrinth\_ext@{load\_labyrinth\_ext}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{load\_labyrinth\_ext()}{load\_labyrinth\_ext()}}
+{\footnotesize\ttfamily void load\+\_\+labyrinth\+\_\+ext (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int \texorpdfstring{$\ast$}{*}}]{seed,  }\item[{int \texorpdfstring{$\ast$}{*}}]{lines,  }\item[{int \texorpdfstring{$\ast$}{*}}]{columns,  }\item[{\mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} \texorpdfstring{$\ast$}{*}}]{diff }\end{DoxyParamCaption})}
+
+
+
+Extended load\+: reads difficulty if present (defaults to DIFF\+\_\+\+EASY). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Basename (without extension) of the config to load. \\
+\hline
+{\em seed} & Output seed. \\
+\hline
+{\em lines} & Output logical rows. \\
+\hline
+{\em columns} & Output logical cols. \\
+\hline
+{\em diff} & Output difficulty (DIFF\+\_\+\+EASY if not present in file). \\
 \hline
 \end{DoxyParams}

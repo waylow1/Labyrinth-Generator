@@ -75,7 +75,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Full labyrinth grid and runtime state.  
+ <a href="structLabyrinth.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="utils_8h_source.html">utils.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Labyrinth:</div>
+<div class="dyncontent">
+<div class="center"><img src="structLabyrinth__coll__graph.png" border="0" usemap="#aLabyrinth_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -97,8 +105,13 @@ Data Fields</h2></td></tr>
 <tr class="separator:a1444b16016707db4eefb5407a282475c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc4fb53c9327943f9f60e7aecccd60ed" id="r_abc4fb53c9327943f9f60e7aecccd60ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLabyrinth.html#abc4fb53c9327943f9f60e7aecccd60ed">coins</a></td></tr>
 <tr class="separator:abc4fb53c9327943f9f60e7aecccd60ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1795d1b3ec6c204d52a8ed5d56faf7be" id="r_a1795d1b3ec6c204d52a8ed5d56faf7be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLabyrinthInternalExtras.html">LabyrinthInternalExtras</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLabyrinth.html#a1795d1b3ec6c204d52a8ed5d56faf7be">extras</a></td></tr>
+<tr class="separator:a1795d1b3ec6c204d52a8ed5d56faf7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Full labyrinth grid and runtime state. </p>
+<p>The grid uses a scaled representation of size (2*length+1) x (2*width+1) where walls are placed at even coordinates and paths/objects at odd coordinates. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="abc4fb53c9327943f9f60e7aecccd60ed" name="abc4fb53c9327943f9f60e7aecccd60ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc4fb53c9327943f9f60e7aecccd60ed">&#9670;&#160;</a></span>coins</h2>
 
@@ -110,6 +123,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Player's current coin total. </p>
 
 </div>
 </div>
@@ -138,6 +152,22 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Exit position in grid coordinates. </p>
+
+</div>
+</div>
+<a id="a1795d1b3ec6c204d52a8ed5d56faf7be" name="a1795d1b3ec6c204d52a8ed5d56faf7be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1795d1b3ec6c204d52a8ed5d56faf7be">&#9670;&#160;</a></span>extras</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structLabyrinthInternalExtras.html">LabyrinthInternalExtras</a>* Labyrinth::extras</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Optional extras (difficulty, monsters). </p>
 
 </div>
 </div>
@@ -152,6 +182,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>2D grid of characters. </p>
 
 </div>
 </div>
@@ -166,6 +197,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>1 if player currently holds the key. </p>
 
 </div>
 </div>
@@ -208,6 +240,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Player position in grid coordinates. </p>
 
 </div>
 </div>
@@ -222,6 +255,7 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Logical size (number of cells). </p>
 
 </div>
 </div>

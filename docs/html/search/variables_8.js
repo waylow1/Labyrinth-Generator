@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['walls_0',['walls',['../structwalls.html#aa52f523c7bb800b8bc90eb0bac475b92',1,'walls']]],
-  ['width_1',['width',['../structLabyrinth.html#a2b48c536f314354bd4c6ea6f91df8f64',1,'Labyrinth']]]
+  ['name_0',['name',['../structscore.html#aad7a4ea1f9b9cb9c5c8e4da90af05b65',1,'score']]]
 ];

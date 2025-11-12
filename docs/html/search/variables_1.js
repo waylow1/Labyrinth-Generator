@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ending_5fx_0',['ending_x',['../structLabyrinth.html#a4d6474b29651237dfbe95322ebe23392',1,'Labyrinth']]],
-  ['ending_5fy_1',['ending_y',['../structLabyrinth.html#ae61d23f9b539e9179796419ad368f191',1,'Labyrinth']]]
+  ['coins_0',['coins',['../structLabyrinth.html#abc4fb53c9327943f9f60e7aecccd60ed',1,'Labyrinth::coins'],['../structscore.html#af40ba4437ef59807341fd41c23ef7c72',1,'score::coins']]],
+  ['count_1',['count',['../structladder.html#a334b8953974143a0313d43314c2d53fa',1,'ladder']]]
 ];

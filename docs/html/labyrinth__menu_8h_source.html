@@ -84,19 +84,22 @@ $(document).ready(function() { init_codefold(0); });
 <a href="labyrinth__menu_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef LABYRINTH_MENU_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define LABYRINTH_MENU_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span> <a class="code hl_function" href="labyrinth__menu_8h.html#a65c493e4917b50c983f9efee5b278f1c">display_menu</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> <a class="code hl_function" href="labyrinth__menu_8h.html#aa5c7f2391fb537da2006bf3d6189b70c">ask_for_labyrinth_size_and_name</a>(<span class="keywordtype">int</span> *length, <span class="keywordtype">int</span> *width, <span class="keywordtype">char</span> **name);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">int</span> <a class="code hl_function" href="labyrinth__menu_8h.html#a2e9f40051bab371da46e0ddcbd9e0607">get_user_choice</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> <a class="code hl_function" href="labyrinth__menu_8h.html#a65c493e4917b50c983f9efee5b278f1c">display_menu</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> <a class="code hl_function" href="labyrinth__menu_8h.html#aa5c7f2391fb537da2006bf3d6189b70c">ask_for_labyrinth_size_and_name</a>(<span class="keywordtype">int</span> *length, <span class="keywordtype">int</span> *width, <span class="keywordtype">char</span> **name);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif </span><span class="comment">// LABYRINTH_MENU_H</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">int</span> <a class="code hl_function" href="labyrinth__menu_8h.html#a2e9f40051bab371da46e0ddcbd9e0607">get_user_choice</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">int</span> <a class="code hl_function" href="labyrinth__menu_8h.html#af39c727d908e8f905d0466a56b4f2d4c">ask_for_difficulty</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">// LABYRINTH_MENU_H</span></div>
 <div class="ttc" id="alabyrinth__menu_8h_html_a2e9f40051bab371da46e0ddcbd9e0607"><div class="ttname"><a href="labyrinth__menu_8h.html#a2e9f40051bab371da46e0ddcbd9e0607">get_user_choice</a></div><div class="ttdeci">int get_user_choice(void)</div><div class="ttdoc">Prompts the user to enter a menu choice and validates the input.</div><div class="ttdef"><b>Definition</b> labyrinth_menu.c:39</div></div>
 <div class="ttc" id="alabyrinth__menu_8h_html_a65c493e4917b50c983f9efee5b278f1c"><div class="ttname"><a href="labyrinth__menu_8h.html#a65c493e4917b50c983f9efee5b278f1c">display_menu</a></div><div class="ttdeci">void display_menu(void)</div><div class="ttdoc">Displays the main menu for the Labyrinth Generator.</div><div class="ttdef"><b>Definition</b> labyrinth_menu.c:4</div></div>
 <div class="ttc" id="alabyrinth__menu_8h_html_aa5c7f2391fb537da2006bf3d6189b70c"><div class="ttname"><a href="labyrinth__menu_8h.html#aa5c7f2391fb537da2006bf3d6189b70c">ask_for_labyrinth_size_and_name</a></div><div class="ttdeci">void ask_for_labyrinth_size_and_name(int *length, int *width, char **name)</div><div class="ttdoc">Asks the user for the labyrinth size and its name.</div><div class="ttdef"><b>Definition</b> labyrinth_menu.c:13</div></div>
+<div class="ttc" id="alabyrinth__menu_8h_html_af39c727d908e8f905d0466a56b4f2d4c"><div class="ttname"><a href="labyrinth__menu_8h.html#af39c727d908e8f905d0466a56b4f2d4c">ask_for_difficulty</a></div><div class="ttdeci">int ask_for_difficulty(void)</div><div class="ttdoc">Asks the user for difficulty level (0=easy, 1=hard).</div><div class="ttdef"><b>Definition</b> labyrinth_menu.c:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,6 +1,13 @@
 #ifndef DISPLAYS_H
 #define DISPLAYS_H
 
+/**
+ * @file displays.h
+ * @brief Text-mode and numeric display helpers for labyrinth structures.
+ * @details Provides functions to print the labyrinth as ASCII art or as raw
+ * integer matrices for debugging and visualization in the terminal.
+ */
+
 #include "utils.h"
 
 /**

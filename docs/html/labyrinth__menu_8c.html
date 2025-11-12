@@ -89,7 +89,7 @@ Include dependency graph for labyrinth_menu.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a39f5190c4bbb94c4d470854781e91105" id="r_a39f5190c4bbb94c4d470854781e91105"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__menu_8c.html#a39f5190c4bbb94c4d470854781e91105">display_menu</a> ()</td></tr>
-<tr class="memdesc:a39f5190c4bbb94c4d470854781e91105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the main menu for the <a class="el" href="structLabyrinth.html">Labyrinth</a> Generator.  <br /></td></tr>
+<tr class="memdesc:a39f5190c4bbb94c4d470854781e91105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the main menu for the <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> Generator.  <br /></td></tr>
 <tr class="separator:a39f5190c4bbb94c4d470854781e91105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5c7f2391fb537da2006bf3d6189b70c" id="r_aa5c7f2391fb537da2006bf3d6189b70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__menu_8c.html#aa5c7f2391fb537da2006bf3d6189b70c">ask_for_labyrinth_size_and_name</a> (int *length, int *width, char **name)</td></tr>
 <tr class="memdesc:aa5c7f2391fb537da2006bf3d6189b70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks the user for the labyrinth size and its name.  <br /></td></tr>
@@ -97,8 +97,32 @@ Functions</h2></td></tr>
 <tr class="memitem:a3fa599412893eddb08a7ee91ac233790" id="r_a3fa599412893eddb08a7ee91ac233790"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__menu_8c.html#a3fa599412893eddb08a7ee91ac233790">get_user_choice</a> ()</td></tr>
 <tr class="memdesc:a3fa599412893eddb08a7ee91ac233790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompts the user to enter a menu choice and validates the input.  <br /></td></tr>
 <tr class="separator:a3fa599412893eddb08a7ee91ac233790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef19545a75bb0b9c9c82d711b52df357" id="r_aef19545a75bb0b9c9c82d711b52df357"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__menu_8c.html#aef19545a75bb0b9c9c82d711b52df357">ask_for_difficulty</a> ()</td></tr>
+<tr class="memdesc:aef19545a75bb0b9c9c82d711b52df357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks the user for difficulty level (0=easy, 1=hard).  <br /></td></tr>
+<tr class="separator:aef19545a75bb0b9c9c82d711b52df357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aef19545a75bb0b9c9c82d711b52df357" name="aef19545a75bb0b9c9c82d711b52df357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef19545a75bb0b9c9c82d711b52df357">&#9670;&#160;</a></span>ask_for_difficulty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ask_for_difficulty </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Asks the user for difficulty level (0=easy, 1=hard). </p>
+<dl class="section return"><dt>Returns</dt><dd>Difficulty value. </dd></dl>
+
+</div>
+</div>
 <a id="aa5c7f2391fb537da2006bf3d6189b70c" name="aa5c7f2391fb537da2006bf3d6189b70c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5c7f2391fb537da2006bf3d6189b70c">&#9670;&#160;</a></span>ask_for_labyrinth_size_and_name()</h2>
 
@@ -161,7 +185,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Displays the main menu for the <a class="el" href="structLabyrinth.html">Labyrinth</a> Generator. </p>
+<p>Displays the main menu for the <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> Generator. </p>
 <p>Options:</p><ol type="1">
 <li>Generate a new labyrinth</li>
 <li>Load a labyrinth from file</li>

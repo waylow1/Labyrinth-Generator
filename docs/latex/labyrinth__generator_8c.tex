@@ -4,6 +4,7 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include "{}utils.\+h"{}}\newline
 {\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}monsters.\+h"{}}\newline
 Include dependency graph for labyrinth\+\_\+generator.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -34,7 +35,11 @@ void \mbox{\hyperlink{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47}
 \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{labyrinth__generator_8c_ab7f29ab5897b33f8998b9b4d78a85132}{concat\+\_\+vertical\+\_\+horizontal\+\_\+walls}} (\mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} vertical\+\_\+walls, \mbox{\hyperlink{utils_8h_ab3020224e6e9f4718c4bdee1beedbd1c}{Labyrinth\+Walls}} horizontal\+\_\+walls, int length, int width)
 \begin{DoxyCompactList}\small\item\em Converts the vertical and horizontal wall matrices into a full labyrinth grid. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{labyrinth__generator_8c_aa9a656eb79177ad3bb4c4b5ed3805f81}{generate\+\_\+labyrinth}} (int length, int width)
-\begin{DoxyCompactList}\small\item\em Generates a complete labyrinth with walls, paths, player, exit, key, chests, and traps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generates a complete labyrinth with walls, paths, player, exit, key, chests, and traps. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{labyrinth__generator_8c_a92481a15ec7f565f667c072379fd88da}{open\+\_\+extra\+\_\+walls}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}labyrinth, int length, int width, int extra\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Open additional random walls in the final grid to create loops (hard mode). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \mbox{\hyperlink{labyrinth__generator_8c_a1c6b381d34f91d34fdff536270698a8d}{generate\+\_\+labyrinth\+\_\+with\+\_\+difficulty}} (int length, int width, \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} diff)
+\begin{DoxyCompactList}\small\item\em Generates a labyrinth with a given difficulty. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -155,6 +160,28 @@ This function uses randomized Prim/\+Kruskal-\/like logic to open walls between 
 \begin{DoxyReturn}{Returns}
 \doxylink{structLabyrinth}{Labyrinth} structure containing the full generated labyrinth grid. 
 \end{DoxyReturn}
+\Hypertarget{labyrinth__generator_8c_a1c6b381d34f91d34fdff536270698a8d}\label{labyrinth__generator_8c_a1c6b381d34f91d34fdff536270698a8d} 
+\index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_labyrinth\_with\_difficulty@{generate\_labyrinth\_with\_difficulty}}
+\index{generate\_labyrinth\_with\_difficulty@{generate\_labyrinth\_with\_difficulty}!labyrinth\_generator.c@{labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{generate\_labyrinth\_with\_difficulty()}{generate\_labyrinth\_with\_difficulty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLabyrinth}{Labyrinth}} generate\+\_\+labyrinth\+\_\+with\+\_\+difficulty (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{width,  }\item[{\mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}}}]{diff }\end{DoxyParamCaption})}
+
+
+
+Generates a labyrinth with a given difficulty. 
+
+In hard mode, extra random internal walls are opened to create loops and monsters are spawned according to the chosen difficulty. 
+\begin{DoxyParams}{Parameters}
+{\em length} & Logical height (number of cell rows). \\
+\hline
+{\em width} & Logical width (number of cell columns). \\
+\hline
+{\em diff} & Difficulty level (DIFF\+\_\+\+EASY or DIFF\+\_\+\+HARD). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A fully initialized \doxylink{structLabyrinth}{Labyrinth} structure. 
+\end{DoxyReturn}
 \Hypertarget{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47}\label{labyrinth__generator_8c_af680eb8a9fb0c4a08c6851dea7807d47} 
 \index{labyrinth\_generator.c@{labyrinth\_generator.c}!generate\_objects@{generate\_objects}}
 \index{generate\_objects@{generate\_objects}!labyrinth\_generator.c@{labyrinth\_generator.c}}
@@ -243,6 +270,27 @@ Used to maintain connectivity when removing walls between cells.
 {\em old\+\_\+val} & Value to replace. \\
 \hline
 {\em new\+\_\+val} & New value to assign. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{labyrinth__generator_8c_a92481a15ec7f565f667c072379fd88da}\label{labyrinth__generator_8c_a92481a15ec7f565f667c072379fd88da} 
+\index{labyrinth\_generator.c@{labyrinth\_generator.c}!open\_extra\_walls@{open\_extra\_walls}}
+\index{open\_extra\_walls@{open\_extra\_walls}!labyrinth\_generator.c@{labyrinth\_generator.c}}
+\doxysubsubsection{\texorpdfstring{open\_extra\_walls()}{open\_extra\_walls()}}
+{\footnotesize\ttfamily void open\+\_\+extra\+\_\+walls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{labyrinth,  }\item[{int}]{length,  }\item[{int}]{width,  }\item[{int}]{extra\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Open additional random walls in the final grid to create loops (hard mode). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labyrinth} & Pointer to the resulting grid (scaled 2N+1 x 2M+1). \\
+\hline
+{\em length} & Logical number of rows (N). \\
+\hline
+{\em width} & Logical number of columns (M). \\
+\hline
+{\em extra\+\_\+count} & Number of extra walls to remove. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{labyrinth__generator_8c_aa8664f3474628d905e95f5f49027fcbe}\label{labyrinth__generator_8c_aa8664f3474628d905e95f5f49027fcbe} 

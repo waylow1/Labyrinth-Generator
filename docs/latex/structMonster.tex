@@ -1,0 +1,93 @@
+\doxysection{Monster Struct Reference}
+\hypertarget{structMonster}{}\label{structMonster}\index{Monster@{Monster}}
+
+
+Runtime monster entity embedded in a labyrinth.  
+
+
+
+
+{\ttfamily \#include $<$utils.\+h$>$}
+
+
+
+Collaboration diagram for Monster\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structMonster_ad352c9962630eab0cb8826c98b148e4c}{x}}
+\item 
+int \mbox{\hyperlink{structMonster_acb04a1f7b49f793ae0c48117be0026c4}{y}}
+\item 
+int \mbox{\hyperlink{structMonster_aae8285416b3d4f60e7f410e4aff1544c}{penalty\+\_\+points}}
+\item 
+int \mbox{\hyperlink{structMonster_a0ac47ebb3c8f1f2048884f1b8e6f4489}{mobility\+\_\+range}}
+\item 
+\mbox{\hyperlink{utils_8h_abd758b4216b3fc46a32b2f1a359b3492}{Monster\+Type}} \mbox{\hyperlink{structMonster_a57ebfd786c0dcbc9dde71912743a220c}{type}}
+\item 
+char \mbox{\hyperlink{structMonster_ae5af197fef97994aff967feebfed5974}{under\+\_\+char}}
+\item 
+int \mbox{\hyperlink{structMonster_ad40fb49ab45413b5f7080f290d5075ab}{alive}}
+\item 
+\mbox{\hyperlink{utils_8h_abf7eaf74557d303ddbc5f0bf2e711c58}{Monster\+Move\+Fn}} \mbox{\hyperlink{structMonster_a48298b9c98c8573fc9447840519c5d6f}{move}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Runtime monster entity embedded in a labyrinth. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structMonster_ad40fb49ab45413b5f7080f290d5075ab}\label{structMonster_ad40fb49ab45413b5f7080f290d5075ab} 
+\index{Monster@{Monster}!alive@{alive}}
+\index{alive@{alive}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{alive}{alive}}
+{\footnotesize\ttfamily int Monster\+::alive}
+
+Non-\/zero if active; zero if removed. \Hypertarget{structMonster_a0ac47ebb3c8f1f2048884f1b8e6f4489}\label{structMonster_a0ac47ebb3c8f1f2048884f1b8e6f4489} 
+\index{Monster@{Monster}!mobility\_range@{mobility\_range}}
+\index{mobility\_range@{mobility\_range}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{mobility\_range}{mobility\_range}}
+{\footnotesize\ttfamily int Monster\+::mobility\+\_\+range}
+
+Max steps a monster may attempt per turn. \Hypertarget{structMonster_a48298b9c98c8573fc9447840519c5d6f}\label{structMonster_a48298b9c98c8573fc9447840519c5d6f} 
+\index{Monster@{Monster}!move@{move}}
+\index{move@{move}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{move}{move}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_abf7eaf74557d303ddbc5f0bf2e711c58}{Monster\+Move\+Fn}} Monster\+::move}
+
+Behavior callback used to move this monster. \Hypertarget{structMonster_aae8285416b3d4f60e7f410e4aff1544c}\label{structMonster_aae8285416b3d4f60e7f410e4aff1544c} 
+\index{Monster@{Monster}!penalty\_points@{penalty\_points}}
+\index{penalty\_points@{penalty\_points}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{penalty\_points}{penalty\_points}}
+{\footnotesize\ttfamily int Monster\+::penalty\+\_\+points}
+
+Coins lost when colliding with the player. \Hypertarget{structMonster_a57ebfd786c0dcbc9dde71912743a220c}\label{structMonster_a57ebfd786c0dcbc9dde71912743a220c} 
+\index{Monster@{Monster}!type@{type}}
+\index{type@{type}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8h_abd758b4216b3fc46a32b2f1a359b3492}{Monster\+Type}} Monster\+::type}
+
+\doxylink{structMonster}{Monster} kind. \Hypertarget{structMonster_ae5af197fef97994aff967feebfed5974}\label{structMonster_ae5af197fef97994aff967feebfed5974} 
+\index{Monster@{Monster}!under\_char@{under\_char}}
+\index{under\_char@{under\_char}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{under\_char}{under\_char}}
+{\footnotesize\ttfamily char Monster\+::under\+\_\+char}
+
+Tile character stored under the monster (to restore). \Hypertarget{structMonster_ad352c9962630eab0cb8826c98b148e4c}\label{structMonster_ad352c9962630eab0cb8826c98b148e4c} 
+\index{Monster@{Monster}!x@{x}}
+\index{x@{x}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Monster\+::x}
+
+\Hypertarget{structMonster_acb04a1f7b49f793ae0c48117be0026c4}\label{structMonster_acb04a1f7b49f793ae0c48117be0026c4} 
+\index{Monster@{Monster}!y@{y}}
+\index{y@{y}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Monster\+::y}
+
+Current grid coordinates (scaled grid). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{utils_8h}{utils.\+h}}\end{DoxyCompactItemize}

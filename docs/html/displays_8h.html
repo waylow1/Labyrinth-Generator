@@ -78,6 +78,9 @@ $(function() {
   <div class="headertitle"><div class="title">displays.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Text-mode and numeric display helpers for labyrinth structures.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for displays.h:</div>
@@ -104,7 +107,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a911806843e8ba93eb13346d5200b46a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a simple 2D integer matrix.  <br /></td></tr>
 <tr class="separator:a911806843e8ba93eb13346d5200b46a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Text-mode and numeric display helpers for labyrinth structures. </p>
+<p>Provides functions to print the labyrinth as ASCII art or as raw integer matrices for debugging and visualization in the terminal. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a3af7d0d2d1fe81e0545dcf2221da0052" name="a3af7d0d2d1fe81e0545dcf2221da0052"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3af7d0d2d1fe81e0545dcf2221da0052">&#9670;&#160;</a></span>display_labyrinth()</h2>
 
@@ -141,7 +147,7 @@ Functions</h2></td></tr>
 <p>Walls are represented by solid blocks, while other cells display their character.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td>The <a class="el" href="structLabyrinth.html">Labyrinth</a> structure containing the grid. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td>The <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure containing the grid. </td></tr>
     <tr><td class="paramname">lines</td><td>Number of logical rows of the labyrinth (before scaling by 2+1). </td></tr>
     <tr><td class="paramname">columns</td><td>Number of logical columns of the labyrinth (before scaling by 2+1). </td></tr>
   </table>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['walls_0',['walls',['../structwalls.html',1,'']]]
+  ['score_0',['score',['../structscore.html',1,'']]]
 ];

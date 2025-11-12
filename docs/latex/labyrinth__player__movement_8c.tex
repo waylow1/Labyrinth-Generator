@@ -8,6 +8,7 @@
 {\ttfamily \#include "{}utils.\+h"{}}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
 {\ttfamily \#include "{}labyrinth\+\_\+score.\+h"{}}\newline
+{\ttfamily \#include "{}monsters.\+h"{}}\newline
 Include dependency graph for labyrinth\+\_\+player\+\_\+movement.\+c\+:
 % FIG 0
 \doxysubsubsection*{Functions}
@@ -164,7 +165,7 @@ If the player moves onto a chest (CHEST), 1000 coins are added.
 
 If the player moves onto a trap (TRAP), 500 coins are subtracted. 
 
-Movement blocked by a wall (WALL) or door (DOOR) is ignored. 
+Movement into a wall (WALL) is blocked. A door (DOOR) is passable if the player holds the key; stepping onto it unlocks the door. 
 \end{DoxyNote}
 \Hypertarget{labyrinth__player__movement_8c_a443946bcaa0cc4e80fd99e41870a9a7f}\label{labyrinth__player__movement_8c_a443946bcaa0cc4e80fd99e41870a9a7f} 
 \index{labyrinth\_player\_movement.c@{labyrinth\_player\_movement.c}!movement\_orchestrator@{movement\_orchestrator}}

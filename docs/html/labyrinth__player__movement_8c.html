@@ -86,6 +86,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="labyrinth__score_8h_source.html">labyrinth_score.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="monsters_8h_source.html">monsters.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for labyrinth_player_movement.c:</div>
 <div class="dyncontent">
@@ -196,7 +197,7 @@ Functions</h2></td></tr>
 <p>Launches the SDL display of the labyrinth and handles interactive gameplay. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td><a class="el" href="structLabyrinth.html">Labyrinth</a> to display and interact with. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td><a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> to display and interact with. </td></tr>
     <tr><td class="paramname">length</td><td>Height of the labyrinth. </td></tr>
     <tr><td class="paramname">width</td><td>Width of the labyrinth. </td></tr>
   </table>
@@ -393,7 +394,7 @@ If the player moves onto a chest (CHEST), 1000 coins are added. </dd>
 <dd>
 If the player moves onto a trap (TRAP), 500 coins are subtracted. </dd>
 <dd>
-Movement blocked by a wall (WALL) or door (DOOR) is ignored. </dd></dl>
+Movement into a wall (WALL) is blocked. A door (DOOR) is passable if the player holds the key; stepping onto it unlocks the door. </dd></dl>
 
 </div>
 </div>

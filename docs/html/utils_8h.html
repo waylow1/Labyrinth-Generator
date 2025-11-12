@@ -81,6 +81,9 @@ $(function() {
   <div class="headertitle"><div class="title">utils.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Core data structures and utilities for the labyrinth game.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
@@ -100,31 +103,70 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcell.html">cell</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical cell used during generation (disjoint-set labeling).  <a href="structcell.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structwalls.html">walls</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for a 2D matrix of walls (1=wall present, 0=open).  <a href="structwalls.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMonster.html">Monster</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime monster entity embedded in a labyrinth.  <a href="structMonster.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLabyrinthExtra.html">LabyrinthExtra</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional gameplay extras carried alongside a labyrinth.  <a href="structLabyrinthExtra.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLabyrinthInternalExtras.html">LabyrinthInternalExtras</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indirection used to keep extras optional/allocatable.  <a href="structLabyrinthInternalExtras.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLabyrinth.html">Labyrinth</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full labyrinth grid and runtime state.  <a href="structLabyrinth.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structscore.html">score</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Player score entry for the leaderboard.  <a href="structscore.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structladder.html">ladder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ladder containing multiple score entries.  <a href="structladder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a07e4c11e475592679fb7baaed1402ee2" id="r_a07e4c11e475592679fb7baaed1402ee2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcell.html">cell</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a07e4c11e475592679fb7baaed1402ee2">LabyrinthCell</a></td></tr>
+<tr class="memdesc:a07e4c11e475592679fb7baaed1402ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical cell used during generation (disjoint-set labeling).  <br /></td></tr>
 <tr class="separator:a07e4c11e475592679fb7baaed1402ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3020224e6e9f4718c4bdee1beedbd1c" id="r_ab3020224e6e9f4718c4bdee1beedbd1c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structwalls.html">walls</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#ab3020224e6e9f4718c4bdee1beedbd1c">LabyrinthWalls</a></td></tr>
+<tr class="memdesc:ab3020224e6e9f4718c4bdee1beedbd1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for a 2D matrix of walls (1=wall present, 0=open).  <br /></td></tr>
 <tr class="separator:ab3020224e6e9f4718c4bdee1beedbd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16a224b3b7dcc48313c0dd10a3c4f362" id="r_a16a224b3b7dcc48313c0dd10a3c4f362"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structLabyrinth.html">Labyrinth</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a16a224b3b7dcc48313c0dd10a3c4f362">Labyrinth</a></td></tr>
 <tr class="separator:a16a224b3b7dcc48313c0dd10a3c4f362"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7eaf74557d303ddbc5f0bf2e711c58" id="r_abf7eaf74557d303ddbc5f0bf2e711c58"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#abf7eaf74557d303ddbc5f0bf2e711c58">MonsterMoveFn</a>) (struct <a class="el" href="structMonster.html">Monster</a> *m, struct <a class="el" href="structLabyrinth.html">Labyrinth</a> *lab)</td></tr>
+<tr class="separator:abf7eaf74557d303ddbc5f0bf2e711c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe3b29e5c09694fcc65ce0b69e85ecde" id="r_abe3b29e5c09694fcc65ce0b69e85ecde"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structMonster.html">Monster</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#abe3b29e5c09694fcc65ce0b69e85ecde">Monster</a></td></tr>
+<tr class="memdesc:abe3b29e5c09694fcc65ce0b69e85ecde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime monster entity embedded in a labyrinth.  <br /></td></tr>
+<tr class="separator:abe3b29e5c09694fcc65ce0b69e85ecde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbe9ad1d525eb6425f95ca43e7807c5c" id="r_abbe9ad1d525eb6425f95ca43e7807c5c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structLabyrinthExtra.html">LabyrinthExtra</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#abbe9ad1d525eb6425f95ca43e7807c5c">LabyrinthExtra</a></td></tr>
+<tr class="memdesc:abbe9ad1d525eb6425f95ca43e7807c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional gameplay extras carried alongside a labyrinth.  <br /></td></tr>
+<tr class="separator:abbe9ad1d525eb6425f95ca43e7807c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3606af69435891ff110a0357366e0e2b" id="r_a3606af69435891ff110a0357366e0e2b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structLabyrinthInternalExtras.html">LabyrinthInternalExtras</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a3606af69435891ff110a0357366e0e2b">LabyrinthInternalExtras</a></td></tr>
+<tr class="memdesc:a3606af69435891ff110a0357366e0e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indirection used to keep extras optional/allocatable.  <br /></td></tr>
+<tr class="separator:a3606af69435891ff110a0357366e0e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6713cd83acee4d263623e703cc762efc" id="r_a6713cd83acee4d263623e703cc762efc"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structscore.html">score</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a6713cd83acee4d263623e703cc762efc">Score</a></td></tr>
+<tr class="memdesc:a6713cd83acee4d263623e703cc762efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Player score entry for the leaderboard.  <br /></td></tr>
 <tr class="separator:a6713cd83acee4d263623e703cc762efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2440c584686d4f544c0397d391d6e1f" id="r_aa2440c584686d4f544c0397d391d6e1f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structladder.html">ladder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#aa2440c584686d4f544c0397d391d6e1f">Ladder</a></td></tr>
+<tr class="memdesc:aa2440c584686d4f544c0397d391d6e1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ladder containing multiple score entries.  <br /></td></tr>
 <tr class="separator:aa2440c584686d4f544c0397d391d6e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a43efb0a2e61815a66134dfa5ccea0a83" id="r_a43efb0a2e61815a66134dfa5ccea0a83"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a> { <a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83a8bda7b0105c63f8b111bd844df580ce7">DIFF_EASY</a> = 0
+, <a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83acb9dd0bdcd97ec04f1573370b991ef0e">DIFF_HARD</a> = 1
+ }</td></tr>
+<tr class="memdesc:a43efb0a2e61815a66134dfa5ccea0a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Difficulty levels for generation and gameplay tweaks.  <a href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">More...</a><br /></td></tr>
+<tr class="separator:a43efb0a2e61815a66134dfa5ccea0a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd758b4216b3fc46a32b2f1a359b3492" id="r_abd758b4216b3fc46a32b2f1a359b3492"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#abd758b4216b3fc46a32b2f1a359b3492">MonsterType</a> { <a class="el" href="utils_8h.html#abd758b4216b3fc46a32b2f1a359b3492a71ceca66bcf18aaeceb5c5343be55d65">MONSTER_GHOST</a> = 'G'
+, <a class="el" href="utils_8h.html#abd758b4216b3fc46a32b2f1a359b3492af12a193688723a96cd4fe471f4b47a18">MONSTER_OGRE</a> = 'O'
+ }</td></tr>
+<tr class="memdesc:abd758b4216b3fc46a32b2f1a359b3492"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMonster.html" title="Runtime monster entity embedded in a labyrinth.">Monster</a> kinds available in the game.  <a href="utils_8h.html#abd758b4216b3fc46a32b2f1a359b3492">More...</a><br /></td></tr>
+<tr class="separator:abd758b4216b3fc46a32b2f1a359b3492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1396ec6ef3e7959327771d2e11e1f26b" id="r_a1396ec6ef3e7959327771d2e11e1f26b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26b">BOX_TYPE</a> { <br />
 &#160;&#160;<a class="el" href="utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26bafca2faad41310c7e71ec303ef789c53a">WALL</a> = '#'
 , <a class="el" href="utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26bad67a493278074cf714b262b33d84739c">PATH</a> = ' '
@@ -137,6 +179,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26baf5a83949bd019169467f675ef8c60ef9">DOOR</a> = 'd'
 <br />
  }</td></tr>
+<tr class="memdesc:a1396ec6ef3e7959327771d2e11e1f26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character codes used in the visual grid representation.  <a href="utils_8h.html#a1396ec6ef3e7959327771d2e11e1f26b">More...</a><br /></td></tr>
 <tr class="separator:a1396ec6ef3e7959327771d2e11e1f26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -154,19 +197,28 @@ Functions</h2></td></tr>
 <tr class="memdesc:a2d67ef53c3399032d366cec633db7fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a 2D array of LabyrinthCell structures.  <br /></td></tr>
 <tr class="separator:a2d67ef53c3399032d366cec633db7fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a594eb5e2225d82c964808c733c4309" id="r_a6a594eb5e2225d82c964808c733c4309"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a6a594eb5e2225d82c964808c733c4309">free_labyrinth</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> labyrinth, int lines, int columns)</td></tr>
-<tr class="memdesc:a6a594eb5e2225d82c964808c733c4309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a <a class="el" href="structLabyrinth.html">Labyrinth</a> structure, including its grid.  <br /></td></tr>
+<tr class="memdesc:a6a594eb5e2225d82c964808c733c4309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for a <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure, including its grid.  <br /></td></tr>
 <tr class="separator:a6a594eb5e2225d82c964808c733c4309"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cccaa878d777af9c24e6dc352b885ab" id="r_a7cccaa878d777af9c24e6dc352b885ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a7cccaa878d777af9c24e6dc352b885ab">dump_labyrinth</a> (int seed, int lines, int columns, char *filename)</td></tr>
 <tr class="memdesc:a7cccaa878d777af9c24e6dc352b885ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps the labyrinth configuration (seed, lines, columns) to a file.  <br /></td></tr>
 <tr class="separator:a7cccaa878d777af9c24e6dc352b885ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1986f83dd2126857ff708b05627e820a" id="r_a1986f83dd2126857ff708b05627e820a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a1986f83dd2126857ff708b05627e820a">dump_labyrinth_ext</a> (int seed, int lines, int columns, <a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a> diff, char *filename)</td></tr>
+<tr class="memdesc:a1986f83dd2126857ff708b05627e820a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended dump: also persists difficulty as a 4th field.  <br /></td></tr>
+<tr class="separator:a1986f83dd2126857ff708b05627e820a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab75970c7149ceb3ecaea1a0cbb1ede8e" id="r_ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#ab75970c7149ceb3ecaea1a0cbb1ede8e">display_all_available_files</a> (char **labyrinth_name)</td></tr>
 <tr class="memdesc:ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays all available labyrinth configuration files and prompts the user to select one.  <br /></td></tr>
 <tr class="separator:ab75970c7149ceb3ecaea1a0cbb1ede8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab8c16aca09c1c9a75601428d67e963b" id="r_aab8c16aca09c1c9a75601428d67e963b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#aab8c16aca09c1c9a75601428d67e963b">load_labyrinth</a> (const char *filename, int *seed, int *lines, int *columns)</td></tr>
 <tr class="memdesc:aab8c16aca09c1c9a75601428d67e963b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the labyrinth configuration (seed, lines, columns) from a file.  <br /></td></tr>
 <tr class="separator:aab8c16aca09c1c9a75601428d67e963b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6f2957cde65f98764a36346f677509" id="r_a4c6f2957cde65f98764a36346f677509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8h.html#a4c6f2957cde65f98764a36346f677509">load_labyrinth_ext</a> (const char *filename, int *seed, int *lines, int *columns, <a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a> *diff)</td></tr>
+<tr class="memdesc:a4c6f2957cde65f98764a36346f677509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended load: reads difficulty if present (defaults to DIFF_EASY).  <br /></td></tr>
+<tr class="separator:a4c6f2957cde65f98764a36346f677509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Core data structures and utilities for the labyrinth game. </p>
+<p>Defines fundamental types (cells, walls, labyrinth, score, monsters), enums, and helper functions for allocation, I/O, and persistence. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="a16a224b3b7dcc48313c0dd10a3c4f362" name="a16a224b3b7dcc48313c0dd10a3c4f362"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16a224b3b7dcc48313c0dd10a3c4f362">&#9670;&#160;</a></span>Labyrinth</h2>
 
@@ -178,6 +230,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Forward declaration for the main <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure. </p>
 
 </div>
 </div>
@@ -193,6 +246,40 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Logical cell used during generation (disjoint-set labeling). </p>
+
+</div>
+</div>
+<a id="abbe9ad1d525eb6425f95ca43e7807c5c" name="abbe9ad1d525eb6425f95ca43e7807c5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe9ad1d525eb6425f95ca43e7807c5c">&#9670;&#160;</a></span>LabyrinthExtra</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structLabyrinthExtra.html">LabyrinthExtra</a> <a class="el" href="structLabyrinthExtra.html">LabyrinthExtra</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Optional gameplay extras carried alongside a labyrinth. </p>
+
+</div>
+</div>
+<a id="a3606af69435891ff110a0357366e0e2b" name="a3606af69435891ff110a0357366e0e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3606af69435891ff110a0357366e0e2b">&#9670;&#160;</a></span>LabyrinthInternalExtras</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structLabyrinthInternalExtras.html">LabyrinthInternalExtras</a> <a class="el" href="structLabyrinthInternalExtras.html">LabyrinthInternalExtras</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indirection used to keep extras optional/allocatable. </p>
+
 </div>
 </div>
 <a id="ab3020224e6e9f4718c4bdee1beedbd1c" name="ab3020224e6e9f4718c4bdee1beedbd1c"></a>
@@ -206,6 +293,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Wrapper for a 2D matrix of walls (1=wall present, 0=open). </p>
 
 </div>
 </div>
@@ -221,6 +310,39 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Ladder containing multiple score entries. </p>
+
+</div>
+</div>
+<a id="abe3b29e5c09694fcc65ce0b69e85ecde" name="abe3b29e5c09694fcc65ce0b69e85ecde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3b29e5c09694fcc65ce0b69e85ecde">&#9670;&#160;</a></span>Monster</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structMonster.html">Monster</a> <a class="el" href="structMonster.html">Monster</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Runtime monster entity embedded in a labyrinth. </p>
+
+</div>
+</div>
+<a id="abf7eaf74557d303ddbc5f0bf2e711c58" name="abf7eaf74557d303ddbc5f0bf2e711c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf7eaf74557d303ddbc5f0bf2e711c58">&#9670;&#160;</a></span>MonsterMoveFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* MonsterMoveFn) (struct <a class="el" href="structMonster.html">Monster</a> *m, struct <a class="el" href="structLabyrinth.html">Labyrinth</a> *lab)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function pointer for per-monster movement behavior. </p>
+
 </div>
 </div>
 <a id="a6713cd83acee4d263623e703cc762efc" name="a6713cd83acee4d263623e703cc762efc"></a>
@@ -234,6 +356,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Player score entry for the leaderboard. </p>
 
 </div>
 </div>
@@ -249,6 +373,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Character codes used in the visual grid representation. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26bafca2faad41310c7e71ec303ef789c53a" name="a1396ec6ef3e7959327771d2e11e1f26bafca2faad41310c7e71ec303ef789c53a"></a>WALL&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26bad67a493278074cf714b262b33d84739c" name="a1396ec6ef3e7959327771d2e11e1f26bad67a493278074cf714b262b33d84739c"></a>PATH&#160;</td><td class="fielddoc"></td></tr>
@@ -258,6 +384,50 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26bad3fba710316b46b04a3bf166dfb65643" name="a1396ec6ef3e7959327771d2e11e1f26bad3fba710316b46b04a3bf166dfb65643"></a>CHEST&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26bac0533b6cb94383273589b6764c8a0796" name="a1396ec6ef3e7959327771d2e11e1f26bac0533b6cb94383273589b6764c8a0796"></a>TRAP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1396ec6ef3e7959327771d2e11e1f26baf5a83949bd019169467f675ef8c60ef9" name="a1396ec6ef3e7959327771d2e11e1f26baf5a83949bd019169467f675ef8c60ef9"></a>DOOR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a43efb0a2e61815a66134dfa5ccea0a83" name="a43efb0a2e61815a66134dfa5ccea0a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43efb0a2e61815a66134dfa5ccea0a83">&#9670;&#160;</a></span>Difficulty</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Difficulty levels for generation and gameplay tweaks. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a43efb0a2e61815a66134dfa5ccea0a83a8bda7b0105c63f8b111bd844df580ce7" name="a43efb0a2e61815a66134dfa5ccea0a83a8bda7b0105c63f8b111bd844df580ce7"></a>DIFF_EASY&#160;</td><td class="fielddoc"><p>Classic maze, no extra loops and no monsters. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a43efb0a2e61815a66134dfa5ccea0a83acb9dd0bdcd97ec04f1573370b991ef0e" name="a43efb0a2e61815a66134dfa5ccea0a83acb9dd0bdcd97ec04f1573370b991ef0e"></a>DIFF_HARD&#160;</td><td class="fielddoc"><p>Extra loops and monsters enabled. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="abd758b4216b3fc46a32b2f1a359b3492" name="abd758b4216b3fc46a32b2f1a359b3492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd758b4216b3fc46a32b2f1a359b3492">&#9670;&#160;</a></span>MonsterType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="utils_8h.html#abd758b4216b3fc46a32b2f1a359b3492">MonsterType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structMonster.html" title="Runtime monster entity embedded in a labyrinth.">Monster</a> kinds available in the game. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abd758b4216b3fc46a32b2f1a359b3492a71ceca66bcf18aaeceb5c5343be55d65" name="abd758b4216b3fc46a32b2f1a359b3492a71ceca66bcf18aaeceb5c5343be55d65"></a>MONSTER_GHOST&#160;</td><td class="fielddoc"><p>Ghost: can ignore some walls when moving. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abd758b4216b3fc46a32b2f1a359b3492af12a193688723a96cd4fe471f4b47a18" name="abd758b4216b3fc46a32b2f1a359b3492af12a193688723a96cd4fe471f4b47a18"></a>MONSTER_OGRE&#160;</td><td class="fielddoc"><p>Ogre: heavy, slower movement, different AI. </p>
+</td></tr>
 </table>
 
 </div>
@@ -416,6 +586,64 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1986f83dd2126857ff708b05627e820a" name="a1986f83dd2126857ff708b05627e820a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1986f83dd2126857ff708b05627e820a">&#9670;&#160;</a></span>dump_labyrinth_ext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dump_labyrinth_ext </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a>&#160;</td>
+          <td class="paramname"><em>diff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extended dump: also persists difficulty as a 4th field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>RNG seed used to generate the labyrinth. </td></tr>
+    <tr><td class="paramname">lines</td><td>Logical number of rows. </td></tr>
+    <tr><td class="paramname">columns</td><td>Logical number of columns. </td></tr>
+    <tr><td class="paramname">diff</td><td>Difficulty to persist alongside the config. </td></tr>
+    <tr><td class="paramname">filename</td><td>Basename (without extension) for the output file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6a594eb5e2225d82c964808c733c4309" name="a6a594eb5e2225d82c964808c733c4309"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a594eb5e2225d82c964808c733c4309">&#9670;&#160;</a></span>free_labyrinth()</h2>
 
@@ -448,10 +676,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Frees the memory allocated for a <a class="el" href="structLabyrinth.html">Labyrinth</a> structure, including its grid. </p>
+<p>Frees the memory allocated for a <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure, including its grid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td>The <a class="el" href="structLabyrinth.html">Labyrinth</a> structure to be freed. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td>The <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure to be freed. </td></tr>
     <tr><td class="paramname">lines</td><td>The number of rows in the labyrinth grid. </td></tr>
     <tr><td class="paramname">columns</td><td>The number of columns in the labyrinth grid. </td></tr>
   </table>
@@ -579,6 +807,64 @@ Functions</h2></td></tr>
     <tr><td class="paramname">seed</td><td>A pointer to store the loaded seed value. </td></tr>
     <tr><td class="paramname">lines</td><td>A pointer to store the loaded number of rows. </td></tr>
     <tr><td class="paramname">columns</td><td>A pointer to store the loaded number of columns. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4c6f2957cde65f98764a36346f677509" name="a4c6f2957cde65f98764a36346f677509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c6f2957cde65f98764a36346f677509">&#9670;&#160;</a></span>load_labyrinth_ext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void load_labyrinth_ext </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>lines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a> *&#160;</td>
+          <td class="paramname"><em>diff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extended load: reads difficulty if present (defaults to DIFF_EASY). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Basename (without extension) of the config to load. </td></tr>
+    <tr><td class="paramname">seed</td><td>Output seed. </td></tr>
+    <tr><td class="paramname">lines</td><td>Output logical rows. </td></tr>
+    <tr><td class="paramname">columns</td><td>Output logical cols. </td></tr>
+    <tr><td class="paramname">diff</td><td>Output difficulty (DIFF_EASY if not present in file). </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5fended_0',['is_ended',['../labyrinth__player__movement_8c.html#a0a62a11f992a30cb1fc562c0336a50e1',1,'is_ended(Labyrinth *labyrinth, int nb_iterations, float elapsed_sec):&#160;labyrinth_player_movement.c'],['../labyrinth__player__movement_8h.html#a0a62a11f992a30cb1fc562c0336a50e1',1,'is_ended(Labyrinth *labyrinth, int nb_iterations, float elapsed_sec):&#160;labyrinth_player_movement.c']]]
+  ['handle_5fplayer_5fmonster_5fcollisions_0',['handle_player_monster_collisions',['../monsters_8c.html#ac4ddec0ccd1262a5319072e3b17db6e8',1,'handle_player_monster_collisions(Labyrinth *lab):&#160;monsters.c'],['../monsters_8h.html#ac4ddec0ccd1262a5319072e3b17db6e8',1,'handle_player_monster_collisions(Labyrinth *lab):&#160;monsters.c']]]
 ];

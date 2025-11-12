@@ -1,0 +1,88 @@
+\doxysection{src/subunit/monsters.c File Reference}
+\hypertarget{monsters_8c}{}\label{monsters_8c}\index{src/subunit/monsters.c@{src/subunit/monsters.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include "{}monsters.\+h"{}}\newline
+Include dependency graph for monsters.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{monsters_8c_a8f8572dc2a9692746a07550bbd9ee1c3}{is\+\_\+monster\+\_\+char}} (char c)
+\begin{DoxyCompactList}\small\item\em Utility to check whether a character corresponds to a monster tile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{monsters_8c_a703f87218befb1f2fb2f7cc91f48d73e}{init\+\_\+monsters}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}lab, \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} diff)
+\begin{DoxyCompactList}\small\item\em Initialize monsters for a given labyrinth and difficulty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{monsters_8c_a145550233f1cef24ea3342a54965e825}{move\+\_\+monsters}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}lab)
+\begin{DoxyCompactList}\small\item\em Move all alive monsters one step according to their behavior. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{monsters_8c_ac4ddec0ccd1262a5319072e3b17db6e8}{handle\+\_\+player\+\_\+monster\+\_\+collisions}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}lab)
+\begin{DoxyCompactList}\small\item\em Handle collisions between player and monsters (apply penalties, remove monsters). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{monsters_8c_ac4ddec0ccd1262a5319072e3b17db6e8}\label{monsters_8c_ac4ddec0ccd1262a5319072e3b17db6e8} 
+\index{monsters.c@{monsters.c}!handle\_player\_monster\_collisions@{handle\_player\_monster\_collisions}}
+\index{handle\_player\_monster\_collisions@{handle\_player\_monster\_collisions}!monsters.c@{monsters.c}}
+\doxysubsubsection{\texorpdfstring{handle\_player\_monster\_collisions()}{handle\_player\_monster\_collisions()}}
+{\footnotesize\ttfamily void handle\+\_\+player\+\_\+monster\+\_\+collisions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{lab }\end{DoxyParamCaption})}
+
+
+
+Handle collisions between player and monsters (apply penalties, remove monsters). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lab} & \doxylink{structLabyrinth}{Labyrinth} containing player state and monsters. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{monsters_8c_a703f87218befb1f2fb2f7cc91f48d73e}\label{monsters_8c_a703f87218befb1f2fb2f7cc91f48d73e} 
+\index{monsters.c@{monsters.c}!init\_monsters@{init\_monsters}}
+\index{init\_monsters@{init\_monsters}!monsters.c@{monsters.c}}
+\doxysubsubsection{\texorpdfstring{init\_monsters()}{init\_monsters()}}
+{\footnotesize\ttfamily void init\+\_\+monsters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{lab,  }\item[{\mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}}}]{diff }\end{DoxyParamCaption})}
+
+
+
+Initialize monsters for a given labyrinth and difficulty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lab} & \doxylink{structLabyrinth}{Labyrinth} to populate with monsters. \\
+\hline
+{\em diff} & Difficulty level driving number/types of monsters. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{monsters_8c_a8f8572dc2a9692746a07550bbd9ee1c3}\label{monsters_8c_a8f8572dc2a9692746a07550bbd9ee1c3} 
+\index{monsters.c@{monsters.c}!is\_monster\_char@{is\_monster\_char}}
+\index{is\_monster\_char@{is\_monster\_char}!monsters.c@{monsters.c}}
+\doxysubsubsection{\texorpdfstring{is\_monster\_char()}{is\_monster\_char()}}
+{\footnotesize\ttfamily int is\+\_\+monster\+\_\+char (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Utility to check whether a character corresponds to a monster tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The grid character to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the character denotes a monster, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{monsters_8c_a145550233f1cef24ea3342a54965e825}\label{monsters_8c_a145550233f1cef24ea3342a54965e825} 
+\index{monsters.c@{monsters.c}!move\_monsters@{move\_monsters}}
+\index{move\_monsters@{move\_monsters}!monsters.c@{monsters.c}}
+\doxysubsubsection{\texorpdfstring{move\_monsters()}{move\_monsters()}}
+{\footnotesize\ttfamily void move\+\_\+monsters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLabyrinth}{Labyrinth}} \texorpdfstring{$\ast$}{*}}]{lab }\end{DoxyParamCaption})}
+
+
+
+Move all alive monsters one step according to their behavior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lab} & \doxylink{structLabyrinth}{Labyrinth} containing the monsters and grid. \\
+\hline
+\end{DoxyParams}

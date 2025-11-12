@@ -163,8 +163,8 @@ Functions</h2></td></tr>
 <p>Adds a new player's score to the scores array if it qualifies for the leaderboard. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ladder</td><td>A pointer to Ladder structure. </td></tr>
-    <tr><td class="paramname">new_player</td><td>The Score structure containing the new player's name and score. </td></tr>
+    <tr><td class="paramname">ladder</td><td>A pointer to Ladder structure to be updated. </td></tr>
+    <tr><td class="paramname">new_player</td><td>The Score containing the new player's name and coins. </td></tr>
   </table>
   </dd>
 </dl>
@@ -218,8 +218,7 @@ Functions</h2></td></tr>
 <p>Displays the leaderboard with the list of scores. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scores</td><td>A pointer to an array of Score structures. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of scores in the array. </td></tr>
+    <tr><td class="paramname">ladder</td><td>Ladder structure containing the entries to display. </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,7 +256,6 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ladder</td><td>A Ladder structure containing the scores to be dumped. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of scores to dump. </td></tr>
     <tr><td class="paramname">labyrinth_name</td><td>The name of the labyrinth associated with the score (without extension). </td></tr>
   </table>
   </dd>
@@ -284,7 +282,7 @@ Functions</h2></td></tr>
 <p>Displays the end-of-game dialog and prompts the user for their name and score. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">score</td><td>A pointer to the Score structure containing the player's name and score. </td></tr>
+    <tr><td class="paramname">score</td><td>A pointer to the Score structure containing the player's name and coins. </td></tr>
   </table>
   </dd>
 </dl>
@@ -321,11 +319,10 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">labyrinth_name</td><td>The name of the labyrinth associated with the scores (without extension). </td></tr>
-    <tr><td class="paramname">out_count</td><td>A pointer to store the number of scores loaded. </td></tr>
+    <tr><td class="paramname">ladder</td><td>Output ladder to be filled with loaded scores. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -348,8 +345,7 @@ Functions</h2></td></tr>
 <p>Sorts the scores in descending order based on the number of coins. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ladder</td><td>A pointer to Ladder structure. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of scores in the array. </td></tr>
+    <tr><td class="paramname">ladder</td><td>A pointer to Ladder structure to sort in-place. </td></tr>
   </table>
   </dd>
 </dl>

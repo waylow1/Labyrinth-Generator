@@ -19,10 +19,14 @@ void \mbox{\hyperlink{utils_8c_a2d67ef53c3399032d366cec633db7fc5}{free\+\_\+laby
 \begin{DoxyCompactList}\small\item\em Frees the memory allocated for a 2D array of Labyrinth\+Cell structures. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8c_a6a594eb5e2225d82c964808c733c4309}{free\+\_\+labyrinth}} (\mbox{\hyperlink{structLabyrinth}{Labyrinth}} labyrinth, int lines, int columns)
 \begin{DoxyCompactList}\small\item\em Frees the memory allocated for a \doxylink{structLabyrinth}{Labyrinth} structure, including its grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_a1986f83dd2126857ff708b05627e820a}{dump\+\_\+labyrinth\+\_\+ext}} (int seed, int lines, int columns, \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} diff, char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Extended dump\+: also persists difficulty as a 4th field. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8c_a7cccaa878d777af9c24e6dc352b885ab}{dump\+\_\+labyrinth}} (int seed, int lines, int columns, char \texorpdfstring{$\ast$}{*}filename)
 \begin{DoxyCompactList}\small\item\em Dumps the labyrinth configuration (seed, lines, columns) to a file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8c_ab75970c7149ceb3ecaea1a0cbb1ede8e}{display\+\_\+all\+\_\+available\+\_\+files}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}labyrinth\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Displays all available labyrinth configuration files and prompts the user to select one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_a4c6f2957cde65f98764a36346f677509}{load\+\_\+labyrinth\+\_\+ext}} (const char \texorpdfstring{$\ast$}{*}filename, int \texorpdfstring{$\ast$}{*}seed, int \texorpdfstring{$\ast$}{*}lines, int \texorpdfstring{$\ast$}{*}columns, \mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} \texorpdfstring{$\ast$}{*}diff)
+\begin{DoxyCompactList}\small\item\em Extended load\+: reads difficulty if present (defaults to DIFF\+\_\+\+EASY). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{utils_8c_aab8c16aca09c1c9a75601428d67e963b}{load\+\_\+labyrinth}} (const char \texorpdfstring{$\ast$}{*}filename, int \texorpdfstring{$\ast$}{*}seed, int \texorpdfstring{$\ast$}{*}lines, int \texorpdfstring{$\ast$}{*}columns)
 \begin{DoxyCompactList}\small\item\em Loads the labyrinth configuration (seed, lines, columns) from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -104,6 +108,29 @@ Dumps the labyrinth configuration (seed, lines, columns) to a file.
 {\em filename} & The name of the file to save the configuration (without extension). \\
 \hline
 \end{DoxyParams}
+\Hypertarget{utils_8c_a1986f83dd2126857ff708b05627e820a}\label{utils_8c_a1986f83dd2126857ff708b05627e820a} 
+\index{utils.c@{utils.c}!dump\_labyrinth\_ext@{dump\_labyrinth\_ext}}
+\index{dump\_labyrinth\_ext@{dump\_labyrinth\_ext}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{dump\_labyrinth\_ext()}{dump\_labyrinth\_ext()}}
+{\footnotesize\ttfamily void dump\+\_\+labyrinth\+\_\+ext (\begin{DoxyParamCaption}\item[{int}]{seed,  }\item[{int}]{lines,  }\item[{int}]{columns,  }\item[{\mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}}}]{diff,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Extended dump\+: also persists difficulty as a 4th field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & RNG seed used to generate the labyrinth. \\
+\hline
+{\em lines} & Logical number of rows. \\
+\hline
+{\em columns} & Logical number of columns. \\
+\hline
+{\em diff} & Difficulty to persist alongside the config. \\
+\hline
+{\em filename} & Basename (without extension) for the output file. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{utils_8c_a6a594eb5e2225d82c964808c733c4309}\label{utils_8c_a6a594eb5e2225d82c964808c733c4309} 
 \index{utils.c@{utils.c}!free\_labyrinth@{free\_labyrinth}}
 \index{free\_labyrinth@{free\_labyrinth}!utils.c@{utils.c}}
@@ -176,5 +203,28 @@ Loads the labyrinth configuration (seed, lines, columns) from a file.
 {\em lines} & A pointer to store the loaded number of rows. \\
 \hline
 {\em columns} & A pointer to store the loaded number of columns. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{utils_8c_a4c6f2957cde65f98764a36346f677509}\label{utils_8c_a4c6f2957cde65f98764a36346f677509} 
+\index{utils.c@{utils.c}!load\_labyrinth\_ext@{load\_labyrinth\_ext}}
+\index{load\_labyrinth\_ext@{load\_labyrinth\_ext}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{load\_labyrinth\_ext()}{load\_labyrinth\_ext()}}
+{\footnotesize\ttfamily void load\+\_\+labyrinth\+\_\+ext (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{int \texorpdfstring{$\ast$}{*}}]{seed,  }\item[{int \texorpdfstring{$\ast$}{*}}]{lines,  }\item[{int \texorpdfstring{$\ast$}{*}}]{columns,  }\item[{\mbox{\hyperlink{utils_8h_a43efb0a2e61815a66134dfa5ccea0a83}{Difficulty}} \texorpdfstring{$\ast$}{*}}]{diff }\end{DoxyParamCaption})}
+
+
+
+Extended load\+: reads difficulty if present (defaults to DIFF\+\_\+\+EASY). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Basename (without extension) of the config to load. \\
+\hline
+{\em seed} & Output seed. \\
+\hline
+{\em lines} & Output logical rows. \\
+\hline
+{\em columns} & Output logical cols. \\
+\hline
+{\em diff} & Output difficulty (DIFF\+\_\+\+EASY if not present in file). \\
 \hline
 \end{DoxyParams}

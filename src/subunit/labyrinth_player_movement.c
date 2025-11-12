@@ -78,7 +78,6 @@ void try_unlock_door(Labyrinth *labyrinth, SDL_Renderer *renderer) {
 }
 
 int is_ended(Labyrinth *labyrinth, int nb_iterations, float elapsed_sec) {
-    // Fin de partie uniquement si le joueur est sur la case END
     if (labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] == END) {
         printf("🎉 Congratulations! You've reached the exit!\n");
         printf("⏱️ Time taken: %.2f seconds\n", elapsed_sec);

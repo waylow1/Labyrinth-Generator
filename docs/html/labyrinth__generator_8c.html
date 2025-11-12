@@ -82,6 +82,7 @@ $(function() {
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="monsters_8h_source.html">monsters.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for labyrinth_generator.c:</div>
 <div class="dyncontent">
@@ -120,6 +121,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aa9a656eb79177ad3bb4c4b5ed3805f81" id="r_aa9a656eb79177ad3bb4c4b5ed3805f81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLabyrinth.html">Labyrinth</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8c.html#aa9a656eb79177ad3bb4c4b5ed3805f81">generate_labyrinth</a> (int length, int width)</td></tr>
 <tr class="memdesc:aa9a656eb79177ad3bb4c4b5ed3805f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a complete labyrinth with walls, paths, player, exit, key, chests, and traps.  <br /></td></tr>
 <tr class="separator:aa9a656eb79177ad3bb4c4b5ed3805f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92481a15ec7f565f667c072379fd88da" id="r_a92481a15ec7f565f667c072379fd88da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8c.html#a92481a15ec7f565f667c072379fd88da">open_extra_walls</a> (<a class="el" href="structLabyrinth.html">Labyrinth</a> *labyrinth, int length, int width, int extra_count)</td></tr>
+<tr class="memdesc:a92481a15ec7f565f667c072379fd88da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open additional random walls in the final grid to create loops (hard mode).  <br /></td></tr>
+<tr class="separator:a92481a15ec7f565f667c072379fd88da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6b381d34f91d34fdff536270698a8d" id="r_a1c6b381d34f91d34fdff536270698a8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structLabyrinth.html">Labyrinth</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__generator_8c.html#a1c6b381d34f91d34fdff536270698a8d">generate_labyrinth_with_difficulty</a> (int length, int width, <a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a> diff)</td></tr>
+<tr class="memdesc:a1c6b381d34f91d34fdff536270698a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a labyrinth with a given difficulty.  <br /></td></tr>
+<tr class="separator:a1c6b381d34f91d34fdff536270698a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a6a89f1096ca9103967438a007b43d825" name="a6a89f1096ca9103967438a007b43d825"></a>
@@ -237,7 +244,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structLabyrinth.html">Labyrinth</a> structure with the completed grid. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure with the completed grid. </dd></dl>
 
 </div>
 </div>
@@ -276,7 +283,7 @@ Functions</h2></td></tr>
 <p>Generates random chests in the labyrinth grid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html">Labyrinth</a> structure. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure. </td></tr>
     <tr><td class="paramname">length</td><td>Logical height of the labyrinth. </td></tr>
     <tr><td class="paramname">width</td><td>Logical width of the labyrinth. </td></tr>
   </table>
@@ -321,7 +328,7 @@ Functions</h2></td></tr>
 <p>Generates a key in a random odd position within the labyrinth. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html">Labyrinth</a> structure. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure. </td></tr>
     <tr><td class="paramname">length</td><td>Logical height of the labyrinth. </td></tr>
     <tr><td class="paramname">width</td><td>Logical width of the labyrinth. </td></tr>
   </table>
@@ -365,7 +372,52 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structLabyrinth.html">Labyrinth</a> structure containing the full generated labyrinth grid. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure containing the full generated labyrinth grid. </dd></dl>
+
+</div>
+</div>
+<a id="a1c6b381d34f91d34fdff536270698a8d" name="a1c6b381d34f91d34fdff536270698a8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c6b381d34f91d34fdff536270698a8d">&#9670;&#160;</a></span>generate_labyrinth_with_difficulty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structLabyrinth.html">Labyrinth</a> generate_labyrinth_with_difficulty </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8h.html#a43efb0a2e61815a66134dfa5ccea0a83">Difficulty</a>&#160;</td>
+          <td class="paramname"><em>diff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a labyrinth with a given difficulty. </p>
+<p>In hard mode, extra random internal walls are opened to create loops and monsters are spawned according to the chosen difficulty. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Logical height (number of cell rows). </td></tr>
+    <tr><td class="paramname">width</td><td>Logical width (number of cell columns). </td></tr>
+    <tr><td class="paramname">diff</td><td>Difficulty level (DIFF_EASY or DIFF_HARD). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A fully initialized <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure. </dd></dl>
 
 </div>
 </div>
@@ -404,7 +456,7 @@ Functions</h2></td></tr>
 <p>Places the player, exit, key, chests, and traps in the labyrinth grid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html">Labyrinth</a> structure. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure. </td></tr>
     <tr><td class="paramname">length</td><td>Logical height of the labyrinth. </td></tr>
     <tr><td class="paramname">width</td><td>Logical width of the labyrinth. </td></tr>
   </table>
@@ -454,7 +506,7 @@ Functions</h2></td></tr>
 <p>Generates traps in the labyrinth grid, usually half the number of chests. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html">Labyrinth</a> structure. </td></tr>
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> structure. </td></tr>
     <tr><td class="paramname">length</td><td>Logical height of the labyrinth. </td></tr>
     <tr><td class="paramname">width</td><td>Logical width of the labyrinth. </td></tr>
     <tr><td class="paramname">nb_chests</td><td>Number of chests placed (used to compute trap count). </td></tr>
@@ -576,6 +628,57 @@ Functions</h2></td></tr>
     <tr><td class="paramname">width</td><td>Number of columns. </td></tr>
     <tr><td class="paramname">old_val</td><td>Value to replace. </td></tr>
     <tr><td class="paramname">new_val</td><td>New value to assign. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92481a15ec7f565f667c072379fd88da" name="a92481a15ec7f565f667c072379fd88da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92481a15ec7f565f667c072379fd88da">&#9670;&#160;</a></span>open_extra_walls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void open_extra_walls </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structLabyrinth.html">Labyrinth</a> *&#160;</td>
+          <td class="paramname"><em>labyrinth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>extra_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open additional random walls in the final grid to create loops (hard mode). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labyrinth</td><td>Pointer to the resulting grid (scaled 2N+1 x 2M+1). </td></tr>
+    <tr><td class="paramname">length</td><td>Logical number of rows (N). </td></tr>
+    <tr><td class="paramname">width</td><td>Logical number of columns (M). </td></tr>
+    <tr><td class="paramname">extra_count</td><td>Number of extra walls to remove. </td></tr>
   </table>
   </dd>
 </dl>

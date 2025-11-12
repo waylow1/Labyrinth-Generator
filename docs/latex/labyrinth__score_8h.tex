@@ -1,5 +1,10 @@
 \doxysection{include/labyrinth\+\_\+score.h File Reference}
 \hypertarget{labyrinth__score_8h}{}\label{labyrinth__score_8h}\index{include/labyrinth\_score.h@{include/labyrinth\_score.h}}
+
+
+Leaderboard and score persistence utilities.  
+
+
 {\ttfamily \#include "{}utils.\+h"{}}\newline
 Include dependency graph for labyrinth\+\_\+score.\+h\+:
 % FIG 0
@@ -24,6 +29,11 @@ int \mbox{\hyperlink{labyrinth__score_8h_a3c76820968b792c7736f410ea17e14c5}{dump
 \begin{DoxyCompactList}\small\item\em Dumps the player\textquotesingle{}s score to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Leaderboard and score persistence utilities. 
+
+Declares helpers to create score files, display ladders, add and sort entries, and load/dump scores associated with a labyrinth. 
+
 \doxysubsection{Function Documentation}
 \Hypertarget{labyrinth__score_8h_ac46e1e22ed933707bdb4a790a186179b}\label{labyrinth__score_8h_ac46e1e22ed933707bdb4a790a186179b} 
 \index{labyrinth\_score.h@{labyrinth\_score.h}!add\_new\_score@{add\_new\_score}}
@@ -37,9 +47,9 @@ Adds a new player\textquotesingle{}s score to the scores array if it qualifies f
 
 
 \begin{DoxyParams}{Parameters}
-{\em ladder} & A pointer to Ladder structure. \\
+{\em ladder} & A pointer to Ladder structure to be updated. \\
 \hline
-{\em new\+\_\+player} & The Score structure containing the new player\textquotesingle{}s name and score. \\
+{\em new\+\_\+player} & The Score containing the new player\textquotesingle{}s name and coins. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -75,9 +85,7 @@ Displays the leaderboard with the list of scores.
 
 
 \begin{DoxyParams}{Parameters}
-{\em scores} & A pointer to an array of Score structures. \\
-\hline
-{\em count} & The number of scores in the array. \\
+{\em ladder} & Ladder structure containing the entries to display. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -97,8 +105,6 @@ Dumps the player\textquotesingle{}s score to a file.
 \begin{DoxyParams}{Parameters}
 {\em ladder} & A Ladder structure containing the scores to be dumped. \\
 \hline
-{\em count} & The number of scores to dump. \\
-\hline
 {\em labyrinth\+\_\+name} & The name of the labyrinth associated with the score (without extension). \\
 \hline
 \end{DoxyParams}
@@ -114,7 +120,7 @@ Displays the end-\/of-\/game dialog and prompts the user for their name and scor
 
 
 \begin{DoxyParams}{Parameters}
-{\em score} & A pointer to the Score structure containing the player\textquotesingle{}s name and score. \\
+{\em score} & A pointer to the Score structure containing the player\textquotesingle{}s name and coins. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{labyrinth__score_8h_a89b3d997f59fc3a4f79778d55793f498}\label{labyrinth__score_8h_a89b3d997f59fc3a4f79778d55793f498} 
@@ -131,12 +137,9 @@ Loads the scores from a file associated with a specific labyrinth.
 \begin{DoxyParams}{Parameters}
 {\em labyrinth\+\_\+name} & The name of the labyrinth associated with the scores (without extension). \\
 \hline
-{\em out\+\_\+count} & A pointer to store the number of scores loaded. \\
+{\em ladder} & Output ladder to be filled with loaded scores. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-void 
-\end{DoxyReturn}
 \Hypertarget{labyrinth__score_8h_abca9e7383ba0185044dacf0ba057b3c9}\label{labyrinth__score_8h_abca9e7383ba0185044dacf0ba057b3c9} 
 \index{labyrinth\_score.h@{labyrinth\_score.h}!sort\_scores@{sort\_scores}}
 \index{sort\_scores@{sort\_scores}!labyrinth\_score.h@{labyrinth\_score.h}}
@@ -149,9 +152,7 @@ Sorts the scores in descending order based on the number of coins.
 
 
 \begin{DoxyParams}{Parameters}
-{\em ladder} & A pointer to Ladder structure. \\
-\hline
-{\em count} & The number of scores in the array. \\
+{\em ladder} & A pointer to Ladder structure to sort in-\/place. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

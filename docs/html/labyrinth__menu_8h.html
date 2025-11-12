@@ -78,6 +78,9 @@ $(function() {
   <div class="headertitle"><div class="title">labyrinth_menu.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Console menu utilities for generating, loading, and playing a labyrinth.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -96,7 +99,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a65c493e4917b50c983f9efee5b278f1c" id="r_a65c493e4917b50c983f9efee5b278f1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__menu_8h.html#a65c493e4917b50c983f9efee5b278f1c">display_menu</a> (void)</td></tr>
-<tr class="memdesc:a65c493e4917b50c983f9efee5b278f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the main menu for the <a class="el" href="structLabyrinth.html">Labyrinth</a> Generator.  <br /></td></tr>
+<tr class="memdesc:a65c493e4917b50c983f9efee5b278f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the main menu for the <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> Generator.  <br /></td></tr>
 <tr class="separator:a65c493e4917b50c983f9efee5b278f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5c7f2391fb537da2006bf3d6189b70c" id="r_aa5c7f2391fb537da2006bf3d6189b70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__menu_8h.html#aa5c7f2391fb537da2006bf3d6189b70c">ask_for_labyrinth_size_and_name</a> (int *length, int *width, char **name)</td></tr>
 <tr class="memdesc:aa5c7f2391fb537da2006bf3d6189b70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks the user for the labyrinth size and its name.  <br /></td></tr>
@@ -104,8 +107,35 @@ Functions</h2></td></tr>
 <tr class="memitem:a2e9f40051bab371da46e0ddcbd9e0607" id="r_a2e9f40051bab371da46e0ddcbd9e0607"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__menu_8h.html#a2e9f40051bab371da46e0ddcbd9e0607">get_user_choice</a> (void)</td></tr>
 <tr class="memdesc:a2e9f40051bab371da46e0ddcbd9e0607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompts the user to enter a menu choice and validates the input.  <br /></td></tr>
 <tr class="separator:a2e9f40051bab371da46e0ddcbd9e0607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39c727d908e8f905d0466a56b4f2d4c" id="r_af39c727d908e8f905d0466a56b4f2d4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="labyrinth__menu_8h.html#af39c727d908e8f905d0466a56b4f2d4c">ask_for_difficulty</a> (void)</td></tr>
+<tr class="memdesc:af39c727d908e8f905d0466a56b4f2d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks the user for difficulty level (0=easy, 1=hard).  <br /></td></tr>
+<tr class="separator:af39c727d908e8f905d0466a56b4f2d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Console menu utilities for generating, loading, and playing a labyrinth. </p>
+<p>Declares helpers to display the main menu and collect user inputs such as sizes, names, and difficulty. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="af39c727d908e8f905d0466a56b4f2d4c" name="af39c727d908e8f905d0466a56b4f2d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39c727d908e8f905d0466a56b4f2d4c">&#9670;&#160;</a></span>ask_for_difficulty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ask_for_difficulty </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Asks the user for difficulty level (0=easy, 1=hard). </p>
+<dl class="section return"><dt>Returns</dt><dd>Difficulty value. </dd></dl>
+
+</div>
+</div>
 <a id="aa5c7f2391fb537da2006bf3d6189b70c" name="aa5c7f2391fb537da2006bf3d6189b70c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa5c7f2391fb537da2006bf3d6189b70c">&#9670;&#160;</a></span>ask_for_labyrinth_size_and_name()</h2>
 
@@ -168,7 +198,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Displays the main menu for the <a class="el" href="structLabyrinth.html">Labyrinth</a> Generator. </p>
+<p>Displays the main menu for the <a class="el" href="structLabyrinth.html" title="Full labyrinth grid and runtime state.">Labyrinth</a> Generator. </p>
 <p>Options:</p><ol type="1">
 <li>Generate a new labyrinth</li>
 <li>Load a labyrinth from file</li>

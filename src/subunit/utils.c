@@ -48,9 +48,13 @@ void free_labyrinth(Labyrinth labyrinth, int lines, int columns){
     }
     free(labyrinth.grid);
     labyrinth.grid = NULL;
+    if (labyrinth.extras) {
+        if (labyrinth.extras->extra.monsters) free(labyrinth.extras->extra.monsters);
+        free(labyrinth.extras);
+    }
 }
 
-void dump_labyrinth(int seed, int lines, int columns, char * filename){
+void dump_labyrinth_ext(int seed, int lines, int columns, Difficulty diff, char * filename){
     if (!filename) return;
     size_t len = 0;
     while (filename[len]) len++;
@@ -75,10 +79,14 @@ void dump_labyrinth(int seed, int lines, int columns, char * filename){
         return;
     }
 
-    fprintf(fp, "%d,%d,%d\n", seed, lines, columns);
+    fprintf(fp, "%d,%d,%d,%d\n", seed, lines, columns, (int)diff);
 
     fclose(fp);
     free(path);
+}
+
+void dump_labyrinth(int seed, int lines, int columns, char * filename){
+    dump_labyrinth_ext(seed, lines, columns, DIFF_EASY, filename);
 }
 
 void display_all_available_files(char ** labyrinth_name){
@@ -91,7 +99,7 @@ void display_all_available_files(char ** labyrinth_name){
 }
 
 
-void load_labyrinth(const char *filename, int *seed, int *lines, int *columns) {
+void load_labyrinth_ext(const char *filename, int *seed, int *lines, int *columns, Difficulty *diff) {
     if (!filename || !seed || !lines || !columns) {
         fprintf(stderr, "❌ Invalid arguments to load_labyrinth().\n");
         return;
@@ -118,13 +126,30 @@ void load_labyrinth(const char *filename, int *seed, int *lines, int *columns) {
 
     printf("Loading labyrinth from file: %s\n", path);
 
-    if (fscanf(fp, "%d,%d,%d", seed, lines, columns) != 3) {
+    int sd=0, ln=0, col=0, df=-1;
+    int read = fscanf(fp, "%d,%d,%d,%d", &sd, &ln, &col, &df);
+    if (read < 3) {
         fprintf(stderr, "⚠️  Invalid labyrinth file format: %s\n", path);
         *seed = *lines = *columns = 0;
+        if (diff) *diff = DIFF_EASY;
     } else {
+        *seed = sd; *lines = ln; *columns = col;
+        if (read == 4 && diff) {
+            *diff = (df == 1 ? DIFF_HARD : DIFF_EASY);
+        } else if (diff) {
+            *diff = DIFF_EASY;
+        }
         printf("✅ Loaded labyrinth parameters: seed=%d, lines=%d, columns=%d\n", *seed, *lines, *columns);
+        if (read == 4) {
+            printf("✅ Loaded difficulty: %s\n", (df==1?"HARD":"EASY"));
+        }
     }
 
     fclose(fp);
     free(path);
+}
+
+void load_labyrinth(const char *filename, int *seed, int *lines, int *columns) {
+    Difficulty tmp;
+    load_labyrinth_ext(filename, seed, lines, columns, &tmp);
 }

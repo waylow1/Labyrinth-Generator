@@ -36,4 +36,10 @@ void ask_for_labyrinth_size_and_name(int *length, int *width, char **name);
  */
 int get_user_choice(void);
 
+/**
+ * @brief Asks the user for difficulty level (0=easy, 1=hard).
+ * @return Difficulty value.
+ */
+int ask_for_difficulty(void);
+
 #endif // LABYRINTH_MENU_H

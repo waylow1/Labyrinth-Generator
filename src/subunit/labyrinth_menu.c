@@ -51,3 +51,15 @@ int get_user_choice() {
     }
     return choice;
 }
+
+int ask_for_difficulty() {
+    int d;
+    printf("Choose difficulty: 0 = Easy, 1 = Hard: ");
+    while (1) {
+        int res = scanf("%d", &d);
+        if (res == 1 && (d == 0 || d == 1)) break;
+        printf("Invalid input, enter 0 or 1: ");
+        int c; while ((c = getchar()) != '\n' && c != EOF) {}
+    }
+    return d;
+}

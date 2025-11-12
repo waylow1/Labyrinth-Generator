@@ -16,14 +16,16 @@ APP_SRC = $(SRC_DIR)/main.c \
           $(SUBUNIT_DIR)/labyrinth_menu.c \
           $(SUBUNIT_DIR)/utils.c \
           $(SUBUNIT_DIR)/displays.c \
-          $(SUBUNIT_DIR)/labyrinth_player_movement.c \
+		  $(SUBUNIT_DIR)/labyrinth_player_movement.c \
+		  $(SUBUNIT_DIR)/monsters.c \
           $(SUBUNIT_DIR)/labyrinth_score.c
 
 APP_OBJ = $(patsubst %.c,$(BUILD_DIR)/%.o,$(notdir $(APP_SRC)))
 
 TEST_SRC = $(TEST_DIR)/test_labyrinth_generator.c \
            $(SUBUNIT_DIR)/labyrinth_generator.c \
-           $(SUBUNIT_DIR)/utils.c
+		   $(SUBUNIT_DIR)/utils.c \
+		   $(SUBUNIT_DIR)/monsters.c
 
 TEST_OBJ = $(patsubst %.c,$(BUILD_DIR)/%.o,$(notdir $(TEST_SRC)))
 TEST_BIN = $(BIN_DIR)/test_labyrinth

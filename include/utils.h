@@ -13,19 +13,51 @@ typedef struct walls{
     int ** walls;
 } LabyrinthWalls;
 
-typedef struct Labyrinth{
+typedef struct Labyrinth Labyrinth;
 
+typedef enum {
+    DIFF_EASY = 0,
+    DIFF_HARD = 1
+} Difficulty;
+
+typedef enum {
+    MONSTER_GHOST = 'G',
+    MONSTER_OGRE  = 'O'
+} MonsterType;
+
+struct Monster;
+
+typedef void (*MonsterMoveFn)(struct Monster *m, struct Labyrinth *lab);
+
+typedef struct Monster {
+    int x, y;                
+    int penalty_points;      
+    int mobility_range;       
+    MonsterType type;         
+    char under_char;          
+    int alive;              
+    MonsterMoveFn move;       
+} Monster;
+
+typedef struct LabyrinthExtra {
+    Difficulty difficulty;
+    Monster *monsters;
+    int monster_count;
+} LabyrinthExtra;
+
+typedef struct LabyrinthInternalExtras {
+    LabyrinthExtra extra;
+} LabyrinthInternalExtras;
+
+struct Labyrinth {
     char ** grid;
-
     int starting_x, starting_y;
     int ending_x, ending_y;
-    
     int length, width;
     int has_key;
-    
     int coins;
-
-} Labyrinth;
+    LabyrinthInternalExtras *extras;
+};
 
 typedef struct score{
     char name[100];
@@ -93,6 +125,11 @@ void free_labyrinth(Labyrinth labyrinth, int lines, int columns);
 void dump_labyrinth(int seed, int lines, int columns, char * filename);
 
 /**
+ * Version étendue: persiste la difficulté (4ème champ).
+ */
+void dump_labyrinth_ext(int seed, int lines, int columns, Difficulty diff, char *filename);
+
+/**
  * @brief Displays all available labyrinth configuration files and prompts the user to select one.
  * 
  * @param labyrinth_name A pointer to a string where the selected labyrinth name will be stored.
@@ -108,6 +145,11 @@ void display_all_available_files(char ** labyrinth_name);
  * @param columns A pointer to store the loaded number of columns.
  */
 void load_labyrinth(const char * filename, int * seed, int * lines, int * columns);
+
+/**
+ * Version étendue: lit la difficulté si présente (sinon renvoie DIFF_EASY par défaut).
+ */
+void load_labyrinth_ext(const char *filename, int *seed, int *lines, int *columns, Difficulty *diff);
 
 
 #endif

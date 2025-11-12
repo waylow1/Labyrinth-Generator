@@ -19,6 +19,7 @@ int main(void) {
     Labyrinth labyrinth;
     int length = 0, width = 0;
     int seed;
+    Difficulty chosen_diff = DIFF_EASY;
 
     while (1) {
         display_menu();
@@ -29,12 +30,14 @@ int main(void) {
                 srand(seed);
                 printf("Generating a new labyrinth...\n");
                 ask_for_labyrinth_size_and_name(&length, &width, &labyrinth_name);
+                int d = ask_for_difficulty();
+                chosen_diff = (d == 1 ? DIFF_HARD : DIFF_EASY);
                 printf("Generating labyrinth of size %dx%d\n", length, width);
 
-                labyrinth = generate_labyrinth(length, width);
+                labyrinth = generate_labyrinth_with_difficulty(length, width, chosen_diff);
                 display_labyrinth(labyrinth, length, width);
 
-                dump_labyrinth(seed, length, width, labyrinth_name);
+                dump_labyrinth_ext(seed, length, width, chosen_diff, labyrinth_name);
                 create_score_file_if_not_exists(labyrinth_name);
                 free(labyrinth_name);
                 labyrinth_name = NULL;
@@ -46,7 +49,9 @@ int main(void) {
 
                 display_all_available_files(&labyrinth_name);
 
-                load_labyrinth(labyrinth_name, &seed, &length, &width);
+                Difficulty loaded_diff = DIFF_EASY;
+                load_labyrinth_ext(labyrinth_name, &seed, &length, &width, &loaded_diff);
+                chosen_diff = loaded_diff;
 
                 load_labyrinth_scores(ladder, labyrinth_name);
                 
@@ -63,7 +68,7 @@ int main(void) {
 
                 printf("Loaded labyrinth '%s' with size %dx%d and seed %d\n", labyrinth_name, length, width, seed);
 
-                labyrinth = generate_labyrinth(length, width);
+                labyrinth = generate_labyrinth_with_difficulty(length, width, chosen_diff);
 
                 display_labyrinth(labyrinth,length, width);
                 display_ladder(*ladder);

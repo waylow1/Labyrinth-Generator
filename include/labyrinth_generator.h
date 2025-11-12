@@ -16,6 +16,12 @@
 Labyrinth generate_labyrinth(int length, int width);
 
 /**
+ * @brief Generates a labyrinth with a given difficulty.
+ * In hard mode, extra random walls are opened and monsters are spawned.
+ */
+Labyrinth generate_labyrinth_with_difficulty(int length, int width, Difficulty diff);
+
+/**
  * @brief Randomly chooses a wall adjacent to a given cell.
  *
  * @param length Number of rows of cells.
@@ -114,5 +120,14 @@ void generate_objects(Labyrinth *labyrinth, int length, int width);
  * @return Labyrinth structure with the completed grid.
  */
 Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width);
+
+/**
+ * @brief Open additional random walls in the final grid to create loops (hard mode).
+ * @param labyrinth Pointer to the resulting grid (scaled 2N+1 x 2M+1)
+ * @param length Logical rows
+ * @param width Logical cols
+ * @param extra_count Number of extra walls to remove
+ */
+void open_extra_walls(Labyrinth *labyrinth, int length, int width, int extra_count);
 
 #endif // LABYRINTH_GENERATOR_H

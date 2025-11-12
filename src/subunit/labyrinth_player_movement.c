@@ -6,6 +6,7 @@
 #include "utils.h"
 #include <unistd.h>
 #include "labyrinth_score.h"
+#include "monsters.h"
 
 int define_cell_size(int length, int width) {
     int max_dimension = length > width ? length : width;
@@ -41,6 +42,10 @@ void redraw_case(SDL_Renderer *renderer, Labyrinth *labyrinth, int x, int y) {
         SDL_SetRenderDrawColor(renderer, TRAP_COLOR);
     } else if(labyrinth->grid[x][y] == DOOR) {
         SDL_SetRenderDrawColor(renderer, DOOR_COLOR);
+    } else if (labyrinth->grid[x][y] == MONSTER_GHOST) {
+        SDL_SetRenderDrawColor(renderer, GHOST_SDL_COLOR);
+    } else if (labyrinth->grid[x][y] == MONSTER_OGRE) {
+        SDL_SetRenderDrawColor(renderer, OGRE_SDL_COLOR);
     } else {
         SDL_SetRenderDrawColor(renderer, PATH_COLOR);
     }
@@ -109,6 +114,19 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
             labyrinth->grid[new_x][new_y] = PATH;
             printf("💀 You stepped on a trap and lost 500 coins\n");
             labyrinth->coins -= 500;
+        }
+        else if (labyrinth->grid[new_x][new_y] == MONSTER_GHOST || labyrinth->grid[new_x][new_y] == MONSTER_OGRE) {
+            if (labyrinth->extras) {
+                int cnt = labyrinth->extras->extra.monster_count;
+                for (int i=0;i<cnt;i++){
+                    Monster *m = &labyrinth->extras->extra.monsters[i];
+                    if (m->alive && m->x == new_x && m->y == new_y) {
+                        labyrinth->coins -= m->penalty_points;
+                        m->alive = 0;
+                        break;
+                    }
+                }
+            }
         }
 
         char old_char = labyrinth->grid[old_x][old_y];
@@ -270,6 +288,8 @@ Score display_labyrinth_sdl(Labyrinth labyrinth, int length, int width) {
                 if (movement_orchestrator(e, &labyrinth, renderer)) {
                     count++;
                     labyrinth.coins -= 1;
+                    move_monsters(&labyrinth);
+                    handle_player_monster_collisions(&labyrinth);
                 }
             }
         }

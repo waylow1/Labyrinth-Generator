@@ -17,6 +17,8 @@
 #define KEY_COLOR 0, 0, 255, 255
 #define TRAP_COLOR 255, 0, 255, 255
 #define DOOR_COLOR 160, 82, 45, 255
+#define GHOST_SDL_COLOR 0, 200, 200, 255
+#define OGRE_SDL_COLOR  200, 100, 0, 255
 
 // --------------------------------
 // SDL and Player Movement Functions

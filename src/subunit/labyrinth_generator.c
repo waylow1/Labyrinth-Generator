@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "utils.h"
 #include <time.h>
+#include "monsters.h"
 
 int choose_wall(int length, int width, int x, int y, int *nx, int *ny) {
     int dir = rand() % 4;
@@ -154,6 +155,7 @@ void generate_objects(Labyrinth * labyrinth, int length, int width) {
 
 Labyrinth concat_vertical_horizontal_walls(LabyrinthWalls vertical_walls, LabyrinthWalls horizontal_walls, int length, int width) {
     Labyrinth labyrinth;
+    labyrinth.extras = NULL; 
 
     int grid_rows = 2 * length + 1;
     int grid_cols = 2 * width + 1;
@@ -208,4 +210,37 @@ Labyrinth generate_labyrinth(int length, int width){
     free_matrix(vertical_walls.walls, length+1);
     free_matrix(horizontal_walls.walls, length);
     return generated_labyrinth;
+}
+
+void open_extra_walls(Labyrinth *labyrinth, int length, int width, int extra_count) {
+    int rows = 2*length + 1;
+    int cols = 2*width + 1;
+    if (extra_count <= 0) return;
+    for (int k = 0; k < extra_count; ++k) {
+        for (int tries = 0; tries < 2000; ++tries) {
+            int i = rand() % rows;
+            int j = rand() % cols;
+            if (i==0 || j==0 || i==rows-1 || j==cols-1) continue; 
+            if ((i%2) == (j%2)) continue; 
+            if (labyrinth->grid[i][j] == WALL) {
+                labyrinth->grid[i][j] = PATH;
+                break;
+            }
+        }
+    }
+}
+
+Labyrinth generate_labyrinth_with_difficulty(int length, int width, Difficulty diff){
+    Labyrinth lab = generate_labyrinth(length, width);
+    if (!lab.extras) {
+        lab.extras = (LabyrinthInternalExtras*)calloc(1, sizeof(LabyrinthInternalExtras));
+    }
+    lab.extras->extra.difficulty = diff;
+    if (diff == DIFF_HARD) {
+        int extra = (length * width) / 4;
+        if (extra < 3) extra = 3;
+        open_extra_walls(&lab, length, width, extra);
+        init_monsters(&lab, diff);
+    }
+    return lab;
 }

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "monsters.h"
 
 int visited_count(Labyrinth labyrinth, int **visited, int x, int y) {
     if (x < 0 || y < 0 || x >= labyrinth.length * 2 + 1 || y >= labyrinth.width * 2 + 1) return 0;
@@ -210,6 +211,77 @@ MU_TEST(test_choose_wall_contract_and_merge_sets) {
     free_labyrinth_cells(cells, length);
 }
 
+MU_TEST(test_open_extra_walls_creates_loops) {
+    srand(111);
+    int length = 8, width = 8;
+    Labyrinth lab = generate_labyrinth(length, width);
+    int rows = length * 2 + 1;
+    int cols = width * 2 + 1;
+
+    int walls_before = 0;
+    for (int i=0;i<rows;i++){
+        for (int j=0;j<cols;j++){
+            if (lab.grid[i][j] == WALL) walls_before++;
+        }
+    }
+    int extra = (length*width)/5;
+    if (extra < 5) extra = 5;
+    open_extra_walls(&lab, length, width, extra);
+
+    int walls_after = 0;
+    for (int i=0;i<rows;i++){
+        for (int j=0;j<cols;j++){
+            if (lab.grid[i][j] == WALL) walls_after++;
+        }
+    }
+
+    mu_assert(walls_after < walls_before, "Aucune ouverture supplémentaire réalisée");
+    mu_assert(walls_before - walls_after <= extra, "Trop de murs ouverts");
+    free_labyrinth(lab, length, width);
+}
+
+MU_TEST(test_init_monsters_and_move) {
+    srand(222);
+    int length = 7, width = 9;
+    Labyrinth lab = generate_labyrinth(length, width);
+    init_monsters(&lab, DIFF_HARD);
+
+    mu_assert(lab.extras != NULL, "extras non initialisés");
+    mu_assert(lab.extras->extra.monster_count > 0, "aucun monstre créé");
+
+    int rows = length * 2 + 1;
+    int cols = width * 2 + 1;
+    int placed = 0;
+    for (int i=0;i<rows;i++){
+        for (int j=0;j<cols;j++){
+            if (is_monster_char(lab.grid[i][j])) placed++;
+        }
+    }
+
+    int alive = 0;
+    for (int i=0;i<lab.extras->extra.monster_count;i++){
+        Monster *m = &lab.extras->extra.monsters[i];
+        if (!m->alive) continue; alive++;
+        mu_assert(is_monster_char(lab.grid[m->x][m->y]), "monstre non visible à sa position");
+    }
+
+    mu_assert(placed >= alive, "moins de monstres affichés que d'instances vivantes");
+    mu_assert(placed - alive <= 1, "trop d'icônes de monstres affichées");
+
+    int moved = 0;
+    for (int step=0; step<4 && moved == 0; ++step) {
+        int before_x0 = lab.extras->extra.monsters[0].x;
+        int before_y0 = lab.extras->extra.monsters[0].y;
+        move_monsters(&lab);
+        if (lab.extras->extra.monsters[0].x != before_x0 || lab.extras->extra.monsters[0].y != before_y0) {
+            moved = 1;
+        }
+    }
+    mu_assert(moved == 1, "aucun mouvement de monstre détecté");
+
+    free_labyrinth(lab, length, width);
+}
+
 MU_TEST_SUITE(test_suite) {
     MU_RUN_TEST(test_labyrinth_is_perfect);
     MU_RUN_TEST(test_utils_allocation);
@@ -217,6 +289,8 @@ MU_TEST_SUITE(test_suite) {
     MU_RUN_TEST(test_labyrinth_invariants);
     MU_RUN_TEST(test_deterministic_generation_with_seed);
     MU_RUN_TEST(test_choose_wall_contract_and_merge_sets);
+    MU_RUN_TEST(test_open_extra_walls_creates_loops);
+    MU_RUN_TEST(test_init_monsters_and_move);
 }
 
 int main() {

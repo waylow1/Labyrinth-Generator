@@ -5,9 +5,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
-// --------------------------------
-// SDL Rendering Colors
-// --------------------------------
 #define PLAYER_COLOR 0, 255, 0, 255
 #define WALL_COLOR 0, 0, 0, 255
 #define PATH_COLOR 255, 255, 255, 255
@@ -20,9 +17,6 @@
 #define GHOST_SDL_COLOR 0, 200, 200, 255
 #define OGRE_SDL_COLOR  200, 100, 0, 255
 
-// --------------------------------
-// SDL and Player Movement Functions
-// --------------------------------
 
 /**
  * @brief Determines the cell size based on the labyrinth dimensions.

@@ -43,11 +43,12 @@ void free_labyrinth_cells(LabyrinthCell ** labyrinth, int length){
 }
 
 void free_labyrinth(Labyrinth labyrinth, int lines, int columns){
-    for (int i=0;i<lines;i++){
-        free(labyrinth.grid[i]);
+    if (labyrinth.grid) {
+        for (int i=0;i<lines;i++){
+            free(labyrinth.grid[i]);
+        }
+        free(labyrinth.grid);
     }
-    free(labyrinth.grid);
-    labyrinth.grid = NULL;
     if (labyrinth.extras) {
         if (labyrinth.extras->extra.monsters) free(labyrinth.extras->extra.monsters);
         free(labyrinth.extras);

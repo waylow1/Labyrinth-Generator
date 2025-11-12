@@ -78,8 +78,8 @@ void try_unlock_door(Labyrinth *labyrinth, SDL_Renderer *renderer) {
 }
 
 int is_ended(Labyrinth *labyrinth, int nb_iterations, float elapsed_sec) {
-    if (labyrinth->starting_x == labyrinth->ending_x &&
-        labyrinth->starting_y == labyrinth->ending_y) {
+    // Fin de partie uniquement si le joueur est sur la case END
+    if (labyrinth->grid[labyrinth->starting_x][labyrinth->starting_y] == END) {
         printf("🎉 Congratulations! You've reached the exit!\n");
         printf("⏱️ Time taken: %.2f seconds\n", elapsed_sec);
         printf("🔄 Total moves made: %d\n", nb_iterations);
@@ -99,7 +99,12 @@ void move_player(Labyrinth *labyrinth, int dx, int dy, SDL_Renderer *renderer) {
     if (new_x >= 0 && new_x < labyrinth->length * 2 + 1 &&
         new_y >= 0 && new_y < labyrinth->width * 2 + 1 &&
         labyrinth->grid[new_x][new_y] != WALL &&
-        labyrinth->grid[new_x][new_y] != DOOR) {
+        !(labyrinth->grid[new_x][new_y] == DOOR && !labyrinth->has_key)) {
+
+        if (labyrinth->grid[new_x][new_y] == DOOR && labyrinth->has_key) {
+            labyrinth->grid[new_x][new_y] = PATH; 
+            printf("🚪 You unlocked the door!\n");
+        }
 
         if (labyrinth->grid[new_x][new_y] == KEY) {
             labyrinth->has_key = 1;

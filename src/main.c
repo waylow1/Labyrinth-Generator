@@ -16,7 +16,7 @@ int main(void) {
     ladder->count = 0;
     ladder->scores = malloc(10 * sizeof(Score));
     char * labyrinth_name = NULL;
-    Labyrinth labyrinth;
+    Labyrinth labyrinth = {0};
     int length = 0, width = 0;
     int seed;
     Difficulty chosen_diff = DIFF_EASY;
@@ -42,6 +42,9 @@ int main(void) {
                 free(labyrinth_name);
                 labyrinth_name = NULL;
                 free_labyrinth(labyrinth, length, width);
+                labyrinth.grid = NULL;
+                labyrinth.extras = NULL;
+                length = width = 0;
                 break;
 
             case 2:
@@ -92,6 +95,9 @@ int main(void) {
                 free(labyrinth_name);
                 free_labyrinth(labyrinth, length, width);
                 labyrinth_name = NULL;
+                labyrinth.grid = NULL;
+                labyrinth.extras = NULL;
+                length = width = 0;
                 break;
 
             case 4:
@@ -109,6 +115,8 @@ int main(void) {
                 if (labyrinth.grid) {
                     free_labyrinth(labyrinth, length, width);
                     labyrinth.grid = NULL;
+                    labyrinth.extras = NULL;
+                    length = width = 0;
                 }
 
                 if (labyrinth_name) {

@@ -167,7 +167,7 @@ make
 ```
 
 Sortie attendue : `X tests, Y assertions, 0 failures`.
-```
+
 
 ---
 
